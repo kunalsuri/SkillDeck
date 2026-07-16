@@ -29,6 +29,19 @@ before continuing.
 3. Make sure Python deps are installed: `pip install -r requirements.txt`
    (only `requests`, `pyyaml`, `datasketch`, `jsonschema` — no
    `sentence-transformers`, no `anthropic`/`openai`/`google-genai` SDKs).
+4. **Run `python -m kitchen precheck` (with `GITHUB_TOKEN` exported) before
+   touching `ingest`.** This is a one-shot diagnostic for exactly the two
+   classes of failure that stop this pipeline before it does anything useful:
+   a bad/missing token and a broken TLS/network path to `api.github.com`. If
+   it exits non-zero, **stop immediately and report the FAIL line(s) to the
+   user verbatim** — do not go debug it yourself with ad-hoc `curl`/Python
+   SSL one-liners, and do not attempt to patch around a TLS failure (e.g. by
+   disabling cert verification). A TLS `FAIL` here means a corporate
+   proxy/VPN/AV is intercepting HTTPS with an untrusted root CA, or the local
+   cert store is broken — that's an environment fix only the user can make
+   (turn off the VPN/SSL-inspection, or trust the intercepting CA), not
+   something to work around in code. Only proceed to section 1 once
+   `precheck` reports `ALL CLEAR` or `OK WITH WARNINGS`.
 
 ## 1. Scriptable stages
 
