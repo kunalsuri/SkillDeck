@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SkillExplorer from '../components/SkillExplorer';
+import kbData from '../data/kb.json';
+
+const title = "General Skills — SkillDeck";
+const description = "Non-development skills from Google and Anthropic and the wider catalog - documents, spreadsheets, cloud operations, and design - grouped by capability.";
+---
+
+<Layout title={title} description={description} active="general-skills" mainClass="flex-1 max-w-7xl w-full mx-auto px-4 py-16 space-y-14">
+  {/* Intro Block */}
+  <div class="space-y-4 text-center max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm">
+      <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span>
+      Everyday Capability Map
+    </div>
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400 pb-1">
+      Beyond The Codebase
+    </h1>
+    <p class="text-sm md:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans max-w-2xl mx-auto">
+      Skills outside the software development lifecycle - documents, spreadsheets, cloud operations, and design - mostly official Google and Anthropic skills, grouped by capability.
+    </p>
+    <p class="text-[11px] font-mono text-zinc-400">
+      Looking for coding-agent skills instead? See <a href="/sdlc" class="text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 hover:underline transition-colors duration-200 font-semibold">Software Engineering / SDLC</a>.
+    </p>
+  </div>
+
+  {/* Skill explorer: a searchable master list of every non-dev skill on
+      the left, full detail card (info grid, install options, try-saying
+      prompt) for the selected one on the right. */}
+  <SkillExplorer kb={kbData as any} mode="capability" client:load />
+</Layout>

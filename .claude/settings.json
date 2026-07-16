@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s --max-time 15 https://api.github.com -o /dev/null -w \"http_code=%{http_code} ssl_verify=%{ssl_verify_result}\\\\n\")",
+      "Bash(nslookup api.github.com)",
+      "Bash(ssh -T -o ConnectTimeout=10 -o StrictHostKeyChecking=no git@github.com)",
+      "Bash(git ls-remote *)",
+      "Bash(git checkout *)",
+      "PowerShell($r = curl.exe -s -o NUL -w \"http_code=%{http_code}`n\" --ssl-no-revoke https://api.github.com; Write-Output \"exit=$LASTEXITCODE $r\")",
+      "Bash(openssl s_client -connect api.github.com:443 -servername api.github.com)",
+      "Bash(openssl x509 *)",
+      "Bash(curl -sI --max-time 10 https://pypi.org)",
+      "Bash(pip install *)",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import site; print\\(site.getsitepackages\\(\\)\\)\")",
+      "Bash(pip show *)",
+      "Read(//c/Users/kunal/**)"
+    ]
+  }
+}

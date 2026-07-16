@@ -1,0 +1,240 @@
+---
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { marked } from 'marked';
+import sanitizeHtml from 'sanitize-html';
+import kbData from '../../data/kb.json';
+import SkillCard from '../../components/SkillCard.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const paths = [];
+
+  for (const entry of kbData.entries) {
+    const skillRefs = entry.skill_refs as Record<string, any>;
+    const allSkillIds = Object.keys(skillRefs);
+
+    for (const skillId of allSkillIds) {
+      const skill = skillRefs[skillId];
+
+      // Get other duplicate skills in the same cluster to display as alternatives
+      const alternatives = allSkillIds
+        .filter(id => id !== skillId)
+        .map(id => {
+          const alt = skillRefs[id];
+          return {
+            id,
+            name: alt.name,
+            repo_url: alt.repo_url,
+            provenance: alt.provenance,
+            vendor: alt.vendor,
+            license: alt.license
+          };
+        });
+
+      paths.push({
+        params: { id: skillId },
+        props: {
+          skill,
+          title: entry.card.title,
+          whatItDoes: entry.card.what_it_does,
+          trySaying: entry.card.try_saying,
+          alternatives
+        }
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { id } = Astro.params;
+const { skill, title, whatItDoes, trySaying, alternatives } = Astro.props;
+
+// Load mirrored SKILL.md if mirrorable
+let markdownHtml = '';
+
+if (skill.review_status === 'human_read' || skill.license !== 'source-available') {
+  // Mirrorable check: let's verify if mirrorable is true by looking at license or metadata
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  const mirrorFilePath = path.resolve(__dirname, '..', '..', '..', '..', 'mirror', `${id}.md`);
+  if (fs.existsSync(mirrorFilePath)) {
+    try {
+      const markdownContent = fs.readFileSync(mirrorFilePath, 'utf-8');
+      const rawHtml = await marked(markdownContent);
+      // Mirrored SKILL.md files originate from third-party repos we don't
+      // control, so raw HTML embedded in the markdown (script/iframe/on*
+      // handlers) must be stripped before it's baked into the static page.
+      markdownHtml = sanitizeHtml(rawHtml, {
+        allowedTags: [
+          'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'ul', 'ol', 'li',
+          'blockquote', 'pre', 'code', 'strong', 'em', 'del', 'table',
+          'thead', 'tbody', 'tr', 'th', 'td', 'img', 'br', 'hr', 'span',
+          'sup', 'sub',
+        ],
+        allowedAttributes: {
+          a: ['href', 'name', 'target', 'rel'],
+          img: ['src', 'alt', 'title', 'width', 'height'],
+          code: ['class'],
+          pre: ['class'],
+          span: ['class'],
+        },
+        allowedSchemes: ['http', 'https', 'mailto'],
+        transformTags: {
+          a: sanitizeHtml.simpleTransform('a', {
+            target: '_blank',
+            rel: 'noopener noreferrer nofollow',
+          }),
+        },
+      });
+    } catch (e) {
+      console.error(`Failed to read mirror file for ${id}:`, e);
+    }
+  }
+}
+
+const displayTitle = `${skill.name} — Skill Details`;
+---
+
+<Layout title={displayTitle} description={whatItDoes} mainClass="flex-1 max-w-4xl w-full mx-auto px-4 py-12 space-y-12">
+  {/* Back button */}
+  <div>
+    <a href="/" class="inline-flex items-center gap-1 text-xs font-mono text-zinc-500 hover:text-accent font-bold">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+      Back to Catalog
+    </a>
+  </div>
+
+  {/* Main card representation */}
+  <SkillCard
+    skillId={id}
+    skill={skill}
+    title={title}
+    whatItDoes={whatItDoes}
+    trySaying={trySaying}
+    alternatives={alternatives}
+  />
+
+  {/* Mirrored SKILL.md contents */}
+  <div class="space-y-6">
+    <h4 class="text-sm font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500 border-b border-zinc-200 dark:border-zinc-800 pb-2">
+      SKILL.md Documentation
+    </h4>
+
+    {markdownHtml ? (
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg p-6 md:p-8 overflow-x-auto shadow-sm">
+        <div class="markdown-body max-w-none text-zinc-800 dark:text-zinc-200 prose dark:prose-invert" set:html={markdownHtml} />
+      </div>
+    ) : (
+      <div class="bg-zinc-100 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-850 rounded-lg p-8 text-center text-sm space-y-4">
+        <div class="text-zinc-500 dark:text-zinc-400 max-w-md mx-auto leading-relaxed">
+          {skill.license === 'source-available' ? (
+            <p>Due to licensing restrictions for <strong>Source-Available</strong> content, the documentation body cannot be mirrored locally.</p>
+          ) : (
+            <p>This skill's documentation has not been mirrored or requires maintainer approval.</p>
+          )}
+        </div>
+        <div>
+          <a
+            href={skill.repo_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 px-4 py-2 text-xs font-mono font-bold bg-zinc-900 text-zinc-100 hover:bg-zinc-850 rounded border border-zinc-850"
+          >
+            Read on GitHub Upstream
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    )}
+  </div>
+</Layout>
+
+{/* Style sheet for basic markdown tags inside detail page */}
+<style is:global>
+  .markdown-body h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e4e4e7;
+    padding-bottom: 0.5rem;
+  }
+  .dark .markdown-body h1 {
+    border-bottom-color: #27272a;
+  }
+  .markdown-body h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .markdown-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  .markdown-body p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.625;
+  }
+  .markdown-body ul, .markdown-body ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  .markdown-body ul {
+    list-style-type: disc;
+  }
+  .markdown-body ol {
+    list-style-type: decimal;
+  }
+  .markdown-body li {
+    margin-bottom: 0.25rem;
+  }
+  .markdown-body pre {
+    background-color: #09090b;
+    color: #f4f4f5;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  .markdown-body code {
+    background-color: #f4f4f5;
+    color: #27272a;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+  }
+  .dark .markdown-body code {
+    background-color: #18181b;
+    color: #e4e4e7;
+  }
+  .markdown-body pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .markdown-body blockquote {
+    border-left: 4px solid #d4d4d8;
+    padding-left: 1rem;
+    color: #71717a;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .dark .markdown-body blockquote {
+    border-left-color: #3f3f46;
+    color: #a1a1aa;
+  }
+</style>

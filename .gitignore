@@ -165,7 +165,13 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+#/site
+
+# Astro site builds
+site/node_modules/
+site/dist/
+site/.astro/
+site/src/data/kb.json
 
 # mypy
 .mypy_cache/
@@ -216,3 +222,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local cache & test output for SkillDeck project
+.kitchen_cache/
+site/test-results/
+
+
+# Claude Code local settings (personal overrides, not shared)
+.claude/settings.local.json

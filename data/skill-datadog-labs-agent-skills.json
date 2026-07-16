@@ -1,0 +1,1606 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T14:29:37.940923Z",
+  "skills": [
+    {
+      "id": "datadog-labs-agent-skills",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": ".",
+        "default_branch": "main"
+      },
+      "name": "agent-skills",
+      "frontmatter_description": "Datadog skills for AI agents. Essential monitoring, logging, tracing and observability.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "431b0f7ba501d471b14783563eeaf49c99d040db",
+        "fetched_at": "2026-07-16T14:28:58.620914Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-049",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 629,
+        "word_count": 358,
+        "line_count": 81,
+        "basis": "body",
+        "trigger": "Datadog skills for AI agents.",
+        "body_blob_sha": "431b0f7ba501d471b14783563eeaf49c99d040db",
+        "computed_at": "2026-07-16T14:29:37.722917Z"
+      }
+    },
+    {
+      "id": "datadog-labs-agent-observability-eval-bootstrap",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "agent-observability/agent-observability-eval-bootstrap",
+        "default_branch": "main"
+      },
+      "name": "agent-observability-eval-bootstrap",
+      "frontmatter_description": "Bootstrap evaluators from production traces — by default propose online LLM-judge evaluators and, after you confirm, create them in Datadog as disabled drafts (never auto-enabled); on request emit Python SDK code or a framework-agnostic JSON spec instead. Use when user says \"bootstrap evaluators\", \"generate evaluators\", \"create evals from traces\", \"eval bootstrap\", \"write evaluators\", \"build eval suite\", \"publish evaluators\", or wants to generate BaseEvaluator/LLMJudge code or online judge configs from production LLM trace data. Works with ml_app and optional RCA report or failure hypothesis.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "4a712cefe3d1509e9634c97b64d8c500023ce3ac",
+        "fetched_at": "2026-07-16T14:28:59.452270Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-050",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 24462,
+        "word_count": 13229,
+        "line_count": 1363,
+        "basis": "body",
+        "trigger": "Use when user says \"bootstrap evaluators\", \"generate evaluators\", \"create evals from traces\", \"eval bootstrap\", \"write evaluators\", \"build eval suite\", \"publish evaluators\", or wants to generate Base…",
+        "body_blob_sha": "4a712cefe3d1509e9634c97b64d8c500023ce3ac",
+        "computed_at": "2026-07-16T14:29:37.725131Z"
+      }
+    },
+    {
+      "id": "datadog-labs-agent-observability-eval-pipeline",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "agent-observability/agent-observability-eval-pipeline",
+        "default_branch": "main"
+      },
+      "name": "agent-observability-eval-pipeline",
+      "frontmatter_description": "End-to-end Agent Observability pipeline for an instrumented ml_app — classify production traces, root-cause failures, bootstrap evaluators, then (optionally) sample + publish a dataset, generate + run an experiment, and analyze results. Six narrated phases with a standardized banner and a \"continue\" checkpoint between each. Pure orchestration over the agent-observability sub-skills (`agent-observability-session-classify`, `agent-observability-trace-rca`, `agent-observability-eval-bootstrap`, `agent-observability-experiment-py-bootstrap`, `agent-observability-experiment-analyzer`). Use when user says \"run the eval pipeline\", \"go from traces to evals\", \"bootstrap evals end to end\", \"classify then RCA then bootstrap\", \"build an eval set from scratch\", \"onboard me to datasets and experiments\", \"walk me through experiments\", \"I have an ml_app, now what\", \"Agent Observability onboarding\", \"guided experiment setup\", \"from traces to experiments\", or wants a deterministic, narrated tour from production data through evaluators, datasets, and experiments. Stop early with `--stop-after <phase>` to short-circuit at evaluators or dataset, or resume mid-flow with `--start-at <phase>`.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "c0da8e3bf931d9656e1627d5d83de992125a2bf6",
+        "fetched_at": "2026-07-16T14:29:00.143476Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-051",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 15204,
+        "word_count": 8655,
+        "line_count": 784,
+        "basis": "body",
+        "trigger": "Use when user says \"run the eval pipeline\", \"go from traces to evals\", \"bootstrap evals end to end\", \"classify then RCA then bootstrap\", \"build an eval set from scratch\", \"onboard me to datasets and …",
+        "body_blob_sha": "c0da8e3bf931d9656e1627d5d83de992125a2bf6",
+        "computed_at": "2026-07-16T14:29:37.726700Z"
+      }
+    },
+    {
+      "id": "datadog-labs-agent-observability-experiment-analyzer",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "agent-observability/agent-observability-experiment-analyzer",
+        "default_branch": "main"
+      },
+      "name": "agent-observability-experiment-analyzer",
+      "frontmatter_description": "Analyze LLM experiment results. Handles single or comparative experiments, exploratory or Q&A modes. Use when user says \"analyze experiment\", \"compare experiments\", \"analyze against baseline\", or provides one or two experiment IDs for analysis.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "564329e95b8573a91edce1c9d7c9919da4ffb864",
+        "fetched_at": "2026-07-16T14:29:00.848512Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-052",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 6313,
+        "word_count": 3552,
+        "line_count": 438,
+        "basis": "body",
+        "trigger": "Use when user says \"analyze experiment\", \"compare experiments\", \"analyze against baseline\", or provides one or two experiment IDs for analysis.",
+        "body_blob_sha": "564329e95b8573a91edce1c9d7c9919da4ffb864",
+        "computed_at": "2026-07-16T14:29:37.727545Z"
+      }
+    },
+    {
+      "id": "datadog-labs-agent-observability-experiment-py-bootstrap",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "agent-observability/agent-observability-experiment-py-bootstrap",
+        "default_branch": "main"
+      },
+      "name": "agent-observability-experiment-py-bootstrap",
+      "frontmatter_description": "Generates a self-contained Python experiment client that uses the ddtrace.llmobs SDK. Emits either a runnable .py script or a Jupyter .ipynb notebook matching the canonical DataDog reference notebook style. Use when the user says \"generate Python experiment\", \"write an SDK experiment\", \"create a ddtrace experiment\", \"Python notebook experiment\", \"use the Agent Observability SDK\", or has `ddtrace` installed and wants idiomatic SDK code.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "569438431a0a368137c6d6a658863866a082cb0f",
+        "fetched_at": "2026-07-16T14:29:01.550757Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-053",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 14392,
+        "word_count": 7885,
+        "line_count": 634,
+        "basis": "body",
+        "trigger": "Use when the user says \"generate Python experiment\", \"write an SDK experiment\", \"create a ddtrace experiment\", \"Python notebook experiment\", \"use the Agent Observability SDK\", or has `ddtrace` instal…",
+        "body_blob_sha": "569438431a0a368137c6d6a658863866a082cb0f",
+        "computed_at": "2026-07-16T14:29:37.728913Z"
+      }
+    },
+    {
+      "id": "datadog-labs-agent-observability-session-classify",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "agent-observability/agent-observability-session-classify",
+        "default_branch": "main"
+      },
+      "name": "agent-observability-session-classify",
+      "frontmatter_description": "Classify whether user intent was satisfied in a Datadog Agent Observability trace or session. Three modes: (1) session_id — classify a single CMD+I assistant session with RUM; (2) trace_id — classify a single Agent Observability trace without RUM; (3) ml_app — sample and classify multiple sessions or traces from a given LLM app. Output is compact by default (verdict + one-sentence reason). Use when evaluating satisfaction, classifying sessions/traces, labeling data, or generating signal for agent-observability-eval-pipeline or agent-observability-trace-rca.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "ddb695bcd4a621e9726253067962c68a136f9393",
+        "fetched_at": "2026-07-16T14:29:02.256435Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-054",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 15699,
+        "word_count": 8740,
+        "line_count": 1142,
+        "basis": "body",
+        "trigger": "Use when evaluating satisfaction, classifying sessions/traces, labeling data, or generating signal for agent-observability-eval-pipeline or agent-observability-trace-rca.",
+        "body_blob_sha": "ddb695bcd4a621e9726253067962c68a136f9393",
+        "computed_at": "2026-07-16T14:29:37.730447Z"
+      }
+    },
+    {
+      "id": "datadog-labs-agent-observability-trace-rca",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "agent-observability/agent-observability-trace-rca",
+        "default_branch": "main"
+      },
+      "name": "agent-observability-trace-rca",
+      "frontmatter_description": "Root cause analysis on production LLM traces. Diagnoses why an LLM application is failing — works from eval judge verdicts, runtime errors, or structural anomalies depending on what signals are present. Walks the span tree from symptom to root cause. Use when user says \"what's wrong with my app\", \"why is my eval failing\", \"analyze errors\", \"root cause analysis\", \"diagnose failures\", or wants to understand production failure patterns.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "472fe7da7386f1db4f5a01f6f128258ba98cb617",
+        "fetched_at": "2026-07-16T14:29:03.085290Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-055",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 10083,
+        "word_count": 5933,
+        "line_count": 780,
+        "basis": "body",
+        "trigger": "Use when user says \"what's wrong with my app\", \"why is my eval failing\", \"analyze errors\", \"root cause analysis\", \"diagnose failures\", or wants to understand production failure patterns.",
+        "body_blob_sha": "472fe7da7386f1db4f5a01f6f128258ba98cb617",
+        "computed_at": "2026-07-16T14:29:37.731580Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-apm",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apm",
+        "default_branch": "main"
+      },
+      "name": "dd-apm",
+      "frontmatter_description": "APM - install, onboard, instrument, enable, set up, configure, traces, services, dependencies, performance analysis. Use for any request involving Datadog APM setup, instrumentation (SSI, ddtrace, agent install), or analysis.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "dddb18c37fc764037ff1b2141bfd4b6e0988d056",
+        "fetched_at": "2026-07-16T14:29:03.749271Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-056",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1591,
+        "word_count": 893,
+        "line_count": 167,
+        "basis": "body",
+        "trigger": "Use for any request involving Datadog APM setup, instrumentation (SSI, ddtrace, agent install), or analysis.",
+        "body_blob_sha": "dddb18c37fc764037ff1b2141bfd4b6e0988d056",
+        "computed_at": "2026-07-16T14:29:37.732096Z"
+      }
+    },
+    {
+      "id": "datadog-labs-agent-install",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apm/linux-ssi/agent-install",
+        "default_branch": "main"
+      },
+      "name": "agent-install",
+      "frontmatter_description": "Install the Datadog Agent on Linux hosts via SSH with Single Step Instrumentation (SSI) enabled — SSI automatically instruments applications for APM without code changes. Only use if no agent is installed yet.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "b99561702a3830665cb2d3277470525e5383f3a1",
+        "fetched_at": "2026-07-16T14:29:07.779667Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-057",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 2550,
+        "word_count": 1485,
+        "line_count": 270,
+        "basis": "body",
+        "trigger": "Only use if no agent is installed yet.",
+        "body_blob_sha": "b99561702a3830665cb2d3277470525e5383f3a1",
+        "computed_at": "2026-07-16T14:29:37.732653Z"
+      }
+    },
+    {
+      "id": "datadog-labs-enable-ssi",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apm/linux-ssi/enable-ssi",
+        "default_branch": "main"
+      },
+      "name": "enable-ssi",
+      "frontmatter_description": "Configure Unified Service Tags and verify Single Step Instrumentation (SSI) injection on Linux hosts — SSI automatically instruments applications for APM without code changes. Only use if the Datadog Agent is already installed.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "bcc5941a31ea5b1ddd481741ab736692361b409e",
+        "fetched_at": "2026-07-16T14:29:08.499770Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-058",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1876,
+        "word_count": 1053,
+        "line_count": 225,
+        "basis": "body",
+        "trigger": "Only use if the Datadog Agent is already installed.",
+        "body_blob_sha": "bcc5941a31ea5b1ddd481741ab736692361b409e",
+        "computed_at": "2026-07-16T14:29:37.733166Z"
+      }
+    },
+    {
+      "id": "datadog-labs-onboarding-summary",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apm/linux-ssi/onboarding-summary",
+        "default_branch": "main"
+      },
+      "name": "onboarding-summary",
+      "frontmatter_description": "Generate a live Single Step Instrumentation (SSI) onboarding confirmation report for Linux hosts — verifies APM instrumentation is working end-to-end with deep links into the Datadog UI. Only use after agent-install and enable-ssi have both completed.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "a5929b996adb7a4a0b7901d1395b0e3fce62ad7f",
+        "fetched_at": "2026-07-16T14:29:09.240150Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-059",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1018,
+        "word_count": 603,
+        "line_count": 129,
+        "basis": "body",
+        "trigger": "Generate a live Single Step Instrumentation (SSI) onboarding confirmation report for Linux hosts — verifies APM instrumentation is working end-to-end with deep links into the Datadog UI.",
+        "body_blob_sha": "a5929b996adb7a4a0b7901d1395b0e3fce62ad7f",
+        "computed_at": "2026-07-16T14:29:37.733599Z"
+      }
+    },
+    {
+      "id": "datadog-labs-troubleshoot-ssi",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apm/linux-ssi/troubleshoot-ssi",
+        "default_branch": "main"
+      },
+      "name": "troubleshoot-ssi",
+      "frontmatter_description": "Diagnose and fix Single Step Instrumentation (SSI) issues on Linux hosts — SSI automatically instruments applications for APM without code changes. Only use if the agent and SSI are configured but traces are missing or instrumentation is not working.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "5532d15c5c08fff99e85e3a4ea4a60f652ea683d",
+        "fetched_at": "2026-07-16T14:29:09.991791Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-060",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 4772,
+        "word_count": 2715,
+        "line_count": 406,
+        "basis": "body",
+        "trigger": "Only use if the agent and SSI are configured but traces are missing or instrumentation is not working.",
+        "body_blob_sha": "5532d15c5c08fff99e85e3a4ea4a60f652ea683d",
+        "computed_at": "2026-07-16T14:29:37.734319Z"
+      }
+    },
+    {
+      "id": "datadog-labs-verify-ssi",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apm/linux-ssi/verify-ssi",
+        "default_branch": "main"
+      },
+      "name": "verify-ssi",
+      "frontmatter_description": "Verify Single Step Instrumentation (SSI) is working end-to-end on Linux hosts — SSI automatically instruments applications for APM without code changes. Only use after enable-ssi has run.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "15465ba5d229726c35e32044cae1a1dea11fbee2",
+        "fetched_at": "2026-07-16T14:29:10.729052Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-061",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1446,
+        "word_count": 881,
+        "line_count": 188,
+        "basis": "body",
+        "trigger": "Verify Single Step Instrumentation (SSI) is working end-to-end on Linux hosts — SSI automatically instruments applications for APM without code changes.",
+        "body_blob_sha": "15465ba5d229726c35e32044cae1a1dea11fbee2",
+        "computed_at": "2026-07-16T14:29:37.734806Z"
+      }
+    },
+    {
+      "id": "datadog-labs-service-remapping",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apm/service-remapping",
+        "default_branch": "main"
+      },
+      "name": "service-remapping",
+      "frontmatter_description": "Create and manage APM service remapping rules — rewrite service names at ingestion time to collapse noisy inferred entities, clean up auto-generated names, handle org renames, or normalize naming conventions. Use for any request involving service renaming, service mapping, inferred service cleanup, peer.service normalization, or collapsing fragmented service names.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "005a1725d1157e2f109137d81b4dd538ee3e54bf",
+        "fetched_at": "2026-07-16T14:29:11.484101Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-062",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 4560,
+        "word_count": 2828,
+        "line_count": 428,
+        "basis": "body",
+        "trigger": "Use for any request involving service renaming, service mapping, inferred service cleanup, peer.service normalization, or collapsing fragmented service names.",
+        "body_blob_sha": "005a1725d1157e2f109137d81b4dd538ee3e54bf",
+        "computed_at": "2026-07-16T14:29:37.735543Z"
+      }
+    },
+    {
+      "id": "datadog-labs-datadog-app",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-apps/datadog-app",
+        "default_branch": "main"
+      },
+      "name": "datadog-app",
+      "frontmatter_description": "Guides developers building Datadog Apps with TypeScript, React, the @datadog/apps scaffolder, and @datadog/vite-plugin. Use when a user wants to scaffold, run, debug, upgrade, build, upload, publish, upload without publishing (draft upload), add an upload-no-publish script, set up CI/CD, use OAuth or API/application key auth, trigger/poll Workflow Automation, choose DDSQL or Action Catalog for backend data access, or query app datastores with DDSQL, including backend function troubleshooting.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "ca194c7fadc1a811e69edff14eed7aad9e24a1aa",
+        "fetched_at": "2026-07-16T14:29:12.254810Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-063",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 610,
+        "word_count": 338,
+        "line_count": 32,
+        "basis": "body",
+        "trigger": "Use when a user wants to scaffold, run, debug, upgrade, build, upload, publish, upload without publishing (draft upload), add an upload-no-publish script, set up CI/CD, use OAuth or API/application k…",
+        "body_blob_sha": "ca194c7fadc1a811e69edff14eed7aad9e24a1aa",
+        "computed_at": "2026-07-16T14:29:37.735955Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-audit",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-audit",
+        "default_branch": "main"
+      },
+      "name": "dd-audit",
+      "frontmatter_description": "Audit Trail investigations - who changed what, key compromise, cost spike root cause, compliance evidence (SOC 2/PCI), and AI activity auditing.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "a7681bec04499b525d58a8299173d19591387b06",
+        "fetched_at": "2026-07-16T14:29:12.986984Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-064",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 870,
+        "word_count": 495,
+        "line_count": 84,
+        "basis": "body",
+        "trigger": "Audit Trail investigations - who changed what, key compromise, cost spike root cause, compliance evidence (SOC 2/PCI), and AI activity auditing.",
+        "body_blob_sha": "a7681bec04499b525d58a8299173d19591387b06",
+        "computed_at": "2026-07-16T14:29:37.736346Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-audit-ai-activity",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-audit/ai-activity-audit",
+        "default_branch": "main"
+      },
+      "name": "dd-audit-ai-activity",
+      "frontmatter_description": "Audit what the Bits AI assistant (MCP server) has done in your Datadog org — tool calls by user, resources accessed, and anomaly flags for AI governance.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "3a27b5488495157e0c4609786a9ccf64440f6d87",
+        "fetched_at": "2026-07-16T14:29:13.711046Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-065",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1144,
+        "word_count": 540,
+        "line_count": 147,
+        "basis": "body",
+        "trigger": "Audit what the Bits AI assistant (MCP server) has done in your Datadog org — tool calls by user, resources accessed, and anomaly flags for AI governance.",
+        "body_blob_sha": "3a27b5488495157e0c4609786a9ccf64440f6d87",
+        "computed_at": "2026-07-16T14:29:37.736784Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-audit-compliance-report",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-audit/compliance-report",
+        "default_branch": "main"
+      },
+      "name": "dd-audit-compliance-report",
+      "frontmatter_description": "Generate auditor-ready compliance evidence from Datadog Audit Trail for SOC 2 and PCI DSS. Maps framework controls to specific query patterns and produces formatted output.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "d51bf4ef1ff29282f718f661786e3b58f5495801",
+        "fetched_at": "2026-07-16T14:29:14.386370Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-066",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1632,
+        "word_count": 734,
+        "line_count": 215,
+        "basis": "body",
+        "trigger": "Generate auditor-ready compliance evidence from Datadog Audit Trail for SOC 2 and PCI DSS.",
+        "body_blob_sha": "d51bf4ef1ff29282f718f661786e3b58f5495801",
+        "computed_at": "2026-07-16T14:29:37.737262Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-audit-cost-spike-investigation",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-audit/cost-spike-investigation",
+        "default_branch": "main"
+      },
+      "name": "dd-audit-cost-spike-investigation",
+      "frontmatter_description": "Investigate a Datadog product usage or cost spike by correlating Usage Metering data (when/what spiked) with Audit Trail config changes (who changed what in the preceding window).",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "4c10952a0d232e0d27a2328899ec7d07bebb9c5e",
+        "fetched_at": "2026-07-16T14:29:15.164105Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-067",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1232,
+        "word_count": 579,
+        "line_count": 133,
+        "basis": "body",
+        "trigger": "Investigate a Datadog product usage or cost spike by correlating Usage Metering data (when/what spiked) with Audit Trail config changes (who changed what in the preceding window).",
+        "body_blob_sha": "4c10952a0d232e0d27a2328899ec7d07bebb9c5e",
+        "computed_at": "2026-07-16T14:29:37.737759Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-audit-key-compromise",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-audit/key-compromise",
+        "default_branch": "main"
+      },
+      "name": "dd-audit-key-compromise",
+      "frontmatter_description": "Investigate a potentially compromised Datadog API key — timeline of actions, geo/IP breakdown, endpoints called, anomaly flags, and remediation steps.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "9afa8bdd6988f1480d0f9384b7ef6de6dbe49956",
+        "fetched_at": "2026-07-16T14:29:15.814867Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-068",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1133,
+        "word_count": 499,
+        "line_count": 139,
+        "basis": "body",
+        "trigger": "Investigate a potentially compromised Datadog API key — timeline of actions, geo/IP breakdown, endpoints called, anomaly flags, and remediation steps.",
+        "body_blob_sha": "9afa8bdd6988f1480d0f9384b7ef6de6dbe49956",
+        "computed_at": "2026-07-16T14:29:37.738302Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-audit-security-investigation",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-audit/security-investigation",
+        "default_branch": "main"
+      },
+      "name": "dd-audit-security-investigation",
+      "frontmatter_description": "Answer \"who did what\" security questions from Audit Trail — deletions, config changes, login activity, permission changes, actions from a specific user or IP.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "4fce829b279e54ec912bb379224b44dc8c159141",
+        "fetched_at": "2026-07-16T14:29:16.487341Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-069",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1444,
+        "word_count": 601,
+        "line_count": 160,
+        "basis": "body",
+        "trigger": "Answer \"who did what\" security questions from Audit Trail — deletions, config changes, login activity, permission changes, actions from a specific user or IP.",
+        "body_blob_sha": "4fce829b279e54ec912bb379224b44dc8c159141",
+        "computed_at": "2026-07-16T14:29:37.738901Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-browser-sdk",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-browser-sdk",
+        "default_branch": "main"
+      },
+      "name": "dd-browser-sdk",
+      "frontmatter_description": "Datadog Browser SDK — RUM, Logs, Session Replay, profiling, product analytics, and error tracking setup, configuration, and migration. Use when upgrading Browser SDK versions, setting up RUM or Logs, or troubleshooting browser-side Datadog instrumentation.\n",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "c32a33e88e2d883f229f6aa28cb1aea4385d199c",
+        "fetched_at": "2026-07-16T14:29:17.136904Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-070",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 296,
+        "word_count": 132,
+        "line_count": 26,
+        "basis": "body",
+        "trigger": "Use when upgrading Browser SDK versions, setting up RUM or Logs, or troubleshooting browser-side Datadog instrumentation.",
+        "body_blob_sha": "c32a33e88e2d883f229f6aa28cb1aea4385d199c",
+        "computed_at": "2026-07-16T14:29:37.739350Z"
+      }
+    },
+    {
+      "id": "datadog-labs-upgrade-browser-sdk-v5",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-browser-sdk/upgrade-v5",
+        "default_branch": "main"
+      },
+      "name": "upgrade-browser-sdk-v5",
+      "frontmatter_description": "Upgrade Datadog Browser SDK from v4 to v5. Use when encountering removed options like proxyUrl, sampleRate, replaySampleRate, premiumSampleRate, allowedTracingOrigins, or deprecated APIs like addRumGlobalContext, removeUser, or when a project references datadoghq-browser-agent.com CDN with /v4/ paths.\n",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "f1a9d9e8a3ff67ce42bb95e5c12a282dfdf5f33b",
+        "fetched_at": "2026-07-16T14:29:17.811403Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-071",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 3610,
+        "word_count": 1522,
+        "line_count": 288,
+        "basis": "body",
+        "trigger": "Use when encountering removed options like proxyUrl, sampleRate, replaySampleRate, premiumSampleRate, allowedTracingOrigins, or deprecated APIs like addRumGlobalContext, removeUser, or when a project…",
+        "body_blob_sha": "f1a9d9e8a3ff67ce42bb95e5c12a282dfdf5f33b",
+        "computed_at": "2026-07-16T14:29:37.740055Z"
+      }
+    },
+    {
+      "id": "datadog-labs-upgrade-browser-sdk-v6",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-browser-sdk/upgrade-v6",
+        "default_branch": "main"
+      },
+      "name": "upgrade-browser-sdk-v6",
+      "frontmatter_description": "Upgrade Datadog Browser SDK from v5 to v6. Use when encountering removed options like useCrossSiteSessionCookie, sendLogsAfterSessionExpiration, or when dropping IE11 support, or when a project references datadoghq-browser-agent.com CDN with /v5/ paths.\n",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "0ef5836dfcaf4ea7aedfa20d65eed5be6af88e42",
+        "fetched_at": "2026-07-16T14:29:18.466681Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-072",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 2548,
+        "word_count": 1039,
+        "line_count": 149,
+        "basis": "body",
+        "trigger": "Use when encountering removed options like useCrossSiteSessionCookie, sendLogsAfterSessionExpiration, or when dropping IE11 support, or when a project references datadoghq-browser-agent.com CDN with …",
+        "body_blob_sha": "0ef5836dfcaf4ea7aedfa20d65eed5be6af88e42",
+        "computed_at": "2026-07-16T14:29:37.740741Z"
+      }
+    },
+    {
+      "id": "datadog-labs-upgrade-browser-sdk-v7",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-browser-sdk/upgrade-v7",
+        "default_branch": "main"
+      },
+      "name": "upgrade-browser-sdk-v7",
+      "frontmatter_description": "Upgrade Datadog Browser SDK from v6 to v7. Use when encountering removed options like betaEncodeCookieOptions, allowFallbackToLocalStorage, trackBfcacheViews, usePciIntake, changed APIs like forwardErrorsToLogs, startDurationVital, stopDurationVital, or when a project references datadoghq-browser-agent.com CDN with /v6/ paths.\n",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "6d7a76dfcf820a439b08c9e5099096498acfc75a",
+        "fetched_at": "2026-07-16T14:29:19.110331Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-073",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 5681,
+        "word_count": 1772,
+        "line_count": 232,
+        "basis": "body",
+        "trigger": "Use when encountering removed options like betaEncodeCookieOptions, allowFallbackToLocalStorage, trackBfcacheViews, usePciIntake, changed APIs like forwardErrorsToLogs, startDurationVital, stopDurati…",
+        "body_blob_sha": "6d7a76dfcf820a439b08c9e5099096498acfc75a",
+        "computed_at": "2026-07-16T14:29:37.741525Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-docs",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-docs",
+        "default_branch": "main"
+      },
+      "name": "dd-docs",
+      "frontmatter_description": "Datadog docs lookup using docs.datadoghq.com/llms.txt and linked Markdown pages.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "595584932cec25bb43350e4dbe09d5f1f7945f25",
+        "fetched_at": "2026-07-16T14:29:19.854363Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-074",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 486,
+        "word_count": 231,
+        "line_count": 65,
+        "basis": "body",
+        "trigger": "Datadog docs lookup using docs.datadoghq.com/llms.txt and linked Markdown pages.",
+        "body_blob_sha": "595584932cec25bb43350e4dbe09d5f1f7945f25",
+        "computed_at": "2026-07-16T14:29:37.742006Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-logs",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-logs",
+        "default_branch": "main"
+      },
+      "name": "dd-logs",
+      "frontmatter_description": "Log management - search, archives, metrics, and cost control.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "e12dcf392c79a10d8dcc012cc1cf450d3f5e1422",
+        "fetched_at": "2026-07-16T14:29:20.516490Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-075",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1098,
+        "word_count": 544,
+        "line_count": 201,
+        "basis": "body",
+        "trigger": "Log management - search, archives, metrics, and cost control.",
+        "body_blob_sha": "e12dcf392c79a10d8dcc012cc1cf450d3f5e1422",
+        "computed_at": "2026-07-16T14:29:37.742479Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-monitors",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-monitors",
+        "default_branch": "main"
+      },
+      "name": "dd-monitors",
+      "frontmatter_description": "Monitor management - list, search, file-based create, and alerting best practices.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "e7ad6473fc08a2b63970fa4f840ebf0ce47b1323",
+        "fetched_at": "2026-07-16T14:29:21.202125Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-076",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1121,
+        "word_count": 618,
+        "line_count": 188,
+        "basis": "body",
+        "trigger": "Monitor management - list, search, file-based create, and alerting best practices.",
+        "body_blob_sha": "e7ad6473fc08a2b63970fa4f840ebf0ce47b1323",
+        "computed_at": "2026-07-16T14:29:37.743085Z"
+      }
+    },
+    {
+      "id": "datadog-labs-dd-pup",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-pup",
+        "default_branch": "main"
+      },
+      "name": "dd-pup",
+      "frontmatter_description": "Datadog CLI (Rust). OAuth2 auth with token refresh.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "d795ebcaf22707d185535943a64b1879ea4e20cd",
+        "fetched_at": "2026-07-16T14:29:21.871565Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-077",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 2377,
+        "word_count": 1325,
+        "line_count": 314,
+        "basis": "body",
+        "trigger": "Datadog CLI (Rust).",
+        "body_blob_sha": "d795ebcaf22707d185535943a64b1879ea4e20cd",
+        "computed_at": "2026-07-16T14:29:37.743689Z"
+      }
+    },
+    {
+      "id": "datadog-labs-k9-ownership-byod-setup",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-security/csm/ownership-agent",
+        "default_branch": "main"
+      },
+      "name": "k9-ownership-byod-setup",
+      "frontmatter_description": "Generate a BYOD ownership preferences reference table for a customer. Walks through preference types, generates CSV, and provides upload instructions (UI, API, cloud storage, or Terraform). Use when asked about BYOD setup, preferences reference table, k9_ownership_preferences, or ownership customization.\n",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "db98e95db8193fb32b646fa557c415923075ede8",
+        "fetched_at": "2026-07-16T14:29:22.496147Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-078",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1385,
+        "word_count": 820,
+        "line_count": 97,
+        "basis": "body",
+        "trigger": "Use when asked about BYOD setup, preferences reference table, k9_ownership_preferences, or ownership customization.",
+        "body_blob_sha": "db98e95db8193fb32b646fa557c415923075ede8",
+        "computed_at": "2026-07-16T14:29:37.744253Z"
+      }
+    },
+    {
+      "id": "datadog-labs-triage-flaky-test",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-software-delivery/triage-flaky-test",
+        "default_branch": "main"
+      },
+      "name": "triage-flaky-test",
+      "frontmatter_description": "Load when investigating a specific flaky test. Gets history, failure pattern, and category, then recommends fix, quarantine, or escalate.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "a36aa8718a86237bf08ffb1246d831ca4d4b954b",
+        "fetched_at": "2026-07-16T14:29:23.183906Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-079",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 2806,
+        "word_count": 1608,
+        "line_count": 246,
+        "basis": "body",
+        "trigger": "Load when investigating a specific flaky test.",
+        "body_blob_sha": "a36aa8718a86237bf08ffb1246d831ca4d4b954b",
+        "computed_at": "2026-07-16T14:29:37.745103Z"
+      }
+    },
+    {
+      "id": "datadog-labs-unblock-pr",
+      "source_id": "datadog-labs-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "datadog-labs",
+        "repo": "agent-skills",
+        "path": "dd-software-delivery/unblock-pr",
+        "default_branch": "main"
+      },
+      "name": "unblock-pr",
+      "frontmatter_description": "Load when investigating a failing PR CI pipeline or checking PR health. Attributes each CI failure as flaky, infra, or regression, proposes a targeted action, and reports code coverage and quality/security status.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "66c3d944edbbb93d9828c19d05d841690ef2c5b3",
+        "blob_sha": "7c9b370b9533ce062efe5720c430fd5b4d92038e",
+        "fetched_at": "2026-07-16T14:29:23.966485Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-080",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 2575,
+        "word_count": 1452,
+        "line_count": 226,
+        "basis": "body",
+        "trigger": "Load when investigating a failing PR CI pipeline or checking PR health.",
+        "body_blob_sha": "7c9b370b9533ce062efe5720c430fd5b4d92038e",
+        "computed_at": "2026-07-16T14:29:37.746326Z"
+      }
+    }
+  ]
+}

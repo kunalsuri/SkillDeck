@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T14:29:37.945390Z",
+  "skills": [
+    {
+      "id": "skills-bootstrap-exercise-from-outline",
+      "source_id": "github-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "skills",
+        "repo": "exercise-creator",
+        "path": ".github/skills/bootstrap-exercise-from-outline",
+        "default_branch": "main"
+      },
+      "name": "bootstrap-exercise-from-outline",
+      "frontmatter_description": "Bootstrap a GitHub Skills exercise repository from an approved outline. Use when asked to turn an outline into a working exercise with README, step content, workflows, and review content.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
+        "blob_sha": "c1d4664856d3e852b435a2c9889988eaa4d381ac",
+        "fetched_at": "2026-07-16T14:25:31.426410Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-081",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1040,
+        "word_count": 542,
+        "line_count": 96,
+        "basis": "body",
+        "trigger": "Use when asked to turn an outline into a working exercise with README, step content, workflows, and review content.",
+        "body_blob_sha": "c1d4664856d3e852b435a2c9889988eaa4d381ac",
+        "computed_at": "2026-07-16T14:29:37.746784Z"
+      }
+    },
+    {
+      "id": "skills-create-exercise-outline",
+      "source_id": "github-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "skills",
+        "repo": "exercise-creator",
+        "path": ".github/skills/create-exercise-outline",
+        "default_branch": "main"
+      },
+      "name": "create-exercise-outline",
+      "frontmatter_description": "Create or refine a GitHub Skills exercise outline. Use when asked to plan a new exercise, draft an outline, turn notes into an outline, or improve an existing outline before implementation.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
+        "blob_sha": "42422207bdfeca4e4406a9c3a06bf10f875d494d",
+        "fetched_at": "2026-07-16T14:25:32.130135Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-082",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 265,
+        "word_count": 149,
+        "line_count": 23,
+        "basis": "body",
+        "trigger": "Use when asked to plan a new exercise, draft an outline, turn notes into an outline, or improve an existing outline before implementation.",
+        "body_blob_sha": "42422207bdfeca4e4406a9c3a06bf10f875d494d",
+        "computed_at": "2026-07-16T14:29:37.747164Z"
+      }
+    },
+    {
+      "id": "skills-publish-exercise",
+      "source_id": "github-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "skills",
+        "repo": "exercise-creator",
+        "path": ".github/skills/publish-exercise",
+        "default_branch": "main"
+      },
+      "name": "publish-exercise",
+      "frontmatter_description": "Publish a GitHub Skills exercise repository safely to GitHub. Use when asked to create the remote repository, prepare repository settings, and publish an exercise after review is complete.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
+        "blob_sha": "4d68af7973f59ad5863ad8a5e475a2bd4fa738e6",
+        "fetched_at": "2026-07-16T14:25:32.766832Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-083",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 630,
+        "word_count": 341,
+        "line_count": 79,
+        "basis": "body",
+        "trigger": "Use when asked to create the remote repository, prepare repository settings, and publish an exercise after review is complete.",
+        "body_blob_sha": "4d68af7973f59ad5863ad8a5e475a2bd4fa738e6",
+        "computed_at": "2026-07-16T14:29:37.747698Z"
+      }
+    },
+    {
+      "id": "skills-review-exercise",
+      "source_id": "github-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "skills",
+        "repo": "exercise-creator",
+        "path": ".github/skills/review-exercise",
+        "default_branch": "main"
+      },
+      "name": "review-exercise",
+      "frontmatter_description": "Review a GitHub Skills exercise for format, clarity, learner flow, and workflow correctness. Use when asked to review an exercise draft, inspect step content, or find issues before publishing.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
+        "blob_sha": "7135687138220f5908b896ea7e2d4282ad431cce",
+        "fetched_at": "2026-07-16T14:25:33.407775Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-084",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 362,
+        "word_count": 255,
+        "line_count": 43,
+        "basis": "body",
+        "trigger": "Use when asked to review an exercise draft, inspect step content, or find issues before publishing.",
+        "body_blob_sha": "7135687138220f5908b896ea7e2d4282ad431cce",
+        "computed_at": "2026-07-16T14:29:37.748160Z"
+      }
+    }
+  ]
+}

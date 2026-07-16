@@ -1,0 +1,291 @@
+---
+import sourcesData from '../../../data/sources.json';
+import Layout from '../layouts/Layout.astro';
+import { provenanceBadgeClass } from '../utils/badgeStyles';
+
+const title = "About SkillDeck & Sources";
+const description = "Epistemic methodology, upstream source registries, and equivalent terminology across AI coding tools.";
+
+const tools = [
+  { id: 'claude-code', label: 'Claude Code' },
+  { id: 'claude-ai', label: 'Claude.ai' },
+  { id: 'vscode-copilot', label: 'VS Code / Copilot' },
+  { id: 'antigravity', label: 'Antigravity' },
+  { id: 'gemini-cli', label: 'Gemini CLI' },
+  { id: 'cursor', label: 'Cursor' },
+];
+
+interface Row {
+  mechanism: string;
+  blurb: string;
+  cells: Record<string, string>;
+}
+
+const rows: Row[] = [
+  {
+    mechanism: 'Reusable skill / instruction pack',
+    blurb: 'On-demand expertise the assistant loads only when a task needs it.',
+    cells: {
+      'claude-code': 'Skill (SKILL.md)',
+      'claude-ai': 'Skill (SKILL.md, uploaded)',
+      'vscode-copilot': 'Instruction files',
+      'antigravity': '—',
+      'gemini-cli': 'Extension',
+      'cursor': 'Rule',
+    },
+  },
+  {
+    mechanism: 'Always-on project instructions',
+    blurb: 'Repo- or workspace-level context applied to every conversation, not loaded on demand.',
+    cells: {
+      'claude-code': 'CLAUDE.md',
+      'claude-ai': 'Project instructions',
+      'vscode-copilot': '.github/copilot-instructions.md',
+      'antigravity': '—',
+      'gemini-cli': 'GEMINI.md',
+      'cursor': '.cursorrules',
+    },
+  },
+  {
+    mechanism: 'Slash / prompt commands',
+    blurb: 'A named prompt template the user invokes explicitly, rather than something the assistant decides to load.',
+    cells: {
+      'claude-code': 'Slash command',
+      'claude-ai': '—',
+      'vscode-copilot': 'Prompt file',
+      'antigravity': '—',
+      'gemini-cli': 'Custom command',
+      'cursor': '—',
+    },
+  },
+  {
+    mechanism: 'Hooks / automations',
+    blurb: 'Deterministic code the harness runs on a lifecycle event (not a model decision) - the same input always produces the same action.',
+    cells: {
+      'claude-code': 'Hook',
+      'claude-ai': '—',
+      'vscode-copilot': '— (via VS Code extension API)',
+      'antigravity': '—',
+      'gemini-cli': '—',
+      'cursor': '—',
+    },
+  },
+  {
+    mechanism: 'Subagents',
+    blurb: 'A delegated agent with its own context window, spun up for a subtask and reporting back.',
+    cells: {
+      'claude-code': 'Subagent',
+      'claude-ai': '—',
+      'vscode-copilot': '—',
+      'antigravity': '—',
+      'gemini-cli': '—',
+      'cursor': '—',
+    },
+  },
+  {
+    mechanism: 'MCP servers',
+    blurb: 'A connection to an external tool or data source over the Model Context Protocol - roughly common to all six.',
+    cells: {
+      'claude-code': 'MCP server',
+      'claude-ai': 'MCP server',
+      'vscode-copilot': 'MCP server',
+      'antigravity': 'MCP server',
+      'gemini-cli': 'MCP server',
+      'cursor': 'MCP server',
+    },
+  },
+];
+
+const wantList: { need: string; mechanism: string }[] = [
+  { need: 'Reusable, on-demand expertise for a specific kind of task', mechanism: 'a skill / instruction pack' },
+  { need: 'A fact or rule relevant to every conversation in this project', mechanism: 'always-on project instructions' },
+  { need: 'A prompt template you want to invoke by name, on demand', mechanism: 'a slash / prompt command' },
+  { need: 'A deterministic guarantee - this always runs, no exceptions', mechanism: 'a hook / automation' },
+  { need: 'A subtask that deserves its own isolated context window', mechanism: 'a subagent' },
+  { need: 'Access to an external tool, API, or data source', mechanism: 'an MCP server' },
+];
+---
+
+<Layout title={title} description={description} active="about" mainClass="flex-1 max-w-6xl w-full mx-auto px-4 py-12 space-y-16">
+  {/* Header Section */}
+  <div class="space-y-4 max-w-3xl">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight font-sans text-zinc-900 dark:text-white">
+      About SkillDeck
+    </h1>
+    <p class="text-base text-zinc-550 dark:text-zinc-400 leading-relaxed font-sans">
+      SkillDeck provides a clean directory of agent skills, compiled via offline crawlers and curated to help developers configure their AI coding assistants quickly.
+    </p>
+  </div>
+
+  {/* 1. Upstream Registries & Crawl Seeds (Core Priority) */}
+  <section class="space-y-6">
+    <div class="space-y-2">
+      <h2 class="text-xl md:text-2xl font-bold font-sans text-zinc-900 dark:text-white">
+        Upstream Registries & Crawl Seeds
+      </h2>
+      <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans max-w-2xl">
+        We scan official platforms, partner developers, and community aggregators to compile the skill index.
+      </p>
+    </div>
+
+    <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden shadow-sm">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-450 text-xs font-mono uppercase tracking-wider">
+              <th class="p-4 font-semibold">Source Name</th>
+              <th class="p-4 font-semibold">Organization</th>
+              <th class="p-4 font-semibold">Kind</th>
+              <th class="p-4 font-semibold">Vendor</th>
+              <th class="p-4 font-semibold">License details</th>
+              <th class="p-4 font-semibold">Links</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-zinc-200 dark:divide-zinc-800">
+            {sourcesData.sources.map((s: any) => (
+              <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-900/20 transition-colors">
+                <td class="p-4 font-mono font-bold text-zinc-800 dark:text-zinc-200">{s.id}</td>
+                <td class="p-4">{s.org}</td>
+                <td class="p-4">
+                  <span class={`inline-flex px-2 py-0.5 rounded text-[10px] font-mono font-semibold uppercase tracking-wider ${
+                    s.kind === 'aggregator'
+                      ? 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300'
+                      : provenanceBadgeClass(s.kind)
+                  }`}>
+                    {s.kind}
+                  </span>
+                </td>
+                <td class="p-4 font-mono text-zinc-550 dark:text-zinc-400">{s.vendor || '—'}</td>
+                <td class="p-4 text-xs max-w-sm text-zinc-550 dark:text-zinc-400 leading-normal">{s.notes || '—'}</td>
+                <td class="p-4">
+                  <a
+                    href={s.repo_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-0.5"
+                  >
+                    Repository
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  {/* 2. Review Badges Legend */}
+  <section class="space-y-4">
+    <h2 class="text-xl font-bold font-sans text-zinc-900 dark:text-white border-b border-zinc-200 dark:border-zinc-800 pb-2">
+      Editorial Vetting & Review Tiers
+    </h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-850 p-5 rounded-lg flex gap-4 items-start shadow-sm">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-900/30 shrink-0">
+          ✓ Human-read
+        </span>
+        <div class="space-y-1">
+          <h3 class="text-sm font-bold text-zinc-850 dark:text-zinc-200">Editor's Choice / Verified Core</h3>
+          <p class="text-xs text-zinc-550 dark:text-zinc-450 leading-relaxed">
+            The maintainer has read the upstream `SKILL.md` contents verbatim, promoted the skill to the core tier, and hand-reviewed the product explanation card to ensure absolute accuracy.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-850 p-5 rounded-lg flex gap-4 items-start shadow-sm">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200/50 dark:border-amber-900/30 shrink-0">
+          Auto-summarized
+        </span>
+        <div class="space-y-1">
+          <h3 class="text-sm font-bold text-zinc-850 dark:text-zinc-200">Ingested Shell Tier</h3>
+          <p class="text-xs text-zinc-550 dark:text-zinc-450 leading-relaxed">
+            The skill was automatically discovered via crawls or aggregator list parsing. Its card was synthesized by an offline agent but has not yet been vetted by a human editor.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 3. Collapsible Tool Terminology & Concepts */}
+  <section class="space-y-4">
+    <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden shadow-sm">
+      <details class="group">
+        <summary class="p-5 font-bold cursor-pointer select-none text-zinc-900 dark:text-white flex justify-between items-center bg-zinc-50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800/30 transition-colors font-sans">
+          <span>Cross-Tool Terminology Map (Concepts)</span>
+          <span class="text-zinc-400 transition-transform group-open:rotate-180 duration-200">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <div class="p-6 space-y-8 border-t border-zinc-200 dark:border-zinc-800">
+          <div class="space-y-2">
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans">
+              Every AI coding tool reinvents the same handful of mechanisms under different names. This table maps the vocabulary across the six tools SkillDeck tracks, so you can translate what you already know into whichever tool you are using.
+            </p>
+          </div>
+
+          <div class="border border-zinc-200 dark:border-zinc-800 rounded-lg overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-450 font-mono uppercase tracking-wider">
+                    <th class="p-3 font-semibold sticky left-0 bg-zinc-50 dark:bg-zinc-900/50">Mechanism</th>
+                    {tools.map((t) => (
+                      <th class="p-3 font-semibold whitespace-nowrap">{t.label}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-200 dark:divide-zinc-800 font-mono">
+                  {rows.map((row) => (
+                    <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-900/20 transition-colors align-top">
+                      <td class="p-3 sticky left-0 bg-white dark:bg-zinc-900">
+                        <div class="font-bold text-zinc-800 dark:text-zinc-200">{row.mechanism}</div>
+                        <div class="text-[10px] text-zinc-500 dark:text-zinc-450 mt-1 max-w-xs leading-relaxed font-sans">{row.blurb}</div>
+                      </td>
+                      {tools.map((t) => (
+                        <td class="p-3 text-zinc-700 dark:text-zinc-300 whitespace-nowrap">
+                          {row.cells[t.id]}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Which mechanism do I want? */}
+          <div class="space-y-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+            <h4 class="text-sm font-bold font-sans text-zinc-900 dark:text-white">
+              Which mechanism do I want?
+            </h4>
+            <ul class="space-y-2">
+              {wantList.map((item) => (
+                <li class="text-xs text-zinc-650 dark:text-zinc-305 leading-relaxed flex gap-2">
+                  <span class="text-zinc-400 dark:text-zinc-600">&rarr;</span>
+                  <span>
+                    <span class="text-zinc-500 dark:text-zinc-400">{item.need}</span>
+                    {' '}means{' '}
+                    <strong class="text-zinc-800 dark:text-zinc-100 font-semibold">{item.mechanism}</strong>.
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  {/* Honesty Footnote */}
+  <section class="space-y-2 border-t border-zinc-200 dark:border-zinc-800 pt-6">
+    <p class="text-xs font-mono text-zinc-400 leading-normal">
+      <strong>Honesty Footnote:</strong> Tool feature sets change quickly. A dash means we weren't confident enough to claim a native equivalent exists, not that one definitely doesn't — check that tool's own documentation before assuming. Listings represent the editor's judgment and do not constitute security certifications; always audit skill contents before running them in a production agent terminal.
+    </p>
+  </section>
+</Layout>

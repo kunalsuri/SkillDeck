@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T14:29:37.956035Z",
+  "skills": [
+    {
+      "id": "kunalsuri-multi-agent-docs",
+      "source_id": "kunalsuri-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "kunalsuri",
+        "repo": "agent-skills",
+        "path": "multi-agent-docs",
+        "default_branch": "main"
+      },
+      "name": "multi-agent-docs",
+      "frontmatter_description": "Creates or refreshes CLAUDE.md and AGENTS.md at a repo's root — both carrying the same real project context (stack, build/test/lint commands, structure, conventions) — plus scaffolds the accompanying .claude/ and .agents/ project directories, so Claude Code, Antigravity, Cursor, GitHub Copilot, Codex, and other AI coding tools all start from identical instructions instead of silently drifting out of sync. Use this whenever the user wants to set up a repo for multiple AI coding assistants, asks for both a CLAUDE.md and an AGENTS.md (or just one but mentions wanting the project to also work in another tool), wants a project-level .agents/ or .claude/ folder created, or says things like \"make this repo work in Claude Code and Antigravity\", \"add agent instructions for VS Code\", \"this project needs to work across coding assistants\", or \"sync my AI context files\". Also trigger if a repo already has a CLAUDE.md or AGENTS.md that looks stale, contradicts the other, or was never kept in sync.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "cc90b735a1174329c7571a184dc200a7ec803fa8",
+        "blob_sha": "4509832034974ddf91e6209347a8f3f01446b347",
+        "fetched_at": "2026-07-16T14:25:28.933861Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-163",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 1356,
+        "word_count": 849,
+        "line_count": 101,
+        "basis": "body",
+        "trigger": "Also trigger if a repo already has a CLAUDE.md or AGENTS.md that looks stale, contradicts the other, or was never kept in sync.",
+        "body_blob_sha": "4509832034974ddf91e6209347a8f3f01446b347",
+        "computed_at": "2026-07-16T14:29:37.757900Z"
+      }
+    },
+    {
+      "id": "kunalsuri-resumable-sdd",
+      "source_id": "kunalsuri-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "kunalsuri",
+        "repo": "agent-skills",
+        "path": "resumable-sdd",
+        "default_branch": "main"
+      },
+      "name": "resumable-sdd",
+      "frontmatter_description": "Runs a multi-step implementation task as a resumable, git-committed loop -- write a spec doc, derive a checklist from it, then implement/test/commit/check-off one item at a time. A lightweight take on spec-driven development. Use when a task is large enough to span multiple sessions, could be interrupted mid-way, or when the user asks for spec-driven development, SDD, or a process that survives the agent stopping unexpectedly (session death, context overflow, running out of budget) so no work is lost.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "5c0e0f5b6487d6834bfbbadb6fabf119ef6eec56",
+        "blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
+        "fetched_at": "2026-07-16T14:25:28.933968Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "planning",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-164",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "plan",
+      "nutrition": {
+        "token_estimate": 1313,
+        "word_count": 841,
+        "line_count": 132,
+        "basis": "body",
+        "trigger": "Use when a task is large enough to span multiple sessions, could be interrupted mid-way, or when the user asks for spec-driven development, SDD, or a process that survives the agent stopping unexpect…",
+        "body_blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
+        "computed_at": "2026-07-12T14:42:14.970532Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2026 Kunal Suri. Apache-2.0. -->
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="SkillDeck Curation & Review Portal. Edit explainer cards and promote or reject ingested skills.">
+  <title>SkillDeck Curation & Review Portal</title>
+  <link class="icon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='black'/><rect x='1' y='1' width='14' height='14' fill='none' stroke='%236366F1' stroke-width='2'/></svg>">
+
+  <!-- THEME & LOCALHOST GUARD INITIALIZER (Runs synchronously to prevent FOUC) -->
+  <script>
+    (function () {
+      // 1. Localhost Guard
+      var allowed = ['localhost', '127.0.0.1', '[::1]'];
+      if (allowed.indexOf(location.hostname) === -1) {
+        document.documentElement.innerHTML =
+          '<head><meta charset="UTF-8"><title>Not Available</title>' +
+          '<style>body{margin:0;display:flex;align-items:center;justify-content:center;' +
+          'min-height:100vh;background:#0b0f19;font-family:system-ui,sans-serif;color:#94a3b8;}' +
+          '.box{text-align:center;padding:2rem;}h1{color:#f1f5f9;font-size:1.5rem;margin-bottom:.5rem;}' +
+          'code{background:#1e293b;color:#6366f1;padding:.2em .4em;border-radius:4px;font-size:.9em;}</style>' +
+          '</head>' +
+          '<body><div class="box">' +
+          '<h1>Review Portal — Local Only</h1>' +
+          '<p>This page is only available when running the local review server.</p>' +
+          '<p>Run <code>python -m kitchen review --web</code> and open <code>http://localhost:8000/</code></p>' +
+          '</div></body>';
+        throw new Error('Review portal blocked: non-localhost origin');
+      }
+
+      // 2. Theme Initialization
+      const stored = localStorage.getItem('review_theme');
+      const isLight = stored === 'light';
+      if (isLight) {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .dark .glass-panel {
+      background: rgba(17, 24, 39, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glow-indigo {
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.05);
+    }
+    .dark .glow-indigo {
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.15);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.05);
+    }
+    .dark .glow-emerald {
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased bg-slate-50 dark:bg-[#0b0f19] text-slate-800 dark:text-slate-200 transition-colors duration-200">
+
+  <!-- Main Container -->
+  <div class="flex-1 flex flex-col max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
+    
+    <!-- Top Nav / Header -->
+    <header class="glass-panel glow-indigo rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 relative overflow-hidden">
+      <!-- Glow background decoration -->
+      <div class="absolute -top-24 -left-24 w-48 h-48 bg-indigo-600 rounded-full blur-3xl opacity-10 dark:opacity-20 pointer-events-none"></div>
+      <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-emerald-600 rounded-full blur-3xl opacity-10 dark:opacity-15 pointer-events-none"></div>
+      
+      <div class="relative z-10">
+        <div class="flex items-center gap-3">
+          <span class="px-3 py-1 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 rounded-full text-xs font-semibold tracking-wider uppercase">Curation Portal</span>
+          <div id="unsaved-badge" class="hidden px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 rounded-full text-xs font-semibold tracking-wider uppercase flex items-center gap-1.5 animate-pulse">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400"></span> Unsaved Changes
+          </div>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold font-display text-slate-900 dark:text-white mt-2 tracking-tight">SkillDeck Review Dashboard</h1>
+        <p class="text-slate-650 dark:text-slate-400 mt-1 max-w-2xl text-sm sm:text-base">Review ingested agent skills, promote them to core, and validate user explainer cards. Changes are persisted directly to split database files.</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3 relative z-10">
+        <!-- Theme Toggle Button -->
+        <button onclick="toggleTheme()" id="theme-toggle-btn" title="Toggle Light/Dark Theme" class="flex items-center justify-center p-2.5 bg-white dark:bg-slate-950/60 hover:bg-slate-100 dark:hover:bg-slate-900 border border-slate-350 dark:border-slate-800 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition duration-150">
+          <!-- Light Mode Icon (Sun) -->
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/>
+          </svg>
+          <!-- Dark Mode Icon (Moon) -->
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+
+        <label class="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 cursor-pointer select-none bg-white dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-900 px-3.5 py-3 rounded-xl border border-slate-350 dark:border-slate-850 hover:text-slate-900 dark:hover:text-white transition">
+          <input type="checkbox" id="cb-autosave" checked class="w-4 h-4 rounded border-slate-400 dark:border-slate-700 bg-white dark:bg-slate-950 text-indigo-650 dark:text-indigo-600 focus:ring-indigo-500 cursor-pointer">
+          Auto-Save
+        </label>
+        
+        <button id="btn-save-fs" onclick="saveToDisk()" class="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-medium rounded-xl border border-indigo-400/20 shadow-lg shadow-indigo-600/10 transition duration-150 group">
+          <svg class="w-5 h-5 text-indigo-200 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
+          </svg>
+          Save to Workspace
+        </button>
+        
+        <button onclick="discardAndReload()" title="Reload data from files" class="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-slate-800 hover:bg-red-50 dark:hover:bg-red-900/50 hover:text-red-650 dark:hover:text-red-300 hover:border-red-300 dark:hover:border-red-700/50 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700 rounded-xl transition duration-150">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5"/>
+          </svg>
+          Reload
+        </button>
+      </div>
+    </header>
+
+    <!-- Stats & Filters Bar -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      
+      <!-- Stats Sidebar -->
+      <section class="glass-panel rounded-2xl p-6 flex flex-col justify-between space-y-6 lg:col-span-1" aria-label="Review Statistics">
+        <div>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Review Completion</h2>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span id="stat-percent" class="text-4xl font-extrabold text-slate-900 dark:text-white font-display">0%</span>
+            <span class="text-slate-500 dark:text-slate-450 text-sm">completed</span>
+          </div>
+          <!-- Progress bar -->
+          <div class="w-full bg-slate-200 dark:bg-slate-900 rounded-full h-2.5 mt-3 overflow-hidden border border-slate-300 dark:border-slate-800">
+            <div id="stat-progress-bar" class="bg-indigo-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-2 text-[10px]">
+            <div class="bg-white dark:bg-slate-900/60 p-2 rounded-lg border border-slate-200 dark:border-slate-800/80 text-center">
+              <span class="text-slate-500 dark:text-slate-400 block font-medium">Shell</span>
+              <span id="stat-shell" class="text-sm font-bold text-amber-600 dark:text-amber-400 mt-0.5 block">0</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900/60 p-2 rounded-lg border border-slate-200 dark:border-slate-800/80 text-center">
+              <span class="text-slate-500 dark:text-slate-400 block font-medium">Core</span>
+              <span id="stat-core" class="text-sm font-bold text-emerald-600 dark:text-emerald-400 mt-0.5 block">0</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900/60 p-2 rounded-lg border border-slate-200 dark:border-slate-800/80 text-center">
+              <span class="text-slate-500 dark:text-slate-400 block font-medium">Rejected</span>
+              <span id="stat-rejected" class="text-sm font-bold text-red-600 dark:text-red-400 mt-0.5 block">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-slate-200 dark:border-slate-800/80 text-xs text-slate-500 dark:text-slate-400 space-y-2">
+          <div class="flex justify-between">
+            <span>Total Ingested:</span>
+            <span id="stat-total" class="font-semibold text-slate-800 dark:text-white">0</span>
+          </div>
+          <div class="flex justify-between">
+            <span>Active Reviewer:</span>
+            <span id="reviewer-name" class="font-semibold text-indigo-600 dark:text-indigo-400">Maintainer</span>
+          </div>
+          <div class="flex justify-between items-center pt-1">
+            <span>Last Saved:</span>
+            <span id="stat-last-saved" class="font-semibold text-slate-450 dark:text-slate-500 text-[10px]">Never</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filters Panel -->
+      <section class="glass-panel rounded-2xl p-6 lg:col-span-3 space-y-4 flex flex-col justify-center" aria-label="Filters and Search">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Filter & Search Ingested Skills</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Search box -->
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg class="h-5 w-5 text-slate-450 dark:text-slate-550" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+            <input type="text" id="search-input" oninput="applyFilters()" placeholder="Search text, IDs, or markdown..." class="block w-full pl-10 pr-3 py-2.5 bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm">
+          </div>
+
+          <!-- Capability Filter -->
+          <div>
+            <select id="filter-capability" onchange="applyFilters()" class="block w-full px-3 py-2.5 bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm">
+              <option value="all">All Capabilities</option>
+            </select>
+          </div>
+
+          <!-- Source Filter -->
+          <div>
+            <select id="filter-source" onchange="applyFilters()" class="block w-full px-3 py-2.5 bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm">
+              <option value="all">All Sources</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Native Ecosystem Filter -->
+          <div>
+            <select id="filter-ecosystem" onchange="applyFilters()" class="block w-full px-3 py-2.5 bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm">
+              <option value="all">All Ecosystems</option>
+              <option value="claude">Claude</option>
+              <option value="google">Google</option>
+              <option value="vscode">VS Code / Copilot</option>
+              <option value="generic">Generic</option>
+            </select>
+          </div>
+
+          <!-- Provenance Filter -->
+          <div>
+            <select id="filter-provenance" onchange="applyFilters()" class="block w-full px-3 py-2.5 bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm">
+              <option value="all">All Provenances</option>
+              <option value="official">Official</option>
+              <option value="partner">Partner</option>
+              <option value="community">Community</option>
+            </select>
+          </div>
+
+          <!-- Tier Filter -->
+          <div>
+            <select id="filter-tier" onchange="applyFilters()" class="block w-full px-3 py-2.5 bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm">
+              <option value="all">All Tiers (Shell, Core, Rejected)</option>
+              <option value="shell">Shell (Unreviewed) Only</option>
+              <option value="core">Core (Reviewed) Only</option>
+              <option value="rejected">Rejected Only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end pt-2">
+          <button onclick="resetFilters()" class="text-xs font-medium text-indigo-650 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+            </svg>
+            Clear All Filters
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col min-h-[400px]">
+      <!-- Summary header for list -->
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2">
+          Skills List
+          <span id="filtered-count-badge" class="px-2.5 py-0.5 bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs rounded-full border border-slate-350 dark:border-slate-700">0 of 0 matches</span>
+        </h2>
+        <span class="text-xs text-slate-550 dark:text-slate-500 hidden sm:inline">Review metadata & copy guidelines before promoting a skill</span>
+      </div>
+
+      <!-- Skill Cards Grid -->
+      <div id="questions-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Spinner placeholder -->
+        <div class="col-span-full flex flex-col items-center justify-center py-20 space-y-3">
+          <svg class="animate-spin h-10 w-10 text-indigo-500" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span class="text-slate-500 dark:text-slate-400 text-sm">Loading skills database...</span>
+        </div>
+      </div>
+      
+      <!-- Empty state -->
+      <div id="empty-state" class="hidden py-16 flex flex-col items-center justify-center text-center space-y-4">
+        <div class="p-4 bg-slate-200 dark:bg-slate-900 rounded-full border border-slate-300 dark:border-slate-800 text-slate-400 dark:text-slate-655">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"/>
+          </svg>
+        </div>
+        <div class="space-y-1">
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-white">No Skills Match Filters</h3>
+          <p class="text-slate-550 dark:text-slate-500 text-sm max-w-md">Try clearing your search query or altering filters to find target skills.</p>
+        </div>
+        <button onclick="resetFilters()" class="px-4 py-2 bg-slate-200 dark:bg-slate-850 hover:bg-slate-300 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-indigo-650 dark:text-indigo-400 text-xs font-semibold rounded-xl transition">Reset Filters</button>
+      </div>
+    </main>
+
+    <!-- Reject Modal -->
+    <div id="reject-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" aria-modal="true" role="dialog">
+      <div class="glass-panel rounded-2xl p-6 max-w-md w-full space-y-4">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Reject Skill</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">Please provide a reason for rejecting this skill. The skill tier will be changed to rejected.</p>
+        <input type="hidden" id="reject-skill-id">
+        <textarea id="reject-reason-input" rows="3" placeholder="e.g. Duplicate of anthropic-official-computer-use, or invalid frontmatter." class="w-full px-3.5 py-2.5 bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-xs"></textarea>
+        <div class="flex justify-end gap-3 text-xs">
+          <button onclick="closeRejectModal()" class="px-4 py-2 bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 hover:bg-slate-300 dark:hover:bg-slate-850 text-slate-700 dark:text-slate-300 font-semibold rounded-xl transition">Cancel</button>
+          <button onclick="submitRejection()" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-semibold rounded-xl transition">Reject Skill</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification System -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3"></div>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-slate-200 dark:border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-655 gap-4">
+      <p>© 2026 SkillDeck Skill Curation Portal. &nbsp;·&nbsp; Process cached in local browser state.</p>
+      <div class="flex gap-4">
+        <span>Press <kbd class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-900 rounded border border-slate-300 dark:border-slate-800 text-slate-500 dark:text-slate-400">Ctrl + S</kbd> to save to workspace</span>
+        <a href="http://localhost:4321/" target="_blank" class="hover:text-indigo-600 dark:hover:text-white transition flex items-center gap-1">
+          Open SkillDeck Frontend
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // ─── System Data State ────────────────────────────────────────────────────
+    let configData = null;
+    let skills = [];
+    let cardsCache = {};
+    let hasUnsavedChanges = false;
+    
+    // ─── Filter State ─────────────────────────────────────────────────────────
+    let filterState = {
+      search: "",
+      capability: "all",
+      source: "all",
+      ecosystem: "all",
+      provenance: "all",
+      tier: "all"
+    };
+
+    // ─── Initialize application ───────────────────────────────────────────────
+    window.addEventListener('DOMContentLoaded', async () => {
+      // Hotkey listeners
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== document.getElementById('search-input')) {
+          e.preventDefault();
+          document.getElementById('search-input').focus();
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+          e.preventDefault();
+          saveToDisk();
+        }
+      });
+
+      await loadData();
+    });
+
+    // Warn user before closing if there are workspace-unsaved changes
+    window.addEventListener('beforeunload', (e) => {
+      if (hasUnsavedChanges) {
+        e.preventDefault();
+        e.returnValue = 'You have curation changes not yet saved to the workspace. Are you sure you want to leave?';
+      }
+    });
+
+    // Toggle Dark/Light Mode
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('review_theme', isDark ? 'dark' : 'light');
+    }
+
+    // Load dynamic data from local server API
+    async function loadData() {
+      const grid = document.getElementById('questions-grid');
+      try {
+        const [configResp, skillsResp, cardsResp] = await Promise.all([
+          fetch('/api/config'),
+          fetch('/api/skills'),
+          fetch('/api/cards')
+        ]);
+
+        if (!configResp.ok || !skillsResp.ok || !cardsResp.ok) {
+          throw new Error("Unable to contact backend APIs. Please make sure the Python server is running.");
+        }
+
+        configData = await configResp.json();
+        skills = await skillsResp.json();
+        cardsCache = await cardsResp.json();
+
+        initUI();
+        updateStats();
+        applyFilters();
+      } catch (err) {
+        console.error(err);
+        grid.innerHTML = `
+          <div class="col-span-full bg-red-950/20 border border-red-900/60 p-6 rounded-2xl text-center">
+            <svg class="w-12 h-12 text-red-500 mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+            </svg>
+            <h3 class="text-lg font-bold text-white">API Load Failure</h3>
+            <p class="text-slate-400 text-sm mt-1">${err.message}</p>
+            <button onclick="loadData()" class="mt-4 px-4 py-2 bg-indigo-600 text-xs font-semibold rounded-lg hover:bg-indigo-500 transition">Retry Load</button>
+          </div>
+        `;
+      }
+    }
+
+    function initUI() {
+      // Populate Capability Filter
+      const capSelect = document.getElementById('filter-capability');
+      capSelect.innerHTML = '<option value="all">All Capabilities</option>';
+      configData.capabilities.forEach(cap => {
+        const opt = document.createElement('option');
+        opt.value = cap.id;
+        opt.textContent = cap.label;
+        capSelect.appendChild(opt);
+      });
+
+      // Populate Source Filter
+      const sourceSelect = document.getElementById('filter-source');
+      sourceSelect.innerHTML = '<option value="all">All Sources</option>';
+      const sources = [...new Set(skills.map(s => s.source_id))].sort();
+      sources.forEach(src => {
+        const opt = document.createElement('option');
+        opt.value = src;
+        opt.textContent = src;
+        sourceSelect.appendChild(opt);
+      });
+
+      // Show git username in stats panel
+      document.getElementById('reviewer-name').textContent = configData.git_username || 'Maintainer';
+    }
+
+    // Toggle body preview accordion
+    function toggleBodyViewer(skillId) {
+      const container = document.querySelector(`.body-container-${skillId}`);
+      const arrow = document.querySelector(`.body-arrow-${skillId}`);
+      if (container.classList.contains('hidden')) {
+        container.classList.remove('hidden');
+        arrow.classList.add('rotate-180');
+      } else {
+        container.classList.add('hidden');
+        arrow.classList.remove('rotate-180');
+      }
+    }
+
+    // Promote a skill to Core
+    function promoteSkill(skillId) {
+      const skill = skills.find(s => s.id === skillId);
+      if (!skill) return;
+
+      skill.tier = 'core';
+      skill.reviewed_by = configData.git_username || 'Maintainer';
+      skill.reviewed_at = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+      skill.reviewed_commit_sha = skill.upstream.commit_sha;
+      skill.reject_reason = null;
+
+      setUnsavedChanges(true);
+      updateStats();
+      applyFilters();
+
+      if (document.getElementById('cb-autosave').checked) {
+        saveToDiskSilently();
+      }
+    }
+
+    // Reset a skill to Shell
+    function resetSkill(skillId) {
+      const skill = skills.find(s => s.id === skillId);
+      if (!skill) return;
+
+      skill.tier = 'shell';
+      skill.reviewed_by = null;
+      skill.reviewed_at = null;
+      skill.reviewed_commit_sha = null;
+      skill.reject_reason = null;
+
+      setUnsavedChanges(true);
+      updateStats();
+      applyFilters();
+
+      if (document.getElementById('cb-autosave').checked) {
+        saveToDiskSilently();
+      }
+    }
+
+    // Modal control for Rejection
+    function showRejectModal(skillId) {
+      document.getElementById('reject-skill-id').value = skillId;
+      document.getElementById('reject-reason-input').value = '';
+      document.getElementById('reject-modal').classList.remove('hidden');
+      document.getElementById('reject-reason-input').focus();
+    }
+
+    // Close Reject Modal
+    function closeRejectModal() {
+      document.getElementById('reject-modal').classList.add('hidden');
+    }
+
+    // Submit rejection status
+    function submitRejection() {
+      const skillId = document.getElementById('reject-skill-id').value;
+      const reason = document.getElementById('reject-reason-input').value.trim();
+
+      if (!reason) {
+        alert("Please provide a rejection reason.");
+        return;
+      }
+
+      const skill = skills.find(s => s.id === skillId);
+      if (!skill) return;
+
+      skill.tier = 'rejected';
+      skill.reject_reason = reason;
+      skill.reviewed_by = configData.git_username || 'Maintainer';
+      skill.reviewed_at = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+      skill.reviewed_commit_sha = skill.upstream.commit_sha;
+
+      setUnsavedChanges(true);
+      updateStats();
+      applyFilters();
+      closeRejectModal();
+
+      if (document.getElementById('cb-autosave').checked) {
+        saveToDiskSilently();
+      }
+    }
+
+    // Explainer Card input updates
+    function updateCardField(skillId, field, value) {
+      const skill = skills.find(s => s.id === skillId);
+      if (!skill) return;
+
+      const cacheKey = `${skill.id}:${skill.upstream.blob_sha}`;
+      if (!cardsCache[cacheKey]) {
+        cardsCache[cacheKey] = { title: "", what_it_does: "", try_saying: "" };
+      }
+
+      cardsCache[cacheKey][field] = value;
+      cardsCache[cacheKey]["generated_by"] = "human";
+      cardsCache[cacheKey]["generated_at"] = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+
+      setUnsavedChanges(true);
+      validateFieldCounters(skillId);
+
+      if (document.getElementById('cb-autosave').checked) {
+        saveToDiskSilently();
+      }
+    }
+
+    // Length validation visual updates
+    function validateFieldCounters(skillId) {
+      const cardEl = document.querySelector(`[data-skill-id="${skillId}"]`);
+      if (!cardEl) return;
+
+      const skill = skills.find(s => s.id === skillId);
+      const cacheKey = `${skill.id}:${skill.upstream.blob_sha}`;
+      const card = cardsCache[cacheKey] || { title: "", what_it_does: "", try_saying: "" };
+
+      // Title validation: <= 6 words
+      const titleWords = (card.title || "").trim().split(/\s+/).filter(Boolean).length;
+      const titleCounter = cardEl.querySelector('.title-counter');
+      const titleInput = cardEl.querySelector('.title-input');
+      titleCounter.textContent = `${titleWords} / 6 words`;
+      if (titleWords > 6) {
+        titleCounter.classList.add('text-red-400');
+        titleCounter.classList.remove('text-slate-500');
+        titleInput.classList.add('border-red-500/50', 'focus:ring-red-500');
+      } else {
+        titleCounter.classList.remove('text-red-400');
+        titleCounter.classList.add('text-slate-500');
+        titleInput.classList.remove('border-red-500/50', 'focus:ring-red-500');
+      }
+
+      // what_it_does validation: <= 2 sentences
+      const sentences = (card.what_it_does || "").trim().split(/[.!?]+(?=\s|$)/).filter(Boolean).length;
+      const whatCounter = cardEl.querySelector('.what-counter');
+      const whatTextarea = cardEl.querySelector('.what-textarea');
+      whatCounter.textContent = `${sentences} / 2 sentences`;
+      if (sentences > 2) {
+        whatCounter.classList.add('text-red-400');
+        whatCounter.classList.remove('text-slate-500');
+        whatTextarea.classList.add('border-red-500/50', 'focus:ring-red-500');
+      } else {
+        whatCounter.classList.remove('text-red-400');
+        whatCounter.classList.add('text-slate-500');
+        whatTextarea.classList.remove('border-red-500/50', 'focus:ring-red-500');
+      }
+
+      // try_saying validation: <= 25 words
+      const tryWords = (card.try_saying || "").trim().split(/\s+/).filter(Boolean).length;
+      const tryCounter = cardEl.querySelector('.try-counter');
+      const tryInput = cardEl.querySelector('.try-input');
+      tryCounter.textContent = `${tryWords} / 25 words`;
+      if (tryWords > 25) {
+        tryCounter.classList.add('text-red-400');
+        tryCounter.classList.remove('text-slate-500');
+        tryInput.classList.add('border-red-500/50', 'focus:ring-red-500');
+      } else {
+        tryCounter.classList.remove('text-red-400');
+        tryCounter.classList.add('text-slate-500');
+        tryInput.classList.remove('border-red-500/50', 'focus:ring-red-500');
+      }
+    }
+
+    // Apply active filter state and update visible list of cards
+    function applyFilters() {
+      filterState.search = document.getElementById('search-input').value.toLowerCase().trim();
+      filterState.capability = document.getElementById('filter-capability').value;
+      filterState.source = document.getElementById('filter-source').value;
+      filterState.ecosystem = document.getElementById('filter-ecosystem').value;
+      filterState.provenance = document.getElementById('filter-provenance').value;
+      filterState.tier = document.getElementById('filter-tier').value;
+
+      const filtered = skills.filter(s => {
+        // Search filter
+        const matchesSearch = filterState.search === "" ||
+          s.id.toLowerCase().includes(filterState.search) ||
+          s.name.toLowerCase().includes(filterState.search) ||
+          s.frontmatter_description.toLowerCase().includes(filterState.search) ||
+          (s.body && s.body.toLowerCase().includes(filterState.search));
+
+        // Capability filter
+        const matchesCapability = filterState.capability === "all" || s.capability_id === filterState.capability;
+
+        // Source filter
+        const matchesSource = filterState.source === "all" || s.source_id === filterState.source;
+
+        // Ecosystem filter
+        const matchesEcosystem = filterState.ecosystem === "all" || s.native_ecosystem === filterState.ecosystem;
+
+        // Provenance filter
+        const matchesProvenance = filterState.provenance === "all" || s.provenance === filterState.provenance;
+
+        // Tier filter
+        const matchesTier = filterState.tier === "all" || s.tier === filterState.tier;
+
+        return matchesSearch && matchesCapability && matchesSource && matchesEcosystem && matchesProvenance && matchesTier;
+      });
+
+      renderSkillCards(filtered);
+    }
+
+    // Reset all filters
+    function resetFilters() {
+      document.getElementById('search-input').value = "";
+      document.getElementById('filter-capability').value = "all";
+      document.getElementById('filter-source').value = "all";
+      document.getElementById('filter-ecosystem').value = "all";
+      document.getElementById('filter-provenance').value = "all";
+      document.getElementById('filter-tier').value = "all";
+      applyFilters();
+    }
+
+    // Render cards to UI
+    function renderSkillCards(filteredSkills) {
+      const grid = document.getElementById('questions-grid');
+      const emptyState = document.getElementById('empty-state');
+      const badge = document.getElementById('filtered-count-badge');
+      
+      badge.textContent = `${filteredSkills.length} of ${skills.length} matches`;
+
+      if (filteredSkills.length === 0) {
+        grid.innerHTML = "";
+        emptyState.classList.remove('hidden');
+        return;
+      }
+      
+      emptyState.classList.add('hidden');
+
+      grid.innerHTML = filteredSkills.map(s => {
+        // Determine border style based on tier
+        let borderClass = 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/40 hover:border-slate-400 dark:hover:border-slate-700 text-slate-800 dark:text-slate-200';
+        if (s.tier === 'core') {
+          borderClass = 'border-emerald-500/50 bg-emerald-50/10 dark:bg-emerald-950/5 glow-emerald hover:border-emerald-500/80';
+        } else if (s.tier === 'rejected') {
+          borderClass = 'border-red-500/30 bg-red-50/10 dark:bg-red-950/5 hover:border-red-500/50';
+        }
+
+        // Tiers Badges
+        let tierBadge = `<span class="px-2 py-0.5 bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 rounded-full text-[10px] font-semibold uppercase tracking-wider">Shell</span>`;
+        if (s.tier === 'core') {
+          tierBadge = `<span class="px-2 py-0.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 rounded-full text-[10px] font-semibold uppercase tracking-wider">Core</span>`;
+        } else if (s.tier === 'rejected') {
+          tierBadge = `<span class="px-2 py-0.5 bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20 rounded-full text-[10px] font-semibold uppercase tracking-wider">Rejected</span>`;
+        }
+
+        // Provenance Badges
+        let provenanceBadge = `<span class="px-2 py-0.5 bg-slate-200 dark:bg-slate-850 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-750 rounded-full text-[10px] font-medium uppercase">${s.provenance}</span>`;
+        if (s.provenance === 'official') {
+          provenanceBadge = `<span class="px-2 py-0.5 bg-indigo-500/10 text-indigo-650 dark:text-indigo-400 border border-indigo-500/20 rounded-full text-[10px] font-semibold uppercase tracking-wider">Official</span>`;
+        } else if (s.provenance === 'partner') {
+          provenanceBadge = `<span class="px-2 py-0.5 bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 rounded-full text-[10px] font-semibold uppercase tracking-wider">Partner</span>`;
+        }
+
+        // Ecosystem Badges
+        let ecosystemColor = "bg-slate-200 dark:bg-slate-800 text-slate-650 dark:text-slate-400 border-slate-300 dark:border-slate-700";
+        if (s.native_ecosystem === 'claude') ecosystemColor = "bg-orange-500/10 text-orange-650 dark:text-orange-400 border-orange-500/20";
+        else if (s.native_ecosystem === 'google') ecosystemColor = "bg-blue-500/10 text-blue-650 dark:text-blue-400 border-blue-500/20";
+        else if (s.native_ecosystem === 'vscode') ecosystemColor = "bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20";
+
+        const ecosystemBadge = `<span class="px-2 py-0.5 border rounded-full text-[10px] font-medium uppercase ${ecosystemColor}">${s.native_ecosystem}</span>`;
+
+        // Action button classes depending on current status
+        const promoteBtnClass = s.tier === 'core' 
+          ? 'bg-emerald-600 text-white shadow shadow-emerald-500/20' 
+          : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800';
+        const rejectBtnClass = s.tier === 'rejected' 
+          ? 'bg-red-600 text-white shadow shadow-red-500/20' 
+          : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800';
+        const resetBtnClass = s.tier === 'shell' 
+          ? 'bg-amber-600 text-white shadow shadow-amber-500/20' 
+          : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800';
+
+        // Explainer card lookup
+        const cacheKey = `${s.id}:${s.upstream.blob_sha}`;
+        const card = cardsCache[cacheKey] || { title: "", what_it_does: "", try_saying: "" };
+
+        return `
+          <div data-skill-id="${s.id}" class="glass-panel rounded-2xl p-6 border transition-all duration-200 flex flex-col justify-between space-y-5 ${borderClass}">
+            
+            <!-- Card Header -->
+            <div class="flex items-start justify-between gap-4">
+              <div class="space-y-1">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="font-mono text-[10px] font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded">${s.id}</span>
+                  ${tierBadge}
+                  ${provenanceBadge}
+                  ${ecosystemBadge}
+                  <span class="text-[10px] text-slate-550 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded">${s.license}</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white leading-snug mt-2">${s.name}</h3>
+              </div>
+              
+              <div class="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-950/60 p-1 rounded-xl border border-slate-200 dark:border-slate-800/80 shrink-0">
+                <button onclick="promoteSkill('${s.id}')" title="Promote to Core" class="px-2.5 py-1 rounded-lg text-xs font-semibold ${promoteBtnClass} transition">Core</button>
+                <button onclick="showRejectModal('${s.id}')" title="Reject" class="px-2.5 py-1 rounded-lg text-xs font-semibold ${rejectBtnClass} transition">Reject</button>
+                <button onclick="resetSkill('${s.id}')" title="Reset to Shell" class="px-2.5 py-1 rounded-lg text-xs font-semibold ${resetBtnClass} transition">Reset</button>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed bg-slate-100/50 dark:bg-slate-950/30 p-4 rounded-xl border border-slate-200 dark:border-slate-900">
+              <span class="text-[10px] text-indigo-650 dark:text-indigo-400 font-bold uppercase block tracking-wider mb-1">Frontmatter Description</span>
+              <p class="leading-relaxed">${escapeHtml(s.frontmatter_description)}</p>
+            </div>
+
+            <!-- Collapsible SKILL.md Body Viewer -->
+            <div class="border-t border-slate-200 dark:border-slate-800/40 pt-4">
+              <button onclick="toggleBodyViewer('${s.id}')" class="text-xs text-indigo-650 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 font-medium flex items-center gap-1 transition focus:outline-none">
+                <svg class="w-3.5 h-3.5 transform transition-transform body-arrow-${s.id}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+                View SKILL.md Content
+              </button>
+              <div class="hidden body-container-${s.id} mt-3">
+                <pre class="whitespace-pre-wrap font-mono text-xs bg-white dark:bg-slate-950 p-4 rounded-xl border border-slate-200 dark:border-slate-900 max-h-96 overflow-y-auto text-slate-700 dark:text-slate-400">${escapeHtml(s.body || 'No markdown body content available.')}</pre>
+              </div>
+            </div>
+
+            <!-- Explainer Card Form -->
+            <div class="border-t border-slate-200 dark:border-slate-800/40 pt-4 space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Explainer Card Copy</span>
+                <span class="text-[10px] text-slate-400 dark:text-slate-500">${card.generated_by ? `Curated by ${card.generated_by}` : 'Not Curated'}</span>
+              </div>
+              
+              <div class="grid grid-cols-1 gap-4 text-xs">
+                <div>
+                  <div class="flex justify-between items-center mb-1.5">
+                    <label class="font-medium text-slate-500 dark:text-slate-400">Card Title (Outcome-phrased)</label>
+                    <span class="title-counter text-[10px] text-slate-450 dark:text-slate-500">0 / 6 words</span>
+                  </div>
+                  <input type="text" 
+                         value="${escapeHtml(card.title || '')}" 
+                         oninput="updateCardField('${s.id}', 'title', this.value)"
+                         placeholder="e.g. Create documents"
+                         class="title-input w-full px-3.5 py-2.5 bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-655 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                </div>
+
+                <div>
+                  <div class="flex justify-between items-center mb-1.5">
+                    <label class="font-medium text-slate-500 dark:text-slate-400">What it does</label>
+                    <span class="what-counter text-[10px] text-slate-450 dark:text-slate-500">0 / 2 sentences</span>
+                  </div>
+                  <textarea rows="2" 
+                            oninput="updateCardField('${s.id}', 'what_it_does', this.value)"
+                            placeholder="e.g. Allows agents to construct and modify documentation tables."
+                            class="what-textarea w-full px-3.5 py-2.5 bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-655 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">${escapeHtml(card.what_it_does || '')}</textarea>
+                </div>
+
+                <div>
+                  <div class="flex justify-between items-center mb-1.5">
+                    <label class="font-medium text-slate-500 dark:text-slate-400">Try saying</label>
+                    <span class="try-counter text-[10px] text-slate-450 dark:text-slate-500">0 / 25 words</span>
+                  </div>
+                  <input type="text" 
+                         value="${escapeHtml(card.try_saying || '')}" 
+                         oninput="updateCardField('${s.id}', 'try_saying', this.value)"
+                         placeholder="e.g. Create a README file for my new library"
+                         class="try-input w-full px-3.5 py-2.5 bg-white dark:bg-slate-950/80 border border-slate-300 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-655 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                </div>
+              </div>
+            </div>
+
+            <!-- Rejection details (if applicable) -->
+            ${s.tier === 'rejected' ? `
+              <div class="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900/40 p-4 rounded-xl text-xs space-y-1">
+                <span class="font-bold text-red-650 dark:text-red-400 uppercase tracking-wider block text-[10px]">Reject Reason:</span>
+                <p class="text-red-750 dark:text-red-300 leading-normal">${escapeHtml(s.reject_reason || 'No reason specified.')}</p>
+              </div>
+            ` : ''}
+
+            <!-- Reviewer Info -->
+            ${s.tier === 'core' && s.reviewed_by ? `
+              <div class="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40 p-4 rounded-xl text-xs space-y-1">
+                <span class="font-bold text-emerald-650 dark:text-emerald-400 uppercase tracking-wider block text-[10px]">Review Information:</span>
+                <div class="grid grid-cols-2 gap-2 text-slate-500 dark:text-slate-405 text-[11px]">
+                  <div>Reviewer: <span class="font-semibold text-slate-800 dark:text-slate-200">${escapeHtml(s.reviewed_by)}</span></div>
+                  <div>Date: <span class="font-semibold text-slate-800 dark:text-slate-200">${new Date(s.reviewed_at).toLocaleString()}</span></div>
+                  <div class="col-span-2">Commit SHA: <span class="font-mono text-indigo-650 dark:text-indigo-400 text-[10px]">${escapeHtml(s.reviewed_commit_sha || 'N/A')}</span></div>
+                </div>
+              </div>
+            ` : ''}
+
+          </div>
+        `;
+      }).join('');
+
+      // Run word counters for all rendered cards
+      filteredSkills.forEach(s => {
+        validateFieldCounters(s.id);
+      });
+    }
+
+    // Set document unsaved updates indicator
+    function setUnsavedChanges(unsaved) {
+      hasUnsavedChanges = unsaved;
+      const badge = document.getElementById('unsaved-badge');
+      if (unsaved) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // Update the visual stats panel
+    function updateStats() {
+      const total = skills.length;
+      const shell = skills.filter(s => s.tier === 'shell').length;
+      const core = skills.filter(s => s.tier === 'core').length;
+      const rejected = skills.filter(s => s.tier === 'rejected').length;
+      const reviewed = core + rejected;
+      const percent = total > 0 ? ((reviewed / total) * 100).toFixed(1) : "0.0";
+
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-shell').textContent = shell;
+      document.getElementById('stat-core').textContent = core;
+      document.getElementById('stat-rejected').textContent = rejected;
+      document.getElementById('stat-percent').textContent = `${percent}%`;
+      
+      const progressBar = document.getElementById('stat-progress-bar');
+      progressBar.style.width = `${percent}%`;
+      
+      if (parseFloat(percent) === 100) {
+        progressBar.className = "bg-emerald-500 h-2.5 rounded-full transition-all duration-300";
+      } else if (parseFloat(percent) > 50) {
+        progressBar.className = "bg-indigo-500 h-2.5 rounded-full transition-all duration-300";
+      } else {
+        progressBar.className = "bg-amber-500 h-2.5 rounded-full transition-all duration-300";
+      }
+    }
+
+    // Discard local changes and reload from workspace files
+    async function discardAndReload() {
+      if (hasUnsavedChanges) {
+        if (!confirm('You have unsaved review changes. Discard them and reload from files?')) return;
+      }
+      setUnsavedChanges(false);
+      await loadData();
+      showToast('Curation state successfully reloaded from workspace.', 'info');
+    }
+
+    // POST updated lists directly to Python backend
+    async function saveToDisk() {
+      const payload = {
+        skills: skills,
+        cards: cardsCache
+      };
+
+      try {
+        const response = await fetch('/api/save', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload)
+        });
+        
+        if (response.ok) {
+          const resData = await response.json();
+          if (resData.success) {
+            setUnsavedChanges(false);
+            const ts = new Date().toLocaleTimeString();
+            document.getElementById('stat-last-saved').textContent = ts + ' (disk)';
+            showToast("Saved all reviews & compiled data/kb.json!", "success");
+            return;
+          }
+        }
+        throw new Error("Local HTTP server returned error response.");
+      } catch (err) {
+        console.error(err);
+        showToast(`Failed to save: ${err.message}`, 'error');
+      }
+    }
+
+    // Auto-save silently on interaction
+    async function saveToDiskSilently() {
+      const payload = {
+        skills: skills,
+        cards: cardsCache
+      };
+      try {
+        const response = await fetch('/api/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (response.ok) {
+          const resData = await response.json();
+          if (resData.success) {
+            setUnsavedChanges(false);
+            const ts = new Date().toLocaleTimeString();
+            document.getElementById('stat-last-saved').textContent = ts + ' (disk)';
+          }
+        }
+      } catch (err) {
+        console.log('Silent auto-save skipped (server busy/offline).');
+      }
+    }
+
+    // Helper functions
+    function escapeHtml(unsafe) {
+      if (!unsafe) return "";
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    // Premium Toast Notification system
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      let typeClasses = "bg-slate-900 border-slate-800 text-slate-200";
+      let icon = `
+        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      `;
+
+      if (type === 'success') {
+        typeClasses = "bg-emerald-950/90 border-emerald-500/30 text-emerald-100";
+        icon = `
+          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        `;
+      } else if (type === 'error') {
+        typeClasses = "bg-red-950/90 border-red-500/30 text-red-100";
+        icon = `
+          <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        `;
+      }
+
+      toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl border shadow-2xl transition duration-300 translate-y-2 opacity-0 glass-panel ${typeClasses}`;
+      toast.innerHTML = `
+        ${icon}
+        <span class="text-sm font-medium leading-tight">${message}</span>
+      `;
+
+      container.appendChild(toast);
+      
+      // Trigger animations
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 50);
+
+      // Remove after 3.5s
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+          container.removeChild(toast);
+        }, 300);
+      }, 3500);
+    }
+  </script>
+</body>
+</html>

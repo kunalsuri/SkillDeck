@@ -1,0 +1,399 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "FAQ — Agent Skills Explained | SkillDeck";
+const description = "Plain-language answers to the most common questions about AI agent skills: what they are, how they differ from prompts and commands, cross-platform portability, and more.";
+
+const faqs = [
+  {
+    id: "q1",
+    q: "What exactly is an \"Agent Skill\"?",
+    badge: "Core Concept",
+    badgeColor: "blue",
+    a: `An agent skill is a <strong>self-contained package of instructions and resources</strong> that gives a compatible AI agent specialized knowledge or a repeatable workflow. Think of it like handing a new employee an onboarding guide, templates, and a toolkit — all in one folder.
+
+Under the <a href="https://agentskills.io/specification" class="faq-link" target="_blank" rel="noopener noreferrer">Agent Skills specification</a>, a skill is a directory containing at minimum one file: <code>SKILL.md</code>. That file has two required parts:
+<ul>
+  <li><strong>Discovery metadata</strong> — YAML frontmatter with a required <code>name</code> and <code>description</code>. Compatible clients normally advertise this compact metadata so the agent can decide when the skill is relevant.</li>
+  <li><strong>Instructions</strong> — a Markdown body that the agent reads when the skill is activated.</li>
+</ul>
+The folder may also include <code>scripts/</code>, <code>references/</code>, and <code>assets/</code> for executable helpers, detailed documentation, templates, images, and data files.
+
+<div class="faq-callout faq-callout-tip">
+  <strong>Plain-language summary:</strong> A skill is a reusable "specialist mode" for an AI agent. Depending on the client and the skill's settings, the agent may activate it automatically, you may invoke it manually, or activation may require your consent.
+</div>`,
+  },
+  {
+    id: "q2",
+    q: "How is a Skill different from a Prompt?",
+    badge: "Fundamentals",
+    badgeColor: "purple",
+    a: `The useful comparison is between an <strong>ad hoc chat prompt</strong> and an installed skill. A prompt is the request or context you send now; a skill is a reusable package the client can discover across tasks and sessions.
+
+<table class="faq-table">
+  <thead><tr><th>Dimension</th><th>Ad hoc prompt</th><th>Skill</th></tr></thead>
+  <tbody>
+    <tr><td>Lifespan</td><td>Remains in the conversation history; it can also be saved as a template</td><td>Lives in a repository, user folder, plugin, or uploaded skill library until removed</td></tr>
+    <tr><td>Invocation</td><td>The user or application sends it</td><td>The agent, the user, or both can activate it, depending on the client and configuration</td></tr>
+    <tr><td>Contents</td><td>Usually text, possibly with files or other attached context</td><td>A structured folder that can bundle instructions, scripts, references, and assets</td></tr>
+    <tr><td>Context cost</td><td>Its content occupies context while retained in the conversation</td><td>Small discovery metadata is usually advertised first; full instructions and resources load on demand</td></tr>
+    <tr><td>Repeatability</td><td>Can be reused, but may rely on manual copying or templates</td><td>Makes a process easier to share, version, and audit; model outputs are still not deterministic</td></tr>
+  </tbody>
+</table>
+
+<div class="faq-callout faq-callout-info">
+  <strong>Analogy:</strong> A prompt is a request you hand to a colleague for the current job. A skill is a documented procedure kept on the team's shelf so a compatible agent can find and apply it when needed.
+</div>
+
+Skills are especially useful when you repeatedly paste the same long checklist or workflow. They reduce that duplication, but they do not guarantee identical results: the model, task context, available tools, and underlying files still affect the outcome.`,
+  },
+  {
+    id: "q3",
+    q: "What is the difference between a Skill and a Slash Command in Anthropic tools?",
+    badge: "Anthropic",
+    badgeColor: "amber",
+    a: `In current Claude Code, <strong>"slash command" describes how something is invoked</strong>, while <strong>"skill" describes a reusable package</strong>. Anthropic has merged custom commands into the Skills system: existing files under <code>.claude/commands/</code> still work, and a skill can also appear as <code>/skill-name</code>.
+
+<table class="faq-table">
+  <thead><tr><th>Kind</th><th>Where it lives</th><th>Who invokes it</th><th>Best fit</th></tr></thead>
+  <tbody>
+    <tr><td>Built-in command</td><td>Built into Claude Code</td><td>The user types commands such as <code>/clear</code> or <code>/model</code></td><td>CLI and session operations implemented by the product</td></tr>
+    <tr><td>Legacy custom command</td><td>A Markdown file in <code>.claude/commands/</code></td><td>The user invokes <code>/command-name</code></td><td>Existing short, single-file workflows</td></tr>
+    <tr><td>Skill</td><td>A directory containing <code>SKILL.md</code>, normally under <code>.claude/skills/</code></td><td>The user, Claude, or both; frontmatter can restrict invocation</td><td>New reusable workflows, especially those with supporting files</td></tr>
+  </tbody>
+</table>
+
+For example, a skill named <code>code-reviewer</code> can normally be invoked manually with <code>/code-reviewer</code> and can also be selected automatically unless its frontmatter disables model invocation. See Anthropic's <a href="https://code.claude.com/docs/en/slash-commands" class="faq-link" target="_blank" rel="noopener noreferrer">current Skills documentation</a>.
+
+<div class="faq-callout faq-callout-tip">
+  <strong>Rule of thumb:</strong> Keep working legacy commands if they remain simple. Build new shareable workflows as skills, particularly when they need scripts, references, assets, automatic discovery, or invocation controls.
+</div>`,
+  },
+  {
+    id: "q4",
+    q: "What are \"always-on instructions\" (CLAUDE.md / GEMINI.md) — and how do they differ from a Skill?",
+    badge: "Fundamentals",
+    badgeColor: "purple",
+    a: `Instruction files such as <code>CLAUDE.md</code>, <code>GEMINI.md</code>, and <code>.github/copilot-instructions.md</code> provide persistent guidance at a user, repository, or directory scope. Root-level files are normally loaded for sessions in that scope; some clients also support nested or path-specific instructions that load only when the agent works in matching directories or files.
+
+Skills use <strong>progressive disclosure</strong>: compatible clients normally advertise compact discovery metadata first and load the full workflow only when it is invoked. Here's how to choose:
+
+<table class="faq-table">
+  <thead><tr><th>Use this</th><th>When you need…</th></tr></thead>
+  <tbody>
+    <tr><td>Persistent instructions</td><td>Facts and conventions broadly relevant within their scope — e.g., build commands, architecture, coding style</td></tr>
+    <tr><td>Path-specific instructions</td><td>Rules that apply only while working with matching files or subdirectories</td></tr>
+    <tr><td>Skill</td><td>Optional expertise or a procedure for a particular task — e.g., a release workflow or security-audit checklist</td></tr>
+  </tbody>
+</table>
+
+<div class="faq-callout faq-callout-info">
+  Persistent instructions consume context and can become less effective when they are long, irrelevant, or conflicting. Progressive disclosure reduces that risk; it does not eliminate long-context limitations or guarantee that every instruction will be followed. Security-critical rules should also be enforced with tests, policy, permissions, hooks, or scanners rather than natural-language instructions alone.
+</div>`,
+  },
+  {
+    id: "q5",
+    q: "What is the SKILL.md standard, and who created it?",
+    badge: "Standard",
+    badgeColor: "green",
+    a: `<code>SKILL.md</code> is the entry-point format defined by the <strong>open Agent Skills specification</strong>. The format was originally developed by <strong>Anthropic</strong>, released as an open standard, and is open to contributions from the wider ecosystem. Its specification and history are documented at <a href="https://agentskills.io/home" class="faq-link" target="_blank" rel="noopener noreferrer">agentskills.io</a>.
+
+A standard-compliant <code>SKILL.md</code> contains YAML frontmatter followed by Markdown instructions. The frontmatter requires <code>name</code> and <code>description</code>; fields such as <code>license</code>, <code>compatibility</code>, and <code>metadata</code> are optional.
+
+<div class="faq-code-block"><span class="faq-code-comment"># 1. YAML frontmatter used for discovery</span>
+---
+name: my-code-reviewer
+description: >
+  Performs a structured code review. Activate when the user
+  asks to review, audit, or check a pull request.
+---
+
+<span class="faq-code-comment"># 2. Markdown instructions loaded on activation</span>
+## Review Checklist
+- Check for hardcoded secrets
+- Verify error handling is present
+- Confirm tests cover the new logic</div>
+
+The format itself is deliberately lightweight and does not require a framework or package manager. Using a skill does require a compatible client, and discovery paths, permissions, invocation controls, supported script languages, and vendor-specific extensions can differ by product.
+
+<div class="faq-callout faq-callout-tip">
+  The <code>description</code> is the main discovery signal: explain both what the skill does and when it should be used. Compatible clients normally expose the skill's <code>name</code> and <code>description</code> before activation, although manually invoked or disabled skills may be handled differently.
+</div>`,
+  },
+  {
+    id: "q6",
+    q: "Can the same Skill work across Claude Code, Gemini CLI, Cursor, and VS Code Copilot?",
+    badge: "Portability",
+    badgeColor: "teal",
+    a: `<strong>Often, yes — if every target client supports the Agent Skills format and the skill stays within the portable core.</strong> The same folder can be reused across many products, but portability is not a promise of identical behavior.
+
+As of July 2026, these products expose native Agent Skills support:
+
+<table class="faq-table">
+  <thead><tr><th>Tool</th><th>Native feature</th><th>Typical project location or setup</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://code.claude.com/docs/en/slash-commands" class="faq-link" target="_blank" rel="noopener noreferrer">Claude Code</a></td><td>Agent Skill</td><td><code>.claude/skills/&lt;name&gt;/SKILL.md</code></td></tr>
+    <tr><td><a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude" class="faq-link" target="_blank" rel="noopener noreferrer">Claude.ai</a></td><td>Agent Skill</td><td>Upload a ZIP in Customize → Skills</td></tr>
+    <tr><td><a href="https://geminicli.com/docs/cli/using-agent-skills/" class="faq-link" target="_blank" rel="noopener noreferrer">Gemini CLI</a></td><td>Agent Skill</td><td><code>.gemini/skills/</code> or <code>.agents/skills/</code></td></tr>
+    <tr><td><a href="https://docs.github.com/en/copilot/concepts/agents/about-agent-skills" class="faq-link" target="_blank" rel="noopener noreferrer">GitHub Copilot</a></td><td>Agent Skill</td><td><code>.github/skills/</code>, <code>.claude/skills/</code>, or <code>.agents/skills/</code></td></tr>
+    <tr><td><a href="https://cursor.com/changelog/2-4" class="faq-link" target="_blank" rel="noopener noreferrer">Cursor</a></td><td>Agent Skill</td><td><code>.cursor/skills/</code> or <code>.agents/skills/</code></td></tr>
+    <tr><td>Antigravity</td><td>Agent Skill</td><td>Supported directly or through a compatible skills installer</td></tr>
+  </tbody>
+</table>
+
+<div class="faq-callout faq-callout-info">
+  <strong>Portable core:</strong> standard frontmatter, Markdown instructions, relative references, scripts, and assets. <strong>Possible adaptation:</strong> product-specific frontmatter, tool names, shell syntax, permissions, authentication, installed dependencies, and invocation behavior. Use the standard's optional <code>compatibility</code> field to document important requirements.
+</div>
+
+SkillDeck provides tool-specific installation guidance where the source metadata is sufficient, but you should still read the skill's requirements and the target client's documentation before enabling executable code.`,
+  },
+  {
+    id: "q7",
+    q: "What does \"progressive disclosure\" mean, and why does it matter for performance?",
+    badge: "Performance",
+    badgeColor: "indigo",
+    a: `Progressive disclosure keeps the full contents of every installed skill out of the active context until they are relevant. The Agent Skills specification describes three levels:
+
+<ol class="faq-steps">
+  <li><strong>Discovery metadata</strong> — The client advertises compact <code>name</code> and <code>description</code> metadata for available, model-invocable skills.</li>
+  <li><strong>Instructions</strong> — When a skill is activated, the agent receives the full <code>SKILL.md</code> body.</li>
+  <li><strong>Resources</strong> — Referenced files are read and bundled scripts are executed only as the task requires and as the client permits.</li>
+</ol>
+
+<div class="faq-callout faq-callout-info">
+  <strong>Why it matters:</strong> Smaller, more relevant context can reduce token use, latency, distraction, and the risk that important instructions are overlooked. It can improve focus and reliability, but it does not guarantee a better answer or remove all long-context limitations.
+</div>
+
+This is one example of <strong>context engineering</strong>: deliberately deciding what information, tools, and state enter an agent's working context, and when. Its value depends on the model, task, and quality of the supplied context; it is not a universal substitute for model capability.`,
+  },
+  {
+    id: "q8",
+    q: "What are Official, Partner, and Community skills? Which should I trust?",
+    badge: "Provenance",
+    badgeColor: "rose",
+    a: `SkillDeck uses three <strong>provenance labels</strong> to describe where a repository came from. They are useful authorship signals, but they are <strong>not security ratings, certifications, or guarantees of maintenance</strong>.
+
+<table class="faq-table">
+  <thead><tr><th>Label</th><th>What SkillDeck means</th><th>What it does not prove</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Official</strong></td><td>The repository is on SkillDeck's allowlist of organizations treated as the product's original publisher</td><td>That every file is safe, current, human-reviewed, or appropriate for your environment</td></tr>
+    <tr><td><strong>Partner</strong></td><td>The repository belongs to a recognized organization on SkillDeck's partner allowlist</td><td>A commercial partnership, external verification, security audit, or maintenance commitment</td></tr>
+    <tr><td><strong>Community</strong></td><td>The repository comes from another listed open-source author or organization</td><td>Low quality or high risk by itself; review must be based on the actual contents and maintainer history</td></tr>
+  </tbody>
+</table>
+
+Evaluate every third-party skill — regardless of provenance — using separate signals:
+<ol>
+  <li><strong>Review status</strong> — <code>human_read</code> means a SkillDeck editor promoted that record after manual inspection; <code>auto_summarized</code> means it has not received that human-review status.</li>
+  <li><strong>Contents and permissions</strong> — Read <code>SKILL.md</code>, scripts, dependencies, requested tools, network access, and installation steps.</li>
+  <li><strong>License and freshness</strong> — Confirm the license at the source repository and assess recent maintenance; catalog metadata can be incomplete or stale.</li>
+  <li><strong>Operational fit</strong> — Decide whether the workflow is appropriate for your data, systems, and risk level, and test it in a constrained environment.</li>
+</ol>
+
+<div class="faq-callout faq-callout-info">
+  Treat skills like third-party dependencies. SkillDeck deduplicates records, records best-effort license metadata, ranks sources, and exposes review status. Human review applies only where the catalog says <code>human_read</code>. SkillDeck does not currently perform a security audit, malware scan, sandbox evaluation, or legal license review.
+</div>`,
+  },
+  {
+    id: "q9",
+    q: "What is the difference between a Skill and an MCP Server?",
+    badge: "Architecture",
+    badgeColor: "cyan",
+    a: `These are complementary technologies at different layers. A skill teaches an agent <em>how to approach a task</em>; MCP standardizes how an AI application connects to programs that expose tools, resources, and prompts.
+
+<table class="faq-table">
+  <thead><tr><th>Feature</th><th>Skill</th><th>MCP Server</th></tr></thead>
+  <tbody>
+    <tr><td>What it provides</td><td>Instructions, procedural knowledge, references, assets, and optional scripts</td><td>Protocol-accessible tools, resources, and prompt templates</td></tr>
+    <tr><td>How it is used</td><td>The client loads instructions into agent context; the agent may read files or execute permitted scripts</td><td>An MCP host creates a client connection and exchanges structured protocol messages with a server</td></tr>
+    <tr><td>Where it lives or runs</td><td>A folder stored locally, in a repository or plugin, or uploaded to a supported service</td><td>A local process over standard input/output or a remote service over Streamable HTTP</td></tr>
+    <tr><td>Typical use</td><td>"Follow this release procedure" or "Apply our code-review checklist"</td><td>"Query this database", "read this resource", or "call this API"</td></tr>
+    <tr><td>Standard</td><td>Agent Skills <code>SKILL.md</code> format</td><td><a href="https://modelcontextprotocol.io/docs/learn/architecture" class="faq-link" target="_blank" rel="noopener noreferrer">Model Context Protocol</a></td></tr>
+  </tbody>
+</table>
+
+<div class="faq-callout faq-callout-tip">
+  A powerful pattern is to combine them: a Skill provides the agent with the <em>workflow and decision logic</em> for a task, while an MCP server gives it the <em>live data and tool access</em> needed to complete that task. For example, a "Database Migration" skill might contain the checklist and review steps, while a Postgres MCP server gives the agent actual database access.
+</div>`,
+  },
+  {
+    id: "q10",
+    q: "Do I need to code to create a Skill? How do I get started?",
+    badge: "Getting Started",
+    badgeColor: "green",
+    a: `<strong>No coding is required for a basic, instruction-only skill.</strong> If you can write clear Markdown instructions and a small YAML header, you can create one. More advanced skills may include scripts, package dependencies, external tools, or environment requirements, which do require technical care.
+
+Here is a minimal working skill you can create right now:
+
+<div class="faq-code-block"><span class="faq-code-comment"># File: skills/my-code-reviewer/SKILL.md</span>
+
+---
+name: my-code-reviewer
+description: >
+  Performs a thorough code review. Use when the user asks to
+  review, check, or audit code or a pull request.
+---
+
+## Code Review Steps
+
+1. Check for hardcoded secrets or API keys
+2. Verify all error paths are handled
+3. Confirm new logic has corresponding tests
+4. Check for obvious performance issues (N+1 queries, etc.)
+5. Summarise findings with a PASS / NEEDS WORK verdict</div>
+
+To install it for Claude Code, drop the <code>my-code-reviewer/</code> folder inside <code>~/.claude/skills/</code> (global) or <code>.claude/skills/</code> (per-project).
+
+<div class="faq-callout faq-callout-tip">
+  Start with a skill that captures a workflow you currently perform by pasting the same long prompt into chat over and over. That is the fastest way to see immediate value.
+</div>`,
+  },
+  {
+    id: "q11",
+    q: "What is happening to \"Custom Commands\" in Claude Code — are they being phased out?",
+    badge: "Updates · July 2026",
+    badgeColor: "amber",
+    a: `Anthropic's current documentation says that existing custom command files under <code>.claude/commands/</code> <strong>continue to work</strong>. Custom commands have been merged conceptually into the Skills system: both a command file and a skill can create a slash-invocable workflow, while skills add packaging and invocation controls.
+
+The documented behavior as of July 2026 is:
+<ul>
+  <li><strong>Built-in commands</strong> such as <code>/clear</code>, <code>/compact</code>, and <code>/model</code> are product operations implemented by Claude Code.</li>
+  <li><strong>Existing custom commands</strong> remain usable as single Markdown files in <code>.claude/commands/</code>.</li>
+  <li><strong>Skills</strong> are the preferred format for new reusable workflows because they can bundle supporting files, load automatically, control who may invoke them, and follow the cross-client Agent Skills structure.</li>
+</ul>
+
+By default, a skill can be invoked through <code>/skill-name</code> and selected by Claude when relevant. Frontmatter can make it user-only or hide it from the slash menu. Anthropic documents the current behavior in <a href="https://code.claude.com/docs/en/slash-commands" class="faq-link" target="_blank" rel="noopener noreferrer">Extend Claude with skills</a>.
+
+<div class="faq-callout faq-callout-info">
+  If you have existing custom commands that are just one-page prompt templates, you do not need to migrate them. If they are growing complex — bundling logic, referencing external files, or being shared across teams — migrating them to Skills is worthwhile.
+</div>`,
+  },
+  {
+    id: "q12",
+    q: "How does SkillDeck decide which skills to include? Can I submit my own?",
+    badge: "About SkillDeck",
+    badgeColor: "zinc",
+    a: `SkillDeck builds its catalog through a <strong>local, auditable, build-time pipeline</strong>. The production site is static, but the ingestion, canonicalization, and freshness stages access GitHub; they are not offline. Capability classification and card writing use small JSON hand-offs completed by the local agent running the pipeline, not a scripted LLM API call.
+
+<ol>
+  <li><strong>Ingest and canonicalize</strong> — The kitchen reads the repositories explicitly listed in <code>data/sources.json</code> through the GitHub API. Aggregator resolution is supported when an aggregator source is configured; none is currently listed.</li>
+  <li><strong>Deduplicate</strong> — MinHash and Jaccard similarity group near-duplicate records under a shared cluster identifier. Alternatives remain visible in the catalog data rather than being silently deleted.</li>
+  <li><strong>Classify</strong> — A local agent assigns cluster heads to one of eight curated capabilities: documents, data analysis, frontend, Google Cloud operations, testing, planning, agent building, or design. The assignment is propagated to duplicate-cluster members.</li>
+  <li><strong>Rank</strong> — Scores consider human-review status, provenance, license metadata, freshness, and target-tool ecosystem fit. Publication groups candidates by capability; a human-reviewed core record is preferred for the default when one exists.</li>
+  <li><strong>Human review</strong> — An editor can promote a <code>shell</code> record to <code>core</code> or reject it. Published records clearly expose <code>human_read</code> versus <code>auto_summarized</code>; active, assigned, non-rejected shell records may still appear.</li>
+  <li><strong>Publish</strong> — The emitter validates and atomically writes <code>data/kb.json</code>. Astro builds it into static files deployed by Vercel; the public site has no application backend or database.</li>
+</ol>
+
+<div class="faq-callout faq-callout-info">
+  <strong>To submit a skill:</strong> Open a pull request adding the source repository to <code>data/sources.json</code> in the <a href="https://github.com/kunalsuri/SkillDeck" class="faq-link" target="_blank" rel="noopener noreferrer">SkillDeck GitHub repo</a>. Inclusion and promotion are not automatic: ingestion creates or updates records, and maintainers may review, promote, or reject them. Running the complete workflow requires the Python dependencies, GitHub access (a token is strongly recommended), and a compatible local agent for the classification/card hand-offs. The kitchen itself does not require an LLM API key.
+</div>`,
+  },
+];
+
+const badgeClasses: Record<string, string> = {
+  blue: "bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300",
+  purple: "bg-purple-100 text-purple-800 dark:bg-purple-900/40 dark:text-purple-300",
+  amber: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
+  green: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
+  teal: "bg-teal-100 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300",
+  indigo: "bg-indigo-100 text-indigo-800 dark:bg-indigo-900/40 dark:text-indigo-300",
+  rose: "bg-rose-100 text-rose-800 dark:bg-rose-900/40 dark:text-rose-300",
+  cyan: "bg-cyan-100 text-cyan-800 dark:bg-cyan-900/40 dark:text-cyan-300",
+  zinc: "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300",
+};
+---
+
+<Layout title={title} description={description} active="faq" mainClass="flex-1 max-w-4xl w-full mx-auto px-4 py-12 md:py-16 space-y-12">
+
+  {/* Hero */}
+  <div class="space-y-4 max-w-3xl">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 text-blue-700 dark:text-blue-300 text-xs font-mono font-semibold uppercase tracking-wider">
+      <span class="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse"></span>
+      Updated July 2026
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight font-sans text-zinc-900 dark:text-white">
+      Frequently Asked <span class="text-blue-600 dark:text-blue-400">Questions</span>
+    </h1>
+    <p class="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans max-w-2xl">
+      Plain-language answers to the most common questions about AI agent skills — what they are, how they compare to prompts and commands, and how to get the most out of them.
+    </p>
+    <div class="flex flex-wrap gap-2 pt-2">
+      {["12 Questions", "Core Concepts", "Anthropic · July 2026", "Cross-Platform"].map(tag => (
+        <span class="inline-flex px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  {/* Quick-nav index */}
+  <nav aria-label="FAQ index" class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 shadow-sm">
+    <h2 class="text-xs font-mono font-semibold uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-4">Jump to a question</h2>
+    <ol class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-sm font-sans">
+      {faqs.map((faq, i) => (
+        <li>
+          <a
+            href={`#${faq.id}`}
+            class="group flex items-start gap-2 text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-150"
+          >
+            <span class="font-mono text-xs text-zinc-400 dark:text-zinc-600 mt-0.5 shrink-0 w-5">{i + 1}.</span>
+            <span class="group-hover:underline underline-offset-2 leading-snug">{faq.q}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </nav>
+
+  {/* FAQ Accordion */}
+  <section class="space-y-4" aria-label="Frequently asked questions">
+    {faqs.map((faq, i) => (
+      <details
+        id={faq.id}
+        class="faq-item group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm overflow-hidden hover:border-zinc-300 dark:hover:border-zinc-700 hover:shadow-md transition-shadow duration-200"
+      >
+        <summary class="faq-summary flex items-start gap-4 px-6 py-5 cursor-pointer list-none select-none">
+          <span class="shrink-0 w-7 h-7 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center font-mono text-xs font-bold text-zinc-500 dark:text-zinc-400 mt-0.5 group-open:bg-blue-100 dark:group-open:bg-blue-950/50 group-open:text-blue-700 dark:group-open:text-blue-300 transition-colors duration-200">
+            {i + 1}
+          </span>
+          <div class="flex-1 space-y-1.5 min-w-0">
+            <span class={`inline-flex px-2 py-0.5 rounded text-[10px] font-mono font-semibold uppercase tracking-wider ${badgeClasses[faq.badgeColor]}`}>
+              {faq.badge}
+            </span>
+            <h3 class="text-base md:text-lg font-semibold font-sans text-zinc-900 dark:text-white leading-snug pr-4 group-open:text-blue-700 dark:group-open:text-blue-300 transition-colors duration-200">
+              {faq.q}
+            </h3>
+          </div>
+          <span class="faq-chevron shrink-0 mt-1.5 text-zinc-400 dark:text-zinc-600 group-open:text-blue-600 dark:group-open:text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+
+        <div class="faq-body px-6 pb-6 border-t border-zinc-100 dark:border-zinc-800">
+          <div class="prose-faq pt-4 text-sm md:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed font-sans space-y-3" set:html={faq.a} />
+        </div>
+      </details>
+    ))}
+  </section>
+
+  {/* Footer CTA */}
+  <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border border-blue-200 dark:border-blue-800/50 rounded-xl p-8 text-center space-y-4">
+    <h2 class="text-xl font-bold font-sans text-zinc-900 dark:text-white">Still have questions?</h2>
+    <p class="text-sm text-zinc-500 dark:text-zinc-400 max-w-md mx-auto font-sans">
+      Browse the full skill catalogue, check the About &amp; Sources page, or visit agentskills.io for the official standard documentation.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 pt-2">
+      <a href="/" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 dark:hover:bg-blue-500 text-white text-sm font-semibold font-sans transition-colors duration-200 shadow-sm">
+        Browse Skill Catalog &rarr;
+      </a>
+      <a href="/about" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white dark:bg-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200 text-sm font-semibold font-sans border border-zinc-200 dark:border-zinc-700 transition-colors duration-200">
+        About &amp; Sources
+      </a>
+      <a href="https://agentskills.io/home" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white dark:bg-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-200 text-sm font-semibold font-sans border border-zinc-200 dark:border-zinc-700 transition-colors duration-200">
+        agentskills.io &nearr;
+      </a>
+    </div>
+  </div>
+
+</Layout>

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "methods": [
+    {
+      "tool_id": "claude-code",
+      "method": "plugin",
+      "template": "/plugin marketplace add {org}/{repo}\n/plugin install {plugin_name}@{marketplace}",
+      "requires_hints": ["plugin_name", "marketplace"],
+      "verified_on": "2026-07-01",
+      "doc_url": "https://platform.claude.com/docs/en/agents-and-tools/claude-code/skills"
+    },
+    {
+      "tool_id": "claude-code",
+      "method": "manual",
+      "template": "Copy the folder to ~/.claude/skills/{skill_name}/ (personal) or .claude/skills/{skill_name}/ (project)",
+      "requires_hints": [],
+      "verified_on": "2026-07-01",
+      "doc_url": "https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/skills"
+    },
+    {
+      "tool_id": "claude-ai",
+      "method": "builtin",
+      "template": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+      "requires_hints": [],
+      "verified_on": "2026-07-01",
+      "doc_url": "https://support.claude.com"
+    },
+    {
+      "tool_id": "vscode-copilot",
+      "method": "manual",
+      "template": "Copy the folder to .github/skills/{skill_name}/",
+      "requires_hints": [],
+      "verified_on": "2026-07-01",
+      "doc_url": "https://github.com/heilcheng/awesome-agent-skills"
+    },
+    {
+      "tool_id": "cursor",
+      "method": "manual",
+      "template": "Copy the folder to .cursor/skills/{skill_name}/",
+      "requires_hints": [],
+      "verified_on": "2026-07-01",
+      "doc_url": "https://docs.cursor.com"
+    },
+    {
+      "tool_id": "antigravity",
+      "method": "npx",
+      "template": "npx skills install github.com/{org}/{repo}",
+      "requires_hints": [],
+      "verified_on": "2026-07-01",
+      "doc_url": "https://cloud.google.com/blog/products/ai-machine-learning/agent-skills-next-2026"
+    },
+    {
+      "tool_id": "gemini-cli",
+      "method": "npx",
+      "template": "npx skills install github.com/{org}/{repo}",
+      "requires_hints": [],
+      "verified_on": "2026-07-01",
+      "doc_url": "https://cloud.google.com/blog/products/ai-machine-learning/agent-skills-next-2026"
+    }
+  ],
+  "fallback_order": {
+    "claude-code": ["plugin", "manual"],
+    "claude-ai": ["builtin"],
+    "vscode-copilot": ["manual"],
+    "cursor": ["manual"],
+    "antigravity": ["npx"],
+    "gemini-cli": ["npx"]
+  }
+}

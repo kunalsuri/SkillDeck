@@ -1,0 +1,2156 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T14:29:37.977226Z",
+  "skills": [
+    {
+      "id": "openai-aspnet-core",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/aspnet-core",
+        "default_branch": "main"
+      },
+      "name": "aspnet-core",
+      "frontmatter_description": "Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing, performance, deployment, or ASP.NET Core upgrades.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "c71ed6e705c44038fbcd2e37a3e12c3a81683fdf",
+        "fetched_at": "2026-07-16T14:25:35.938371Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-395",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1282,
+        "word_count": 521,
+        "line_count": 57,
+        "basis": "body",
+        "trigger": "Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing,…",
+        "body_blob_sha": "c71ed6e705c44038fbcd2e37a3e12c3a81683fdf",
+        "computed_at": "2026-07-16T14:29:37.906169Z"
+      }
+    },
+    {
+      "id": "openai-chatgpt-apps",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/chatgpt-apps",
+        "default_branch": "main"
+      },
+      "name": "chatgpt-apps",
+      "frontmatter_description": "Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain settings, or produce a docs-aligned project scaffold. Prefer a docs-first workflow by invoking the openai-docs skill or OpenAI developer docs MCP tools before generating code.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "6280a08c57db44ab622dcccbd853e01005edfcbd",
+        "fetched_at": "2026-07-16T14:25:36.629422Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-396",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4781,
+        "word_count": 2632,
+        "line_count": 316,
+        "basis": "body",
+        "trigger": "Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain settings, or produce a docs-aligned proje…",
+        "body_blob_sha": "6280a08c57db44ab622dcccbd853e01005edfcbd",
+        "computed_at": "2026-07-16T14:29:37.906908Z"
+      }
+    },
+    {
+      "id": "openai-cli-creator",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/cli-creator",
+        "default_branch": "main"
+      },
+      "name": "cli-creator",
+      "frontmatter_description": "Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion skill.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "60e5a9a03f89cf66a60aa798bfc6f3c3fa5ed8c4",
+        "fetched_at": "2026-07-16T14:25:37.268581Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-397",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 2532,
+        "word_count": 1523,
+        "line_count": 156,
+        "basis": "body",
+        "trigger": "Use when the user wants Codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion skill.",
+        "body_blob_sha": "60e5a9a03f89cf66a60aa798bfc6f3c3fa5ed8c4",
+        "computed_at": "2026-07-16T14:29:37.907397Z"
+      }
+    },
+    {
+      "id": "openai-cloudflare-deploy",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/cloudflare-deploy",
+        "default_branch": "main"
+      },
+      "name": "cloudflare-deploy",
+      "frontmatter_description": "Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "e2d73abb7e5a550af3d9e40797a28259bddba97d",
+        "fetched_at": "2026-07-16T14:25:37.913704Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-398",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1722,
+        "word_count": 938,
+        "line_count": 220,
+        "basis": "body",
+        "trigger": "Use when the user asks to deploy, host, publish, or set up a project on Cloudflare.",
+        "body_blob_sha": "e2d73abb7e5a550af3d9e40797a28259bddba97d",
+        "computed_at": "2026-07-16T14:29:37.907888Z"
+      }
+    },
+    {
+      "id": "openai-define-goal",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/define-goal",
+        "default_branch": "main"
+      },
+      "name": "define-goal",
+      "frontmatter_description": "Help the user define a concrete, measurable goal before starting work, especially when they ask to use the goal tool, create a goal, set an objective, clarify success criteria, or turn a fuzzy intention into a quantitative outcome. Use this skill for goal creation and goal refinement only; it does not manage durable snapshots, decision logs, or long-running execution artifacts.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "87f111bd700e0d993465f7ac741847b5daee57d6",
+        "fetched_at": "2026-07-16T14:25:38.639597Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-399",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1306,
+        "word_count": 805,
+        "line_count": 95,
+        "basis": "body",
+        "trigger": "Use this skill for goal creation and goal refinement only; it does not manage durable snapshots, decision logs, or long-running execution artifacts.",
+        "body_blob_sha": "87f111bd700e0d993465f7ac741847b5daee57d6",
+        "computed_at": "2026-07-16T14:29:37.908314Z"
+      }
+    },
+    {
+      "id": "openai-figma-code-connect-components",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma-code-connect-components",
+        "default_branch": "main"
+      },
+      "name": "figma-code-connect-components",
+      "frontmatter_description": "Connects Figma design components to code components using Code Connect mapping tools. Use when user says \"code connect\", \"connect this component to code\", \"map this component\", \"link component to code\", \"create code connect mapping\", or wants to establish mappings between Figma designs and code implementations. For canvas writes via `use_figma`, use `figma-use`.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "d417e16baf15bad3f1dd147d562c8b2578e4b4bd",
+        "fetched_at": "2026-07-16T14:25:39.283543Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-400",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4080,
+        "word_count": 2174,
+        "line_count": 345,
+        "basis": "body",
+        "trigger": "Use when user says \"code connect\", \"connect this component to code\", \"map this component\", \"link component to code\", \"create code connect mapping\", or wants to establish mappings between Figma design…",
+        "body_blob_sha": "d417e16baf15bad3f1dd147d562c8b2578e4b4bd",
+        "computed_at": "2026-07-16T14:29:37.908955Z"
+      }
+    },
+    {
+      "id": "openai-figma-create-design-system-rules",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma-create-design-system-rules",
+        "default_branch": "main"
+      },
+      "name": "figma-create-design-system-rules",
+      "frontmatter_description": "Generates custom design system rules for the user's codebase. Use when user says \"create design system rules\", \"generate rules for my project\", \"set up design rules\", \"customize design system guidelines\", or wants to establish project-specific conventions for Figma-to-code workflows. Requires Figma MCP server connection.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "42cc4ce838276cb68a14bbb29c5a6f1e19b6e50d",
+        "fetched_at": "2026-07-16T14:25:40.004616Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-401",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4459,
+        "word_count": 2499,
+        "line_count": 533,
+        "basis": "body",
+        "trigger": "Use when user says \"create design system rules\", \"generate rules for my project\", \"set up design rules\", \"customize design system guidelines\", or wants to establish project-specific conventions for F…",
+        "body_blob_sha": "42cc4ce838276cb68a14bbb29c5a6f1e19b6e50d",
+        "computed_at": "2026-07-16T14:29:37.909570Z"
+      }
+    },
+    {
+      "id": "openai-figma-create-new-file",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma-create-new-file",
+        "default_branch": "main"
+      },
+      "name": "figma-create-new-file",
+      "frontmatter_description": "Create a new blank Figma file. Use when the user wants to create a new Figma design or FigJam file, or when you need a new file before calling use_figma. Handles plan resolution via whoami if needed. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard)",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "8f74967b9bb4c26b3b8e2a8d102f004d6962ae0d",
+        "fetched_at": "2026-07-16T14:25:40.635428Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-402",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 589,
+        "word_count": 368,
+        "line_count": 64,
+        "basis": "body",
+        "trigger": "Use when the user wants to create a new Figma design or FigJam file, or when you need a new file before calling use_figma.",
+        "body_blob_sha": "8f74967b9bb4c26b3b8e2a8d102f004d6962ae0d",
+        "computed_at": "2026-07-16T14:29:37.909990Z"
+      }
+    },
+    {
+      "id": "openai-figma-generate-design",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma-generate-design",
+        "default_branch": "main"
+      },
+      "name": "figma-generate-design",
+      "frontmatter_description": "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: 'write to Figma', 'create in Figma from code', 'push page to Figma', 'take this app/page and build it in Figma', 'create a screen', 'build a landing page in Figma', 'update the Figma screen to match code'. This is the preferred workflow skill whenever the user wants to build or update a full page, screen, or view in Figma from code or a description. Discovers design system components, variables, and styles via search_design_system, imports them, and assembles screens incrementally section-by-section using design system tokens instead of hardcoded values.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "f71d7e71600e84e95639ca2b3e2b8578ac50c3ea",
+        "fetched_at": "2026-07-16T14:25:41.322128Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-403",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4838,
+        "word_count": 2513,
+        "line_count": 337,
+        "basis": "body",
+        "trigger": "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma.",
+        "body_blob_sha": "f71d7e71600e84e95639ca2b3e2b8578ac50c3ea",
+        "computed_at": "2026-07-16T14:29:37.910681Z"
+      }
+    },
+    {
+      "id": "openai-figma-generate-library",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma-generate-library",
+        "default_branch": "main"
+      },
+      "name": "figma-generate-library",
+      "frontmatter_description": "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "0c162901c29dba36094c324cd9ffabd2a6b33498",
+        "fetched_at": "2026-07-16T14:25:41.961567Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-404",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4294,
+        "word_count": 2346,
+        "line_count": 310,
+        "basis": "body",
+        "trigger": "Use when the user wants to create variables/tokens, build component libraries, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma.",
+        "body_blob_sha": "0c162901c29dba36094c324cd9ffabd2a6b33498",
+        "computed_at": "2026-07-16T14:29:37.911349Z"
+      }
+    },
+    {
+      "id": "openai-figma-implement-design",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma-implement-design",
+        "default_branch": "main"
+      },
+      "name": "figma-implement-design",
+      "frontmatter_description": "Translates Figma designs into production-ready application code with 1:1 visual fidelity. Use when implementing UI code from Figma files, when user mentions \"implement design\", \"generate code\", \"implement component\", provides Figma URLs, or asks to build components matching Figma specs. For Figma canvas writes via `use_figma`, use `figma-use`.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "9aacde6657a913db819d7938f3fd1888ff643c6a",
+        "fetched_at": "2026-07-16T14:25:42.614789Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-405",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 2806,
+        "word_count": 1516,
+        "line_count": 254,
+        "basis": "body",
+        "trigger": "Use when implementing UI code from Figma files, when user mentions \"implement design\", \"generate code\", \"implement component\", provides Figma URLs, or asks to build components matching Figma specs.",
+        "body_blob_sha": "9aacde6657a913db819d7938f3fd1888ff643c6a",
+        "computed_at": "2026-07-16T14:29:37.911869Z"
+      }
+    },
+    {
+      "id": "openai-figma-use",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma-use",
+        "default_branch": "main"
+      },
+      "name": "figma-use",
+      "frontmatter_description": "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "4b0e23f53d8160e1623177f518535d1588a53c69",
+        "fetched_at": "2026-07-16T14:25:43.426903Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-406",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4282,
+        "word_count": 2404,
+        "line_count": 229,
+        "basis": "body",
+        "trigger": "Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g.",
+        "body_blob_sha": "4b0e23f53d8160e1623177f518535d1588a53c69",
+        "computed_at": "2026-07-16T14:29:37.912556Z"
+      }
+    },
+    {
+      "id": "openai-figma",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/figma",
+        "default_branch": "main"
+      },
+      "name": "figma",
+      "frontmatter_description": "Use the Figma MCP server to fetch design context, screenshots, variables, and assets from Figma, and to translate Figma nodes into production code. Trigger when a task involves Figma URLs, node IDs, design-to-code implementation, or Figma MCP setup and troubleshooting.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "b4f18d2969fe827778b13b5a0fb08a158ec091b1",
+        "fetched_at": "2026-07-16T14:25:44.081953Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-407",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 716,
+        "word_count": 427,
+        "line_count": 38,
+        "basis": "body",
+        "trigger": "Trigger when a task involves Figma URLs, node IDs, design-to-code implementation, or Figma MCP setup and troubleshooting.",
+        "body_blob_sha": "b4f18d2969fe827778b13b5a0fb08a158ec091b1",
+        "computed_at": "2026-07-16T14:29:37.913017Z"
+      }
+    },
+    {
+      "id": "openai-gh-address-comments",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/gh-address-comments",
+        "default_branch": "main"
+      },
+      "name": "gh-address-comments",
+      "frontmatter_description": "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "0ee19e080dc9f0b082157080d1e65511ddc49e7e",
+        "fetched_at": "2026-07-16T14:25:44.744502Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-408",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 248,
+        "word_count": 161,
+        "line_count": 19,
+        "basis": "body",
+        "trigger": "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.",
+        "body_blob_sha": "0ee19e080dc9f0b082157080d1e65511ddc49e7e",
+        "computed_at": "2026-07-16T14:29:37.913382Z"
+      }
+    },
+    {
+      "id": "openai-gh-fix-ci",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/gh-fix-ci",
+        "default_branch": "main"
+      },
+      "name": "gh-fix-ci",
+      "frontmatter_description": "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "76bdeb6a7bff93cbe924c0652f1fd7a3c3ffc46c",
+        "fetched_at": "2026-07-16T14:25:45.384227Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-409",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 824,
+        "word_count": 468,
+        "line_count": 65,
+        "basis": "body",
+        "trigger": "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after ex…",
+        "body_blob_sha": "76bdeb6a7bff93cbe924c0652f1fd7a3c3ffc46c",
+        "computed_at": "2026-07-16T14:29:37.913780Z"
+      }
+    },
+    {
+      "id": "openai-hatch-pet",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/hatch-pet",
+        "default_branch": "main"
+      },
+      "name": "hatch-pet",
+      "frontmatter_description": "Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA contact sheets, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "5f6e79a444d2a1ccb38cec02fa6830c7bb2521ba",
+        "fetched_at": "2026-07-16T14:25:46.185321Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-410",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 9170,
+        "word_count": 4940,
+        "line_count": 535,
+        "basis": "body",
+        "trigger": "Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA conta…",
+        "body_blob_sha": "5f6e79a444d2a1ccb38cec02fa6830c7bb2521ba",
+        "computed_at": "2026-07-16T14:29:37.914862Z"
+      }
+    },
+    {
+      "id": "openai-jupyter-notebook",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/jupyter-notebook",
+        "default_branch": "main"
+      },
+      "name": "jupyter-notebook",
+      "frontmatter_description": "Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "e1d1748cac9e9313c8229763751714628d1f6853",
+        "fetched_at": "2026-07-16T14:25:46.847082Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-411",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 967,
+        "word_count": 482,
+        "line_count": 103,
+        "basis": "body",
+        "trigger": "Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` …",
+        "body_blob_sha": "e1d1748cac9e9313c8229763751714628d1f6853",
+        "computed_at": "2026-07-16T14:29:37.915526Z"
+      }
+    },
+    {
+      "id": "openai-linear",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/linear",
+        "default_branch": "main"
+      },
+      "name": "linear",
+      "frontmatter_description": "Manage issues, projects & team workflows in Linear. Use when the user wants to read, create or updates tickets in Linear.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "6982ccbe4835ed207f6c7c0b2f011d903dbe2960",
+        "fetched_at": "2026-07-16T14:25:47.551079Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-412",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1184,
+        "word_count": 666,
+        "line_count": 81,
+        "basis": "body",
+        "trigger": "Use when the user wants to read, create or updates tickets in Linear.",
+        "body_blob_sha": "6982ccbe4835ed207f6c7c0b2f011d903dbe2960",
+        "computed_at": "2026-07-16T14:29:37.916035Z"
+      }
+    },
+    {
+      "id": "openai-migrate-to-codex",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/migrate-to-codex",
+        "default_branch": "main"
+      },
+      "name": "migrate-to-codex",
+      "frontmatter_description": "Migrate supported instruction files, skills, agents, and MCP config into Codex project and global files.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "b1c001b70e8cf326b8196e153b87811a43b23d48",
+        "fetched_at": "2026-07-16T14:25:48.245539Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-413",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1944,
+        "word_count": 1060,
+        "line_count": 110,
+        "basis": "body",
+        "trigger": "Migrate supported instruction files, skills, agents, and MCP config into Codex project and global files.",
+        "body_blob_sha": "b1c001b70e8cf326b8196e153b87811a43b23d48",
+        "computed_at": "2026-07-16T14:29:37.916593Z"
+      }
+    },
+    {
+      "id": "openai-netlify-deploy",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/netlify-deploy",
+        "default_branch": "main"
+      },
+      "name": "netlify-deploy",
+      "frontmatter_description": "Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "52075090a6644b104fc34837c9923b403d949369",
+        "fetched_at": "2026-07-16T14:25:48.926775Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-414",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1688,
+        "word_count": 950,
+        "line_count": 243,
+        "basis": "body",
+        "trigger": "Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys.",
+        "body_blob_sha": "52075090a6644b104fc34837c9923b403d949369",
+        "computed_at": "2026-07-16T14:29:37.917091Z"
+      }
+    },
+    {
+      "id": "openai-notion-knowledge-capture",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/notion-knowledge-capture",
+        "default_branch": "main"
+      },
+      "name": "notion-knowledge-capture",
+      "frontmatter_description": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "5d347f66e6b494328a81f3ecb4fd7865f95b0067",
+        "fetched_at": "2026-07-16T14:25:49.659624Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-415",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 752,
+        "word_count": 409,
+        "line_count": 50,
+        "basis": "body",
+        "trigger": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.",
+        "body_blob_sha": "5d347f66e6b494328a81f3ecb4fd7865f95b0067",
+        "computed_at": "2026-07-16T14:29:37.917494Z"
+      }
+    },
+    {
+      "id": "openai-notion-meeting-intelligence",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/notion-meeting-intelligence",
+        "default_branch": "main"
+      },
+      "name": "notion-meeting-intelligence",
+      "frontmatter_description": "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "efc716839ee614cf57efb3858fcfb538e0c4a8d9",
+        "fetched_at": "2026-07-16T14:25:50.617493Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-416",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 775,
+        "word_count": 406,
+        "line_count": 54,
+        "basis": "body",
+        "trigger": "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.",
+        "body_blob_sha": "efc716839ee614cf57efb3858fcfb538e0c4a8d9",
+        "computed_at": "2026-07-16T14:29:37.917906Z"
+      }
+    },
+    {
+      "id": "openai-notion-research-documentation",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/notion-research-documentation",
+        "default_branch": "main"
+      },
+      "name": "notion-research-documentation",
+      "frontmatter_description": "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "4bd40dbe0eb8d9d8920e3a4d705b38b4887623c7",
+        "fetched_at": "2026-07-16T14:25:51.608365Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-417",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 768,
+        "word_count": 419,
+        "line_count": 53,
+        "basis": "body",
+        "trigger": "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations.",
+        "body_blob_sha": "4bd40dbe0eb8d9d8920e3a4d705b38b4887623c7",
+        "computed_at": "2026-07-16T14:29:37.918304Z"
+      }
+    },
+    {
+      "id": "openai-notion-spec-to-implementation",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/notion-spec-to-implementation",
+        "default_branch": "main"
+      },
+      "name": "notion-spec-to-implementation",
+      "frontmatter_description": "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "d6a0a0e0fb358f56e1d4893c54a25c6c2e04fc65",
+        "fetched_at": "2026-07-16T14:25:52.410811Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-418",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 794,
+        "word_count": 409,
+        "line_count": 52,
+        "basis": "body",
+        "trigger": "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.",
+        "body_blob_sha": "d6a0a0e0fb358f56e1d4893c54a25c6c2e04fc65",
+        "computed_at": "2026-07-16T14:29:37.918703Z"
+      }
+    },
+    {
+      "id": "openai-openai-docs",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.system/openai-docs",
+        "default_branch": "main"
+      },
+      "name": "openai-docs",
+      "frontmatter_description": "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "df395fb442746703eefcc1d0cb9183efa39d9e66",
+        "fetched_at": "2026-07-16T14:26:03.905129Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-419",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4563,
+        "word_count": 2543,
+        "line_count": 163,
+        "basis": "body",
+        "trigger": "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest …",
+        "body_blob_sha": "df395fb442746703eefcc1d0cb9183efa39d9e66",
+        "computed_at": "2026-07-16T14:29:37.919366Z"
+      }
+    },
+    {
+      "id": "openai-pdf",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/pdf",
+        "default_branch": "main"
+      },
+      "name": "pdf",
+      "frontmatter_description": "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "fd5d56058f10202e4f50a30bc2906f39696024a1",
+        "fetched_at": "2026-07-16T14:25:53.871880Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-420",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 558,
+        "word_count": 332,
+        "line_count": 63,
+        "basis": "body",
+        "trigger": "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplu…",
+        "body_blob_sha": "fd5d56058f10202e4f50a30bc2906f39696024a1",
+        "computed_at": "2026-07-16T14:29:37.919749Z"
+      }
+    },
+    {
+      "id": "openai-playwright-interactive",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/playwright-interactive",
+        "default_branch": "main"
+      },
+      "name": "playwright-interactive",
+      "frontmatter_description": "Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "7d85f8284014c8c2690918a596a4b5bef7cb86e1",
+        "fetched_at": "2026-07-16T14:25:54.654828Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-421",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 7890,
+        "word_count": 4371,
+        "line_count": 689,
+        "basis": "body",
+        "trigger": "Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging.",
+        "body_blob_sha": "7d85f8284014c8c2690918a596a4b5bef7cb86e1",
+        "computed_at": "2026-07-16T14:29:37.920533Z"
+      }
+    },
+    {
+      "id": "openai-playwright",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/playwright",
+        "default_branch": "main"
+      },
+      "name": "playwright",
+      "frontmatter_description": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "77c01afb31aa602d0b002ae2438c2b67f0335fcb",
+        "fetched_at": "2026-07-16T14:25:55.380050Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-422",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 880,
+        "word_count": 489,
+        "line_count": 143,
+        "basis": "body",
+        "trigger": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapp…",
+        "body_blob_sha": "77c01afb31aa602d0b002ae2438c2b67f0335fcb",
+        "computed_at": "2026-07-16T14:29:37.920928Z"
+      }
+    },
+    {
+      "id": "openai-render-deploy",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/render-deploy",
+        "default_branch": "main"
+      },
+      "name": "render-deploy",
+      "frontmatter_description": "Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "a0f78c13b07df3def82c16bccf4a1c17c4d8e30d",
+        "fetched_at": "2026-07-16T14:25:56.019645Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-423",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4327,
+        "word_count": 2406,
+        "line_count": 475,
+        "basis": "body",
+        "trigger": "Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform.",
+        "body_blob_sha": "a0f78c13b07df3def82c16bccf4a1c17c4d8e30d",
+        "computed_at": "2026-07-16T14:29:37.921612Z"
+      }
+    },
+    {
+      "id": "openai-screenshot",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/screenshot",
+        "default_branch": "main"
+      },
+      "name": "screenshot",
+      "frontmatter_description": "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "1d967bfb1d7d38874147b5810f2a19677bc3161b",
+        "fetched_at": "2026-07-16T14:25:56.668306Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-424",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1872,
+        "word_count": 943,
+        "line_count": 263,
+        "basis": "body",
+        "trigger": "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-lev…",
+        "body_blob_sha": "1d967bfb1d7d38874147b5810f2a19677bc3161b",
+        "computed_at": "2026-07-16T14:29:37.922068Z"
+      }
+    },
+    {
+      "id": "openai-security-best-practices",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/security-best-practices",
+        "default_branch": "main"
+      },
+      "name": "security-best-practices",
+      "frontmatter_description": "Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "45ccbd8d671c4c4cc3e7e0645a16a3f80ec50de7",
+        "fetched_at": "2026-07-16T14:25:57.304200Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-425",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 2042,
+        "word_count": 1378,
+        "line_count": 82,
+        "basis": "body",
+        "trigger": "Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help.",
+        "body_blob_sha": "45ccbd8d671c4c4cc3e7e0645a16a3f80ec50de7",
+        "computed_at": "2026-07-16T14:29:37.922532Z"
+      }
+    },
+    {
+      "id": "openai-security-ownership-map",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/security-ownership-map",
+        "default_branch": "main"
+      },
+      "name": "security-ownership-map",
+      "frontmatter_description": "Analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases and visualization. Trigger only when the user explicitly wants a security-oriented ownership or bus-factor analysis grounded in git history (for example: orphaned sensitive code, security maintainers, CODEOWNERS reality checks for risk, sensitive hotspots, or ownership clusters). Do not trigger for general maintainer lists or non-security ownership questions.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "0164d0d8809825dc5bccc99e87cafb8345a6be72",
+        "fetched_at": "2026-07-16T14:25:57.959203Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-426",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 2036,
+        "word_count": 858,
+        "line_count": 202,
+        "basis": "body",
+        "trigger": "Trigger only when the user explicitly wants a security-oriented ownership or bus-factor analysis grounded in git history (for example: orphaned sensitive code, security maintainers, CODEOWNERS realit…",
+        "body_blob_sha": "0164d0d8809825dc5bccc99e87cafb8345a6be72",
+        "computed_at": "2026-07-16T14:29:37.923029Z"
+      }
+    },
+    {
+      "id": "openai-security-threat-model",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/security-threat-model",
+        "default_branch": "main"
+      },
+      "name": "security-threat-model",
+      "frontmatter_description": "Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. Trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform AppSec threat modeling. Do not trigger for general architecture summaries, code review, or non-security design work.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "abd3c1c95d49c4e0e0664f198f4bf168c6291aec",
+        "fetched_at": "2026-07-16T14:25:58.604106Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-427",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1272,
+        "word_count": 702,
+        "line_count": 77,
+        "basis": "body",
+        "trigger": "Trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform AppSec threat modeling.",
+        "body_blob_sha": "abd3c1c95d49c4e0e0664f198f4bf168c6291aec",
+        "computed_at": "2026-07-16T14:29:37.923470Z"
+      }
+    },
+    {
+      "id": "openai-sentry",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/sentry",
+        "default_branch": "main"
+      },
+      "name": "sentry",
+      "frontmatter_description": "Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` command.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "c94f7efa9d513f381d5fcd07912d56581ec3dc2a",
+        "fetched_at": "2026-07-16T14:25:59.418543Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-428",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 892,
+        "word_count": 511,
+        "line_count": 116,
+        "basis": "body",
+        "trigger": "Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` comman…",
+        "body_blob_sha": "c94f7efa9d513f381d5fcd07912d56581ec3dc2a",
+        "computed_at": "2026-07-16T14:29:37.923872Z"
+      }
+    },
+    {
+      "id": "openai-speech",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/speech",
+        "default_branch": "main"
+      },
+      "name": "speech",
+      "frontmatter_description": "Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_speech.py`) with built-in voices and require `OPENAI_API_KEY` for live calls. Custom voice creation is out of scope.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "54727b1f84831739e7262b4db8271ada026d20c7",
+        "fetched_at": "2026-07-16T14:26:00.076133Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-429",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1723,
+        "word_count": 957,
+        "line_count": 140,
+        "basis": "body",
+        "trigger": "Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_speech…",
+        "body_blob_sha": "54727b1f84831739e7262b4db8271ada026d20c7",
+        "computed_at": "2026-07-16T14:29:37.924313Z"
+      }
+    },
+    {
+      "id": "openai-transcribe",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/transcribe",
+        "default_branch": "main"
+      },
+      "name": "transcribe",
+      "frontmatter_description": "Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "757576f9bbd1782f14fcc28ca85159139a2b8fa5",
+        "fetched_at": "2026-07-16T14:26:00.780422Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-430",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 644,
+        "word_count": 333,
+        "line_count": 77,
+        "basis": "body",
+        "trigger": "Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings.",
+        "body_blob_sha": "757576f9bbd1782f14fcc28ca85159139a2b8fa5",
+        "computed_at": "2026-07-16T14:29:37.924689Z"
+      }
+    },
+    {
+      "id": "openai-vercel-deploy",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/vercel-deploy",
+        "default_branch": "main"
+      },
+      "name": "vercel-deploy",
+      "frontmatter_description": "Deploy applications and websites to Vercel. Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this live\", or \"create a preview deployment\".",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "a7e6faf3b999d31e8224e232d39fbf58952b7a5b",
+        "fetched_at": "2026-07-16T14:26:01.385721Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-431",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 604,
+        "word_count": 344,
+        "line_count": 73,
+        "basis": "body",
+        "trigger": "Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this live\", or \"create a preview deployment\".",
+        "body_blob_sha": "a7e6faf3b999d31e8224e232d39fbf58952b7a5b",
+        "computed_at": "2026-07-16T14:29:37.925076Z"
+      }
+    },
+    {
+      "id": "openai-winui-app",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/winui-app",
+        "default_branch": "main"
+      },
+      "name": "winui-app",
+      "frontmatter_description": "Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityToolkit components. Use when creating a brand new app, preparing a machine for WinUI, reviewing, refactoring, planning, troubleshooting, environment-checking, or setting up WinUI 3 XAML, controls, navigation, windowing, theming, accessibility, responsiveness, performance, deployment, or related Windows app design and development work.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "28e67e8677f0ab74ac921ec85dd80888f7d53fa7",
+        "fetched_at": "2026-07-16T14:26:02.007726Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-432",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 2675,
+        "word_count": 1498,
+        "line_count": 90,
+        "basis": "body",
+        "trigger": "Use when creating a brand new app, preparing a machine for WinUI, reviewing, refactoring, planning, troubleshooting, environment-checking, or setting up WinUI 3 XAML, controls, navigation, windowing,…",
+        "body_blob_sha": "28e67e8677f0ab74ac921ec85dd80888f7d53fa7",
+        "computed_at": "2026-07-16T14:29:37.925585Z"
+      }
+    },
+    {
+      "id": "openai-yeet",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.curated/yeet",
+        "default_branch": "main"
+      },
+      "name": "yeet",
+      "frontmatter_description": "Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`).",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "acce5634f720e0a26c65c5e6048e0b43f6a3abd8",
+        "fetched_at": "2026-07-16T14:26:02.625220Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-433",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1695,
+        "word_count": 1061,
+        "line_count": 128,
+        "basis": "body",
+        "trigger": "Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`).",
+        "body_blob_sha": "acce5634f720e0a26c65c5e6048e0b43f6a3abd8",
+        "computed_at": "2026-07-16T14:29:37.926043Z"
+      }
+    },
+    {
+      "id": "openai-imagegen",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.system/imagegen",
+        "default_branch": "main"
+      },
+      "name": "imagegen",
+      "frontmatter_description": "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "88195882efdedbfab56e0eb2570dd4fd6d9e8610",
+        "fetched_at": "2026-07-16T14:26:03.274707Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-434",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 3890,
+        "word_count": 2252,
+        "line_count": 275,
+        "basis": "body",
+        "trigger": "Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector.",
+        "body_blob_sha": "88195882efdedbfab56e0eb2570dd4fd6d9e8610",
+        "computed_at": "2026-07-16T14:29:37.926700Z"
+      }
+    },
+    {
+      "id": "openai-plugin-creator",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.system/plugin-creator",
+        "default_branch": "main"
+      },
+      "name": "plugin-creator",
+      "frontmatter_description": "Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use when Codex needs to create a new local plugin, add optional plugin structure, or generate or update repo-root `.agents/plugins/marketplace.json` entries for plugin ordering and availability metadata.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "5108f549a7d6f93eb4b80dc9990bbd966157330a",
+        "fetched_at": "2026-07-16T14:26:04.542574Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-435",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1484,
+        "word_count": 697,
+        "line_count": 156,
+        "basis": "body",
+        "trigger": "Use when Codex needs to create a new local plugin, add optional plugin structure, or generate or update repo-root `.agents/plugins/marketplace.json` entries for plugin ordering and availability metad…",
+        "body_blob_sha": "5108f549a7d6f93eb4b80dc9990bbd966157330a",
+        "computed_at": "2026-07-16T14:29:37.927174Z"
+      }
+    },
+    {
+      "id": "openai-skill-creator",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.system/skill-creator",
+        "default_branch": "main"
+      },
+      "name": "skill-creator",
+      "frontmatter_description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "72bc0b97e7a6476254a9d5c424c9971748402ec3",
+        "fetched_at": "2026-07-16T14:26:05.195067Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-436",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 4548,
+        "word_count": 2566,
+        "line_count": 362,
+        "basis": "body",
+        "trigger": "Guide for creating effective skills.",
+        "body_blob_sha": "72bc0b97e7a6476254a9d5c424c9971748402ec3",
+        "computed_at": "2026-07-16T14:29:37.927885Z"
+      }
+    },
+    {
+      "id": "openai-skill-installer",
+      "source_id": "openai-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "openai",
+        "repo": "skills",
+        "path": "skills/.system/skill-installer",
+        "default_branch": "main"
+      },
+      "name": "skill-installer",
+      "frontmatter_description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+      "license": "unspecified",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
+        "blob_sha": "8ca23bf833379d2272a0a67e0026c2709b8823f1",
+        "fetched_at": "2026-07-16T14:26:05.864204Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-437",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 720,
+        "word_count": 379,
+        "line_count": 52,
+        "basis": "body",
+        "trigger": "Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+        "body_blob_sha": "8ca23bf833379d2272a0a67e0026c2709b8823f1",
+        "computed_at": "2026-07-16T14:29:37.928284Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "anthropic-official",
+      "org": "anthropics",
+      "repo_url": "https://github.com/anthropics/skills",
+      "kind": "official",
+      "vendor": "anthropic",
+      "default_license": "varies",
+      "notes": "Example skills Apache-2.0; document skills (docx/pdf/pptx/xlsx) source-available."
+    },
+    {
+      "id": "google-official",
+      "org": "google",
+      "repo_url": "https://github.com/google/skills",
+      "kind": "official",
+      "vendor": "google",
+      "default_license": "Apache-2.0",
+      "notes": "Announced Cloud Next 2026."
+    },
+    {
+      "id": "vercel-official",
+      "org": "vercel-labs",
+      "repo_url": "https://github.com/vercel-labs/agent-skills",
+      "kind": "official",
+      "vendor": "vercel",
+      "default_license": "MIT",
+      "notes": "Vercel's official agent skills collection, distributed via the skills.sh directory (npx skills add)."
+    },
+    {
+      "id": "addyosmani-agent-skills",
+      "org": "addyosmani",
+      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "kind": "community",
+      "vendor": null,
+      "default_license": "MIT",
+      "notes": "24 SDLC-phase skills (Define/Plan/Build/Verify/Review/Ship) with matching slash commands; inspiration for SkillDeck's Software Engineering / SDLC page."
+    },
+    {
+      "id": "kunalsuri-agent-skills",
+      "org": "kunalsuri",
+      "repo_url": "https://github.com/kunalsuri/agent-skills",
+      "kind": "community",
+      "vendor": null,
+      "default_license": "Apache-2.0",
+      "notes": "Portable-skill workbench centered on resumable-sdd, a resumable spec-driven-development SKILL.md that works across Claude Code, Copilot, Cursor, Antigravity, and Gemini CLI."
+    },
+    {
+      "id": "github-skills",
+      "org": "skills",
+      "repo_url": "https://github.com/skills/exercise-creator",
+      "kind": "partner",
+      "vendor": "github",
+      "default_license": "Apache-2.0",
+      "notes": "GitHub Skills learning catalog"
+    },
+    {
+      "id": "openai-skills",
+      "org": "openai",
+      "repo_url": "https://github.com/openai/skills",
+      "kind": "partner",
+      "vendor": "openai",
+      "default_license": "unspecified",
+      "notes": "Skills Catalog for Codex"
+    },
+    {
+      "id": "nvidia-skills",
+      "org": "nvidia",
+      "repo_url": "https://github.com/nvidia/skills",
+      "kind": "partner",
+      "vendor": "nvidia",
+      "default_license": "varies",
+      "notes": "AI agent skills published by NVIDIA"
+    },
+    {
+      "id": "datadog-labs-agent-skills",
+      "org": "datadog-labs",
+      "repo_url": "https://github.com/datadog-labs/agent-skills",
+      "kind": "partner",
+      "vendor": "datadog",
+      "default_license": "MIT",
+      "notes": "Public repository for Datadog Agent Skills"
+    },
+    {
+      "id": "block-agent-skills",
+      "org": "block",
+      "repo_url": "https://github.com/block/agent-skills",
+      "kind": "partner",
+      "vendor": null,
+      "default_license": "Apache-2.0",
+      "notes": "A marketplace for agent skills"
+    }
+  ]
+}

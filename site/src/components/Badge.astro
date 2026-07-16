@@ -1,0 +1,76 @@
+---
+import { provenanceBadgeClass, provenanceLabel, epistemicBadgeClass, freshnessBadgeClass, LICENSE_BADGE_CLASS, formatBadgeDate } from '../utils/badgeStyles';
+
+interface Props {
+  type: 'provenance' | 'epistemic' | 'license' | 'freshness';
+  value: string | null;
+  provenance?: string;
+  vendor?: string | null;
+  reviewedAt?: string | null;
+  date?: string | null;
+}
+
+const { type, value, provenance, vendor, reviewedAt, date } = Astro.props;
+---
+
+{type === 'provenance' && (
+  <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold font-mono uppercase tracking-wider ${provenanceBadgeClass(value ?? 'community')}`}>
+    {value ? provenanceLabel(value, vendor ?? null) : ''}
+  </span>
+)}
+
+{type === 'epistemic' && (
+  <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+    value === 'human_read'
+      ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900/30'
+      : (provenance === 'official' || provenance === 'partner')
+      ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 border border-blue-200 dark:border-blue-900/30'
+      : 'bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200 dark:border-amber-900/30'
+  }`}>
+    {value === 'human_read' ? (
+      <span class="flex items-center gap-1 font-mono">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        Editor Choice {reviewedAt ? `· ${formatBadgeDate(reviewedAt)}` : ''}
+      </span>
+    ) : (provenance === 'official' || provenance === 'partner') ? (
+      <span class="flex items-center gap-1 font-mono">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        Publisher Verified (No Review Needed)
+      </span>
+    ) : (
+      <span class="flex items-center gap-1 font-mono">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+        Auto-summarized — not yet reviewed
+      </span>
+    )}
+  </span>
+)}
+
+{type === 'license' && (
+  <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-mono ${LICENSE_BADGE_CLASS}`}>
+    {value}
+  </span>
+)}
+
+{type === 'freshness' && (
+  <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${freshnessBadgeClass(value)}`}>
+    {value === 'drifted' ? (
+      <span class="flex items-center gap-1 font-mono">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+        Upstream changed{date ? ` · ${formatBadgeDate(date)}` : ''} — recheck pending
+      </span>
+    ) : (
+      <span class="flex items-center gap-1 font-mono">
+        Verified{date ? ` · ${formatBadgeDate(date)}` : ''}
+      </span>
+    )}
+  </span>
+)}

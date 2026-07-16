@@ -1,0 +1,160 @@
+---
+import SkillExplorer from '../components/SkillExplorer';
+import Layout from '../layouts/Layout.astro';
+import kbData from '../data/kb.json';
+
+const title = "SkillDeck — Curated Agent-Skills Knowledge Base";
+const description = "Find the best AI agent skills for any task. Get copy-pasteable installation commands instantly.";
+
+// Aggregate stats per publisher at build time
+const publisherCounts: Record<string, number> = {};
+let totalSkills = 0;
+
+for (const entry of kbData.entries) {
+  for (const skill of Object.values(entry.skill_refs as Record<string, any>)) {
+    totalSkills++;
+    let vendorId = 'community';
+    if (skill.vendor) {
+      vendorId = skill.vendor;
+    } else if (skill.provenance === 'official' || skill.provenance === 'partner') {
+      vendorId = 'partner-other';
+    }
+    publisherCounts[vendorId] = (publisherCounts[vendorId] || 0) + 1;
+  }
+}
+
+const PUBLISHER_CARDS = [
+  {
+    id: 'google',
+    name: 'Google',
+    description: 'Official skills for Gemini, Vertex AI, BigQuery, and Google Cloud services.',
+    accentColor: 'from-blue-600 to-sky-400 dark:from-blue-500 dark:to-sky-300',
+    borderColor: 'border-blue-200 dark:border-blue-800/60',
+    tag: 'Official Publisher'
+  },
+  {
+    id: 'anthropic',
+    name: 'Anthropic',
+    description: 'Official helper skills for Claude, MCP servers, and prompt/brand design.',
+    accentColor: 'from-amber-600 to-orange-400 dark:from-amber-500 dark:to-orange-300',
+    borderColor: 'border-amber-200 dark:border-amber-800/60',
+    tag: 'Official Publisher'
+  },
+  {
+    id: 'vercel',
+    name: 'Vercel',
+    description: 'Official agent skills for Next.js, React Native, and design guidelines.',
+    accentColor: 'from-zinc-800 to-zinc-550 dark:from-zinc-200 dark:to-zinc-400',
+    borderColor: 'border-zinc-200 dark:border-zinc-800/60',
+    tag: 'Official Publisher'
+  },
+  {
+    id: 'nvidia',
+    name: 'NVIDIA',
+    description: 'Verified partner skills optimized for CUDA, model training, and AI pipelines.',
+    accentColor: 'from-emerald-600 to-green-400 dark:from-emerald-500 dark:to-green-300',
+    borderColor: 'border-emerald-200 dark:border-emerald-800/60',
+    tag: 'Verified Partner'
+  },
+  {
+    id: 'datadog',
+    name: 'Datadog',
+    description: 'Verified partner skills for monitors, alerts, metrics, and cloud observability.',
+    accentColor: 'from-purple-600 to-indigo-400 dark:from-purple-500 dark:to-indigo-300',
+    borderColor: 'border-purple-200 dark:border-purple-800/60',
+    tag: 'Verified Partner'
+  },
+  {
+    id: 'openai',
+    name: 'OpenAI',
+    description: 'Verified partner skills developed for Codex and LLM capability mappings.',
+    accentColor: 'from-teal-600 to-emerald-400 dark:from-teal-500 dark:to-emerald-300',
+    borderColor: 'border-teal-200 dark:border-teal-800/60',
+    tag: 'Verified Partner'
+  },
+  {
+    id: 'community',
+    name: 'Community',
+    description: 'Open-source and independent developer skills curated and audited by editors.',
+    accentColor: 'from-orange-600 to-red-400 dark:from-orange-500 dark:to-red-300',
+    borderColor: 'border-orange-200 dark:border-orange-800/60',
+    tag: 'Community Curated'
+  }
+];
+---
+
+<Layout title={title} description={description} active="catalog" mainClass="flex-1 max-w-6xl w-full mx-auto px-4 py-12 md:py-16 space-y-16">
+  {/* Hero Section */}
+  <div class="space-y-4 max-w-3xl">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white font-sans">
+      The Curated <span class="text-blue-600 dark:text-blue-500">Agent Skills Index</span>
+    </h1>
+    <p class="text-lg md:text-xl text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans max-w-2xl">
+      Explore official and community-curated MCP servers, helper scripts, and prompt designs categorized by developer ecosystem and publishing orgs.
+    </p>
+    <div class="pt-2 text-xs font-mono text-zinc-400 space-y-1">
+      <div>Subject to editorial review; verify before production use.</div>
+      <div>Learn more about the standard at <a href="https://agentskills.io/home" class="text-blue-600 dark:text-blue-400 hover:underline">agentskills.io</a>.</div>
+    </div>
+  </div>
+
+  {/* Directory Grid */}
+  <div class="space-y-6">
+    <div class="flex justify-between items-baseline border-b border-zinc-200 dark:border-zinc-800 pb-3">
+      <h2 class="text-lg font-bold font-sans text-zinc-900 dark:text-white">
+        SKILL Publishing Organizations
+      </h2>
+      <span class="text-xs font-mono text-zinc-400">
+        Showing {PUBLISHER_CARDS.length} publishers &middot; {totalSkills} total skills
+      </span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {PUBLISHER_CARDS.map(card => {
+        const count = publisherCounts[card.id] || 0;
+        return (
+          <a
+            href={`#${card.id}`}
+            class={`block p-6 rounded-xl bg-white dark:bg-zinc-900 border ${card.borderColor} shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group text-left relative overflow-hidden`}
+          >
+            {/* Background Accent glow */}
+            <div class={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${card.accentColor} opacity-5 group-hover:opacity-10 rounded-bl-full transition-opacity duration-200`}></div>
+
+            <div class="space-y-3">
+              <div class="flex justify-between items-start gap-2">
+                <h3 class="text-lg font-bold text-zinc-950 dark:text-zinc-100 font-sans group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                  {card.name}
+                </h3>
+                <span class="inline-flex px-2 py-0.5 rounded text-[9px] font-mono font-semibold uppercase tracking-wider bg-zinc-100 dark:bg-zinc-800 text-zinc-650 dark:text-zinc-300">
+                  {card.tag}
+                </span>
+              </div>
+              <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans line-clamp-3">
+                {card.description}
+              </p>
+              <div class="pt-2 flex justify-between items-center text-xs font-mono text-zinc-400 dark:text-zinc-500">
+                <span class="font-semibold text-zinc-600 dark:text-zinc-300 group-hover:text-zinc-800 dark:group-hover:text-zinc-200 transition-colors font-sans">
+                  {count} skill{count !== 1 ? 's' : ''} available
+                </span>
+                <span class="inline-flex items-center gap-0.5 text-[10px] text-blue-600 dark:text-blue-400 font-bold opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200">
+                  View Skills &rarr;
+                </span>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+
+  {/* Explorer Pane */}
+  <div class="space-y-6">
+    <div class="border-b border-zinc-200 dark:border-zinc-800 pb-3">
+      <h2 class="text-lg font-bold font-sans text-zinc-900 dark:text-white">
+        Interactive Explorer
+      </h2>
+    </div>
+    <SkillExplorer kb={kbData as any} mode="publisher" client:load />
+  </div>
+</Layout>
+

@@ -1,0 +1,1434 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T14:29:37.933586Z",
+  "skills": [
+    {
+      "id": "anthropics-algorithmic-art",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/algorithmic-art",
+        "default_branch": "main"
+      },
+      "name": "algorithmic-art",
+      "frontmatter_description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "634f6fa42e4e697fa6afd293acd7fb8246574876",
+        "fetched_at": "2026-07-16T14:25:10.945105Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-024",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 81,
+        "word_count": 44,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.715524Z"
+      }
+    },
+    {
+      "id": "anthropics-brand-guidelines",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/brand-guidelines",
+        "default_branch": "main"
+      },
+      "name": "brand-guidelines",
+      "frontmatter_description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "47c72c607bdb5dd81bdea5de2b5e4f3992a5fd59",
+        "fetched_at": "2026-07-16T14:25:10.945145Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-025",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 59,
+        "word_count": 34,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.715702Z"
+      }
+    },
+    {
+      "id": "anthropics-canvas-design",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/canvas-design",
+        "default_branch": "main"
+      },
+      "name": "canvas-design",
+      "frontmatter_description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "9f63fee82de84cd4230e1d0e322247b61eb4c94c",
+        "fetched_at": "2026-07-16T14:25:10.945171Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-026",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 72,
+        "word_count": 46,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "You should use this skill when the user asks to create a poster, piece of art, design, or other static piece.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.715868Z"
+      }
+    },
+    {
+      "id": "anthropics-claude-api",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/claude-api",
+        "default_branch": "main"
+      },
+      "name": "claude-api",
+      "frontmatter_description": "Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration.\nTRIGGER — read BEFORE opening the target file; don't skip because it \"looks like a one-liner\" — whenever: the prompt names Claude/Anthropic in any form (Claude, Anthropic, Fable, Opus, Sonnet, Haiku, `anthropic`, `@anthropic-ai`, `claude-*`, `us.anthropic.*`, `[1m]`); the user asks about an LLM (pricing/model choice/limits/caching) — never answer from memory; OR the task is LLM-shaped with provider unstated (agent/MCP/tool-definition/multi-agent/RAG/LLM-judge/computer-use; generate/summarize/extract/classify/rewrite/converse over NL; debugging refusals/cutoffs/streaming/tool-calls/tokens).\nSKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativeai|genai|mistralai|cohere|ollama'` over the project hits (run this grep FIRST if no provider named — don't Read the file).",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "9a9407309936d7fd36858296374c246dc2c27e46",
+        "fetched_at": "2026-07-16T14:25:10.945228Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "agent-building",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-027",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": "build",
+      "nutrition": {
+        "token_estimate": 267,
+        "word_count": 124,
+        "line_count": 3,
+        "basis": "description",
+        "trigger": "SKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativea…",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.716071Z"
+      }
+    },
+    {
+      "id": "anthropics-doc-coauthoring",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/doc-coauthoring",
+        "default_branch": "main"
+      },
+      "name": "doc-coauthoring",
+      "frontmatter_description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "license": "varies",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "a5a69839ef4a161131d80b6daef10037a9686f4a",
+        "fetched_at": "2026-07-16T14:25:10.945260Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-028",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 107,
+        "word_count": 57,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.716236Z"
+      }
+    },
+    {
+      "id": "anthropics-docx",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/docx",
+        "default_branch": "main"
+      },
+      "name": "docx",
+      "frontmatter_description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "2951e559989765293b6fbf83942378a3c2d0cba6",
+        "fetched_at": "2026-07-16T14:25:10.945281Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-029",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 196,
+        "word_count": 117,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.716406Z"
+      }
+    },
+    {
+      "id": "anthropics-frontend-design",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/frontend-design",
+        "default_branch": "main"
+      },
+      "name": "frontend-design",
+      "frontmatter_description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "decdff43d05908b4c1fc2cfd2d80fc5743440934",
+        "fetched_at": "2026-07-16T14:25:10.945313Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "frontend",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-030",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": "build",
+      "nutrition": {
+        "token_estimate": 51,
+        "word_count": 29,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.716565Z"
+      }
+    },
+    {
+      "id": "anthropics-internal-comms",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/internal-comms",
+        "default_branch": "main"
+      },
+      "name": "internal-comms",
+      "frontmatter_description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "56ea935b74f371bfeb4c7d3c19d5139df866e73b",
+        "fetched_at": "2026-07-16T14:25:10.945333Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-031",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 82,
+        "word_count": 50,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.716727Z"
+      }
+    },
+    {
+      "id": "anthropics-mcp-builder",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/mcp-builder",
+        "default_branch": "main"
+      },
+      "name": "mcp-builder",
+      "frontmatter_description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "8a1a77a47d141967b246adb4da4f91037578ff7d",
+        "fetched_at": "2026-07-16T14:25:10.945354Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "agent-building",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-032",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": "build",
+      "nutrition": {
+        "token_estimate": 69,
+        "word_count": 39,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.716890Z"
+      }
+    },
+    {
+      "id": "anthropics-pdf",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/pdf",
+        "default_branch": "main"
+      },
+      "name": "pdf",
+      "frontmatter_description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "d3e046a5ae107a6cb23cfb16c219837094ab35d3",
+        "fetched_at": "2026-07-16T14:25:10.945376Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-033",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 109,
+        "word_count": 69,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use this skill whenever the user wants to do anything with PDF files.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.717059Z"
+      }
+    },
+    {
+      "id": "anthropics-pptx",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/pptx",
+        "default_branch": "main"
+      },
+      "name": "pptx",
+      "frontmatter_description": "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill.",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "df5000e17ef60ecf400e65bfcd3c58ff88b604c3",
+        "fetched_at": "2026-07-16T14:25:10.945398Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-034",
+      "score_default": 320,
+      "scores_by_tool": {
+        "claude-code": 370,
+        "claude-ai": 370,
+        "vscode-copilot": 320,
+        "antigravity": 320,
+        "gemini-cli": 320,
+        "cursor": 320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 172,
+        "word_count": 109,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.717242Z"
+      }
+    },
+    {
+      "id": "anthropics-skill-creator",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/skill-creator",
+        "default_branch": "main"
+      },
+      "name": "skill-creator",
+      "frontmatter_description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "license": "varies",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "65b3a402dbd09b8e83f9d637c6b553875189085c",
+        "fetched_at": "2026-07-16T14:25:10.945428Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "agent-building",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-035",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": "build",
+      "nutrition": {
+        "token_estimate": 80,
+        "word_count": 49,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's descripti…",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.717402Z"
+      }
+    },
+    {
+      "id": "anthropics-slack-gif-creator",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/slack-gif-creator",
+        "default_branch": "main"
+      },
+      "name": "slack-gif-creator",
+      "frontmatter_description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "16660d8ceb77af47986bba1c9176c2ff3f287a91",
+        "fetched_at": "2026-07-16T14:25:10.945452Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-036",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 57,
+        "word_count": 36,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.717558Z"
+      }
+    },
+    {
+      "id": "anthropics-theme-factory",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/theme-factory",
+        "default_branch": "main"
+      },
+      "name": "theme-factory",
+      "frontmatter_description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "90dfceaf2ecdc191a4dcfb0069768a9560638998",
+        "fetched_at": "2026-07-16T14:25:10.945475Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-037",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 66,
+        "word_count": 43,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Toolkit for styling artifacts with a theme.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.717718Z"
+      }
+    },
+    {
+      "id": "anthropics-web-artifacts-builder",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/web-artifacts-builder",
+        "default_branch": "main"
+      },
+      "name": "web-artifacts-builder",
+      "frontmatter_description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "8b39b19f259b4216ecb07574741dd8eaa9863a07",
+        "fetched_at": "2026-07-16T14:25:10.945499Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "frontend",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-038",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": "build",
+      "nutrition": {
+        "token_estimate": 72,
+        "word_count": 37,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.717876Z"
+      }
+    },
+    {
+      "id": "anthropics-webapp-testing",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/webapp-testing",
+        "default_branch": "main"
+      },
+      "name": "webapp-testing",
+      "frontmatter_description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "license": "Complete terms in LICENSE.txt",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "4726215301db64a0cc4d41fc3219c61f37a30f4a",
+        "fetched_at": "2026-07-16T14:25:10.945522Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "testing",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-039",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": "verify",
+      "nutrition": {
+        "token_estimate": 51,
+        "word_count": 25,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Toolkit for interacting with and testing local web applications using Playwright.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.718030Z"
+      }
+    },
+    {
+      "id": "anthropics-xlsx",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/xlsx",
+        "default_branch": "main"
+      },
+      "name": "xlsx",
+      "frontmatter_description": "Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .csv, or .tsv file (e.g., adding columns, computing formulas, formatting, charting, cleaning messy data); create a new spreadsheet from scratch or from other data sources; or convert between tabular file formats. Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it. Also trigger for cleaning or restructuring messy tabular data files (malformed rows, misplaced headers, junk data) into proper spreadsheets. The deliverable must be a spreadsheet file. Do NOT trigger when the primary deliverable is a Word document, HTML report, standalone Python script, database pipeline, or Google Sheets API integration, even if tabular data is involved.",
+      "license": "Proprietary. LICENSE.txt has complete terms",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "c5c881be9ebaa2bfcdd02f97de2ebd711ab78803",
+        "fetched_at": "2026-07-16T14:25:10.945545Z"
+      },
+      "status": "active",
+      "tier": "core",
+      "capability_id": "data-analysis",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-040",
+      "score_default": 1320,
+      "scores_by_tool": {
+        "claude-code": 1370,
+        "claude-ai": 1370,
+        "vscode-copilot": 1320,
+        "antigravity": 1320,
+        "gemini-cli": 1320,
+        "cursor": 1320
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 235,
+        "word_count": 151,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.718216Z"
+      }
+    },
+    {
+      "id": "anthropics-template-skill",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "template",
+        "default_branch": "main"
+      },
+      "name": "template-skill",
+      "frontmatter_description": "Replace with description of the skill and when Claude should use it.",
+      "license": "varies",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
+        "blob_sha": "50a4f9b104357d96361e257adb70454604cd15c0",
+        "fetched_at": "2026-07-16T14:25:10.945576Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-041",
+      "score_default": 320,
+      "scores_by_tool": {
+        "claude-code": 370,
+        "claude-ai": 370,
+        "vscode-copilot": 320,
+        "antigravity": 320,
+        "gemini-cli": 320,
+        "cursor": 320
+      },
+      "nutrition": {
+        "token_estimate": 17,
+        "word_count": 12,
+        "line_count": 1,
+        "basis": "description",
+        "trigger": "Replace with description of the skill and when Claude should use it.",
+        "body_blob_sha": null,
+        "computed_at": "2026-07-16T14:29:37.718368Z"
+      }
+    },
+    {
+      "id": "anthropic-docx",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/docx",
+        "default_branch": "main"
+      },
+      "name": "docx",
+      "frontmatter_description": "Create and edit Word documents (.docx) with advanced styling and layouts.",
+      "license": "source-available",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "def4567890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {
+        "claude-code": {
+          "plugin_name": "document-skills",
+          "marketplace": "anthropic-agent-skills"
+        }
+      },
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-pdf",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/pdf",
+        "default_branch": "main"
+      },
+      "name": "pdf",
+      "frontmatter_description": "Generate, edit, and read PDF files with formatting, text parsing, and page assembly.",
+      "license": "source-available",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defpdf7890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {
+        "claude-code": {
+          "plugin_name": "document-skills",
+          "marketplace": "anthropic-agent-skills"
+        }
+      },
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-xlsx",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/xlsx",
+        "default_branch": "main"
+      },
+      "name": "xlsx",
+      "frontmatter_description": "Read, analyze, write, and format Excel spreadsheets (.xlsx) with formulas and styling.",
+      "license": "source-available",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defxlsx890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "data-analysis",
+      "native_ecosystem": "claude",
+      "install_hints": {
+        "claude-code": {
+          "plugin_name": "data-skills",
+          "marketplace": "anthropic-agent-skills"
+        }
+      },
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-frontend-design",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/frontend-design",
+        "default_branch": "main"
+      },
+      "name": "frontend-design",
+      "frontmatter_description": "Generate modern HTML/CSS/JS components with high aesthetic value and interactive behaviors.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "deffro7890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "frontend",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-web-artifacts-builder",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/web-artifacts-builder",
+        "default_branch": "main"
+      },
+      "name": "web-artifacts-builder",
+      "frontmatter_description": "Build, test, and package standalone web artifacts, visualizations, and React components.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defart7890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "frontend",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-webapp-testing",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/webapp-testing",
+        "default_branch": "main"
+      },
+      "name": "webapp-testing",
+      "frontmatter_description": "Run Playwright and Cypress end-to-end tests for web applications, reporting visual and behavioral issues.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "deftst7890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "testing",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-mcp-builder",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/mcp-builder",
+        "default_branch": "main"
+      },
+      "name": "mcp-builder",
+      "frontmatter_description": "Design and build Model Context Protocol (MCP) servers in Node or Python.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defmcp7890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "agent-building",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-skill-creator",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/skill-creator",
+        "default_branch": "main"
+      },
+      "name": "skill-creator",
+      "frontmatter_description": "Convert developer workflows and API catalogs into reusable agent skills.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defskc7890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "agent-building",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-brand-guidelines",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/brand-guidelines",
+        "default_branch": "main"
+      },
+      "name": "brand-guidelines",
+      "frontmatter_description": "Analyze and apply custom color palettes, logos, styles, and identity guidelines.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defbrn7890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-theme-factory",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/theme-factory",
+        "default_branch": "main"
+      },
+      "name": "theme-factory",
+      "frontmatter_description": "Create unified dark/light themes, color schemes, and styles for web layouts.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defthem890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-algorithmic-art",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/algorithmic-art",
+        "default_branch": "main"
+      },
+      "name": "algorithmic-art",
+      "frontmatter_description": "Generate dynamic, procedural SVG and canvas art with code.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defart890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-canvas-design",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/canvas-design",
+        "default_branch": "main"
+      },
+      "name": "canvas-design",
+      "frontmatter_description": "Design interactive whiteboard layouts, cards, and canvas visual mappings.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defcan890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-slack-gif-creator",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/slack-gif-creator",
+        "default_branch": "main"
+      },
+      "name": "slack-gif-creator",
+      "frontmatter_description": "Generate animated GIFs and stickers matching custom Slack emojis.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defgif890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "design",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-internal-comms",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/internal-comms",
+        "default_branch": "main"
+      },
+      "name": "internal-comms",
+      "frontmatter_description": "Compose internal newsletters, announcements, and Slack memos.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defcom890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-doc-coauthoring",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/doc-coauthoring",
+        "default_branch": "main"
+      },
+      "name": "doc-coauthoring",
+      "frontmatter_description": "Interactive text coauthoring, markdown revisions, and formatting review.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defcoa890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "documents",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    },
+    {
+      "id": "anthropic-claude-api",
+      "source_id": "anthropic-official",
+      "provenance": "official",
+      "origin": {
+        "org": "anthropics",
+        "repo": "skills",
+        "path": "skills/claude-api",
+        "default_branch": "main"
+      },
+      "name": "claude-api",
+      "frontmatter_description": "Integrate Claude's REST API into node scripts with proper token handling.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "abc1234567890123456789012345678901234567",
+        "blob_sha": "defapi890123456789012345678901234567890",
+        "fetched_at": "2026-07-07T12:00:00Z"
+      },
+      "status": "gone",
+      "tier": "core",
+      "capability_id": "agent-building",
+      "native_ecosystem": "claude",
+      "install_hints": {},
+      "reviewed_by": "Antigravity",
+      "reviewed_at": "2026-07-07T14:00:00Z",
+      "reviewed_commit_sha": "abc1234567890123456789012345678901234567",
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null
+    }
+  ]
+}

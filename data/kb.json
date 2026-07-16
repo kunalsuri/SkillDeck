@@ -1,0 +1,3342 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-12T14:42:20.316870Z",
+  "tools": [
+    {
+      "id": "claude-code",
+      "label": "Claude Code"
+    },
+    {
+      "id": "claude-ai",
+      "label": "Claude.ai"
+    },
+    {
+      "id": "vscode-copilot",
+      "label": "VS Code / Copilot"
+    },
+    {
+      "id": "antigravity",
+      "label": "Antigravity"
+    },
+    {
+      "id": "gemini-cli",
+      "label": "Gemini CLI"
+    },
+    {
+      "id": "cursor",
+      "label": "Cursor"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "documents",
+      "label": "Create & edit documents",
+      "order": 1
+    },
+    {
+      "id": "data-analysis",
+      "label": "Analyze data & spreadsheets",
+      "order": 2
+    },
+    {
+      "id": "frontend",
+      "label": "Build web pages & UI",
+      "order": 3
+    },
+    {
+      "id": "cloud-ops",
+      "label": "Work with Google Cloud",
+      "order": 4
+    },
+    {
+      "id": "testing",
+      "label": "Test web apps & code",
+      "order": 5
+    },
+    {
+      "id": "planning",
+      "label": "Plan long agent tasks",
+      "order": 6
+    },
+    {
+      "id": "agent-building",
+      "label": "Build MCP servers & agents",
+      "order": 7
+    },
+    {
+      "id": "design",
+      "label": "Design, themes & branding",
+      "order": 8
+    }
+  ],
+  "lifecycle_phases": [
+    {
+      "id": "define",
+      "label": "Define",
+      "order": 1
+    },
+    {
+      "id": "plan",
+      "label": "Plan",
+      "order": 2
+    },
+    {
+      "id": "build",
+      "label": "Build",
+      "order": 3
+    },
+    {
+      "id": "verify",
+      "label": "Verify",
+      "order": 4
+    },
+    {
+      "id": "review",
+      "label": "Review",
+      "order": 5
+    },
+    {
+      "id": "ship",
+      "label": "Ship",
+      "order": 6
+    }
+  ],
+  "entries": [
+    {
+      "capability_id": "testing",
+      "recommended": {
+        "default": "anthropics-webapp-testing",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Test your local web app",
+        "what_it_does": "Interacts with and tests a locally running web app using Playwright — clicking through it, capturing screenshots, and reading browser logs. Helps confirm the frontend actually behaves as expected.",
+        "try_saying": "Test my local web app and take a screenshot of the login page.",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637430Z"
+      },
+      "skill_refs": {
+        "addyosmani-browser-testing-with-devtools": {
+          "name": "browser-testing-with-devtools",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/browser-testing-with-devtools",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:23.719238Z",
+          "lifecycle_phase": "verify",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/browser-testing-with-devtools/ (personal) or .claude/skills/browser-testing-with-devtools/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/browser-testing-with-devtools/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/browser-testing-with-devtools/"
+          },
+          "nutrition": {
+            "token_estimate": 3388,
+            "word_count": 2082,
+            "line_count": 313,
+            "basis": "body",
+            "trigger": "Use when building or debugging anything that runs in a browser.",
+            "body_blob_sha": "9864d2724e273e1164d62ab10b73590ae00fd6a8",
+            "computed_at": "2026-07-12T14:42:14.931725Z"
+          }
+        },
+        "addyosmani-ci-cd-and-automation": {
+          "name": "ci-cd-and-automation",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/ci-cd-and-automation",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:24.313101Z",
+          "lifecycle_phase": "ship",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/ci-cd-and-automation/ (personal) or .claude/skills/ci-cd-and-automation/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/ci-cd-and-automation/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/ci-cd-and-automation/"
+          },
+          "nutrition": {
+            "token_estimate": 2688,
+            "word_count": 1524,
+            "line_count": 386,
+            "basis": "body",
+            "trigger": "Use when setting up or modifying build and deployment pipelines.",
+            "body_blob_sha": "118456fcb10225c030769a4fee7815b9c536b0ce",
+            "computed_at": "2026-07-12T14:42:14.932544Z"
+          }
+        },
+        "addyosmani-code-review-and-quality": {
+          "name": "code-review-and-quality",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/code-review-and-quality",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:24.974377Z",
+          "lifecycle_phase": "review",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/code-review-and-quality/ (personal) or .claude/skills/code-review-and-quality/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/code-review-and-quality/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/code-review-and-quality/"
+          },
+          "nutrition": {
+            "token_estimate": 5044,
+            "word_count": 3219,
+            "line_count": 392,
+            "basis": "body",
+            "trigger": "Use when reviewing code written by yourself, another agent, or a human.",
+            "body_blob_sha": "01c4ebe0424eb25109d0802c46e8d8667947df9b",
+            "computed_at": "2026-07-12T14:42:14.933754Z"
+          }
+        },
+        "addyosmani-debugging-and-error-recovery": {
+          "name": "debugging-and-error-recovery",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/debugging-and-error-recovery",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:26.750689Z",
+          "lifecycle_phase": "verify",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/debugging-and-error-recovery/ (personal) or .claude/skills/debugging-and-error-recovery/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/debugging-and-error-recovery/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/debugging-and-error-recovery/"
+          },
+          "nutrition": {
+            "token_estimate": 2483,
+            "word_count": 1604,
+            "line_count": 296,
+            "basis": "body",
+            "trigger": "Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error.",
+            "body_blob_sha": "51743d47c2f9ddb699a6d8084c29b709d017b529",
+            "computed_at": "2026-07-12T14:42:14.936101Z"
+          }
+        },
+        "addyosmani-test-driven-development": {
+          "name": "test-driven-development",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/test-driven-development",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:36.295821Z",
+          "lifecycle_phase": "verify",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/test-driven-development/ (personal) or .claude/skills/test-driven-development/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/test-driven-development/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/test-driven-development/"
+          },
+          "nutrition": {
+            "token_estimate": 3620,
+            "word_count": 2176,
+            "line_count": 379,
+            "basis": "body",
+            "trigger": "Use when implementing any logic, fixing any bug, or changing any behavior.",
+            "body_blob_sha": "c96a67f4560121a4761baad2efeaa51ef1602d7a",
+            "computed_at": "2026-07-12T14:42:14.950976Z"
+          }
+        },
+        "anthropics-webapp-testing": {
+          "name": "webapp-testing",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.997071Z",
+          "lifecycle_phase": "verify",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/webapp-testing/ (personal) or .claude/skills/webapp-testing/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/webapp-testing/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/webapp-testing/"
+          },
+          "nutrition": {
+            "token_estimate": 51,
+            "word_count": 25,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Toolkit for interacting with and testing local web applications using Playwright.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.955909Z"
+          }
+        }
+      },
+      "alternatives": [
+        "addyosmani-browser-testing-with-devtools",
+        "addyosmani-ci-cd-and-automation",
+        "addyosmani-code-review-and-quality",
+        "addyosmani-debugging-and-error-recovery",
+        "addyosmani-test-driven-development"
+      ]
+    },
+    {
+      "capability_id": "planning",
+      "recommended": {
+        "default": "addyosmani-context-engineering",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Set up your assistant's project context",
+        "what_it_does": "Configures the background information and rules your coding assistant uses so it gives better answers. Useful when starting a new project or when its responses start feeling off.",
+        "try_saying": "Set up the project rules and context files so you understand this codebase better.",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637220Z"
+      },
+      "skill_refs": {
+        "addyosmani-context-engineering": {
+          "name": "context-engineering",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/context-engineering",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:26.163777Z",
+          "lifecycle_phase": "plan",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/context-engineering/ (personal) or .claude/skills/context-engineering/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/context-engineering/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/context-engineering/"
+          },
+          "nutrition": {
+            "token_estimate": 2574,
+            "word_count": 1553,
+            "line_count": 285,
+            "basis": "body",
+            "trigger": "Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project.",
+            "body_blob_sha": "be991103fe2b13f7e5f6f5da9d3c6029ad30ac64",
+            "computed_at": "2026-07-12T14:42:14.935364Z"
+          }
+        },
+        "addyosmani-idea-refine": {
+          "name": "idea-refine",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/idea-refine",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:30.391327Z",
+          "lifecycle_phase": "define",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/idea-refine/ (personal) or .claude/skills/idea-refine/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/idea-refine/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/idea-refine/"
+          },
+          "nutrition": {
+            "token_estimate": 1927,
+            "word_count": 1221,
+            "line_count": 174,
+            "basis": "body",
+            "trigger": "Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one.",
+            "body_blob_sha": "38955e8943f2ea68c041f10ef1902d94bdfb1cb9",
+            "computed_at": "2026-07-12T14:42:14.941854Z"
+          }
+        },
+        "addyosmani-incremental-implementation": {
+          "name": "incremental-implementation",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/incremental-implementation",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:30.973474Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/incremental-implementation/ (personal) or .claude/skills/incremental-implementation/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/incremental-implementation/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/incremental-implementation/"
+          },
+          "nutrition": {
+            "token_estimate": 2168,
+            "word_count": 1400,
+            "line_count": 245,
+            "basis": "body",
+            "trigger": "Use when implementing any feature or change that touches more than one file.",
+            "body_blob_sha": "f18acb64e8152c68554b3359203f52afb5715a93",
+            "computed_at": "2026-07-12T14:42:14.942693Z"
+          }
+        },
+        "addyosmani-interview-me": {
+          "name": "interview-me",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/interview-me",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:31.566967Z",
+          "lifecycle_phase": "define",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/interview-me/ (personal) or .claude/skills/interview-me/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/interview-me/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/interview-me/"
+          },
+          "nutrition": {
+            "token_estimate": 3446,
+            "word_count": 2322,
+            "line_count": 221,
+            "basis": "body",
+            "trigger": "Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you…",
+            "body_blob_sha": "de5e3aff0c497e2d474e329cde447678632e082b",
+            "computed_at": "2026-07-12T14:42:14.943583Z"
+          }
+        },
+        "addyosmani-planning-and-task-breakdown": {
+          "name": "planning-and-task-breakdown",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/planning-and-task-breakdown",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:33.311874Z",
+          "lifecycle_phase": "plan",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/planning-and-task-breakdown/ (personal) or .claude/skills/planning-and-task-breakdown/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/planning-and-task-breakdown/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/planning-and-task-breakdown/"
+          },
+          "nutrition": {
+            "token_estimate": 1815,
+            "word_count": 1212,
+            "line_count": 230,
+            "basis": "body",
+            "trigger": "Use when you have a spec or clear requirements and need to break work into implementable tasks.",
+            "body_blob_sha": "ada6cbc135055f045960a70ff504f1d5371612f7",
+            "computed_at": "2026-07-12T14:42:14.946245Z"
+          }
+        },
+        "addyosmani-spec-driven-development": {
+          "name": "spec-driven-development",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/spec-driven-development",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:35.719505Z",
+          "lifecycle_phase": "define",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/spec-driven-development/ (personal) or .claude/skills/spec-driven-development/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/spec-driven-development/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/spec-driven-development/"
+          },
+          "nutrition": {
+            "token_estimate": 2048,
+            "word_count": 1246,
+            "line_count": 202,
+            "basis": "body",
+            "trigger": "Use when starting a new project, feature, or significant change and no specification exists yet.",
+            "body_blob_sha": "569d22321469770385b1ff89bf69f498f2202bc6",
+            "computed_at": "2026-07-12T14:42:14.950153Z"
+          }
+        },
+        "kunalsuri-resumable-sdd": {
+          "name": "resumable-sdd",
+          "repo_url": "https://github.com/kunalsuri/agent-skills/tree/main/resumable-sdd",
+          "provenance": "community",
+          "vendor": null,
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:38.924759Z",
+          "lifecycle_phase": "plan",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/resumable-sdd/ (personal) or .claude/skills/resumable-sdd/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/resumable-sdd/",
+            "antigravity": "npx skills install github.com/kunalsuri/agent-skills",
+            "gemini-cli": "npx skills install github.com/kunalsuri/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/resumable-sdd/"
+          },
+          "nutrition": {
+            "token_estimate": 1313,
+            "word_count": 841,
+            "line_count": 132,
+            "basis": "body",
+            "trigger": "Use when a task is large enough to span multiple sessions, could be interrupted mid-way, or when the user asks for spec-driven development, SDD, or a process that survives the agent stopping unexpect…",
+            "body_blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
+            "computed_at": "2026-07-12T14:42:14.970532Z"
+          }
+        }
+      },
+      "alternatives": [
+        "addyosmani-idea-refine",
+        "addyosmani-incremental-implementation",
+        "addyosmani-interview-me",
+        "addyosmani-planning-and-task-breakdown",
+        "addyosmani-spec-driven-development",
+        "kunalsuri-resumable-sdd"
+      ]
+    },
+    {
+      "capability_id": "documents",
+      "recommended": {
+        "default": "anthropics-doc-coauthoring",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Co-write a document with your assistant",
+        "what_it_does": "Walks through writing documentation, proposals, or technical specs together step by step, refining the content through iteration. Helps transfer your context into a polished, structured document.",
+        "try_saying": "Help me co-write a technical proposal for this new feature.",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637345Z"
+      },
+      "skill_refs": {
+        "addyosmani-documentation-and-adrs": {
+          "name": "documentation-and-adrs",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/documentation-and-adrs",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:27.953997Z",
+          "lifecycle_phase": "define",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/documentation-and-adrs/ (personal) or .claude/skills/documentation-and-adrs/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/documentation-and-adrs/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/documentation-and-adrs/"
+          },
+          "nutrition": {
+            "token_estimate": 2109,
+            "word_count": 1291,
+            "line_count": 274,
+            "basis": "body",
+            "trigger": "Use when making architectural decisions, changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
+            "body_blob_sha": "061c5e1a0a9faf07bd8c65bbd03141fab7b044bd",
+            "computed_at": "2026-07-12T14:42:14.938070Z"
+          }
+        },
+        "anthropics-doc-coauthoring": {
+          "name": "doc-coauthoring",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "varies",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996792Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/doc-coauthoring/ (personal) or .claude/skills/doc-coauthoring/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/doc-coauthoring/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/doc-coauthoring/"
+          },
+          "nutrition": {
+            "token_estimate": 107,
+            "word_count": 57,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.953332Z"
+          }
+        },
+        "anthropics-docx": {
+          "name": "docx",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/docx",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Proprietary. LICENSE.txt has complete terms",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996814Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/docx/ (personal) or .claude/skills/docx/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/docx/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/docx/"
+          },
+          "nutrition": {
+            "token_estimate": 196,
+            "word_count": 117,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.953601Z"
+          }
+        },
+        "anthropics-internal-comms": {
+          "name": "internal-comms",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996866Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/internal-comms/ (personal) or .claude/skills/internal-comms/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/internal-comms/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/internal-comms/"
+          },
+          "nutrition": {
+            "token_estimate": 82,
+            "word_count": 50,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.954099Z"
+          }
+        },
+        "anthropics-pdf": {
+          "name": "pdf",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/pdf",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Proprietary. LICENSE.txt has complete terms",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996913Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/pdf/ (personal) or .claude/skills/pdf/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/pdf/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/pdf/"
+          },
+          "nutrition": {
+            "token_estimate": 109,
+            "word_count": 69,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use this skill whenever the user wants to do anything with PDF files.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.954594Z"
+          }
+        },
+        "anthropics-pptx": {
+          "name": "pptx",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/pptx",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Proprietary. LICENSE.txt has complete terms",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996937Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/pptx/ (personal) or .claude/skills/pptx/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/pptx/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/pptx/"
+          },
+          "nutrition": {
+            "token_estimate": 172,
+            "word_count": 109,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.954877Z"
+          }
+        },
+        "vercel-labs-writing-guidelines": {
+          "name": "writing-guidelines",
+          "repo_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/writing-guidelines",
+          "provenance": "official",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:21.196672Z",
+          "lifecycle_phase": "review",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/writing-guidelines/ (personal) or .claude/skills/writing-guidelines/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/writing-guidelines/",
+            "antigravity": "npx skills install github.com/vercel-labs/agent-skills",
+            "gemini-cli": "npx skills install github.com/vercel-labs/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/writing-guidelines/"
+          },
+          "nutrition": {
+            "token_estimate": 52,
+            "word_count": 31,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when asked to \"review my docs\", \"check writing style\", \"audit prose\", \"review docs voice and tone\", or \"check this page against the writing handbook\".",
+            "body_blob_sha": "63facf310252a990d154bed12b3dcdd295ba771a",
+            "computed_at": "2026-07-10T19:32:30.741052Z"
+          }
+        }
+      },
+      "alternatives": [
+        "anthropics-docx",
+        "anthropics-internal-comms",
+        "anthropics-pdf",
+        "vercel-labs-writing-guidelines",
+        "anthropics-pptx",
+        "addyosmani-documentation-and-adrs"
+      ]
+    },
+    {
+      "capability_id": "frontend",
+      "recommended": {
+        "default": "anthropics-frontend-design",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Give your UI a distinctive look",
+        "what_it_does": "Provides direction on visual style, typography, and layout choices so a new interface doesn't look like a generic template. Useful when building or restyling a user-facing page.",
+        "try_saying": "Give this landing page a more distinctive, intentional visual design.",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637360Z"
+      },
+      "skill_refs": {
+        "addyosmani-frontend-ui-engineering": {
+          "name": "frontend-ui-engineering",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/frontend-ui-engineering",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:29.154758Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/frontend-ui-engineering/ (personal) or .claude/skills/frontend-ui-engineering/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/frontend-ui-engineering/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/frontend-ui-engineering/"
+          },
+          "nutrition": {
+            "token_estimate": 2578,
+            "word_count": 1398,
+            "line_count": 324,
+            "basis": "body",
+            "trigger": "Use when building or modifying interfaces and pages, creating components, implementing layouts, meeting WCAG accessibility requirements, managing state, or when the output needs to look and feel prod…",
+            "body_blob_sha": "ad64ed29cdfeed9b7ecdd535db34cf98379041ae",
+            "computed_at": "2026-07-12T14:42:14.940122Z"
+          }
+        },
+        "anthropics-frontend-design": {
+          "name": "frontend-design",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996845Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/frontend-design/ (personal) or .claude/skills/frontend-design/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/frontend-design/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/frontend-design/"
+          },
+          "nutrition": {
+            "token_estimate": 51,
+            "word_count": 29,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.953847Z"
+          }
+        },
+        "anthropics-web-artifacts-builder": {
+          "name": "web-artifacts-builder",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.997046Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/web-artifacts-builder/ (personal) or .claude/skills/web-artifacts-builder/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/web-artifacts-builder/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/web-artifacts-builder/"
+          },
+          "nutrition": {
+            "token_estimate": 72,
+            "word_count": 37,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.955710Z"
+          }
+        },
+        "vercel-labs-vercel-composition-patterns": {
+          "name": "vercel-composition-patterns",
+          "repo_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/composition-patterns",
+          "provenance": "official",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:21.196208Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/vercel-composition-patterns/ (personal) or .claude/skills/vercel-composition-patterns/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/vercel-composition-patterns/",
+            "antigravity": "npx skills install github.com/vercel-labs/agent-skills",
+            "gemini-cli": "npx skills install github.com/vercel-labs/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/vercel-composition-patterns/"
+          },
+          "nutrition": {
+            "token_estimate": 78,
+            "word_count": 39,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs.",
+            "body_blob_sha": "d07025bf943345bc1cf15eb923594f889ff881f0",
+            "computed_at": "2026-07-10T19:32:30.740499Z"
+          }
+        },
+        "vercel-labs-vercel-react-best-practices": {
+          "name": "vercel-react-best-practices",
+          "repo_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
+          "provenance": "official",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:21.196301Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/vercel-react-best-practices/ (personal) or .claude/skills/vercel-react-best-practices/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/vercel-react-best-practices/",
+            "antigravity": "npx skills install github.com/vercel-labs/agent-skills",
+            "gemini-cli": "npx skills install github.com/vercel-labs/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/vercel-react-best-practices/"
+          },
+          "nutrition": {
+            "token_estimate": 82,
+            "word_count": 41,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+            "body_blob_sha": "237988de4a66dd8a71d30a2c24ebe1a86b58d04e",
+            "computed_at": "2026-07-10T19:32:30.740652Z"
+          }
+        },
+        "vercel-labs-vercel-react-native-skills": {
+          "name": "vercel-react-native-skills",
+          "repo_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-native-skills",
+          "provenance": "official",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:21.196465Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/vercel-react-native-skills/ (personal) or .claude/skills/vercel-react-native-skills/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/vercel-react-native-skills/",
+            "antigravity": "npx skills install github.com/vercel-labs/agent-skills",
+            "gemini-cli": "npx skills install github.com/vercel-labs/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/vercel-react-native-skills/"
+          },
+          "nutrition": {
+            "token_estimate": 74,
+            "word_count": 40,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when building React Native components, optimizing list performance, implementing animations, or working with native modules.",
+            "body_blob_sha": "73401865dd7440a43c5243b107a3763e0d2f4aae",
+            "computed_at": "2026-07-10T19:32:30.740714Z"
+          }
+        },
+        "vercel-labs-vercel-react-view-transitions": {
+          "name": "vercel-react-view-transitions",
+          "repo_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions",
+          "provenance": "official",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:21.196514Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/vercel-react-view-transitions/ (personal) or .claude/skills/vercel-react-view-transitions/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/vercel-react-view-transitions/",
+            "antigravity": "npx skills install github.com/vercel-labs/agent-skills",
+            "gemini-cli": "npx skills install github.com/vercel-labs/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/vercel-react-view-transitions/"
+          },
+          "nutrition": {
+            "token_estimate": 166,
+            "word_count": 80,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Also use when the user mentions view transitions, `startViewTransition`, `ViewTransition`, transition types, or asks about animating between UI states in React without third-party animation libraries.",
+            "body_blob_sha": "dcecd8e3f356c73f340676cfcefb33539435e987",
+            "computed_at": "2026-07-10T19:32:30.740815Z"
+          }
+        },
+        "vercel-labs-vercel-optimize": {
+          "name": "vercel-optimize",
+          "repo_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/vercel-optimize",
+          "provenance": "official",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:21.196588Z",
+          "lifecycle_phase": "verify",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/vercel-optimize/ (personal) or .claude/skills/vercel-optimize/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/vercel-optimize/",
+            "antigravity": "npx skills install github.com/vercel-labs/agent-skills",
+            "gemini-cli": "npx skills install github.com/vercel-labs/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/vercel-optimize/"
+          },
+          "nutrition": {
+            "token_estimate": 142,
+            "word_count": 73,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use for Vercel cost and performance optimization on deployed projects, especially Next.js, SvelteKit, Nuxt, and limited Astro apps.",
+            "body_blob_sha": "c8a6d6d7075b2cc3f7921da89de86e6926f78985",
+            "computed_at": "2026-07-10T19:32:30.740937Z"
+          }
+        },
+        "vercel-labs-web-design-guidelines": {
+          "name": "web-design-guidelines",
+          "repo_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines",
+          "provenance": "official",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:21.196637Z",
+          "lifecycle_phase": "review",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/web-design-guidelines/ (personal) or .claude/skills/web-design-guidelines/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/web-design-guidelines/",
+            "antigravity": "npx skills install github.com/vercel-labs/agent-skills",
+            "gemini-cli": "npx skills install github.com/vercel-labs/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/web-design-guidelines/"
+          },
+          "nutrition": {
+            "token_estimate": 46,
+            "word_count": 28,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+            "body_blob_sha": "ceae92ab319216a68274168fba9b63b998b65997",
+            "computed_at": "2026-07-10T19:32:30.740992Z"
+          }
+        }
+      },
+      "alternatives": [
+        "anthropics-web-artifacts-builder",
+        "vercel-labs-vercel-composition-patterns",
+        "vercel-labs-vercel-optimize",
+        "vercel-labs-vercel-react-best-practices",
+        "vercel-labs-vercel-react-native-skills",
+        "vercel-labs-vercel-react-view-transitions",
+        "vercel-labs-web-design-guidelines",
+        "addyosmani-frontend-ui-engineering"
+      ]
+    },
+    {
+      "capability_id": "agent-building",
+      "recommended": {
+        "default": "anthropics-claude-api",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Get answers about the Claude API",
+        "what_it_does": "Reference guide for building with the Claude API — models, pricing, streaming, tool use, and connecting external tools. Use it when integrating Claude into your own application.",
+        "try_saying": "How do I stream responses from the Claude API in Python?",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637337Z"
+      },
+      "skill_refs": {
+        "addyosmani-using-agent-skills": {
+          "name": "using-agent-skills",
+          "repo_url": "https://github.com/addyosmani/agent-skills/tree/main/skills/using-agent-skills",
+          "provenance": "community",
+          "vendor": null,
+          "license": "MIT",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:36.883214Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/using-agent-skills/ (personal) or .claude/skills/using-agent-skills/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/using-agent-skills/",
+            "antigravity": "npx skills install github.com/addyosmani/agent-skills",
+            "gemini-cli": "npx skills install github.com/addyosmani/agent-skills",
+            "cursor": "Copy the folder to .cursor/skills/using-agent-skills/"
+          },
+          "nutrition": {
+            "token_estimate": 2355,
+            "word_count": 1265,
+            "line_count": 187,
+            "basis": "body",
+            "trigger": "Use when starting a session or when you need to discover which skill applies to the current task.",
+            "body_blob_sha": "975fb5c2569c036d62985aeacdf9368d0fac0771",
+            "computed_at": "2026-07-12T14:42:14.951845Z"
+          }
+        },
+        "anthropics-claude-api": {
+          "name": "claude-api",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/claude-api",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996759Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/claude-api/ (personal) or .claude/skills/claude-api/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/claude-api/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/claude-api/"
+          },
+          "nutrition": {
+            "token_estimate": 267,
+            "word_count": 124,
+            "line_count": 3,
+            "basis": "description",
+            "trigger": "SKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativea…",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.953071Z"
+          }
+        },
+        "anthropics-mcp-builder": {
+          "name": "mcp-builder",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/mcp-builder",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996889Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/mcp-builder/ (personal) or .claude/skills/mcp-builder/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/mcp-builder/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/mcp-builder/"
+          },
+          "nutrition": {
+            "token_estimate": 69,
+            "word_count": 39,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.954328Z"
+          }
+        },
+        "anthropics-skill-creator": {
+          "name": "skill-creator",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/skill-creator",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "varies",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996968Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/skill-creator/ (personal) or .claude/skills/skill-creator/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/skill-creator/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/skill-creator/"
+          },
+          "nutrition": {
+            "token_estimate": 80,
+            "word_count": 49,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's descripti…",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.955091Z"
+          }
+        },
+        "google-google-agents-cli-onboarding": {
+          "name": "google-agents-cli-onboarding",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-agents-cli-onboarding",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.753683Z",
+          "lifecycle_phase": "build",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-agents-cli-onboarding/ (personal) or .claude/skills/google-agents-cli-onboarding/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-agents-cli-onboarding/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-agents-cli-onboarding/"
+          },
+          "nutrition": {
+            "token_estimate": 882,
+            "word_count": 522,
+            "line_count": 78,
+            "basis": "body",
+            "trigger": "Onboarding entrypoint for agents-cli in Agent Platform.",
+            "body_blob_sha": "720444e3332ca7f4bb1712eb8707ef9d07185f05",
+            "computed_at": "2026-07-12T14:42:14.967863Z"
+          }
+        }
+      },
+      "alternatives": [
+        "anthropics-mcp-builder",
+        "anthropics-skill-creator",
+        "google-google-agents-cli-onboarding",
+        "addyosmani-using-agent-skills"
+      ]
+    },
+    {
+      "capability_id": "design",
+      "recommended": {
+        "default": "anthropics-algorithmic-art",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Create generative art with code",
+        "what_it_does": "Generates original algorithmic art — flow fields, particle systems, seeded randomness — using the p5.js creative coding library. Lets you explore visual patterns interactively rather than drawing them by hand.",
+        "try_saying": "Create a generative art piece using flow fields and soft pastel colors.",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637315Z"
+      },
+      "skill_refs": {
+        "anthropics-algorithmic-art": {
+          "name": "algorithmic-art",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/algorithmic-art",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996645Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/algorithmic-art/ (personal) or .claude/skills/algorithmic-art/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/algorithmic-art/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/algorithmic-art/"
+          },
+          "nutrition": {
+            "token_estimate": 81,
+            "word_count": 44,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.952175Z"
+          }
+        },
+        "anthropics-brand-guidelines": {
+          "name": "brand-guidelines",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996693Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/brand-guidelines/ (personal) or .claude/skills/brand-guidelines/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/brand-guidelines/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/brand-guidelines/"
+          },
+          "nutrition": {
+            "token_estimate": 59,
+            "word_count": 34,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.952452Z"
+          }
+        },
+        "anthropics-canvas-design": {
+          "name": "canvas-design",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996723Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/canvas-design/ (personal) or .claude/skills/canvas-design/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/canvas-design/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/canvas-design/"
+          },
+          "nutrition": {
+            "token_estimate": 72,
+            "word_count": 46,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "You should use this skill when the user asks to create a poster, piece of art, design, or other static piece.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.952698Z"
+          }
+        },
+        "anthropics-slack-gif-creator": {
+          "name": "slack-gif-creator",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.996995Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/slack-gif-creator/ (personal) or .claude/skills/slack-gif-creator/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/slack-gif-creator/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/slack-gif-creator/"
+          },
+          "nutrition": {
+            "token_estimate": 57,
+            "word_count": 36,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.955282Z"
+          }
+        },
+        "anthropics-theme-factory": {
+          "name": "theme-factory",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/theme-factory",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Complete terms in LICENSE.txt",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.997020Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/theme-factory/ (personal) or .claude/skills/theme-factory/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/theme-factory/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/theme-factory/"
+          },
+          "nutrition": {
+            "token_estimate": 66,
+            "word_count": 43,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Toolkit for styling artifacts with a theme.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.955503Z"
+          }
+        }
+      },
+      "alternatives": [
+        "anthropics-brand-guidelines",
+        "anthropics-canvas-design",
+        "anthropics-slack-gif-creator",
+        "anthropics-theme-factory"
+      ]
+    },
+    {
+      "capability_id": "data-analysis",
+      "recommended": {
+        "default": "anthropics-xlsx",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Create or edit a spreadsheet",
+        "what_it_does": "Opens, edits, formats, and creates Excel and CSV spreadsheets — including formulas, charts, and cleaning up messy data. Use it any time a spreadsheet is the input or output.",
+        "try_saying": "Clean up this messy spreadsheet and add a summary chart.",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637437Z"
+      },
+      "skill_refs": {
+        "anthropics-xlsx": {
+          "name": "xlsx",
+          "repo_url": "https://github.com/anthropics/skills/tree/main/skills/xlsx",
+          "provenance": "official",
+          "vendor": "anthropic",
+          "license": "Proprietary. LICENSE.txt has complete terms",
+          "review_status": "human_read",
+          "reviewed_at": "2026-07-07T14:00:00Z",
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:04.997098Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/xlsx/ (personal) or .claude/skills/xlsx/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/xlsx/",
+            "antigravity": "npx skills install github.com/anthropics/skills",
+            "gemini-cli": "npx skills install github.com/anthropics/skills",
+            "cursor": "Copy the folder to .cursor/skills/xlsx/"
+          },
+          "nutrition": {
+            "token_estimate": 235,
+            "word_count": 151,
+            "line_count": 1,
+            "basis": "description",
+            "trigger": "Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it.",
+            "body_blob_sha": null,
+            "computed_at": "2026-07-12T14:42:14.956169Z"
+          }
+        },
+        "google-google-analytics-data-api-basics": {
+          "name": "google-analytics-data-api-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/analytics/google-analytics-data-api-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.647925Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-analytics-data-api-basics/ (personal) or .claude/skills/google-analytics-data-api-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-analytics-data-api-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-analytics-data-api-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 2240,
+            "word_count": 987,
+            "line_count": 252,
+            "basis": "body",
+            "trigger": "Use when you need to interact with Google Analytics properties, run customized analytics reports, query metrics (like activeUsers, screenPageViews) and dimensions (like city, date), check metrics and…",
+            "body_blob_sha": "1d669070b5b5f0807bdf7c1c15059cba176a2d73",
+            "computed_at": "2026-07-12T14:42:14.965034Z"
+          }
+        },
+        "google-bigquery-ai-ml": {
+          "name": "bigquery-ai-ml",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/bigquery-ai-ml",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648340Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/bigquery-ai-ml/ (personal) or .claude/skills/bigquery-ai-ml/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/bigquery-ai-ml/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/bigquery-ai-ml/"
+          },
+          "nutrition": {
+            "token_estimate": 66,
+            "word_count": 36,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to write SQL queries that perform time-series forecasting, detect outliers, find key drivers, or leverage generative AI capabilities in BigQuery.",
+            "body_blob_sha": "5fb001712501319717b5bc75388ec6c0bb2d911d",
+            "computed_at": "2026-07-10T19:32:30.737952Z"
+          }
+        },
+        "google-bigquery-basics": {
+          "name": "bigquery-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/bigquery-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648367Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/bigquery-basics/ (personal) or .claude/skills/bigquery-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/bigquery-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/bigquery-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 52,
+            "word_count": 31,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to interact with BigQuery, run SQL queries, manage BigQuery resources (datasets, tables, views), or perform basic data ingestion and analysis.",
+            "body_blob_sha": "3e57636f5f4a9a6ae8809e1e772c4405254c35e9",
+            "computed_at": "2026-07-10T19:32:30.738009Z"
+          }
+        },
+        "google-bigquery-bigframes": {
+          "name": "bigquery-bigframes",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/bigquery-bigframes",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648397Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/bigquery-bigframes/ (personal) or .claude/skills/bigquery-bigframes/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/bigquery-bigframes/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/bigquery-bigframes/"
+          },
+          "nutrition": {
+            "token_estimate": 80,
+            "word_count": 41,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when writing BigFrames code or doing pandas-style dataframe/ML work against BigQuery (e.g.",
+            "body_blob_sha": "3819b122e1be886425e756200361e24384dabf89",
+            "computed_at": "2026-07-10T19:32:30.738064Z"
+          }
+        },
+        "google-datalineage-bigquery-asset-impact-analysis": {
+          "name": "datalineage-bigquery-asset-impact-analysis",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/datalineage-bigquery-asset-impact-analysis",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.284098Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/datalineage-bigquery-asset-impact-analysis/ (personal) or .claude/skills/datalineage-bigquery-asset-impact-analysis/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/datalineage-bigquery-asset-impact-analysis/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/datalineage-bigquery-asset-impact-analysis/"
+          },
+          "nutrition": {
+            "token_estimate": 1450,
+            "word_count": 735,
+            "line_count": 120,
+            "basis": "body",
+            "trigger": "Use when: - Performing a blast radius or impact analysis for a BigQuery table or view.",
+            "body_blob_sha": "890ee413e0b031d27062c542587e8adfe8a31ace",
+            "computed_at": "2026-07-12T14:42:14.965591Z"
+          }
+        }
+      },
+      "alternatives": [
+        "google-bigquery-ai-ml",
+        "google-bigquery-basics",
+        "google-bigquery-bigframes",
+        "google-datalineage-bigquery-asset-impact-analysis",
+        "google-google-analytics-data-api-basics"
+      ]
+    },
+    {
+      "capability_id": "cloud-ops",
+      "recommended": {
+        "default": "google-agent-platform-alert-configuration",
+        "by_tool": {}
+      },
+      "card": {
+        "title": "Set up alerts for AI agents",
+        "what_it_does": "Configures alerting policies that monitor an AI agent's latency, error rate, and response quality on Google Cloud. Notifies you when something's degrading before users notice.",
+        "try_saying": "Set up an alert if my agent's error rate goes above 5 percent.",
+        "generated_by": "llm",
+        "generated_at": "2026-07-12T14:42:08.637462Z"
+      },
+      "skill_refs": {
+        "google-google-analytics-admin-api-basics": {
+          "name": "google-analytics-admin-api-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/analytics/google-analytics-admin-api-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.003949Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-analytics-admin-api-basics/ (personal) or .claude/skills/google-analytics-admin-api-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-analytics-admin-api-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-analytics-admin-api-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 1798,
+            "word_count": 888,
+            "line_count": 206,
+            "basis": "body",
+            "trigger": "Use when you need to programmatically configure Google Analytics accounts, provision properties, manage data retention, configure Measurement Protocol secrets, or manage Firebase and Google Ads links.",
+            "body_blob_sha": "1dd1b543ef4d527ba67fdbaec4cd168ad95d10e2",
+            "computed_at": "2026-07-12T14:42:14.964517Z"
+          }
+        },
+        "google-agent-platform-alert-configuration": {
+          "name": "agent-platform-alert-configuration",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-alert-configuration",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.647986Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-alert-configuration/ (personal) or .claude/skills/agent-platform-alert-configuration/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-alert-configuration/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-alert-configuration/"
+          },
+          "nutrition": {
+            "token_estimate": 134,
+            "word_count": 76,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when analyzing, writing, or deploying alerting policies to monitor agent latency, error rates, and quality metrics (response quality, tool use, hallucination).",
+            "body_blob_sha": "457ed43c632208fa62858366359870bbb84f9fb2",
+            "computed_at": "2026-07-10T19:32:30.737144Z"
+          }
+        },
+        "google-agent-platform-deploy": {
+          "name": "agent-platform-deploy",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-deploy",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648019Z",
+          "lifecycle_phase": "ship",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-deploy/ (personal) or .claude/skills/agent-platform-deploy/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-deploy/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-deploy/"
+          },
+          "nutrition": {
+            "token_estimate": 157,
+            "word_count": 92,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when asked to deploy models on Agent Platform, list available Model Garden models, check if a model is deployable, query deployment cost, troubleshoot deployment errors (like quota limits), or un…",
+            "body_blob_sha": "2d8e68d9dd8067e71d74e801c30312cbcfaeb424",
+            "computed_at": "2026-07-10T19:32:30.737204Z"
+          }
+        },
+        "google-agent-platform-endpoint-management": {
+          "name": "agent-platform-endpoint-management",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-endpoint-management",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648046Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-endpoint-management/ (personal) or .claude/skills/agent-platform-endpoint-management/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-endpoint-management/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-endpoint-management/"
+          },
+          "nutrition": {
+            "token_estimate": 81,
+            "word_count": 47,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to create, list, describe, update, or delete serving endpoints for model deployment on Agent Platform.",
+            "body_blob_sha": "36e4ad427c7793e5db03dcebca3d0efe5e4d3a2d",
+            "computed_at": "2026-07-10T19:32:30.737252Z"
+          }
+        },
+        "google-agent-platform-eval-flywheel": {
+          "name": "agent-platform-eval-flywheel",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-eval-flywheel",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648071Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-eval-flywheel/ (personal) or .claude/skills/agent-platform-eval-flywheel/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-eval-flywheel/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-eval-flywheel/"
+          },
+          "nutrition": {
+            "token_estimate": 132,
+            "word_count": 74,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when evaluating an agent or model, building an eval dataset, picking or writing evaluation metrics, analyzing failures, comparing results before and after a fix, or when guidance is needed on Age…",
+            "body_blob_sha": "1fabfd1ce1579d40d7270935def00ec96bc35617",
+            "computed_at": "2026-07-10T19:32:30.737318Z"
+          }
+        },
+        "google-agent-platform-inference": {
+          "name": "agent-platform-inference",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-inference",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648098Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-inference/ (personal) or .claude/skills/agent-platform-inference/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-inference/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-inference/"
+          },
+          "nutrition": {
+            "token_estimate": 136,
+            "word_count": 80,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to generate code for calling Gemini or OpenMaaS models, authenticate with GenAI SDK, OpenAI SDK, or legacy Agent Platform SDK, configure base URLs and global/regional endpoints, or …",
+            "body_blob_sha": "666c78dec892aaaf29632137af65d5b557c15ca6",
+            "computed_at": "2026-07-10T19:32:30.737383Z"
+          }
+        },
+        "google-agent-platform-migrate-from-ai-studio": {
+          "name": "agent-platform-migrate-from-ai-studio",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-migrate-from-ai-studio",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648125Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-migrate-from-ai-studio/ (personal) or .claude/skills/agent-platform-migrate-from-ai-studio/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-migrate-from-ai-studio/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-migrate-from-ai-studio/"
+          },
+          "nutrition": {
+            "token_estimate": 76,
+            "word_count": 45,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use this skill when moving applications to Google Cloud, to leverage Cloud credits, or to unify inferencing with other Cloud infrastructure (IAM, billing, telemetry).",
+            "body_blob_sha": "fec68368238e4f9242db4ea7d1d49be6a5e23d7d",
+            "computed_at": "2026-07-10T19:32:30.737447Z"
+          }
+        },
+        "google-agent-platform-model-registry": {
+          "name": "agent-platform-model-registry",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-model-registry",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648151Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-model-registry/ (personal) or .claude/skills/agent-platform-model-registry/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-model-registry/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-model-registry/"
+          },
+          "nutrition": {
+            "token_estimate": 72,
+            "word_count": 42,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to upload, list, describe, update, or delete machine learning models (and their versions) in the Agent Platform Model Registry.",
+            "body_blob_sha": "ec2f578be2c43ff4c7c42615a60fe296045d4d19",
+            "computed_at": "2026-07-10T19:32:30.737574Z"
+          }
+        },
+        "google-agent-platform-prompt-management": {
+          "name": "agent-platform-prompt-management",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-prompt-management",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648177Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-prompt-management/ (personal) or .claude/skills/agent-platform-prompt-management/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-prompt-management/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-prompt-management/"
+          },
+          "nutrition": {
+            "token_estimate": 63,
+            "word_count": 37,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to create, list, retrieve, version, or delete managed prompts in Agent Platform.",
+            "body_blob_sha": "088dbc52b1c9d8559259787ae1c7c3e894465845",
+            "computed_at": "2026-07-10T19:32:30.737642Z"
+          }
+        },
+        "google-agent-platform-rag-engine-management": {
+          "name": "agent-platform-rag-engine-management",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-rag-engine-management",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648203Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-rag-engine-management/ (personal) or .claude/skills/agent-platform-rag-engine-management/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-rag-engine-management/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-rag-engine-management/"
+          },
+          "nutrition": {
+            "token_estimate": 90,
+            "word_count": 56,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when listing RAG corpora or files, inspecting a corpus, retrieving contexts, or generating content grounded in a RAG corpus.",
+            "body_blob_sha": "7d9ff2c9c022c05a487f406faeb1a6b740a74f73",
+            "computed_at": "2026-07-10T19:32:30.737699Z"
+          }
+        },
+        "google-agent-platform-skill-registry": {
+          "name": "agent-platform-skill-registry",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-skill-registry",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648229Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-skill-registry/ (personal) or .claude/skills/agent-platform-skill-registry/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-skill-registry/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-skill-registry/"
+          },
+          "nutrition": {
+            "token_estimate": 49,
+            "word_count": 29,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Interact with the Gemini Enterprise Agent Platform Skill Registry to create and search for available skills.",
+            "body_blob_sha": "0a827579f25e948c07ccc5848fe39e4906b78ced",
+            "computed_at": "2026-07-10T19:32:30.737749Z"
+          }
+        },
+        "google-agent-platform-tuning-management": {
+          "name": "agent-platform-tuning-management",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-tuning-management",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648256Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-tuning-management/ (personal) or .claude/skills/agent-platform-tuning-management/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-tuning-management/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-tuning-management/"
+          },
+          "nutrition": {
+            "token_estimate": 76,
+            "word_count": 37,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Don't use for fine-tuning models (use `agent-platform-tuning`), deploying models to endpoints (use `agent-platform-deploy`), or managing serving endpoints (use `agent-platform-endpoint-management`).",
+            "body_blob_sha": "3b24fccebb9a36a3156dd1a5e4dc8d09831668eb",
+            "computed_at": "2026-07-10T19:32:30.737806Z"
+          }
+        },
+        "google-agent-platform-tuning": {
+          "name": "agent-platform-tuning",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/agent-platform-tuning",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648282Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/agent-platform-tuning/ (personal) or .claude/skills/agent-platform-tuning/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/agent-platform-tuning/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/agent-platform-tuning/"
+          },
+          "nutrition": {
+            "token_estimate": 78,
+            "word_count": 39,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to fine-tune open models or Gemini models using Agent Platform infrastructure.",
+            "body_blob_sha": "2596067307954386faacc05b231fa2eeb59f0c93",
+            "computed_at": "2026-07-10T19:32:30.737852Z"
+          }
+        },
+        "google-alloydb-basics": {
+          "name": "alloydb-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/alloydb-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648312Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/alloydb-basics/ (personal) or .claude/skills/alloydb-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/alloydb-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/alloydb-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 42,
+            "word_count": 22,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Manages clusters, instances, and backups for AlloyDB for PostgreSQL, and integrates with AlloyDB model context protocol (MCP) tools for automated database operations.",
+            "body_blob_sha": "db30ef4b8cefea6048e06342fd17c4f289a51b93",
+            "computed_at": "2026-07-10T19:32:30.737897Z"
+          }
+        },
+        "google-bigtable-basics": {
+          "name": "bigtable-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/bigtable-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648425Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/bigtable-basics/ (personal) or .claude/skills/bigtable-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/bigtable-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/bigtable-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 102,
+            "word_count": 55,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when designing Bigtable row keys, configuring column families, writing SQL queries or client library code (Java, Go, Python) for Bigtable, or diagnosing performance/hotspotting issues.",
+            "body_blob_sha": "cbb63bee2a509a65adfed158f623b0cb8706c872",
+            "computed_at": "2026-07-10T19:32:30.738132Z"
+          }
+        },
+        "google-cloud-run-basics": {
+          "name": "cloud-run-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/cloud-run-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648454Z",
+          "lifecycle_phase": "ship",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/cloud-run-basics/ (personal) or .claude/skills/cloud-run-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/cloud-run-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/cloud-run-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 62,
+            "word_count": 34,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to deploy applications responding to HTTP requests (services), run event-triggered or scheduled tasks (jobs), or handle always-on pull-based background processing (worker pools).",
+            "body_blob_sha": "af673bcb00e290777eb821b69f1829013923cfa9",
+            "computed_at": "2026-07-10T19:32:30.738183Z"
+          }
+        },
+        "google-cloud-sql-basics": {
+          "name": "cloud-sql-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/cloud-sql-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:14.648483Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/cloud-sql-basics/ (personal) or .claude/skills/cloud-sql-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/cloud-sql-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/cloud-sql-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 131,
+            "word_count": 81,
+            "line_count": 3,
+            "basis": "body",
+            "trigger": "This file generates or explains Cloud SQL resources.",
+            "body_blob_sha": "33ac65fd4a046422d383c440e53f8778c61f6d6e",
+            "computed_at": "2026-07-10T19:32:30.738254Z"
+          }
+        },
+        "google-detection-engineering-coverage-evaluation": {
+          "name": "detection-engineering-coverage-evaluation",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/detection-engineering-coverage-evaluation",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.886830Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/detection-engineering-coverage-evaluation/ (personal) or .claude/skills/detection-engineering-coverage-evaluation/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/detection-engineering-coverage-evaluation/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/detection-engineering-coverage-evaluation/"
+          },
+          "nutrition": {
+            "token_estimate": 1212,
+            "word_count": 711,
+            "line_count": 125,
+            "basis": "body",
+            "trigger": "Use when fetching threat intelligence from blogs, generating Threat Detection Opportunities (TDOs), simulating attacker behavior with synthetic UDM events, evaluating rule coverage, and generating ne…",
+            "body_blob_sha": "110735871b0abc25f0222a2a0c00d667d7c5f9c2",
+            "computed_at": "2026-07-12T14:42:14.966053Z"
+          }
+        },
+        "google-firebase-basics": {
+          "name": "firebase-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/firebase-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.886968Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/firebase-basics/ (personal) or .claude/skills/firebase-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/firebase-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/firebase-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 32,
+            "word_count": 22,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use this skill whenever you are working on a project that uses Firebase products or services, especially for mobile or web apps.",
+            "body_blob_sha": "f11d29aa62bb2cad530bbebba070040745d1b8a6",
+            "computed_at": "2026-07-10T19:32:30.738445Z"
+          }
+        },
+        "google-gcloud": {
+          "name": "gcloud",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gcloud",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887062Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gcloud/ (personal) or .claude/skills/gcloud/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gcloud/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gcloud/"
+          },
+          "nutrition": {
+            "token_estimate": 117,
+            "word_count": 66,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when managing cloud resources, querying configurations, or troubleshooting issues via gcloud.",
+            "body_blob_sha": "5f1f0c8097768250d8eaf1086e103c6f65211528",
+            "computed_at": "2026-07-10T19:32:30.738539Z"
+          }
+        },
+        "google-gemini-agents-api": {
+          "name": "gemini-agents-api",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gemini-agents-api",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887145Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gemini-agents-api/ (personal) or .claude/skills/gemini-agents-api/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gemini-agents-api/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gemini-agents-api/"
+          },
+          "nutrition": {
+            "token_estimate": 68,
+            "word_count": 35,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when the user wants to programmatically create, configure, list, update, or delete stateful, server-managed Agent resources (including mounting files, skills, and tools) before executing conversa…",
+            "body_blob_sha": "c0ee66c72318ce655de31e8cc7eff80c52f004a8",
+            "computed_at": "2026-07-10T19:32:30.738596Z"
+          }
+        },
+        "google-gemini-api": {
+          "name": "gemini-api",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gemini-api",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887230Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gemini-api/ (personal) or .claude/skills/gemini-api/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gemini-api/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gemini-api/"
+          },
+          "nutrition": {
+            "token_estimate": 92,
+            "word_count": 59,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when the user asks about using Gemini in an enterprise environment or explicitly mentions Vertex AI, Google Cloud, or Agent Platform.",
+            "body_blob_sha": "8bf8d29ccfb1149d26c880c364f33baad36f93d7",
+            "computed_at": "2026-07-10T19:32:30.738647Z"
+          }
+        },
+        "google-gemini-interactions-api": {
+          "name": "gemini-interactions-api",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gemini-interactions-api",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887316Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gemini-interactions-api/ (personal) or .claude/skills/gemini-interactions-api/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gemini-interactions-api/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gemini-interactions-api/"
+          },
+          "nutrition": {
+            "token_estimate": 71,
+            "word_count": 39,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when the user wants to use the stateful, server-managed Interactions API for multi-turn conversations, background execution, streaming, structured output, and function calling on the Agent Platfo…",
+            "body_blob_sha": "8abec77b79350c8225588be8f5cb0ab1e1ee444c",
+            "computed_at": "2026-07-10T19:32:30.738693Z"
+          }
+        },
+        "google-gke-app-onboarding": {
+          "name": "gke-app-onboarding",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-app-onboarding",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887444Z",
+          "lifecycle_phase": "ship",
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-app-onboarding/ (personal) or .claude/skills/gke-app-onboarding/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-app-onboarding/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-app-onboarding/"
+          },
+          "nutrition": {
+            "token_estimate": 78,
+            "word_count": 43,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when onboarding or deploying an application to GKE for the first time, or containerizing an app for GKE.",
+            "body_blob_sha": "cf22de079781e6fb6ab0a136e0095a57bc463673",
+            "computed_at": "2026-07-10T19:32:30.738740Z"
+          }
+        },
+        "google-gke-backup-dr": {
+          "name": "gke-backup-dr",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-backup-dr",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887544Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-backup-dr/ (personal) or .claude/skills/gke-backup-dr/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-backup-dr/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-backup-dr/"
+          },
+          "nutrition": {
+            "token_estimate": 38,
+            "word_count": 22,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use for backup policies, disaster recovery, or GKE cluster restores.",
+            "body_blob_sha": "20557136a800e828c7cfc629a40388dec17df0e6",
+            "computed_at": "2026-07-10T19:32:30.738789Z"
+          }
+        },
+        "google-gke-basics": {
+          "name": "gke-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887629Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-basics/ (personal) or .claude/skills/gke-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 37,
+            "word_count": 23,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Do not use for specialized tasks (networking, security, etc.) directly.",
+            "body_blob_sha": "52be22dc06fad426868c577ccbe1f63957888918",
+            "computed_at": "2026-07-10T19:32:30.738834Z"
+          }
+        },
+        "google-gke-batch-hpc": {
+          "name": "gke-batch-hpc",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-batch-hpc",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:15.887713Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-batch-hpc/ (personal) or .claude/skills/gke-batch-hpc/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-batch-hpc/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-batch-hpc/"
+          },
+          "nutrition": {
+            "token_estimate": 63,
+            "word_count": 38,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when running GKE batch jobs, configuring GKE HPC, or setting up GKE job queues.",
+            "body_blob_sha": "f07fcc5382d13ca5e6998ac90323f94ad03eb8f5",
+            "computed_at": "2026-07-10T19:32:30.738881Z"
+          }
+        },
+        "google-gke-cluster-autoscaler": {
+          "name": "gke-cluster-autoscaler",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-cluster-autoscaler",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.500757Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-cluster-autoscaler/ (personal) or .claude/skills/gke-cluster-autoscaler/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-cluster-autoscaler/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-cluster-autoscaler/"
+          },
+          "nutrition": {
+            "token_estimate": 2716,
+            "word_count": 1336,
+            "line_count": 66,
+            "basis": "body",
+            "trigger": "Trigger on mention of GKE cluster autoscaler,  node autoscaling, node pool auto-creation / node auto-provisioning.",
+            "body_blob_sha": "0bfee954c30c0020e71973c7297accccafc24d26",
+            "computed_at": "2026-07-12T14:42:14.966795Z"
+          }
+        },
+        "google-gke-cluster-creation": {
+          "name": "gke-cluster-creation",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-cluster-creation",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.500832Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-cluster-creation/ (personal) or .claude/skills/gke-cluster-creation/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-cluster-creation/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-cluster-creation/"
+          },
+          "nutrition": {
+            "token_estimate": 69,
+            "word_count": 34,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when creating GKE clusters, provisioning GKE environments, or auditing GKE clusters.",
+            "body_blob_sha": "bf112ee64c4065e02c37edc47a9cf1ba6e3675bd",
+            "computed_at": "2026-07-10T19:32:30.738972Z"
+          }
+        },
+        "google-gke-compute-classes": {
+          "name": "gke-compute-classes",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-compute-classes",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.500875Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-compute-classes/ (personal) or .claude/skills/gke-compute-classes/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-compute-classes/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-compute-classes/"
+          },
+          "nutrition": {
+            "token_estimate": 94,
+            "word_count": 47,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when configuring Spot VMs with on-demand fallback, targeting specific accelerators (GPUs/TPUs) or machine families, restricting ComputeClass access, or debugging pending pods related to node pool…",
+            "body_blob_sha": "dcf68341fe46ede100c1b764f007339665b6cfe7",
+            "computed_at": "2026-07-10T19:32:30.739020Z"
+          }
+        },
+        "google-gke-cost": {
+          "name": "gke-cost",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-cost",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.500929Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-cost/ (personal) or .claude/skills/gke-cost/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-cost/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-cost/"
+          },
+          "nutrition": {
+            "token_estimate": 66,
+            "word_count": 37,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when optimizing GKE costs, rightsizing GKE workloads, or configuring GKE Spot VMs.",
+            "body_blob_sha": "831b9ccdcc316fc016b57c9484352a47cb9d1399",
+            "computed_at": "2026-07-10T19:32:30.739062Z"
+          }
+        },
+        "google-gke-golden-path": {
+          "name": "gke-golden-path",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-golden-path",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.500969Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-golden-path/ (personal) or .claude/skills/gke-golden-path/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-golden-path/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-golden-path/"
+          },
+          "nutrition": {
+            "token_estimate": 78,
+            "word_count": 39,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when designing GKE clusters, verifying GKE production readiness, or checking configurations against GKE defaults.",
+            "body_blob_sha": "5090f85660c173c1443b4c147a36598aca39158d",
+            "computed_at": "2026-07-10T19:32:30.739107Z"
+          }
+        },
+        "google-gke-inference": {
+          "name": "gke-inference",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-inference",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.501007Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-inference/ (personal) or .claude/skills/gke-inference/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-inference/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-inference/"
+          },
+          "nutrition": {
+            "token_estimate": 72,
+            "word_count": 44,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when deploying GKE inference servers, configuring GKE GPU resources for inference, or deploying LLMs on GKE.",
+            "body_blob_sha": "afe4660e66e4f508bfb19211e3c5ad5dd863bee8",
+            "computed_at": "2026-07-10T19:32:30.739150Z"
+          }
+        },
+        "google-gke-multitenancy": {
+          "name": "gke-multitenancy",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-multitenancy",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.501045Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-multitenancy/ (personal) or .claude/skills/gke-multitenancy/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-multitenancy/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-multitenancy/"
+          },
+          "nutrition": {
+            "token_estimate": 104,
+            "word_count": 52,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when designing GKE multi-tenancy, configuring GKE namespaces, setting up resource quotas, or isolating GKE teams.",
+            "body_blob_sha": "be4dce18a2a37e726d80faf3fd7bcf42abc5d1ab",
+            "computed_at": "2026-07-10T19:32:30.739203Z"
+          }
+        },
+        "google-gke-networking": {
+          "name": "gke-networking",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-networking",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:16.501082Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-networking/ (personal) or .claude/skills/gke-networking/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-networking/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-networking/"
+          },
+          "nutrition": {
+            "token_estimate": 104,
+            "word_count": 55,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when designing GKE networking layouts, configuring private clusters, setting up Gateway API, planning GKE IP ranges, or configuring GKE ingress/egress.",
+            "body_blob_sha": "9996b25392a3aff1649bfeb0b079d0d68f1defe2",
+            "computed_at": "2026-07-10T19:32:30.739254Z"
+          }
+        },
+        "google-gke-observability": {
+          "name": "gke-observability",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-observability",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.144388Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-observability/ (personal) or .claude/skills/gke-observability/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-observability/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-observability/"
+          },
+          "nutrition": {
+            "token_estimate": 2536,
+            "word_count": 946,
+            "line_count": 215,
+            "basis": "body",
+            "trigger": "Use when configuring GKE monitoring, setting up GKE logging, or configuring Prometheus metrics collection.",
+            "body_blob_sha": "97d727c705691c8285cca0e86b2353da8b0fb67e",
+            "computed_at": "2026-07-12T14:42:14.967382Z"
+          }
+        },
+        "google-gke-reliability": {
+          "name": "gke-reliability",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-reliability",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.144619Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-reliability/ (personal) or .claude/skills/gke-reliability/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-reliability/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-reliability/"
+          },
+          "nutrition": {
+            "token_estimate": 78,
+            "word_count": 42,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when configuring GKE workload reliability, setting up PDBs, or configuring GKE health probes (liveness, readiness, startup).",
+            "body_blob_sha": "337ff2bf03e5bf113ad4949cfc1db4249d24ec3b",
+            "computed_at": "2026-07-10T19:32:30.739342Z"
+          }
+        },
+        "google-gke-scaling": {
+          "name": "gke-scaling",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-scaling",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.144751Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-scaling/ (personal) or .claude/skills/gke-scaling/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-scaling/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-scaling/"
+          },
+          "nutrition": {
+            "token_estimate": 78,
+            "word_count": 43,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when configuring GKE autoscaling, setting up GKE HPA, setting up GKE VPA, or configuring GKE NAP.",
+            "body_blob_sha": "b78db0c5d10a90210a381e597a8322667cb878ef",
+            "computed_at": "2026-07-10T19:32:30.739386Z"
+          }
+        },
+        "google-gke-security": {
+          "name": "gke-security",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-security",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.144872Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-security/ (personal) or .claude/skills/gke-security/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-security/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-security/"
+          },
+          "nutrition": {
+            "token_estimate": 112,
+            "word_count": 56,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when securing GKE clusters, setting up Workload Identity, hardening RBAC configurations, or configuring GKE secrets.",
+            "body_blob_sha": "6a3ad379182f223fe773ed5323e861414336920e",
+            "computed_at": "2026-07-10T19:32:30.739434Z"
+          }
+        },
+        "google-gke-storage": {
+          "name": "gke-storage",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-storage",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.144996Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-storage/ (personal) or .claude/skills/gke-storage/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-storage/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-storage/"
+          },
+          "nutrition": {
+            "token_estimate": 65,
+            "word_count": 36,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when configuring GKE storage, creating PVCs, or setting up GCS FUSE on GKE.",
+            "body_blob_sha": "5ec7080844dc7e1008ba83bbecf87ba8873166f6",
+            "computed_at": "2026-07-10T19:32:30.739503Z"
+          }
+        },
+        "google-gke-upgrades": {
+          "name": "gke-upgrades",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/gke-upgrades",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.145116Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/gke-upgrades/ (personal) or .claude/skills/gke-upgrades/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/gke-upgrades/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/gke-upgrades/"
+          },
+          "nutrition": {
+            "token_estimate": 254,
+            "word_count": 131,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use this skill whenever the user mentions GKE upgrades, Kubernetes version bumps, node pool maintenance, GKE patching, cluster version management, release channel selection, maintenance windows, surg…",
+            "body_blob_sha": "c3277e28fd42f82b1eba5197ea9c64c61bc38b2e",
+            "computed_at": "2026-07-10T19:32:30.739627Z"
+          }
+        },
+        "google-google-cloud-networking-observability": {
+          "name": "google-cloud-networking-observability",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-networking-observability",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.753767Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-networking-observability/ (personal) or .claude/skills/google-cloud-networking-observability/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-networking-observability/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-networking-observability/"
+          },
+          "nutrition": {
+            "token_estimate": 86,
+            "word_count": 46,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when investigating VPC Flow Logs (including cost estimation), NAT, firewall, or threat logs, querying latency and throughput metrics, or running Connectivity Tests for path diagnostics.",
+            "body_blob_sha": "aa1aad2e486a993251573b932706577db0a90ce8",
+            "computed_at": "2026-07-10T19:32:30.739747Z"
+          }
+        },
+        "google-google-cloud-recipe-auth": {
+          "name": "google-cloud-recipe-auth",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-recipe-auth",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:17.753815Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-recipe-auth/ (personal) or .claude/skills/google-cloud-recipe-auth/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-recipe-auth/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-recipe-auth/"
+          },
+          "nutrition": {
+            "token_estimate": 53,
+            "word_count": 28,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Provides expert guidance on authenticating and authorizing to Google Cloud services and APIs, covering human users, service identities, Application Default Credentials (ADC), and best practices for s…",
+            "body_blob_sha": "0f6e79c58eed43b45b541872bbdcb13257d5b23e",
+            "computed_at": "2026-07-10T19:32:30.739799Z"
+          }
+        },
+        "google-google-cloud-recipe-foundation-builder": {
+          "name": "google-cloud-recipe-foundation-builder",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-recipe-foundation-builder",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:18.355643Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-recipe-foundation-builder/ (personal) or .claude/skills/google-cloud-recipe-foundation-builder/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-recipe-foundation-builder/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-recipe-foundation-builder/"
+          },
+          "nutrition": {
+            "token_estimate": 4649,
+            "word_count": 2092,
+            "line_count": 345,
+            "basis": "body",
+            "trigger": "Use when setting up a new Google Cloud Organization or establishing a secure, enterprise-grade landing zone foundation.",
+            "body_blob_sha": "6894b8b2a17a9f16e51a2d5907c1b3ae31544e40",
+            "computed_at": "2026-07-12T14:42:14.968511Z"
+          }
+        },
+        "google-google-cloud-recipe-onboarding": {
+          "name": "google-cloud-recipe-onboarding",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-recipe-onboarding",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:18.355727Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-recipe-onboarding/ (personal) or .claude/skills/google-cloud-recipe-onboarding/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-recipe-onboarding/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-recipe-onboarding/"
+          },
+          "nutrition": {
+            "token_estimate": 104,
+            "word_count": 59,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when a new developer wants to initialize their first Google Cloud project, configure billing, and verify deployment.",
+            "body_blob_sha": "a717981fdea3f6f31c466529cabd74c647f715e1",
+            "computed_at": "2026-07-10T19:32:30.739903Z"
+          }
+        },
+        "google-google-cloud-solution-agentic-ai-bidirectional-streaming": {
+          "name": "google-cloud-solution-agentic-ai-bidirectional-streaming",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-solution-agentic-ai-bidirectional-streaming",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.059499Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-solution-agentic-ai-bidirectional-streaming/ (personal) or .claude/skills/google-cloud-solution-agentic-ai-bidirectional-streaming/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-solution-agentic-ai-bidirectional-streaming/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-solution-agentic-ai-bidirectional-streaming/"
+          },
+          "nutrition": {
+            "token_estimate": 4962,
+            "word_count": 2136,
+            "line_count": 343,
+            "basis": "body",
+            "trigger": "Use when users need agentic assistance to design and create a multi-product solution in the cloud for live bidirectional multimodal streaming workloads.",
+            "body_blob_sha": "e0a6fc02e7c3eda063d24dd03b074b2c66602bb8",
+            "computed_at": "2026-07-12T14:42:14.969175Z"
+          }
+        },
+        "google-google-cloud-solution-architecture": {
+          "name": "google-cloud-solution-architecture",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-solution-architecture",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.704680Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-solution-architecture/ (personal) or .claude/skills/google-cloud-solution-architecture/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-solution-architecture/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-solution-architecture/"
+          },
+          "nutrition": {
+            "token_estimate": 2685,
+            "word_count": 1464,
+            "line_count": 212,
+            "basis": "body",
+            "trigger": "Use when users need holistic, end-to-end design recommendations and architectural guidance for complex workloads on Google Cloud for specific use cases.",
+            "body_blob_sha": "47061d92cbb28ef8c787af22d918d4cd302d868e",
+            "computed_at": "2026-07-12T14:42:14.969983Z"
+          }
+        },
+        "google-google-cloud-waf-cost-optimization": {
+          "name": "google-cloud-waf-cost-optimization",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-waf-cost-optimization",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.704790Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-waf-cost-optimization/ (personal) or .claude/skills/google-cloud-waf-cost-optimization/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-waf-cost-optimization/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-waf-cost-optimization/"
+          },
+          "nutrition": {
+            "token_estimate": 80,
+            "word_count": 43,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Generates cost optimization guidance for Google Cloud workloads based on the Google Cloud Well-Architected Framework (WAF).",
+            "body_blob_sha": "0372156bb918213b1852d13367b684a6839b00ad",
+            "computed_at": "2026-07-10T19:32:30.740004Z"
+          }
+        },
+        "google-google-cloud-waf-operational-excellence": {
+          "name": "google-cloud-waf-operational-excellence",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-waf-operational-excellence",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.704837Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-waf-operational-excellence/ (personal) or .claude/skills/google-cloud-waf-operational-excellence/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-waf-operational-excellence/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-waf-operational-excellence/"
+          },
+          "nutrition": {
+            "token_estimate": 93,
+            "word_count": 46,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Generates operations-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Operational Excellence pillar of the Google Cloud Well-Architected Framework…",
+            "body_blob_sha": "83cb7acac757359ca5212a5ffcf4af24c7cf4c1b",
+            "computed_at": "2026-07-10T19:32:30.740065Z"
+          }
+        },
+        "google-google-cloud-waf-performance-optimization": {
+          "name": "google-cloud-waf-performance-optimization",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-waf-performance-optimization",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.704882Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-waf-performance-optimization/ (personal) or .claude/skills/google-cloud-waf-performance-optimization/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-waf-performance-optimization/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-waf-performance-optimization/"
+          },
+          "nutrition": {
+            "token_estimate": 95,
+            "word_count": 47,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Generates performance-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Performance Optimization pillar of the Google Cloud Well-Architected Framew…",
+            "body_blob_sha": "35bfdf1b6c1dde2620a982dfe11f18b48422bb9c",
+            "computed_at": "2026-07-10T19:32:30.740126Z"
+          }
+        },
+        "google-google-cloud-waf-reliability": {
+          "name": "google-cloud-waf-reliability",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-waf-reliability",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.704948Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-waf-reliability/ (personal) or .claude/skills/google-cloud-waf-reliability/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-waf-reliability/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-waf-reliability/"
+          },
+          "nutrition": {
+            "token_estimate": 86,
+            "word_count": 45,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Generates reliability-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework.",
+            "body_blob_sha": "8944d2327a5ea3294e56f245494a8470141771c8",
+            "computed_at": "2026-07-10T19:32:30.740193Z"
+          }
+        },
+        "google-google-cloud-waf-security": {
+          "name": "google-cloud-waf-security",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-waf-security",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.705009Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-waf-security/ (personal) or .claude/skills/google-cloud-waf-security/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-waf-security/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-waf-security/"
+          },
+          "nutrition": {
+            "token_estimate": 87,
+            "word_count": 44,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Generates security-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework (WAF).",
+            "body_blob_sha": "58e18f7a4fb1b5506de02ae3406437db30f076ef",
+            "computed_at": "2026-07-10T19:32:30.740250Z"
+          }
+        },
+        "google-google-cloud-waf-sustainability": {
+          "name": "google-cloud-waf-sustainability",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/google-cloud-waf-sustainability",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.705051Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/google-cloud-waf-sustainability/ (personal) or .claude/skills/google-cloud-waf-sustainability/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/google-cloud-waf-sustainability/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/google-cloud-waf-sustainability/"
+          },
+          "nutrition": {
+            "token_estimate": 92,
+            "word_count": 47,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Generates sustainability-focused guidance for Google Cloud workloads based on the design principles and recommendations in the Google Cloud Well-Architected Framework (WAF).",
+            "body_blob_sha": "10362b86aeeb1ba30ab77cad3881e67ce3f77b95",
+            "computed_at": "2026-07-10T19:32:30.740318Z"
+          }
+        },
+        "google-iam-recommendations-fetcher": {
+          "name": "iam-recommendations-fetcher",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/iam-recommendations-fetcher",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.705093Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/iam-recommendations-fetcher/ (personal) or .claude/skills/iam-recommendations-fetcher/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/iam-recommendations-fetcher/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/iam-recommendations-fetcher/"
+          },
+          "nutrition": {
+            "token_estimate": 100,
+            "word_count": 56,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to retrieve security recommendations before analyzing or applying them.",
+            "body_blob_sha": "0b44d9605b96bb675a490d46e74981f934853f17",
+            "computed_at": "2026-07-10T19:32:30.740369Z"
+          }
+        },
+        "google-workload-manager-basics": {
+          "name": "workload-manager-basics",
+          "repo_url": "https://github.com/google/skills/tree/main/skills/cloud/workload-manager-basics",
+          "provenance": "official",
+          "vendor": "google",
+          "license": "Apache-2.0",
+          "review_status": "auto_summarized",
+          "reviewed_at": null,
+          "freshness": null,
+          "upstream_changed_at": null,
+          "upstream_fetched_at": "2026-07-12T14:28:19.705135Z",
+          "lifecycle_phase": null,
+          "install": {
+            "claude-code": "Copy the folder to ~/.claude/skills/workload-manager-basics/ (personal) or .claude/skills/workload-manager-basics/ (project)",
+            "claude-ai": "Available on paid plans — enable in Settings > Capabilities, then just ask.",
+            "vscode-copilot": "Copy the folder to .github/skills/workload-manager-basics/",
+            "antigravity": "npx skills install github.com/google/skills",
+            "gemini-cli": "npx skills install github.com/google/skills",
+            "cursor": "Copy the folder to .cursor/skills/workload-manager-basics/"
+          },
+          "nutrition": {
+            "token_estimate": 155,
+            "word_count": 89,
+            "line_count": 1,
+            "basis": "body",
+            "trigger": "Use when you need to inspect workload best-practice rules, create and run evaluations for Google Cloud general best practices, SAP, SQL Server, or custom organizational rules, review violations, expo…",
+            "body_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
+            "computed_at": "2026-07-10T19:32:30.740423Z"
+          }
+        }
+      },
+      "alternatives": [
+        "google-agent-platform-deploy",
+        "google-agent-platform-endpoint-management",
+        "google-agent-platform-eval-flywheel",
+        "google-agent-platform-inference",
+        "google-agent-platform-migrate-from-ai-studio",
+        "google-agent-platform-model-registry",
+        "google-agent-platform-prompt-management",
+        "google-agent-platform-rag-engine-management",
+        "google-agent-platform-skill-registry",
+        "google-agent-platform-tuning",
+        "google-agent-platform-tuning-management",
+        "google-alloydb-basics",
+        "google-bigtable-basics",
+        "google-cloud-run-basics",
+        "google-cloud-sql-basics",
+        "google-detection-engineering-coverage-evaluation",
+        "google-firebase-basics",
+        "google-gcloud",
+        "google-gemini-agents-api",
+        "google-gemini-api",
+        "google-gemini-interactions-api",
+        "google-gke-app-onboarding",
+        "google-gke-backup-dr",
+        "google-gke-basics",
+        "google-gke-batch-hpc",
+        "google-gke-cluster-autoscaler",
+        "google-gke-cluster-creation",
+        "google-gke-compute-classes",
+        "google-gke-cost",
+        "google-gke-golden-path",
+        "google-gke-inference",
+        "google-gke-multitenancy",
+        "google-gke-networking",
+        "google-gke-observability",
+        "google-gke-reliability",
+        "google-gke-scaling",
+        "google-gke-security",
+        "google-gke-storage",
+        "google-gke-upgrades",
+        "google-google-analytics-admin-api-basics",
+        "google-google-cloud-networking-observability",
+        "google-google-cloud-recipe-auth",
+        "google-google-cloud-recipe-foundation-builder",
+        "google-google-cloud-recipe-onboarding",
+        "google-google-cloud-solution-agentic-ai-bidirectional-streaming",
+        "google-google-cloud-solution-architecture",
+        "google-google-cloud-waf-cost-optimization",
+        "google-google-cloud-waf-operational-excellence",
+        "google-google-cloud-waf-performance-optimization",
+        "google-google-cloud-waf-reliability",
+        "google-google-cloud-waf-security",
+        "google-google-cloud-waf-sustainability",
+        "google-iam-recommendations-fetcher",
+        "google-workload-manager-basics"
+      ]
+    }
+  ]
+}

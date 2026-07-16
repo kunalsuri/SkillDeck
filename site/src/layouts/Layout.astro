@@ -1,0 +1,87 @@
+---
+import ThemeInit from '../components/ThemeInit.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import '../styles/global.css';
+
+// Single source of truth for the site chrome (head, header/nav, footer)
+// shared by every page. Before this existed, each page hand-duplicated
+// this markup and the copies had already drifted - two pages ended up
+// with a different header/footer max-width, background opacity, and
+// Google Fonts weight set than the rest, which is what made the nav bar
+// visibly resize/reflow when navigating between them.
+export type NavKey = 'catalog' | 'sdlc' | 'general-skills' | 'doctor' | 'faq' | 'about';
+
+interface Props {
+  title: string;
+  description: string;
+  active?: NavKey;
+  mainClass: string;
+}
+
+const { title, description, active, mainClass } = Astro.props;
+
+const NAV_ITEMS: { key: NavKey; href: string; label: string }[] = [
+  { key: 'catalog', href: '/', label: 'Skill Catalog' },
+  { key: 'general-skills', href: '/general-skills', label: 'General Skills' },
+  { key: 'sdlc', href: '/sdlc', label: 'SDLC' },
+  { key: 'doctor', href: '/doctor', label: 'Skill Doctor' },
+  { key: 'faq', href: '/faq', label: 'FAQ' },
+  { key: 'about', href: '/about', label: 'About' },
+];
+
+const ACTIVE_CLASS = 'text-zinc-900 dark:text-zinc-100 hover:text-blue-600 dark:hover:text-blue-400';
+const INACTIVE_CLASS = 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <ThemeInit />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-200 min-h-screen flex flex-col">
+    {/* Header */}
+    <header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur sticky top-0 z-10">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-2">
+          <span class="text-lg font-mono font-bold tracking-tight text-zinc-900 dark:text-white flex items-center">
+            Skill<span class="text-blue-600 dark:text-blue-500 font-sans">Deck</span>
+          </span>
+          <span class="text-[10px] font-mono border border-zinc-300 dark:border-zinc-700 px-1 rounded text-zinc-500">v0.1.0</span>
+        </a>
+        <div class="flex items-center gap-4">
+          <nav class="flex items-center gap-6 text-sm font-mono font-medium">
+            {NAV_ITEMS.map((item) => (
+              <a href={item.href} class={active === item.key ? ACTIVE_CLASS : INACTIVE_CLASS}>{item.label}</a>
+            ))}
+          </nav>
+          <ThemeToggle />
+        </div>
+      </div>
+    </header>
+
+    {/* Main Content */}
+    <main class={mainClass}>
+      <slot />
+    </main>
+
+    {/* Footer */}
+    <footer class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/30 mt-auto py-8">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+        <div>
+          &copy; 2026 SkillDeck Contributors. Licensed under <a href="https://github.com/kunalsuri/SkillDeck/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="hover:underline text-zinc-700 dark:text-zinc-300">Apache-2.0</a>.
+        </div>
+        <div class="text-center md:text-right max-w-md">
+          Skill content remains under its original authors' licenses; this catalog asserts no ownership over listed skills.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T14:29:37.938349Z",
+  "skills": [
+    {
+      "id": "block-api-setup",
+      "source_id": "block-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "block",
+        "repo": "agent-skills",
+        "path": "api-setup",
+        "default_branch": "main"
+      },
+      "name": "api-setup",
+      "frontmatter_description": "Set up API integration with configuration and helper scripts",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "329a55d1500748a0a48d64629757cbe2622e34bf",
+        "blob_sha": "b66c52195e447b453c7c874d2fbe48f28ee81f80",
+        "fetched_at": "2026-07-16T14:29:26.074071Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-042",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 256,
+        "word_count": 165,
+        "line_count": 45,
+        "basis": "body",
+        "trigger": "Set up API integration with configuration and helper scripts",
+        "body_blob_sha": "b66c52195e447b453c7c874d2fbe48f28ee81f80",
+        "computed_at": "2026-07-16T14:29:37.718732Z"
+      }
+    },
+    {
+      "id": "block-beads",
+      "source_id": "block-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "block",
+        "repo": "agent-skills",
+        "path": "beads",
+        "default_branch": "main"
+      },
+      "name": "beads",
+      "frontmatter_description": "Use beads (bd) for persistent task tracking in coding projects. A git-backed issue tracker designed for AI agents with dependency graphs, hierarchical tasks, and multi-agent coordination.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "329a55d1500748a0a48d64629757cbe2622e34bf",
+        "blob_sha": "ae9f34f0740dddaf260b4652769233e4db082f30",
+        "fetched_at": "2026-07-16T14:29:26.710240Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-043",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1252,
+        "word_count": 813,
+        "line_count": 212,
+        "basis": "body",
+        "trigger": "Use beads (bd) for persistent task tracking in coding projects.",
+        "body_blob_sha": "ae9f34f0740dddaf260b4652769233e4db082f30",
+        "computed_at": "2026-07-16T14:29:37.719711Z"
+      }
+    },
+    {
+      "id": "block-code-review",
+      "source_id": "block-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "block",
+        "repo": "agent-skills",
+        "path": "code-review",
+        "default_branch": "main"
+      },
+      "name": "code-review",
+      "frontmatter_description": "Comprehensive code review checklist for pull requests",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "329a55d1500748a0a48d64629757cbe2622e34bf",
+        "blob_sha": "6892e36699137efc9a4af9a3ed4e6301e98a4988",
+        "fetched_at": "2026-07-16T14:29:27.357378Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-044",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 216,
+        "word_count": 166,
+        "line_count": 40,
+        "basis": "body",
+        "trigger": "Comprehensive code review checklist for pull requests",
+        "body_blob_sha": "6892e36699137efc9a4af9a3ed4e6301e98a4988",
+        "computed_at": "2026-07-16T14:29:37.720435Z"
+      }
+    },
+    {
+      "id": "block-frontend-design",
+      "source_id": "block-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "block",
+        "repo": "agent-skills",
+        "path": "frontend-design",
+        "default_branch": "main"
+      },
+      "name": "frontend-design",
+      "frontmatter_description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "329a55d1500748a0a48d64629757cbe2622e34bf",
+        "blob_sha": "67d6a1713e89f72da62f8eb0b61e2da02957a88d",
+        "fetched_at": "2026-07-16T14:29:27.972846Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-045",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 989,
+        "word_count": 520,
+        "line_count": 37,
+        "basis": "body",
+        "trigger": "Use this skill when the user asks to build web components, pages, or applications.",
+        "body_blob_sha": "67d6a1713e89f72da62f8eb0b61e2da02957a88d",
+        "computed_at": "2026-07-16T14:29:37.720854Z"
+      }
+    },
+    {
+      "id": "block-goose-blog-post",
+      "source_id": "block-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "block",
+        "repo": "agent-skills",
+        "path": "goose-blog-post",
+        "default_branch": "main"
+      },
+      "name": "goose-blog-post",
+      "frontmatter_description": "Write and publish blog posts for the block/goose open source project",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "329a55d1500748a0a48d64629757cbe2622e34bf",
+        "blob_sha": "46f64b97f11d54cd3a6c07a03c902243b17a5242",
+        "fetched_at": "2026-07-16T14:29:28.633641Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-046",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 3322,
+        "word_count": 1884,
+        "line_count": 322,
+        "basis": "body",
+        "trigger": "Write and publish blog posts for the block/goose open source project",
+        "body_blob_sha": "46f64b97f11d54cd3a6c07a03c902243b17a5242",
+        "computed_at": "2026-07-16T14:29:37.721511Z"
+      }
+    },
+    {
+      "id": "block-rp-why",
+      "source_id": "block-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "block",
+        "repo": "agent-skills",
+        "path": "rp-why",
+        "default_branch": "main"
+      },
+      "name": "rp-why",
+      "frontmatter_description": "Load when reflecting on AI collaboration quality or tracking growth over time. Analyzes session history to surface how deeply you think with AI tools and whether your orchestration sophistication matches your cognitive depth. Provides actionable nudges to push toward more strategic work.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "329a55d1500748a0a48d64629757cbe2622e34bf",
+        "blob_sha": "b9de7a7a1a88f6f1239fd9049f2a14338199b2e6",
+        "fetched_at": "2026-07-16T14:29:29.239343Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-047",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 4293,
+        "word_count": 2084,
+        "line_count": 419,
+        "basis": "body",
+        "trigger": "Load when reflecting on AI collaboration quality or tracking growth over time.",
+        "body_blob_sha": "b9de7a7a1a88f6f1239fd9049f2a14338199b2e6",
+        "computed_at": "2026-07-16T14:29:37.722176Z"
+      }
+    },
+    {
+      "id": "block-testing-strategy",
+      "source_id": "block-agent-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "block",
+        "repo": "agent-skills",
+        "path": "testing-strategy",
+        "default_branch": "main"
+      },
+      "name": "testing-strategy",
+      "frontmatter_description": "Guidelines for writing effective tests in this project",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "329a55d1500748a0a48d64629757cbe2622e34bf",
+        "blob_sha": "8fb8d38770918b33c5ab693b6b44fcb32f174b26",
+        "fetched_at": "2026-07-16T14:29:29.881920Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-048",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 311,
+        "word_count": 192,
+        "line_count": 56,
+        "basis": "body",
+        "trigger": "Guidelines for writing effective tests in this project",
+        "body_blob_sha": "8fb8d38770918b33c5ab693b6b44fcb32f174b26",
+        "computed_at": "2026-07-16T14:29:37.722539Z"
+      }
+    }
+  ]
+}

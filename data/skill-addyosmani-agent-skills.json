@@ -1,0 +1,1220 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-16T14:29:37.929400Z",
+  "skills": [
+    {
+      "id": "addyosmani-api-and-interface-design",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/api-and-interface-design",
+        "default_branch": "main"
+      },
+      "name": "api-and-interface-design",
+      "frontmatter_description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or establishing boundaries between frontend and backend.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "012c8b68ccc5eca5924c2686202700387b38b72f",
+        "fetched_at": "2026-07-16T14:25:26.522996Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-000",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 2488,
+        "word_count": 1404,
+        "line_count": 290,
+        "basis": "body",
+        "trigger": "Use when designing APIs, module boundaries, or any public interface.",
+        "body_blob_sha": "012c8b68ccc5eca5924c2686202700387b38b72f",
+        "computed_at": "2026-07-12T14:42:14.930606Z"
+      }
+    },
+    {
+      "id": "addyosmani-browser-testing-with-devtools",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/browser-testing-with-devtools",
+        "default_branch": "main"
+      },
+      "name": "browser-testing-with-devtools",
+      "frontmatter_description": "Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network requests, profile performance, or verify visual output with real runtime data. Requires the chrome-devtools MCP server to be configured.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "9864d2724e273e1164d62ab10b73590ae00fd6a8",
+        "fetched_at": "2026-07-16T14:25:26.523073Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "testing",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-001",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "verify",
+      "nutrition": {
+        "token_estimate": 3388,
+        "word_count": 2082,
+        "line_count": 313,
+        "basis": "body",
+        "trigger": "Use when building or debugging anything that runs in a browser.",
+        "body_blob_sha": "9864d2724e273e1164d62ab10b73590ae00fd6a8",
+        "computed_at": "2026-07-12T14:42:14.931725Z"
+      }
+    },
+    {
+      "id": "addyosmani-ci-cd-and-automation",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/ci-cd-and-automation",
+        "default_branch": "main"
+      },
+      "name": "ci-cd-and-automation",
+      "frontmatter_description": "Automates CI/CD pipeline setup. Use when setting up or modifying build and deployment pipelines. Use when you need to automate quality gates, configure test runners in CI, or establish deployment strategies.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "118456fcb10225c030769a4fee7815b9c536b0ce",
+        "fetched_at": "2026-07-16T14:25:26.523129Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "testing",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-002",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "ship",
+      "nutrition": {
+        "token_estimate": 2688,
+        "word_count": 1524,
+        "line_count": 386,
+        "basis": "body",
+        "trigger": "Use when setting up or modifying build and deployment pipelines.",
+        "body_blob_sha": "118456fcb10225c030769a4fee7815b9c536b0ce",
+        "computed_at": "2026-07-12T14:42:14.932544Z"
+      }
+    },
+    {
+      "id": "addyosmani-code-review-and-quality",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/code-review-and-quality",
+        "default_branch": "main"
+      },
+      "name": "code-review-and-quality",
+      "frontmatter_description": "Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dimensions before it enters the main branch.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "01c4ebe0424eb25109d0802c46e8d8667947df9b",
+        "fetched_at": "2026-07-16T14:25:26.523176Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "testing",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-003",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "review",
+      "nutrition": {
+        "token_estimate": 5044,
+        "word_count": 3219,
+        "line_count": 392,
+        "basis": "body",
+        "trigger": "Use when reviewing code written by yourself, another agent, or a human.",
+        "body_blob_sha": "01c4ebe0424eb25109d0802c46e8d8667947df9b",
+        "computed_at": "2026-07-12T14:42:14.933754Z"
+      }
+    },
+    {
+      "id": "addyosmani-code-simplification",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/code-simplification",
+        "default_branch": "main"
+      },
+      "name": "code-simplification",
+      "frontmatter_description": "Simplifies code for clarity. Use when refactoring code for clarity without changing behavior. Use when code works but is harder to read, maintain, or extend than it should be. Use when reviewing code that has accumulated unnecessary complexity.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "239b2848489511de30d9e63b0bd183adc4b01347",
+        "fetched_at": "2026-07-16T14:25:26.523220Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-004",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 3301,
+        "word_count": 1985,
+        "line_count": 327,
+        "basis": "body",
+        "trigger": "Use when refactoring code for clarity without changing behavior.",
+        "body_blob_sha": "239b2848489511de30d9e63b0bd183adc4b01347",
+        "computed_at": "2026-07-12T14:42:14.934740Z"
+      }
+    },
+    {
+      "id": "addyosmani-context-engineering",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/context-engineering",
+        "default_branch": "main"
+      },
+      "name": "context-engineering",
+      "frontmatter_description": "Optimizes agent context setup. Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "be991103fe2b13f7e5f6f5da9d3c6029ad30ac64",
+        "fetched_at": "2026-07-16T14:25:26.523262Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "planning",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-005",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "plan",
+      "nutrition": {
+        "token_estimate": 2574,
+        "word_count": 1553,
+        "line_count": 285,
+        "basis": "body",
+        "trigger": "Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project.",
+        "body_blob_sha": "be991103fe2b13f7e5f6f5da9d3c6029ad30ac64",
+        "computed_at": "2026-07-12T14:42:14.935364Z"
+      }
+    },
+    {
+      "id": "addyosmani-debugging-and-error-recovery",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/debugging-and-error-recovery",
+        "default_branch": "main"
+      },
+      "name": "debugging-and-error-recovery",
+      "frontmatter_description": "Guides systematic root-cause debugging. Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error. Use when you need a systematic approach to finding and fixing the root cause rather than guessing.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "51743d47c2f9ddb699a6d8084c29b709d017b529",
+        "fetched_at": "2026-07-16T14:25:26.523306Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "testing",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-006",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "verify",
+      "nutrition": {
+        "token_estimate": 2483,
+        "word_count": 1604,
+        "line_count": 296,
+        "basis": "body",
+        "trigger": "Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error.",
+        "body_blob_sha": "51743d47c2f9ddb699a6d8084c29b709d017b529",
+        "computed_at": "2026-07-12T14:42:14.936101Z"
+      }
+    },
+    {
+      "id": "addyosmani-deprecation-and-migration",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/deprecation-and-migration",
+        "default_branch": "main"
+      },
+      "name": "deprecation-and-migration",
+      "frontmatter_description": "Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset existing code.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "765bdde6329dbd5fd22d5d3fc2c185737fc9f908",
+        "fetched_at": "2026-07-16T14:25:26.523349Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-007",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 3036,
+        "word_count": 1917,
+        "line_count": 243,
+        "basis": "body",
+        "trigger": "Use when removing old systems, APIs, or features.",
+        "body_blob_sha": "765bdde6329dbd5fd22d5d3fc2c185737fc9f908",
+        "computed_at": "2026-07-12T14:42:14.937025Z"
+      }
+    },
+    {
+      "id": "addyosmani-documentation-and-adrs",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/documentation-and-adrs",
+        "default_branch": "main"
+      },
+      "name": "documentation-and-adrs",
+      "frontmatter_description": "Records decisions and documentation. Use when making architectural decisions, changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "061c5e1a0a9faf07bd8c65bbd03141fab7b044bd",
+        "fetched_at": "2026-07-16T14:25:26.523392Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "documents",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-008",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "define",
+      "nutrition": {
+        "token_estimate": 2109,
+        "word_count": 1291,
+        "line_count": 274,
+        "basis": "body",
+        "trigger": "Use when making architectural decisions, changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
+        "body_blob_sha": "061c5e1a0a9faf07bd8c65bbd03141fab7b044bd",
+        "computed_at": "2026-07-12T14:42:14.938070Z"
+      }
+    },
+    {
+      "id": "addyosmani-doubt-driven-development",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/doubt-driven-development",
+        "default_branch": "main"
+      },
+      "name": "doubt-driven-development",
+      "frontmatter_description": "Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matters more than speed, when working in unfamiliar code, when stakes are high (production, security-sensitive logic, irreversible operations), or any time a confident output would be cheaper to verify now than to debug later.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "f5bc53d01ca0c5bdf178fba1c38c9817b39b63ec",
+        "fetched_at": "2026-07-16T14:25:26.523436Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-009",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 4001,
+        "word_count": 2508,
+        "line_count": 239,
+        "basis": "body",
+        "trigger": "Use when correctness matters more than speed, when working in unfamiliar code, when stakes are high (production, security-sensitive logic, irreversible operations), or any time a confident output wou…",
+        "body_blob_sha": "f5bc53d01ca0c5bdf178fba1c38c9817b39b63ec",
+        "computed_at": "2026-07-12T14:42:14.939187Z"
+      }
+    },
+    {
+      "id": "addyosmani-frontend-ui-engineering",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/frontend-ui-engineering",
+        "default_branch": "main"
+      },
+      "name": "frontend-ui-engineering",
+      "frontmatter_description": "Builds production-quality, accessible, responsive user-facing UIs. Use when building or modifying interfaces and pages, creating components, implementing layouts, meeting WCAG accessibility requirements, managing state, or when the output needs to look and feel production-quality rather than AI-generated.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "ad64ed29cdfeed9b7ecdd535db34cf98379041ae",
+        "fetched_at": "2026-07-16T14:25:26.523481Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "frontend",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-010",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "build",
+      "nutrition": {
+        "token_estimate": 2578,
+        "word_count": 1398,
+        "line_count": 324,
+        "basis": "body",
+        "trigger": "Use when building or modifying interfaces and pages, creating components, implementing layouts, meeting WCAG accessibility requirements, managing state, or when the output needs to look and feel prod…",
+        "body_blob_sha": "ad64ed29cdfeed9b7ecdd535db34cf98379041ae",
+        "computed_at": "2026-07-12T14:42:14.940122Z"
+      }
+    },
+    {
+      "id": "addyosmani-git-workflow-and-versioning",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/git-workflow-and-versioning",
+        "default_branch": "main"
+      },
+      "name": "git-workflow-and-versioning",
+      "frontmatter_description": "Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, or when you need to organize work across multiple parallel streams. Use when cutting a release, choosing a semantic version bump, tagging, or writing a changelog.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "6b33aefe602eee4d43ae77e12329827eba5b70cc",
+        "fetched_at": "2026-07-16T14:25:26.523526Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-011",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 3346,
+        "word_count": 2084,
+        "line_count": 351,
+        "basis": "body",
+        "trigger": "Use when making any code change.",
+        "body_blob_sha": "6b33aefe602eee4d43ae77e12329827eba5b70cc",
+        "computed_at": "2026-07-12T14:42:14.941074Z"
+      }
+    },
+    {
+      "id": "addyosmani-idea-refine",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/idea-refine",
+        "default_branch": "main"
+      },
+      "name": "idea-refine",
+      "frontmatter_description": "Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one. Triggers on \"ideate\", \"refine this idea\", or \"stress-test my plan\".",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "38955e8943f2ea68c041f10ef1902d94bdfb1cb9",
+        "fetched_at": "2026-07-16T14:25:26.523577Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "planning",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-012",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "define",
+      "nutrition": {
+        "token_estimate": 1927,
+        "word_count": 1221,
+        "line_count": 174,
+        "basis": "body",
+        "trigger": "Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one.",
+        "body_blob_sha": "38955e8943f2ea68c041f10ef1902d94bdfb1cb9",
+        "computed_at": "2026-07-12T14:42:14.941854Z"
+      }
+    },
+    {
+      "id": "addyosmani-incremental-implementation",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/incremental-implementation",
+        "default_branch": "main"
+      },
+      "name": "incremental-implementation",
+      "frontmatter_description": "Delivers changes incrementally. Use when implementing any feature or change that touches more than one file. Use when you're about to write a large amount of code at once, or when a task feels too big to land in one step.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "f18acb64e8152c68554b3359203f52afb5715a93",
+        "fetched_at": "2026-07-16T14:25:26.523628Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "planning",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-013",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "build",
+      "nutrition": {
+        "token_estimate": 2168,
+        "word_count": 1400,
+        "line_count": 245,
+        "basis": "body",
+        "trigger": "Use when implementing any feature or change that touches more than one file.",
+        "body_blob_sha": "f18acb64e8152c68554b3359203f52afb5715a93",
+        "computed_at": "2026-07-12T14:42:14.942693Z"
+      }
+    },
+    {
+      "id": "addyosmani-interview-me",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/interview-me",
+        "default_branch": "main"
+      },
+      "name": "interview-me",
+      "frontmatter_description": "Extracts what the user actually wants instead of what they think they should want. Achieves this through one-question-at-a-time interview until ~95% confidence about the underlying intent. Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you catch yourself silently filling in ambiguous requirements before any plan, spec, or code exists.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "de5e3aff0c497e2d474e329cde447678632e082b",
+        "fetched_at": "2026-07-16T14:25:26.523703Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "planning",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-014",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "define",
+      "nutrition": {
+        "token_estimate": 3446,
+        "word_count": 2322,
+        "line_count": 221,
+        "basis": "body",
+        "trigger": "Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you…",
+        "body_blob_sha": "de5e3aff0c497e2d474e329cde447678632e082b",
+        "computed_at": "2026-07-12T14:42:14.943583Z"
+      }
+    },
+    {
+      "id": "addyosmani-observability-and-instrumentation",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/observability-and-instrumentation",
+        "default_branch": "main"
+      },
+      "name": "observability-and-instrumentation",
+      "frontmatter_description": "Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting. Use when shipping any feature that runs in production and you need evidence it works. Use when production issues are reported but you can't tell what happened from the available data.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "c151387152bf203eee2e7f44b16f3d90341d26f2",
+        "fetched_at": "2026-07-16T14:25:26.523760Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-015",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 2658,
+        "word_count": 1646,
+        "line_count": 199,
+        "basis": "body",
+        "trigger": "Use when adding logging, metrics, tracing, or alerting.",
+        "body_blob_sha": "c151387152bf203eee2e7f44b16f3d90341d26f2",
+        "computed_at": "2026-07-12T14:42:14.944309Z"
+      }
+    },
+    {
+      "id": "addyosmani-performance-optimization",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/performance-optimization",
+        "default_branch": "main"
+      },
+      "name": "performance-optimization",
+      "frontmatter_description": "Optimizes application performance across frontend, backend, queries, and databases. Use when performance requirements exist, when you suspect performance regressions, when Core Web Vitals or load times need improvement, when N+1 query patterns need fixing, or when profiling reveals bottlenecks.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "fbfcc55773b345bb0edec75bc22bd71629cf2fb5",
+        "fetched_at": "2026-07-16T14:25:26.523812Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-016",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 2783,
+        "word_count": 1569,
+        "line_count": 346,
+        "basis": "body",
+        "trigger": "Use when performance requirements exist, when you suspect performance regressions, when Core Web Vitals or load times need improvement, when N+1 query patterns need fixing, or when profiling reveals …",
+        "body_blob_sha": "fbfcc55773b345bb0edec75bc22bd71629cf2fb5",
+        "computed_at": "2026-07-12T14:42:14.945249Z"
+      }
+    },
+    {
+      "id": "addyosmani-planning-and-task-breakdown",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/planning-and-task-breakdown",
+        "default_branch": "main"
+      },
+      "name": "planning-and-task-breakdown",
+      "frontmatter_description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate scope, or when parallel work is possible.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "ada6cbc135055f045960a70ff504f1d5371612f7",
+        "fetched_at": "2026-07-16T14:25:26.523862Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "planning",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-017",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "plan",
+      "nutrition": {
+        "token_estimate": 1815,
+        "word_count": 1212,
+        "line_count": 230,
+        "basis": "body",
+        "trigger": "Use when you have a spec or clear requirements and need to break work into implementable tasks.",
+        "body_blob_sha": "ada6cbc135055f045960a70ff504f1d5371612f7",
+        "computed_at": "2026-07-12T14:42:14.946245Z"
+      }
+    },
+    {
+      "id": "addyosmani-security-and-hardening",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/security-and-hardening",
+        "default_branch": "main"
+      },
+      "name": "security-and-hardening",
+      "frontmatter_description": "Hardens code against vulnerabilities. Use when handling user input, authentication, data storage, or external integrations. Use when building any feature that accepts untrusted data, manages user sessions, or interacts with third-party services.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "2ddd1352d85fc7f7122280c930a6da9127bd9b65",
+        "fetched_at": "2026-07-16T14:25:26.523916Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-018",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 5016,
+        "word_count": 2889,
+        "line_count": 463,
+        "basis": "body",
+        "trigger": "Use when handling user input, authentication, data storage, or external integrations.",
+        "body_blob_sha": "2ddd1352d85fc7f7122280c930a6da9127bd9b65",
+        "computed_at": "2026-07-12T14:42:14.947459Z"
+      }
+    },
+    {
+      "id": "addyosmani-shipping-and-launch",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/shipping-and-launch",
+        "default_branch": "main"
+      },
+      "name": "shipping-and-launch",
+      "frontmatter_description": "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a rollback strategy.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "eebcc6cbb1b89d978fef1b594136b6b28990e5eb",
+        "fetched_at": "2026-07-16T14:25:26.523970Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-019",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 2399,
+        "word_count": 1537,
+        "line_count": 306,
+        "basis": "body",
+        "trigger": "Use when preparing to deploy to production.",
+        "body_blob_sha": "eebcc6cbb1b89d978fef1b594136b6b28990e5eb",
+        "computed_at": "2026-07-12T14:42:14.948417Z"
+      }
+    },
+    {
+      "id": "addyosmani-source-driven-development",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/source-driven-development",
+        "default_branch": "main"
+      },
+      "name": "source-driven-development",
+      "frontmatter_description": "Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library where correctness matters.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "9ef02877e446bd2d31862006ef4e3a79d5c38b9a",
+        "fetched_at": "2026-07-16T14:25:26.524026Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-020",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "nutrition": {
+        "token_estimate": 1966,
+        "word_count": 1160,
+        "line_count": 190,
+        "basis": "body",
+        "trigger": "Use when you want authoritative, source-cited code free from outdated patterns.",
+        "body_blob_sha": "9ef02877e446bd2d31862006ef4e3a79d5c38b9a",
+        "computed_at": "2026-07-12T14:42:14.949349Z"
+      }
+    },
+    {
+      "id": "addyosmani-spec-driven-development",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/spec-driven-development",
+        "default_branch": "main"
+      },
+      "name": "spec-driven-development",
+      "frontmatter_description": "Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when requirements are unclear, ambiguous, or only exist as a vague idea.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "569d22321469770385b1ff89bf69f498f2202bc6",
+        "fetched_at": "2026-07-16T14:25:26.524081Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "planning",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-021",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "define",
+      "nutrition": {
+        "token_estimate": 2048,
+        "word_count": 1246,
+        "line_count": 202,
+        "basis": "body",
+        "trigger": "Use when starting a new project, feature, or significant change and no specification exists yet.",
+        "body_blob_sha": "569d22321469770385b1ff89bf69f498f2202bc6",
+        "computed_at": "2026-07-12T14:42:14.950153Z"
+      }
+    },
+    {
+      "id": "addyosmani-test-driven-development",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/test-driven-development",
+        "default_branch": "main"
+      },
+      "name": "test-driven-development",
+      "frontmatter_description": "Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about to modify existing functionality.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "c96a67f4560121a4761baad2efeaa51ef1602d7a",
+        "fetched_at": "2026-07-16T14:25:26.524138Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "testing",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-022",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": "verify",
+      "nutrition": {
+        "token_estimate": 3620,
+        "word_count": 2176,
+        "line_count": 379,
+        "basis": "body",
+        "trigger": "Use when implementing any logic, fixing any bug, or changing any behavior.",
+        "body_blob_sha": "c96a67f4560121a4761baad2efeaa51ef1602d7a",
+        "computed_at": "2026-07-12T14:42:14.950976Z"
+      }
+    },
+    {
+      "id": "addyosmani-using-agent-skills",
+      "source_id": "addyosmani-agent-skills",
+      "provenance": "community",
+      "origin": {
+        "org": "addyosmani",
+        "repo": "agent-skills",
+        "path": "skills/using-agent-skills",
+        "default_branch": "main"
+      },
+      "name": "using-agent-skills",
+      "frontmatter_description": "Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are discovered and invoked.",
+      "license": "MIT",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "849850e03972c84a909286e8fddbdc8166600b0f",
+        "blob_sha": "975fb5c2569c036d62985aeacdf9368d0fac0771",
+        "fetched_at": "2026-07-16T14:25:26.524197Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "agent-building",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-023",
+      "score_default": 150,
+      "scores_by_tool": {
+        "claude-code": 150,
+        "claude-ai": 150,
+        "vscode-copilot": 150,
+        "antigravity": 150,
+        "gemini-cli": 150,
+        "cursor": 150
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 2355,
+        "word_count": 1265,
+        "line_count": 187,
+        "basis": "body",
+        "trigger": "Use when starting a session or when you need to discover which skill applies to the current task.",
+        "body_blob_sha": "975fb5c2569c036d62985aeacdf9368d0fac0771",
+        "computed_at": "2026-07-12T14:42:14.951845Z"
+      }
+    }
+  ]
+}

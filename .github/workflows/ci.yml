@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  kitchen-tests:
+    name: Kitchen (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Install Bandit
+        run: pip install bandit
+      - name: Run Bandit security scan
+        run: bandit -r kitchen/ -x kitchen/tests/ -ll
+      - name: Install pytest
+        run: pip install pytest
+      - name: Run pytest
+        run: python -m pytest kitchen/tests/
+
+  site-tests:
+    name: Site (Vitest + Playwright)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: site/package-lock.json
+      - name: Install dependencies
+        run: npm install
+        working-directory: site
+      - name: Run npm audit
+        run: npm audit --audit-level=high
+        working-directory: site
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+        working-directory: site
+      - name: Run Vitest
+        run: npm run test
+        working-directory: site
+      - name: Run production build
+        run: npm run build
+        working-directory: site
+      - name: Run Playwright e2e
+        run: npm run test:e2e
+        working-directory: site

@@ -1,0 +1,307 @@
+---
+import Badge from './Badge.astro';
+import TrustGlyph from './TrustGlyph.astro';
+import { formatTokens, costBucket } from '../utils/contextCost';
+
+interface Nutrition {
+  token_estimate: number;
+  word_count: number;
+  line_count: number;
+  basis: 'body' | 'description';
+  trigger: string;
+  body_blob_sha: string | null;
+  computed_at: string;
+}
+
+interface SkillRef {
+  name: string;
+  repo_url: string;
+  provenance: string;
+  vendor: string | null;
+  license: string;
+  review_status: string;
+  reviewed_at: string | null;
+  freshness: string | null;
+  upstream_changed_at: string | null;
+  upstream_fetched_at: string | null;
+  install: Record<string, string>;
+  nutrition: Nutrition | null;
+}
+
+interface Props {
+  skillId: string;
+  skill: SkillRef;
+  title: string;
+  whatItDoes: string;
+  trySaying: string;
+  alternatives?: { id: string; name: string; repo_url: string; provenance: string; vendor: string | null; license: string }[];
+}
+
+const { skillId, skill, title, whatItDoes, trySaying, alternatives = [] } = Astro.props;
+
+const tools = [
+  { id: 'claude-code', label: 'Claude Code' },
+  { id: 'claude-ai', label: 'Claude.ai' },
+  { id: 'vscode-copilot', label: 'VS Code' },
+  { id: 'cursor', label: 'Cursor' },
+  { id: 'antigravity', label: 'Antigravity' },
+  { id: 'gemini-cli', label: 'Gemini CLI' }
+];
+
+const hasInstallCommands = Object.keys(skill.install).length > 0;
+const isUnreviewedCommunity = skill.provenance === 'community' && skill.review_status !== 'human_read';
+const isVerifiedPublisher = (skill.provenance === 'official' || skill.provenance === 'partner') && skill.review_status !== 'human_read';
+const isEditorsChoice = skill.review_status === 'human_read';
+
+const cardBorderClass = isEditorsChoice
+  ? 'border-emerald-300 dark:border-emerald-800 border-l-4 border-l-emerald-400 dark:border-l-emerald-500'
+  : isVerifiedPublisher
+  ? 'border-blue-300 dark:border-blue-800 border-l-4 border-l-blue-400 dark:border-l-blue-500'
+  : 'border-amber-300 dark:border-amber-800 border-l-4 border-l-amber-400 dark:border-l-amber-500'; // Community unreviewed
+
+const nutrition = skill.nutrition;
+const costChipStyle = nutrition && nutrition.basis === 'body'
+  ? costBucket(nutrition.token_estimate) === 'light'
+    ? 'bg-zinc-100 text-zinc-700 dark:bg-zinc-800/80 dark:text-zinc-300 border-zinc-200/50 dark:border-zinc-700/50'
+    : costBucket(nutrition.token_estimate) === 'moderate'
+    ? 'bg-amber-100 text-amber-800 dark:bg-amber-950/30 dark:text-amber-300 border-amber-200/50 dark:border-amber-900/20'
+    : 'bg-red-100 text-red-800 dark:bg-red-950/40 dark:text-red-300 border-red-200 dark:border-red-900/30'
+  : '';
+---
+
+<div class={`bg-white dark:bg-zinc-900 border rounded-lg overflow-hidden shadow-sm max-w-4xl ${cardBorderClass}`}>
+  {isEditorsChoice && (
+    <div class="px-6 md:px-8 py-2 bg-emerald-50 dark:bg-emerald-950/20 border-b border-emerald-200 dark:border-emerald-900/30 text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-300 flex items-center gap-2">
+      <svg class="w-4.5 h-4.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+      Editor's Choice — Manually reviewed and recommended by SkillDeck editors.
+    </div>
+  )}
+  {isVerifiedPublisher && (
+    <div class="px-6 md:px-8 py-2 bg-blue-50 dark:bg-blue-950/20 border-b border-blue-200 dark:border-blue-900/30 text-xs font-mono font-semibold text-blue-800 dark:text-blue-300 flex items-center gap-2">
+      <svg class="w-4.5 h-4.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+      Org Verified — Sourced directly from the official GitHub repository.
+    </div>
+  )}
+  {isUnreviewedCommunity && (
+    <div class="px-6 md:px-8 py-2 bg-amber-50 dark:bg-amber-950/30 border-b border-amber-200 dark:border-amber-900/40 text-xs font-mono font-semibold text-amber-800 dark:text-amber-300 flex items-center gap-2">
+      <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+      Community Submission — Not yet human-reviewed. Verify contents before running.
+    </div>
+  )}
+  <div class="p-6 md:p-8 space-y-6">
+    {/* Title & Upstream Link */}
+    <div class="flex flex-col md:flex-row justify-between items-start gap-4">
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 dark:text-white">
+        {title}
+      </h3>
+      <a
+        href={skill.repo_url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-mono text-zinc-400 hover:text-accent flex items-center gap-1 shrink-0"
+      >
+        View Upstream Source
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+
+    {/* Trust glyph + context-cost chip: one verdict, full provenance/review/freshness/license detail one click away */}
+    <div class="flex flex-wrap items-center gap-2">
+      <TrustGlyph
+        provenance={skill.provenance}
+        vendor={skill.vendor}
+        reviewStatus={skill.review_status}
+        reviewedAt={skill.reviewed_at}
+        freshness={skill.freshness}
+        upstreamChangedAt={skill.upstream_changed_at}
+        upstreamFetchedAt={skill.upstream_fetched_at}
+        license={skill.license}
+      />
+      {nutrition && (
+        nutrition.basis === 'description' ? (
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 text-zinc-500 dark:bg-zinc-800/60 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-700/50">
+            size unknown — metadata only
+          </span>
+        ) : (
+          <span
+            class={`px-2 py-0.5 rounded text-[10px] font-medium font-mono border ${costChipStyle}`}
+            title="Estimated context cost when this skill loads (chars ÷ 4)"
+          >
+            ⛁ {formatTokens(nutrition.token_estimate)}
+          </span>
+        )
+      )}
+    </div>
+
+    {/* What it does */}
+    <div class="space-y-1">
+      <p class="text-base md:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed">
+        {whatItDoes}
+      </p>
+      {nutrition?.trigger && (
+        <p class="text-[11px] font-mono text-zinc-400 dark:text-zinc-500">
+          Loads when: &ldquo;{nutrition.trigger}&rdquo;
+        </p>
+      )}
+    </div>
+
+    {/* Try saying — the primary action on this page */}
+    <div class="space-y-2">
+      <span class="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+        Try asking your assistant:
+      </span>
+      <div class="relative group bg-accent/5 dark:bg-accent/10 border-2 border-accent/30 dark:border-accent/40 rounded p-4 flex items-center justify-between gap-4">
+        <blockquote class="text-sm md:text-base font-semibold italic text-zinc-800 dark:text-zinc-100">
+          &ldquo;{trySaying}&rdquo;
+        </blockquote>
+        <button
+          onclick={`navigator.clipboard.writeText(decodeURIComponent("${encodeURIComponent(trySaying)}")).then(() => {
+            const btn = this;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<svg class="w-4 h-4 animate-copied-pop" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg> Copied';
+            setTimeout(() => { btn.innerHTML = original; }, 2000);
+          })`}
+          class="px-3 py-1.5 rounded border border-accent bg-accent text-white hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1.5 text-xs font-mono font-semibold shrink-0"
+          aria-label="Copy prompt example"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+          </svg>
+          Copy
+        </button>
+      </div>
+    </div>
+
+    {/* Get it: install commands with CSS-only tabs */}
+    <div class="space-y-3">
+      <span class="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+        Installation commands:
+      </span>
+
+      {hasInstallCommands ? (
+        <div class="border border-zinc-200 dark:border-zinc-800 rounded overflow-hidden">
+          {/* Radio controllers */}
+          {tools.map((t, idx) => (
+            <input
+              type="radio"
+              name={`tab-${skillId}`}
+              id={`tab-${t.id}-${skillId}`}
+              class="hidden peer"
+              checked={idx === 0}
+            />
+          ))}
+
+          {/* Tab labels */}
+          <div class="flex border-b border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 overflow-x-auto whitespace-nowrap scrollbar-none">
+            {tools.map(t => (
+              <label
+                for={`tab-${t.id}-${skillId}`}
+                class={`px-4 py-2 text-xs font-mono border-b-2 border-transparent text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 cursor-pointer select-none transition-colors `}
+                data-tool={t.id}
+              >
+                {t.label}
+              </label>
+            ))}
+          </div>
+
+          {/* CSS to match labels to checked radio */}
+          <style is:global>{`
+            ${tools.map(t => `
+              #tab-${t.id}-${skillId}:checked ~ div [data-tool="${t.id}"] {
+                border-bottom-color: #2563eb;
+                color: #2563eb;
+                font-weight: 600;
+              }
+              #tab-${t.id}-${skillId}:checked ~ .content-${t.id} {
+                display: flex;
+              }
+            `).join('\n')}
+          `}</style>
+
+          {/* Panels */}
+          {tools.map(t => {
+            const cmd = skill.install[t.id];
+            return (
+              <div class={`content-${t.id} hidden bg-zinc-950 text-zinc-200 p-4 font-mono text-xs items-center justify-between gap-4`}>
+                {cmd ? (
+                  <code class="whitespace-pre-wrap select-all leading-relaxed text-zinc-300">
+                    {cmd}
+                  </code>
+                ) : (
+                  <span class="text-zinc-500 italic">
+                    See provider documentation: <a href={skill.repo_url} target="_blank" rel="noopener noreferrer" class="text-accent underline hover:text-accent-dark">GitHub Upstream</a>
+                  </span>
+                )}
+
+                {cmd && (
+                  <button
+                    onclick={`navigator.clipboard.writeText(decodeURIComponent("${encodeURIComponent(cmd)}")).then(() => {
+                      const btn = this;
+                      const original = btn.innerHTML;
+                      btn.innerHTML = '<svg class="w-4 h-4 text-emerald-500 animate-copied-pop" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>';
+                      setTimeout(() => { btn.innerHTML = original; }, 2000);
+                    })`}
+                    class="p-1.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-400 focus:outline-none shrink-0"
+                    aria-label="Copy installation command"
+                  >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div class="bg-zinc-950 text-zinc-500 p-4 font-mono text-xs border border-zinc-800 rounded italic">
+          No installation commands specified for this skill. See provider documentation.
+        </div>
+      )}
+    </div>
+  </div>
+
+  {/* Collapsed alternatives details */}
+  {alternatives.length > 0 && (
+    <details class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 group">
+      <summary class="px-6 py-3 text-xs font-mono text-zinc-500 dark:text-zinc-400 cursor-pointer select-none hover:text-zinc-700 dark:hover:text-zinc-200 flex items-center justify-between focus:outline-none">
+        <span class="font-semibold">{alternatives.length} other option{alternatives.length > 1 ? 's' : ''} for this capability</span>
+        <svg class="w-4 h-4 transition-transform group-open:rotate-180 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div class="px-6 pb-6 pt-2 space-y-3 divide-y divide-zinc-100 dark:divide-zinc-800/50 border-t border-zinc-200 dark:border-zinc-800/80">
+        {alternatives.map(alt => (
+          <div class="pt-3 first:pt-0 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+            <div class="flex flex-wrap gap-2 items-center">
+              <a href={`/skill/${alt.id}`} class="text-xs font-mono font-bold text-zinc-800 dark:text-zinc-200 hover:underline">
+                {alt.name}
+              </a>
+              <Badge type="provenance" value={alt.provenance} vendor={alt.vendor} />
+              <span class="text-[10px] font-mono text-zinc-400">({alt.license})</span>
+            </div>
+            <a
+              href={alt.repo_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-[10px] font-mono text-zinc-400 hover:text-accent flex items-center gap-0.5"
+            >
+              GitHub Upstream
+              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </details>
+  )}
+</div>
