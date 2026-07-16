@@ -19,6 +19,7 @@ def ingest_all():
 
     client = GitHubClient()
     new_skills = {}
+    failed_source_ids = set()
 
     for source in sources_data.get("sources", []):
         source_id = source["id"]
@@ -31,16 +32,22 @@ def ingest_all():
         org = source["org"]
         # extract repo name from url
         repo = repo_url.split("github.com/")[-1].split("/")[-1]
-        
+
         print(f"Ingesting from direct source: {org}/{repo} ({source_id})")
-        
+
         branch = client.get_repo_default_branch(org, repo)
         tree_url = f"https://api.github.com/repos/{org}/{repo}/git/trees/{branch}?recursive=1"
-        
+
         try:
             tree_data = client.get(tree_url)
         except Exception as e:
             print(f"Failed to fetch tree for {org}/{repo}: {e}")
+            # We didn't actually see this source's current skill list, so we
+            # can't tell "skill was deleted upstream" from "network/auth
+            # failure" - don't let the vanished-skill sweep below mark this
+            # source's existing skills 'gone' on the strength of a fetch we
+            # never completed.
+            failed_source_ids.add(source_id)
             continue
 
         commit_sha = tree_data.get("sha", "")
@@ -140,19 +147,29 @@ def ingest_all():
                     "upstream_changed_at": existing.get("upstream_changed_at")
                 }
 
-    # Now verify which of the existing skills have vanished
-    # Only skills belonging to the direct sources we just processed
+    # Now verify which of the existing skills have vanished.
+    # Only skills belonging to a direct source whose tree we actually
+    # fetched this run are eligible - if the fetch failed we have no signal
+    # either way, so we leave those skills' status untouched.
     processed_source_ids = {s["id"] for s in sources_data.get("sources", []) if s["kind"] != "aggregator"}
+    preserved_after_failure = 0
     for skill_id, skill in existing_skills.items():
-        if skill.get("source_id") in processed_source_ids:
-            if skill_id not in new_skills:
-                # Skill has vanished!
-                skill["status"] = "gone"
-                new_skills[skill_id] = skill
-        else:
-            # Belongs to aggregator or other sources, keep as is for now
-            if skill_id not in new_skills:
-                new_skills[skill_id] = skill
+        if skill_id in new_skills:
+            continue
+        source_id = skill.get("source_id")
+        if source_id in processed_source_ids and source_id not in failed_source_ids:
+            # Skill has vanished!
+            skill["status"] = "gone"
+        elif source_id in failed_source_ids:
+            preserved_after_failure += 1
+        new_skills[skill_id] = skill
+
+    if failed_source_ids:
+        print(
+            f"Warning: {len(failed_source_ids)} source(s) failed to fetch this run "
+            f"({', '.join(sorted(failed_source_ids))}); left {preserved_after_failure} "
+            f"of their existing skill(s) untouched instead of marking them 'gone'."
+        )
 
     # Update output skills.json
     save_skills(SKILLS_JSON, list(new_skills.values()))

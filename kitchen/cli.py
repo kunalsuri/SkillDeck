@@ -12,6 +12,7 @@ from kitchen.cards import prepare_cards_input, apply_card_assignments
 from kitchen.review import review_skill, show_queue, start_review_server
 from kitchen.freshness import check_freshness
 from kitchen.emit import run_emit
+from kitchen.precheck import run_precheck
 
 def run_pipeline():
     """
@@ -38,6 +39,9 @@ def run_pipeline():
 def main():
     parser = argparse.ArgumentParser(description="SkillDeck Kitchen CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    # Precheck
+    subparsers.add_parser("precheck", help="Diagnose network/token issues before running ingest/canonicalize/freshness")
 
     # Ingest
     subparsers.add_parser("ingest", help="Fetch skill lists + SKILL.md metadata")
@@ -87,7 +91,9 @@ def main():
     args = parser.parse_args()
 
     try:
-        if args.command == "ingest":
+        if args.command == "precheck":
+            sys.exit(0 if run_precheck() else 1)
+        elif args.command == "ingest":
             ingest_all()
         elif args.command == "canonicalize":
             canonicalize_all()

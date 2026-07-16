@@ -19,8 +19,13 @@ before continuing.
 
 1. Confirm you're in the SkillDeck repo root (`kitchen/`, `data/`, `site/` exist).
 2. Check `GITHUB_TOKEN` is set (`echo $GITHUB_TOKEN` / `$env:GITHUB_TOKEN` on
-   Windows). If it's missing, tell the user to set it and stop — `ingest`/
-   `canonicalize` will otherwise hit GitHub's unauthenticated rate limit.
+   Windows). If it's not already set in the shell, check for a `.env` file in
+   the repo root and read a `GITHUB_TOKEN=...` line from it before concluding
+   it's missing — export that value into the shell environment for this run
+   (don't print the token value, and don't write it anywhere new). Only if
+   there's no `.env` file, or it has no `GITHUB_TOKEN` line, tell the user to
+   set it and stop — `ingest`/`canonicalize` will otherwise hit GitHub's
+   unauthenticated rate limit.
 3. Make sure Python deps are installed: `pip install -r requirements.txt`
    (only `requests`, `pyyaml`, `datasketch`, `jsonschema` — no
    `sentence-transformers`, no `anthropic`/`openai`/`google-genai` SDKs).

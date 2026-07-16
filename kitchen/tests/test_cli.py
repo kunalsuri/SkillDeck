@@ -5,6 +5,24 @@ from pathlib import Path
 from kitchen.cli import main
 
 class TestCli(unittest.TestCase):
+    @patch("kitchen.cli.run_precheck")
+    def test_cli_precheck_ok_exits_zero(self, mock_precheck):
+        mock_precheck.return_value = True
+        with patch.object(sys, "argv", ["cli.py", "precheck"]):
+            with self.assertRaises(SystemExit) as cm:
+                main()
+        mock_precheck.assert_called_once()
+        self.assertEqual(cm.exception.code, 0)
+
+    @patch("kitchen.cli.run_precheck")
+    def test_cli_precheck_blocked_exits_one(self, mock_precheck):
+        mock_precheck.return_value = False
+        with patch.object(sys, "argv", ["cli.py", "precheck"]):
+            with self.assertRaises(SystemExit) as cm:
+                main()
+        mock_precheck.assert_called_once()
+        self.assertEqual(cm.exception.code, 1)
+
     @patch("kitchen.cli.ingest_all")
     def test_cli_ingest(self, mock_ingest):
         with patch.object(sys, "argv", ["cli.py", "ingest"]):

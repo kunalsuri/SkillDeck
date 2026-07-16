@@ -236,5 +236,88 @@ New skill body
         self.assertEqual(s["capability_id"], "documents")
         self.assertEqual(s["reviewed_by"], "John Doe")
 
+    @patch("kitchen.ingest.GitHubClient")
+    def test_ingest_preserves_status_when_tree_fetch_fails(self, mock_client_cls):
+        """A source whose tree fetch fails (network/SSL/rate-limit error) must
+        NOT cause its existing skills to be marked 'gone' - we never actually
+        saw whether they're still upstream, so a fetch failure must not be
+        treated as proof of deletion."""
+        sources_content = {
+            "sources": [
+                {
+                    "id": "direct-source",
+                    "org": "anthropics",
+                    "repo_url": "https://github.com/anthropics/skills",
+                    "kind": "official",
+                    "vendor": "anthropic",
+                    "default_license": "Apache-2.0"
+                }
+            ]
+        }
+
+        existing_skills = {
+            "schema_version": 1,
+            "generated_at": "2026-07-07T10:00:00Z",
+            "skills": [
+                {
+                    "id": "anthropics-still-here",
+                    "source_id": "direct-source",
+                    "provenance": "official",
+                    "origin": {
+                        "org": "anthropics",
+                        "repo": "skills",
+                        "path": "skills/still-here",
+                        "default_branch": "main"
+                    },
+                    "name": "still-here",
+                    "frontmatter_description": "desc",
+                    "license": "Apache-2.0",
+                    "mirrorable": True,
+                    "upstream": {
+                        "commit_sha": "old_commit",
+                        "blob_sha": "old_blob",
+                        "fetched_at": "2026-07-07T08:00:00Z"
+                    },
+                    "status": "active",
+                    "tier": "core",
+                    "capability_id": "documents",
+                    "native_ecosystem": "claude",
+                    "reviewed_by": "John Doe",
+                    "reviewed_at": "2026-07-07T08:00:00Z",
+                    "reviewed_commit_sha": "old_commit"
+                }
+            ]
+        }
+
+        mock_client = mock_client_cls.return_value
+        mock_client.get_repo_default_branch.return_value = "main"
+        mock_client.get.side_effect = Exception(
+            "SSLError: certificate verify failed: unable to get local issuer certificate"
+        )
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_sources = Path(tmpdir) / "sources.json"
+            tmp_skills = Path(tmpdir) / "skills.json"
+
+            with open(tmp_sources, "w", encoding="utf-8") as f:
+                json.dump(sources_content, f)
+            with open(tmp_skills, "w", encoding="utf-8") as f:
+                json.dump(existing_skills, f)
+
+            with patch("kitchen.ingest.SOURCES_JSON", tmp_sources), \
+                 patch("kitchen.ingest.SKILLS_JSON", tmp_skills):
+                ingest_all()
+
+            with open(tmp_skills, "r", encoding="utf-8") as f:
+                result_data = json.load(f)
+
+        skills = {s["id"]: s for s in result_data["skills"]}
+        self.assertIn("anthropics-still-here", skills)
+        s = skills["anthropics-still-here"]
+        # Core assertion: a failed fetch must not flip status to 'gone'.
+        self.assertEqual(s["status"], "active")
+        self.assertEqual(s["tier"], "core")
+        self.assertEqual(s["reviewed_by"], "John Doe")
+
 if __name__ == "__main__":
     unittest.main()
