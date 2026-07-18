@@ -7,12 +7,13 @@ import sanitizeHtml from 'sanitize-html';
 import kbData from '../../data/kb.json';
 import SkillCard from '../../components/SkillCard.astro';
 import Layout from '../../layouts/Layout.astro';
+import type { SkillRef } from '../../types/kb';
 
 export async function getStaticPaths() {
   const paths = [];
 
   for (const entry of kbData.entries) {
-    const skillRefs = entry.skill_refs as Record<string, any>;
+    const skillRefs = entry.skill_refs as unknown as Record<string, SkillRef>;
     const allSkillIds = Object.keys(skillRefs);
 
     for (const skillId of allSkillIds) {

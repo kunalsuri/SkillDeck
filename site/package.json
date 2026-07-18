@@ -10,7 +10,9 @@
     "prebuild": "node prebuild.js",
     "astro": "astro",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@astrojs/preact": "^6.0.1",
@@ -27,8 +29,12 @@
     "@testing-library/preact": "^3.0.0",
     "@types/node": "^26.1.1",
     "@types/sanitize-html": "^2.16.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "eslint": "^10.7.0",
+    "eslint-plugin-astro": "^3.0.1",
     "jsdom": "^29.1.1",
     "typescript": "^6.0.3",
+    "typescript-eslint": "^8.64.0",
     "vitest": "^4.1.10"
   }
 }

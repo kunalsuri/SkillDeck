@@ -3,7 +3,7 @@ import type { ComponentChildren } from 'preact';
 import { formatTokens } from '../utils/contextCost';
 import { PHASE_COLORS, DEFAULT_PHASE_COLOR, type PhaseColor } from '../utils/phaseColors';
 import { CAPABILITY_COLORS, DEFAULT_CAPABILITY_COLOR } from '../utils/capabilityColors';
-import { provenanceBadgeClass, provenanceLabel, epistemicBadgeClass, freshnessBadgeClass, vendorLabel as formatVendorLabel, formatBadgeDate } from '../utils/badgeStyles';
+import { provenanceBadgeClass, provenanceLabel, freshnessBadgeClass, vendorLabel as formatVendorLabel, formatBadgeDate } from '../utils/badgeStyles';
 import type { Tool, Capability, KB, KBEntry, SkillRef } from '../types/kb';
 
 // 'phase' groups the SDLC page by lifecycle_phase, keeping only skills that
