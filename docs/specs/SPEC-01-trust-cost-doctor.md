@@ -59,8 +59,7 @@ storage.
    existing prepare/apply file-contract testing pattern where relevant.
 7. **TypeScript errors are build failures.** `npm run build` runs
    `astro check` first. Trust `site/package.json` for versions (Astro 7,
-   Tailwind 4 via `@tailwindcss/vite`, Preact with `compat: true`) — the
-   "Astro v4" mention in CLAUDE.md is stale.
+   Tailwind 4 via `@tailwindcss/vite`, Preact with `compat: true`).
 8. **Determinism.** Every metric this spec adds must be a pure function of
    committed repository content. Same input → byte-identical output. No
    timestamps in derived metrics except the explicitly specified

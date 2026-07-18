@@ -17,54 +17,7 @@
 
 <br>
 
-<p align="center">
-  <img src="media/skilldeck-demo.gif" alt="SkillDeck demo — filtering the catalog by tool and capability, opening a skill's detail page, linting a SKILL.md with the Doctor, and browsing the SDLC board" width="760" />
-</p>
-
-<p align="center"><sub>17 seconds, real interactions, no cuts. Prefer full quality? <a href="media/skilldeck-demo.mp4">watch the MP4</a>.</sub></p>
-
-<br>
-
 > There are hundreds of AI agent skills scattered across GitHub, written for six different tools, with no way to tell the maintained ones from the abandoned forks. SkillDeck reads all of them, removes the duplicates, ranks what's left, and hands you the one skill worth installing — with the exact command for whatever tool you use.
-
-<br>
-
----
-
-## ✨ See It In Action
-
-<table>
-<tr>
-<td width="50%" valign="top">
-<p align="center"><img src="media/screenshots/catalog.png" width="380" alt="SkillDeck catalog filtered to Claude Code and Create & edit documents" /></p>
-<p><b>Describe the task. Get the skill.</b><br/>Pick your tool and what you're trying to do — or just type it in plain English — and the catalog narrows to one recommendation, with a ready-to-paste prompt.</p>
-</td>
-<td width="50%" valign="top">
-<p align="center"><img src="media/screenshots/skill-detail.png" width="380" alt="Skill detail page showing trust badges, review status, and install commands for all six tools" /></p>
-<p><b>Not just a skill. Proof it's trustworthy.</b><br/>Provenance, license, human-review status, and the install command for every supported tool — all on one page, before you copy anything.</p>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<p align="center"><img src="media/screenshots/sdlc-board.png" width="380" alt="The Developer's Journey — skills mapped across Define, Plan, Build, Verify, Review, Ship" /></p>
-<p><b>Your build, mapped end to end.</b><br/>Every software-engineering skill placed where it actually belongs in the lifecycle — Define, Plan, Build, Verify, Review, Ship.</p>
-</td>
-<td width="50%" valign="top">
-<p align="center"><img src="media/screenshots/skill-doctor.png" width="380" alt="Skill Doctor showing a Ready verdict with 0 errors and 0 warnings" /></p>
-<p><b>Paste it. Know in seconds.</b><br/>Skill Doctor lints your own <code>SKILL.md</code> against the mistakes that keep skills from firing — entirely client-side, nothing leaves your browser.</p>
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-<p align="center"><img src="media/screenshots/concepts.png" width="380" alt="Concepts table mapping the same mechanism across six tools' different names" /></p>
-<p><b>Six tools, six vocabularies. One Rosetta Stone.</b><br/>A "hook" in Claude Code is a VS Code extension API call — and doesn't exist at all in three of the others. This page translates what you already know into whatever tool you're using today.</p>
-</td>
-<td width="50%" valign="top">
-<p align="center"><img src="media/screenshots/sources.png" width="380" alt="Upstream registries table listing every source SkillDeck crawls" /></p>
-<p><b>Nothing here we can't point back to.</b><br/>Every skill traces to a real upstream repository — official, partner, or community — never a mystery package.</p>
-</td>
-</tr>
-</table>
 
 <br>
 
@@ -269,7 +222,7 @@ Key properties of this layout:
 
 ## 🚀 Deployment
 
-The front-end website is built using **Astro v4** (within [site/](site)) and outputs static web pages optimized for visual excellence, performance, and SEO.
+The front-end website is built using **Astro v7** (within [site/](site)) and outputs static web pages optimized for visual excellence, performance, and SEO.
 
 > [!NOTE]
 > **Vercel Integration:** SkillDeck is pre-configured via [vercel.json](vercel.json) for production builds on Vercel. A deployment pipeline is coming soon, publishing the verified skill deck directly to the Vercel web app!

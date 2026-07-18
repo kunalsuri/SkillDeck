@@ -44,7 +44,7 @@ python -m kitchen rank
 ```
 
 These only touch the GitHub API (via `GITHUB_TOKEN`) and do local
-MinHash/scoring math. They update `data/skills.json` in place.
+MinHash/scoring math. They update the per-source `data/skill-<source_id>.json` files in place.
 
 ## 2. Capability clustering (you do this part)
 
