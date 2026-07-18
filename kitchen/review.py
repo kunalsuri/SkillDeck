@@ -7,9 +7,8 @@ import http.server
 import urllib.parse
 import webbrowser
 from datetime import datetime, timezone
-from pathlib import Path
-from kitchen.config import SKILLS_JSON, CACHE_DIR, KB_JSON, PROJECT_ROOT
-from kitchen.utils import parse_skill_md, load_all_skills, save_skills, atomic_write_json
+from kitchen.config import SKILLS_JSON, PROJECT_ROOT
+from kitchen.utils import load_all_skills, save_skills
 from kitchen.dedup import get_skill_body
 from kitchen.cards import load_cards_cache, save_cards_cache
 

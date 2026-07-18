@@ -3,7 +3,6 @@ import re
 import hashlib
 import base64
 from datetime import datetime
-from pathlib import Path
 from datasketch import MinHash, MinHashLSH
 from kitchen.config import SKILLS_JSON, CACHE_DIR, MIRROR_DIR
 from kitchen.utils import load_all_skills, save_skills
@@ -157,7 +156,7 @@ def run_dedup():
             alt_skill["cluster_id"] = cluster_id
 
     save_skills(SKILLS_JSON, skills)
-    print(f"Deduplicated skills. Stamped cluster_id in database.")
+    print("Deduplicated skills. Stamped cluster_id in database.")
 
 if __name__ == "__main__":
     run_dedup()

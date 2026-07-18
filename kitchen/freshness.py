@@ -1,6 +1,4 @@
-import json
 from datetime import datetime, timezone
-from pathlib import Path
 from kitchen.config import SKILLS_JSON
 from kitchen.utils import GitHubClient, load_all_skills, save_skills
 

@@ -10,3 +10,13 @@ dependencies = [
     "datasketch>=2.0.0",
     "jsonschema>=4.26.0",
 ]
+
+[tool.ruff]
+target-version = "py311"
+
+# Scoped to real-bug-catching rules for now (unused imports/names, undefined
+# names, syntax errors). The wider style/format rulesets (E, I, UP, B, SIM)
+# surface ~300 pre-existing findings across the codebase - worth adopting
+# incrementally later, but out of scope for standing up this CI gate.
+[tool.ruff.lint]
+select = ["E9", "F"]

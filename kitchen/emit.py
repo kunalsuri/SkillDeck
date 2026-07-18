@@ -1,7 +1,6 @@
 import json
 import re
 from datetime import datetime, timezone
-from pathlib import Path
 from kitchen.config import (
     SKILLS_JSON, INSTALL_MATRIX_JSON, KB_JSON, MIRROR_DIR, TOOLS, CAPABILITIES, LIFECYCLE_PHASES
 )
