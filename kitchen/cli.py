@@ -9,6 +9,7 @@ from kitchen.rank import run_rank
 from kitchen.nutrition import run_nutrition
 from kitchen.phase import prepare_phase_input, apply_phase_assignments
 from kitchen.cards import prepare_cards_input, apply_card_assignments
+from kitchen.summary import prepare_summary_input, apply_summary_assignments
 from kitchen.review import review_skill, show_queue, start_review_server
 from kitchen.freshness import check_freshness
 from kitchen.emit import run_emit
@@ -32,8 +33,9 @@ def run_pipeline():
     print(
         "Next: run 'cluster-prepare', have an agent classify skills into "
         "cluster_output.json, then 'cluster-apply'. Do the same with "
-        "'phase-prepare'/'phase-apply' for lifecycle phase, and "
-        "'cards-prepare'/'cards-apply' for card text. Finish with 'emit'."
+        "'phase-prepare'/'phase-apply' for lifecycle phase, "
+        "'cards-prepare'/'cards-apply' for card text, and "
+        "'summary-prepare'/'summary-apply' for Skill Summaries. Finish with 'emit'."
     )
 
 def main():
@@ -72,6 +74,11 @@ def main():
     subparsers.add_parser("cards-prepare", help="Write cluster heads needing card text for an agent to read")
     cards_apply_parser = subparsers.add_parser("cards-apply", help="Apply an agent's card text")
     cards_apply_parser.add_argument("input_file", nargs="?", help="Path to cards JSON (default: .kitchen_cache/cards_output.json)")
+
+    # Summary (agent-driven, split into prepare/apply)
+    subparsers.add_parser("summary-prepare", help="Write cluster heads needing a Skill Summary for an agent to read")
+    summary_apply_parser = subparsers.add_parser("summary-apply", help="Apply an agent's Skill Summaries")
+    summary_apply_parser.add_argument("input_file", nargs="?", help="Path to summaries JSON (default: .kitchen_cache/summary_output.json)")
 
     # Review
     review_parser = subparsers.add_parser("review", help="Human read/promote workflow")
@@ -115,6 +122,10 @@ def main():
             prepare_cards_input()
         elif args.command == "cards-apply":
             apply_card_assignments(Path(args.input_file) if args.input_file else None)
+        elif args.command == "summary-prepare":
+            prepare_summary_input()
+        elif args.command == "summary-apply":
+            apply_summary_assignments(Path(args.input_file) if args.input_file else None)
         elif args.command == "review":
             if args.queue:
                 show_queue()

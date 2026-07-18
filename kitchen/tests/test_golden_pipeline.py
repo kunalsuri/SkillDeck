@@ -8,6 +8,7 @@ from pathlib import Path
 from kitchen.cli import run_pipeline
 from kitchen.cluster import prepare_cluster_input, apply_cluster_assignments
 from kitchen.cards import prepare_cards_input, apply_card_assignments
+from kitchen.summary import prepare_summary_input, apply_summary_assignments
 from kitchen.emit import run_emit
 from kitchen.schemas import validate_json, KB_SCHEMA
 
@@ -137,6 +138,8 @@ Write documents skill body text content. Detailed reports can be output!
             tmp_cards_input = tmp_dir / "cards_input.json"
             tmp_cards_output = tmp_dir / "cards_output.json"
             tmp_cards_cache = tmp_dir / "cards_cache.json"
+            tmp_summary_input = tmp_dir / "summary_input.json"
+            tmp_summary_output = tmp_dir / "summary_output.json"
 
             tmp_mirror.mkdir(parents=True, exist_ok=True)
             tmp_cache_dir.mkdir(parents=True, exist_ok=True)
@@ -165,6 +168,7 @@ Write documents skill body text content. Detailed reports can be output!
                  patch("kitchen.cluster.SKILLS_JSON", tmp_skills), \
                  patch("kitchen.cards.SKILLS_JSON", tmp_skills), \
                  patch("kitchen.cards.CARDS_CACHE_FILE", tmp_cards_cache), \
+                 patch("kitchen.summary.SKILLS_JSON", tmp_skills), \
                  patch("kitchen.rank.SKILLS_JSON", tmp_skills), \
                  patch("kitchen.nutrition.SKILLS_JSON", tmp_skills), \
                  patch("kitchen.emit.SKILLS_JSON", tmp_skills), \
@@ -200,6 +204,21 @@ Write documents skill body text content. Detailed reports can be output!
                     json.dump({"cards": cards_out}, f)
                 apply_card_assignments(tmp_cards_output)
 
+                # Skill Summaries: prepare -> (agent writes summaries) -> apply
+                prepare_summary_input(tmp_summary_input)
+                with open(tmp_summary_input, "r", encoding="utf-8") as f:
+                    summary_in = json.load(f)
+                summaries_out = {
+                    h["skill_id"]: (
+                        "Generates structured report documents from prompts, laying out "
+                        "sections and formatting the output for direct sharing with readers."
+                    )
+                    for h in summary_in["heads_needing_summaries"]
+                }
+                with open(tmp_summary_output, "w", encoding="utf-8") as f:
+                    json.dump({"summaries": summaries_out}, f)
+                apply_summary_assignments(tmp_summary_output)
+
                 run_emit()
 
             # 4. Verify Outputs
@@ -225,6 +244,15 @@ Write documents skill body text content. Detailed reports can be output!
 
             self.assertEqual(entry["skill_refs"]["google-doc-writer"]["name"], "doc-writer")
             self.assertEqual(entry["skill_refs"]["google-doc-writer"]["license"], "Apache-2.0")
+
+            # The head's Skill Summary lands in kb.json and is propagated to
+            # its dedup-cluster twin as well.
+            self.assertTrue(
+                entry["skill_refs"]["google-doc-writer"]["summary"].startswith("Generates structured report")
+            )
+            self.assertTrue(
+                entry["skill_refs"]["org2-doc-helper"]["summary"].startswith("Generates structured report")
+            )
 
             self.assertTrue((tmp_mirror / "google-doc-writer.md").exists())
             self.assertTrue((tmp_mirror / "org2-doc-helper.md").exists())

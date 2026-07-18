@@ -16,6 +16,22 @@ NUTRITION_SCHEMA = {
     }
 }
 
+# Shared shape for the "summary" (Skill Summary) object on skills.json
+# records, nullable at the call site: null/absent means the summary stage
+# hasn't run for that skill yet. kb.json carries only the text (see
+# KB_SCHEMA's skill_refs).
+SUMMARY_SCHEMA = {
+    "type": ["object", "null"],
+    "required": ["text", "basis", "body_blob_sha", "generated_by", "generated_at"],
+    "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "basis": {"type": "string", "enum": ["body", "description"]},
+        "body_blob_sha": {"type": ["string", "null"]},
+        "generated_by": {"type": "string", "enum": ["llm", "human"]},
+        "generated_at": {"type": "string", "format": "date-time"}
+    }
+}
+
 # Schema for sources.json
 SOURCES_SCHEMA = {
     "type": "object",
@@ -139,7 +155,8 @@ SKILLS_SCHEMA = {
                         "type": ["string", "null"],
                         "enum": ["define", "plan", "build", "verify", "review", "ship", None]
                     },
-                    "nutrition": NUTRITION_SCHEMA
+                    "nutrition": NUTRITION_SCHEMA,
+                    "summary": SUMMARY_SCHEMA
                 }
             }
         }
@@ -221,7 +238,7 @@ KB_SCHEMA = {
                         "type": "object",
                         "additionalProperties": {
                             "type": "object",
-                            "required": ["name", "repo_url", "provenance", "license", "review_status", "reviewed_at", "install", "nutrition"],
+                            "required": ["name", "repo_url", "provenance", "license", "review_status", "reviewed_at", "install", "nutrition", "summary"],
                             "properties": {
                                 "name": {"type": "string"},
                                 "repo_url": {"type": "string", "format": "uri"},
@@ -241,7 +258,8 @@ KB_SCHEMA = {
                                     "type": "object",
                                     "additionalProperties": {"type": "string"}
                                 },
-                                "nutrition": NUTRITION_SCHEMA
+                                "nutrition": NUTRITION_SCHEMA,
+                                "summary": {"type": ["string", "null"]}
                             }
                         }
                     },

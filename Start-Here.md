@@ -255,10 +255,13 @@ When you type `/skilldeck-ingest` in a Claude Code session, the agent follows a 
 │  Phase 3: AI writes explainer cards                             │
 │     │   cards-prepare → AI writes copy → cards-apply            │
 │     ▼                                                           │
-│  Phase 4: Emit final kb.json                                    │
+│  Phase 4: AI writes Skill Summaries                             │
+│     │   summary-prepare → AI writes text → summary-apply        │
+│     ▼                                                           │
+│  Phase 5: Emit final kb.json                                    │
 │     │                                                           │
 │     ▼                                                           │
-│  Phase 5: Report (does NOT commit)                              │
+│  Phase 6: Report (does NOT commit)                              │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -297,6 +300,17 @@ If any command exits with a non-zero code, the agent **stops and reports the err
 
 > [!NOTE]
 > If a card fails validation, the agent is expected to re-check and retry. Cards that are too long are **rejected and logged**, not silently truncated.
+
+**Phase 4 — Skill Summaries** (AI writes the comparison text)
+
+| Step | What Happens | File Involved |
+|------|-------------|---------------|
+| `python -m kitchen summary-prepare` | Writes a list of skills whose Skill Summary is missing or stale for the current upstream body (skips human-locked or already-current ones) | `.kitchen_cache/summary_input.json` |
+| **Claude reads the file** | The agent reads each skill's name, description, and body excerpt, then writes one factual paragraph describing what the skill actually does | *(reads)* `.kitchen_cache/summary_input.json` |
+| **Claude writes the summaries** | The agent writes `{"summaries": {"skill-id": "summary text", ...}}` | `.kitchen_cache/summary_output.json` |
+| `python -m kitchen summary-apply` | Validates each summary (single paragraph, 15–120 words, ≤5 sentences, not a verbatim description copy), stamps it on the cluster head, and propagates it to duplicate-cluster members | `data/skills.json` |
+
+Summaries end up in `kb.json` under each skill entry and are the substrate for cross-skill semantic comparison (the planned similarity matrix).
 
 **Phase 4 — Emit**
 
@@ -573,6 +587,8 @@ python -m kitchen cluster-prepare      # Then have your AI classify
 python -m kitchen cluster-apply
 python -m kitchen cards-prepare        # Then have your AI write cards
 python -m kitchen cards-apply
+python -m kitchen summary-prepare      # Then have your AI write Skill Summaries
+python -m kitchen summary-apply
 python -m kitchen emit                 # Regenerate kb.json
 ```
 

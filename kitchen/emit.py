@@ -218,7 +218,8 @@ def run_emit():
                 "upstream_fetched_at": member.get("upstream", {}).get("fetched_at"),
                 "lifecycle_phase": member.get("lifecycle_phase"),
                 "install": install_block,
-                "nutrition": member.get("nutrition")
+                "nutrition": member.get("nutrition"),
+                "summary": (member.get("summary") or {}).get("text")
             }
             
             # Track if mirrorable
