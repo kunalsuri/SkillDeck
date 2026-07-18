@@ -5,10 +5,11 @@ description: Run the SkillDeck kitchen pipeline locally, doing capability cluste
 # SkillDeck: local ingest pipeline
 
 You are running the SkillDeck kitchen pipeline (`kitchen/`) on the user's own
-machine, using their own `GITHUB_TOKEN`. Two stages that used to call out to
-external ML/LLM systems — capability clustering and Explainer Card writing —
-are now things **you** do directly by reading a JSON file and writing your
-answers to another JSON file. No embedding model download, no `LLM_API_KEY`.
+machine, using their own `GITHUB_TOKEN`. The judgment-based stages —
+capability clustering, lifecycle-phase classification, Explainer Card
+writing, and Skill Summary writing — are things **you** do directly by
+reading a JSON file and writing your answers to another JSON file. No
+embedding model download, no `LLM_API_KEY`.
 
 Work from the repository root. Stop and report back to the user (don't just
 barrel through) if any step fails — most failures here mean a missing
@@ -159,7 +160,47 @@ silently truncated — re-check and re-run if you see failures):
 python -m kitchen cards-apply
 ```
 
-## 5. Context-cost (nutrition) metrics — no agent involvement
+## 5. Skill Summaries (you do this part too)
+
+```bash
+python -m kitchen summary-prepare
+```
+
+This writes `.kitchen_cache/summary_input.json` with `heads_needing_summaries`
+(capability-assigned skills whose summary is missing or stale for the current
+upstream body). Each entry has `skill_id`, `name`, `frontmatter_description`,
+a `body_excerpt` (first 1000 words, or just the description when no body is
+available — see the entry's `basis` field), a `capability_label`, and a
+`members` list. Skills with a human-locked summary, or one already written
+for the current body, are skipped automatically.
+
+For each entry, write one **Skill Summary** — a factual statement of what
+the skill actually does. Unlike the marketing-friendly card copy, summaries
+power semantic comparison between skills (finding overlapping or related
+skills across sources), so precision beats polish:
+
+- One paragraph, 2–5 sentences, 15–120 words. No markdown headings, lists,
+  or line breaks.
+- Neutral third person: the tasks it performs, what it operates on (tools,
+  file formats, services), and what it produces.
+- Concrete specifics over marketing language; never copy the frontmatter
+  description verbatim.
+
+Write `.kitchen_cache/summary_output.json`:
+
+```json
+{"summaries": {"<skill_id>": "<summary text>", "...": "..."}}
+```
+
+Every `skill_id` from `heads_needing_summaries` must have an entry. Then
+apply it (summaries that violate the rules above are rejected and logged,
+not silently truncated — re-check and re-run if you see failures):
+
+```bash
+python -m kitchen summary-apply
+```
+
+## 6. Context-cost (nutrition) metrics — no agent involvement
 
 ```bash
 python -m kitchen nutrition
@@ -173,7 +214,7 @@ else the frontmatter description as a last resort with `basis:
 "description"`). Run it any time after `rank`; it's idempotent and safe to
 re-run.
 
-## 6. Emit
+## 7. Emit
 
 ```bash
 python -m kitchen emit
@@ -182,21 +223,22 @@ python -m kitchen emit
 This validates and writes `data/kb.json`. It groups skills by capability
 bucket (one `kb.json` entry per capability, which may contain multiple
 `skill_refs` if more than one dedup cluster mapped to the same capability),
-and stamps each `skill_refs` entry with its `lifecycle_phase` and
-`nutrition` (or `null`) so the Software Engineering / SDLC page and the
-context-cost chip can read them. It also updates `mirror/` non-destructively:
+and stamps each `skill_refs` entry with its `lifecycle_phase`, `nutrition`
+(or `null`), and `summary` text (or `null`) so the Software Engineering /
+SDLC page, the context-cost chip, and the skill detail page can read them. It also updates `mirror/` non-destructively:
 only `.md` files for skills no longer emitted are deleted, and a file is
 only overwritten when there's fresh GitHub blob cache content for it — a
 cold cache never truncates a committed mirror body down to a one-line
 description fallback.
 
-## 7. Report, don't commit
+## 8. Report, don't commit
 
 Run `git status` and `git diff --stat` on `data/` and `mirror/` and summarize
 for the user: how many skills were ingested, how many capability buckets got
 entries, how many skills were classified into each lifecycle phase, how many
-cards you wrote vs. reused from cache, and anything that looked off (e.g. a
-skill you had to leave `unassigned`, or a card that failed validation twice).
+cards and Skill Summaries you wrote vs. reused from cache, and anything that
+looked off (e.g. a skill you had to leave `unassigned`, or a card or summary
+that failed validation twice).
 
 Also remind the user that the **web review dashboard** is available for
 human promotion/rejection of skills and manual card editing:

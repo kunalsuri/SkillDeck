@@ -95,6 +95,11 @@ class TestEmit(unittest.TestCase):
                         "token_estimate": 100, "word_count": 80, "line_count": 12,
                         "basis": "body", "trigger": "Use this when users need reports.",
                         "body_blob_sha": "sha_head", "computed_at": "2026-07-08T00:00:00Z"
+                    },
+                    "summary": {
+                        "text": "Cleans and restructures report documents into a consistent layout with numbered sections.",
+                        "basis": "body", "body_blob_sha": "sha_head",
+                        "generated_by": "llm", "generated_at": "2026-07-08T00:00:00Z"
                     }
                 },
                 # 2. Active shell skill in cluster-1 (non-mirrorable MIT, community, not head)
@@ -294,6 +299,13 @@ class TestEmit(unittest.TestCase):
             self.assertEqual(entry["skill_refs"]["skill-head"]["nutrition"]["basis"], "body")
             self.assertEqual(entry["skill_refs"]["skill-head"]["nutrition"]["token_estimate"], 100)
             self.assertIsNone(entry["skill_refs"]["skill-twin"]["nutrition"])
+
+            # 2e. summary text passes through per skill_ref; a skill without one emits null
+            self.assertEqual(
+                entry["skill_refs"]["skill-head"]["summary"],
+                "Cleans and restructures report documents into a consistent layout with numbered sections."
+            )
+            self.assertIsNone(entry["skill_refs"]["skill-twin"]["summary"])
 
             # KB validation passes with a mix of present and null nutrition.
             validate_json(kb_data, KB_SCHEMA)

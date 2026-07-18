@@ -191,7 +191,8 @@ class TestSchemas(unittest.TestCase):
                                 "trigger": "Use this when users request generative art.",
                                 "body_blob_sha": "abc123",
                                 "computed_at": "2026-07-07T10:00:00Z"
-                            }
+                            },
+                            "summary": "Generates generative art reports from prompts and saves them as documents."
                         }
                     },
                     "alternatives": []
@@ -229,7 +230,8 @@ class TestSchemas(unittest.TestCase):
                             "review_status": "auto_summarized",
                             "reviewed_at": None,
                             "install": {"claude-code": "run command"},
-                            "nutrition": None
+                            "nutrition": None,
+                            "summary": None
                         }
                     },
                     "alternatives": []

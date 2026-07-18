@@ -351,6 +351,14 @@ You can also interact with the Python kitchen pipeline stage by stage:
   python -m kitchen cards-apply
   ```
 
+* **Skill Summaries (agent-driven):**
+
+  ```bash
+  python -m kitchen summary-prepare   # writes .kitchen_cache/summary_input.json
+  # ... an agent reads it and writes .kitchen_cache/summary_output.json ...
+  python -m kitchen summary-apply
+  ```
+
 * **Review the queue of skills (CLI):**
   
   ```bash

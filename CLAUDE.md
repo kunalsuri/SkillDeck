@@ -23,8 +23,9 @@ The bridge between the two is a single static JSON file:
 **`data/kb.json`**. The kitchen writes it; the site reads it (copied into
 `site/src/data/kb.json` at build time by `site/prebuild.js`). If you change
 the shape of `kb.json`, you must update `kitchen/schemas.py` (`KB_SCHEMA`),
-`kitchen/emit.py`, and the frontend types in `site/src/components/Wizard.tsx`
-/ `SkillCard.astro` together.
+`kitchen/emit.py`, and the frontend types in `site/src/types/kb.ts`
+(shared by the components; `SkillCard.astro` also re-declares a local
+subset) together.
 
 ## Repository layout
 
@@ -95,15 +96,28 @@ reads/writes the JSON files under `data/` idempotently via
    words, ≤2 sentence description, ≤25 word "try saying") and caches it. No
    `LLM_API_KEY`, no scripted API call — `emit.py` falls back to a generic
    card if a head has no cached card yet.
-9. **`review.py`** — human-in-the-loop CLI. Promotes a skill from
-   `"shell"` tier to `"core"`, stamping `reviewed_by` / `reviewed_at` /
-   `reviewed_commit_sha`. This is the only stage a human runs interactively;
-   everything else is automatable.
-10. **`emit.py`** — writes the final `data/kb.json` (validated against
+9. **`summary.py`** — writes the "Skill Summary": one factual, dense
+   paragraph per cluster head stating what the skill actually does, stored
+   as a `summary` object on the skill record and propagated to cluster
+   members. Same prepare/apply split as clustering:
+   `prepare_summary_input()` writes emit-eligible heads whose summary is
+   missing or stale (idempotent via `body_blob_sha`, never downgrading a
+   body-based summary to a description-based one) to
+   `.kitchen_cache/summary_input.json`; an agent writes the text to
+   `.kitchen_cache/summary_output.json`; `apply_summary_assignments()`
+   validates it (`validate_summary()`: single paragraph, 15–120 words, ≤5
+   sentences, not a verbatim copy of the frontmatter description) and
+   writes it back. Summaries are the substrate for cross-skill semantic
+   comparison (see `docs/dev/20260718-skill-summary-and-similarity-matrix.md`).
+10. **`review.py`** — human-in-the-loop CLI. Promotes a skill from
+    `"shell"` tier to `"core"`, stamping `reviewed_by` / `reviewed_at` /
+    `reviewed_commit_sha`. This is the only stage a human runs interactively;
+    everything else is automatable.
+11. **`emit.py`** — writes the final `data/kb.json` (validated against
     `KB_SCHEMA` in `schemas.py`) and resolves per-tool install commands from
     `data/install_matrix.json` templates. Mirrors each skill's `nutrition`
-    object into its `skill_refs` entry.
-11. **`freshness.py`** — separate, not part of the default pipeline; diffs
+    object and `summary` text into its `skill_refs` entry.
+12. **`freshness.py`** — separate, not part of the default pipeline; diffs
     upstream blob SHAs for `"core"` skills to flag drift.
 
 ### Running the kitchen
@@ -124,6 +138,8 @@ python -m kitchen phase-prepare         # writes .kitchen_cache/phase_input.json
 python -m kitchen phase-apply           # reads .kitchen_cache/phase_output.json, writes lifecycle_phase back
 python -m kitchen cards-prepare         # writes .kitchen_cache/cards_input.json for an agent to read
 python -m kitchen cards-apply           # reads .kitchen_cache/cards_output.json, validates + caches cards
+python -m kitchen summary-prepare       # writes .kitchen_cache/summary_input.json for an agent to read
+python -m kitchen summary-apply         # reads .kitchen_cache/summary_output.json, validates + writes summaries back
 python -m kitchen nutrition             # computes context-cost metrics from cached/mirrored bodies (no agent needed)
 python -m kitchen review --queue        # list skills awaiting human review
 python -m kitchen review <skill_id>     # interactive review/promote/reject
@@ -279,6 +295,12 @@ Cross-platform support: PowerShell scripts (`.ps1`) are provided for Windows, an
   command's instructions to the agent writing them — if you touch card
   writing, preserve those constraints (outcome-phrased title ≤6 words, ≤2
   sentence description, ≤25 word "try saying" prompt) in both places.
+- Skill Summary text has the same dual enforcement: `kitchen/summary.py:
+  validate_summary()` (single paragraph, 15–120 words, ≤5 sentences, no
+  verbatim copy of the frontmatter description) and the matching rules in
+  the `/skilldeck-ingest` command — keep both in sync if you change either.
+  Summaries are factual comparison material, not marketing copy; that tone
+  distinction is deliberate.
 - License: Apache-2.0 (see `LICENSE`).
 
 ## Things that look unfinished (don't be surprised)

@@ -50,6 +50,9 @@ export interface SkillRef {
   lifecycle_phase: string | null;
   install: Record<string, string>;
   nutrition: Nutrition | null;
+  // Optional until the next `python -m kitchen emit` regenerates kb.json;
+  // null when the summary stage hasn't produced text for the skill yet.
+  summary?: string | null;
 }
 
 export interface KBEntry {
