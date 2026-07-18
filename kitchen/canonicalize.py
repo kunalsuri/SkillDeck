@@ -3,7 +3,7 @@ import re
 import base64
 from datetime import datetime, timezone
 from pathlib import Path
-from kitchen.config import SOURCES_JSON, SKILLS_JSON, OFFICIAL_ORGS, PARTNER_ORGS, KB_JSON
+from kitchen.config import SOURCES_JSON, SKILLS_JSON, OFFICIAL_ORGS, PARTNER_ORGS
 from kitchen.utils import GitHubClient, parse_skill_md, load_all_skills, save_skills, get_existing_matching_skill
 
 def extract_github_repos(readme_text: str) -> list:
@@ -89,7 +89,6 @@ def canonicalize_all():
         if source["kind"] != "aggregator":
             continue
         
-        source_id = source["id"]
         repo_url = source["repo_url"]
         org = source["org"]
         repo = repo_url.split("github.com/")[-1].split("/")[-1]

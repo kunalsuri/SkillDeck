@@ -2,6 +2,7 @@
 import SkillExplorer from '../components/SkillExplorer';
 import Layout from '../layouts/Layout.astro';
 import kbData from '../data/kb.json';
+import type { KB, SkillRef } from '../types/kb';
 
 const title = "SkillDeck — Curated Agent-Skills Knowledge Base";
 const description = "Find the best AI agent skills for any task. Get copy-pasteable installation commands instantly.";
@@ -11,7 +12,7 @@ const publisherCounts: Record<string, number> = {};
 let totalSkills = 0;
 
 for (const entry of kbData.entries) {
-  for (const skill of Object.values(entry.skill_refs as Record<string, any>)) {
+  for (const skill of Object.values(entry.skill_refs as unknown as Record<string, SkillRef>)) {
     totalSkills++;
     let vendorId = 'community';
     if (skill.vendor) {
@@ -154,7 +155,7 @@ const PUBLISHER_CARDS = [
         Interactive Explorer
       </h2>
     </div>
-    <SkillExplorer kb={kbData as any} mode="publisher" client:load />
+    <SkillExplorer kb={kbData as unknown as KB} mode="publisher" client:load />
   </div>
 </Layout>
 

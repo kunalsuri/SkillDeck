@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SkillExplorer from '../components/SkillExplorer';
 import kbData from '../data/kb.json';
+import type { KB } from '../types/kb';
 
 const title = "Software Engineering / SDLC — SkillDeck";
 const description = "Coding-agent skills grouped by software development lifecycle phase: Define, Plan, Build, Verify, Review, Ship.";
@@ -28,5 +29,5 @@ const description = "Coding-agent skills grouped by software development lifecyc
   {/* Skill explorer: a searchable master list of every phase-classified
       skill on the left, full detail card (info grid, install options,
       try-saying prompt) for the selected one on the right. */}
-  <SkillExplorer kb={kbData as any} mode="phase" client:load />
+  <SkillExplorer kb={kbData as unknown as KB} mode="phase" client:load />
 </Layout>

@@ -6,10 +6,38 @@ on:
   pull_request:
 
 jobs:
+  kitchen-lint:
+    name: Kitchen (ruff)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Install ruff
+        run: pip install ruff
+      - name: Run ruff check
+        run: ruff check kitchen/
+      # `ruff format --check` isn't gated yet: the codebase predates ruff and
+      # isn't formatted to its style, so enabling it would require a single
+      # large reformat-only commit as a deliberate, separate decision.
+
   kitchen-tests:
     name: Kitchen (Python)
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v6
         with:
@@ -20,15 +48,54 @@ jobs:
         run: pip install bandit
       - name: Run Bandit security scan
         run: bandit -r kitchen/ -x kitchen/tests/ -ll
+      - name: Install pip-audit
+        run: pip install pip-audit
+      - name: Run pip-audit
+        run: pip-audit -r requirements.txt
       - name: Install pytest
-        run: pip install pytest
+        run: pip install pytest pytest-cov
       - name: Run pytest
-        run: python -m pytest kitchen/tests/
+        run: python -m pytest kitchen/tests/ --cov=kitchen --cov-report=xml --cov-report=term-missing
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kitchen-coverage
+          path: coverage.xml
+          retention-days: 14
+
+  site-lint:
+    name: Site (ESLint)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: site/package-lock.json
+      - name: Install dependencies
+        run: npm install
+        working-directory: site
+      - name: Run ESLint
+        run: npm run lint
+        working-directory: site
 
   site-tests:
     name: Site (Vitest + Playwright)
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
@@ -44,9 +111,15 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
         working-directory: site
-      - name: Run Vitest
-        run: npm run test
+      - name: Run Vitest with coverage
+        run: npm run test:coverage
         working-directory: site
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-coverage
+          path: site/coverage
+          retention-days: 14
       - name: Run production build
         run: npm run build
         working-directory: site

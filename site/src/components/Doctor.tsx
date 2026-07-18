@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'preact/hooks';
+import type { JSX } from 'preact';
 import { parseSkillMd, estimateTokens, diagnose, verdict, extractTrigger, type Finding } from '../utils/skillDoctor';
 import { formatTokens } from '../utils/contextCost';
 
@@ -28,7 +29,7 @@ export default function Doctor() {
   const [hasDiagnosed, setHasDiagnosed] = useState(false);
   const [activeTab, setActiveTab] = useState<'analysis' | 'guide' | 'rules'>('analysis');
 
-  const handleInput = (e: any) => {
+  const handleInput = (e: JSX.TargetedEvent<HTMLTextAreaElement>) => {
     const val = e.currentTarget.value;
     setText(val);
     if (val.trim().length === 0) {

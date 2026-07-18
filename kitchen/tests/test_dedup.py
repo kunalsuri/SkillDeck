@@ -1,12 +1,12 @@
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 import json
 import tempfile
 import hashlib
 import base64
 from pathlib import Path
 from kitchen.dedup import (
-    normalize_text, get_shingles, get_skill_body, sort_key, run_dedup
+    normalize_text, get_shingles, sort_key, run_dedup
 )
 
 class TestDedup(unittest.TestCase):

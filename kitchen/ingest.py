@@ -1,9 +1,8 @@
 import json
-import os
 from datetime import datetime, timezone
 from pathlib import Path
 from kitchen.config import SOURCES_JSON, SKILLS_JSON, OFFICIAL_ORGS, PARTNER_ORGS
-from kitchen.utils import GitHubClient, parse_skill_md, atomic_write_json, load_all_skills, save_skills, get_existing_matching_skill
+from kitchen.utils import GitHubClient, parse_skill_md, load_all_skills, save_skills, get_existing_matching_skill
 
 def ingest_all():
     print("Ingesting sources...")

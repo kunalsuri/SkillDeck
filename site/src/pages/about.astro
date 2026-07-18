@@ -21,6 +21,15 @@ interface Row {
   cells: Record<string, string>;
 }
 
+interface Source {
+  id: string;
+  org: string;
+  kind: string;
+  vendor?: string;
+  notes?: string;
+  repo_url: string;
+}
+
 const rows: Row[] = [
   {
     mechanism: 'Reusable skill / instruction pack',
@@ -142,7 +151,7 @@ const wantList: { need: string; mechanism: string }[] = [
             </tr>
           </thead>
           <tbody class="divide-y divide-zinc-200 dark:divide-zinc-800">
-            {sourcesData.sources.map((s: any) => (
+            {(sourcesData.sources as Source[]).map((s) => (
               <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-900/20 transition-colors">
                 <td class="p-4 font-mono font-bold text-zinc-800 dark:text-zinc-200">{s.id}</td>
                 <td class="p-4">{s.org}</td>
