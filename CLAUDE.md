@@ -33,8 +33,8 @@ subset) together.
 kitchen/          Python offline pipeline (ingest -> emit) + CLI + tests
 .claude/commands/ skilldeck-ingest.md — the slash command that runs the
                    pipeline locally and does clustering/cards itself
-site/             Astro v4 static frontend (Preact islands, Tailwind)
-data/             Pipeline state & output (sources.json, skills.json,
+site/             Astro v7 static frontend (Preact islands, Tailwind)
+data/             Pipeline state & output (sources.json, skill-<id>.json,
                    install_matrix.json, kb.json) — committed JSON, not a DB
 mirror/           Markdown mirrors of community skills fetched by the kitchen
 docs/             Architecture diagrams (docs/system/) and marketing-style
@@ -51,7 +51,8 @@ reads/writes the JSON files under `data/` idempotently via
 `atomic_write_json` (write to `.tmp`, then `os.replace`):
 
 1. **`ingest.py`** — fetches `SKILL.md` files + metadata from GitHub sources
-   listed in `data/sources.json`, writes/updates `data/skills.json`.
+   listed in `data/sources.json`, writes/updates the per-source
+   `data/skill-<source_id>.json` files.
 2. **`canonicalize.py`** — resolves `"aggregator"` sources (awesome-lists)
    to their true origin repos by regex-scanning READMEs for GitHub links.
 3. **`dedup.py`** — MinHash + Jaccard similarity (`datasketch`) to detect
@@ -159,7 +160,13 @@ force a full refetch.
 
 ### Data model conventions (`kitchen/schemas.py`)
 
-- `skills.json` entries have a `tier`: `"shell"` (auto-ingested, unreviewed)
+- Skills are stored **per source**, not in one monolithic file:
+  `save_skills()` groups records by `source_id` into
+  `data/skill-<source_id>.json` (e.g. `skill-anthropic-official.json`) and
+  `load_all_skills()` globs `data/skill-*.json`. A legacy `data/skills.json`,
+  if present, is read once for migration and then deleted — there is no
+  `skills.json` in the repo.
+- Skill records have a `tier`: `"shell"` (auto-ingested, unreviewed)
   → `"core"` (human-promoted) or `"rejected"`.
 - `provenance` is `"official"` / `"partner"` / `"community"`, derived from
   `OFFICIAL_ORGS` / `PARTNER_ORGS` in `config.py` — update those sets when
@@ -196,7 +203,7 @@ JSON output, apply it), not through a mocked model or LLM client.
 
 ## The frontend (`site/`)
 
-Astro v4, static output only (`output: 'static'` in `astro.config.mjs`), with
+Astro v7, static output only (`output: 'static'` in `astro.config.mjs`), with
 Preact islands (`@astrojs/preact`, `compat: true`) for interactivity and
 Tailwind for styling. There is no server-side rendering and no API routes.
 
@@ -269,7 +276,7 @@ Cross-platform support: PowerShell scripts (`.ps1`) are provided for Windows, an
 - **Never edit `data/kb.json` by hand.** It's pipeline output; regenerate it
   with `python -m kitchen emit` (after `cluster-apply`/`cards-apply` have
   run, or via the `/skilldeck-ingest` command which does the whole thing)
-  after changing `data/skills.json`, `data/sources.json`, or
+  after changing `data/skill-*.json`, `data/sources.json`, or
   `data/install_matrix.json`.
 - **`data/*.json` files are atomically written** (temp file + rename) by
   every kitchen stage. Follow the same pattern (`kitchen/ingest.py:
