@@ -19,7 +19,7 @@
     "marked": "^18.0.6",
     "preact": "^10.19.3",
     "sanitize-html": "^2.17.6",
-    "tailwindcss": "^4.3.2"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
