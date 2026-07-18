@@ -29,7 +29,7 @@ jobs:
       # Free for public repos; private repos need a GITLEAKS_LICENSE secret
       # (https://github.com/gitleaks/gitleaks-action#free-for-public-repos).
       - name: Gitleaks scan
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
