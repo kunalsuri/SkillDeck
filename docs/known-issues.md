@@ -37,11 +37,11 @@ permanently.
 **Important catch — silent data loss on the first failed run:** The
 first (failed) ingest run misread the connection failures as "these
 files were deleted upstream" and silently flipped 98 previously-active
-skills to `status: "gone"` in `data/skills.json`. This was caught via
+skills to `status: "gone"` in the per-source `data/skill-*.json` files. This was caught via
 `git diff` before any downstream stage (cluster/rank/emit) ran, reverted,
 and ingest was re-run cleanly with zero false deletions.
 
 **Takeaway:** After any `ingest` run, always check `git diff
-data/skills.json` for unexpected `status` changes before running later
+data/skill-*.json` for unexpected `status` changes before running later
 pipeline stages — a network/SSL failure should not be able to look like
 an upstream deletion.

@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 import json
 import tempfile
 import hashlib
@@ -417,7 +417,8 @@ class TestEmitPhase0FreshClone(unittest.TestCase):
         ]
 
     def _run_with_patches(self, patches):
-        started = [p.start() for p in patches]
+        for p in patches:
+            p.start()
         try:
             run_emit()
         finally:

@@ -1,9 +1,8 @@
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 import json
 import tempfile
 from pathlib import Path
-from datetime import datetime, timezone
 from kitchen.review import (
     get_git_username, edit_card_workflow, review_skill, show_queue
 )

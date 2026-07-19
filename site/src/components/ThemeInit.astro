@@ -1,6 +1,8 @@
 ---
 ---
 <script is:inline>
+  /* eslint-disable no-var -- runs unbundled/untranspiled in <head> before any
+     framework loads, so `var` (not `let`/`const`) is intentional here. */
   (function () {
     var STORAGE_KEY = 'skilldeck_theme';
     var stored = localStorage.getItem(STORAGE_KEY);

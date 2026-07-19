@@ -1,8 +1,5 @@
-import json
 from datetime import datetime, timezone
-from pathlib import Path
 from kitchen.config import SKILLS_JSON, TOOLS
-from kitchen.dedup import sort_key
 from kitchen.utils import load_all_skills, save_skills
 
 def days_since(date_str: str) -> int:
@@ -65,7 +62,7 @@ def run_rank():
             
     # Save skills database
     save_skills(SKILLS_JSON, skills)
-    print(f"Ranked active skills. Scores saved in database.")
+    print("Ranked active skills. Scores saved in database.")
 
 if __name__ == "__main__":
     run_rank()

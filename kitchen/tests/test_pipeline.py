@@ -1,11 +1,6 @@
 import unittest
-import json
-import tempfile
-import os
-from pathlib import Path
-from unittest.mock import MagicMock, patch
 
-from kitchen.canonicalize import extract_github_repos, resolve_license
+from kitchen.canonicalize import extract_github_repos
 from kitchen.dedup import normalize_text, get_shingles
 from datasketch import MinHash
 from kitchen.rank import score_skill, ecosystem_match

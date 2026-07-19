@@ -34,11 +34,12 @@ subset) together.
 kitchen/          Python offline pipeline (ingest -> emit) + CLI + tests
 .claude/commands/ skilldeck-ingest.md — the slash command that runs the
                    pipeline locally and does clustering/cards itself
-site/             Astro v4 static frontend (Preact islands, Tailwind)
-data/             Pipeline state & output (sources.json, skills.json,
+site/             Astro v7 static frontend (Preact islands, Tailwind)
+data/             Pipeline state & output (sources.json, skill-<id>.json,
                    install_matrix.json, kb.json) — committed JSON, not a DB
 mirror/           Markdown mirrors of community skills fetched by the kitchen
-docs/             Architecture images (docs/README.md is currently empty)
+docs/             Architecture diagrams (docs/system/) and marketing-style
+                   images (docs/images/) — see docs/README.md
 scripts/          OS-specific dev scripts (scripts/win/ and scripts/linux/)
 requirements.txt  Python deps for the kitchen (mirrors kitchen/pyproject.toml)
 vercel.json       Vercel build config (installs/builds only `site/`)
@@ -51,7 +52,8 @@ reads/writes the JSON files under `data/` idempotently via
 `atomic_write_json` (write to `.tmp`, then `os.replace`):
 
 1. **`ingest.py`** — fetches `SKILL.md` files + metadata from GitHub sources
-   listed in `data/sources.json`, writes/updates `data/skills.json`.
+   listed in `data/sources.json`, writes/updates the per-source
+   `data/skill-<source_id>.json` files.
 2. **`canonicalize.py`** — resolves `"aggregator"` sources (awesome-lists)
    to their true origin repos by regex-scanning READMEs for GitHub links.
 3. **`dedup.py`** — MinHash + Jaccard similarity (`datasketch`) to detect
@@ -69,7 +71,25 @@ reads/writes the JSON files under `data/` idempotently via
    (official > partner > community), license, tier, and freshness
    (`score_skill()` in `rank.py`); the top skill becomes the
    `recommended.default` for that capability.
-6. **`cards.py`** — generates the "Explainer Card" (`title`,
+6. **`nutrition.py`** — computes deterministic "Context Cost" metrics
+   (`token_estimate` via a documented chars÷4 estimate, `word_count`,
+   `line_count`, a `basis` of `"body"` vs. `"description"`, and a `trigger`
+   sentence pulled from `frontmatter_description`) for every active,
+   non-rejected skill. Fully offline (`resolve_skill_body()` in `dedup.py`:
+   cache → `mirror/<id>.md` → `None`, never a description lookalike) and
+   idempotent (skips recompute when the cached `body_blob_sha` still
+   matches, never downgrades a `"body"`-basis result). Powers the
+   context-cost chip on every skill card.
+7. **`phase.py`** — classifies capability-assigned skills into a
+   `lifecycle_phase` (`define`/`plan`/`build`/`verify`/`review`/`ship`, or
+   `null` for non-software-engineering skills) from the fixed
+   `LIFECYCLE_PHASES` list in `config.py`, for the "Software Engineering /
+   SDLC" page (`site/src/pages/sdlc.astro`). Same prepare/apply split as
+   clustering, reusing its head election: `prepare_phase_input()` writes
+   `.kitchen_cache/phase_input.json`; an agent decides each phase (or
+   `null`) and writes `.kitchen_cache/phase_output.json`;
+   `apply_phase_assignments()` propagates it to every cluster member.
+8. **`cards.py`** — generates the "Explainer Card" (`title`,
    `what_it_does`, `try_saying`). Same prepare/apply split as clustering:
    `prepare_cards_input()` writes cluster heads needing a card to
    `.kitchen_cache/cards_input.json` (skipping human-locked or already-cached
@@ -78,25 +98,28 @@ reads/writes the JSON files under `data/` idempotently via
    words, ≤2 sentence description, ≤25 word "try saying") and caches it. No
    `LLM_API_KEY`, no scripted API call — `emit.py` falls back to a generic
    card if a head has no cached card yet.
-7. **`summary.py`** — writes the "Skill Summary": one factual, dense
+9. **`summary.py`** — writes the "Skill Summary": one factual, dense
    paragraph per cluster head stating what the skill actually does, stored
    as a `summary` object on the skill record and propagated to cluster
    members. Same prepare/apply split as clustering:
    `prepare_summary_input()` writes emit-eligible heads whose summary is
-   missing or stale to `.kitchen_cache/summary_input.json`; an agent writes
-   the text to `.kitchen_cache/summary_output.json`;
-   `apply_summary_assignments()` validates it (`validate_summary()`: single
-   paragraph, 15–120 words, ≤5 sentences, not a verbatim copy of the
-   frontmatter description) and writes it back.
-8. **`review.py`** — human-in-the-loop CLI. Promotes a skill from
-   `"shell"` tier to `"core"`, stamping `reviewed_by` / `reviewed_at` /
-   `reviewed_commit_sha`. This is the only stage a human runs interactively;
-   everything else is automatable.
-9. **`emit.py`** — writes the final `data/kb.json` (validated against
-   `KB_SCHEMA` in `schemas.py`) and resolves per-tool install commands from
-   `data/install_matrix.json` templates. Mirrors each skill's `summary`
-   text into its `skill_refs` entry.
-10. **`freshness.py`** — separate, not part of the default pipeline; diffs
+   missing or stale (idempotent via `body_blob_sha`, never downgrading a
+   body-based summary to a description-based one) to
+   `.kitchen_cache/summary_input.json`; an agent writes the text to
+   `.kitchen_cache/summary_output.json`; `apply_summary_assignments()`
+   validates it (`validate_summary()`: single paragraph, 15–120 words, ≤5
+   sentences, not a verbatim copy of the frontmatter description) and
+   writes it back. Summaries are the substrate for cross-skill semantic
+   comparison (see `docs/dev/20260718-skill-summary-and-similarity-matrix.md`).
+10. **`review.py`** — human-in-the-loop CLI. Promotes a skill from
+    `"shell"` tier to `"core"`, stamping `reviewed_by` / `reviewed_at` /
+    `reviewed_commit_sha`. This is the only stage a human runs interactively;
+    everything else is automatable.
+11. **`emit.py`** — writes the final `data/kb.json` (validated against
+    `KB_SCHEMA` in `schemas.py`) and resolves per-tool install commands from
+    `data/install_matrix.json` templates. Mirrors each skill's `nutrition`
+    object and `summary` text into its `skill_refs` entry.
+12. **`freshness.py`** — separate, not part of the default pipeline; diffs
     upstream blob SHAs for `"core"` skills to flag drift.
 
 ### Running the kitchen
@@ -109,14 +132,17 @@ order, doing the clustering/card-writing steps itself.
 To run stages by hand:
 
 ```bash
-python -m kitchen pipeline              # scriptable stages only: ingest -> canonicalize -> dedup -> rank
+python -m kitchen pipeline              # scriptable stages only: ingest -> canonicalize -> dedup -> rank -> nutrition
 python -m kitchen ingest                # single stage
 python -m kitchen cluster-prepare       # writes .kitchen_cache/cluster_input.json for an agent to read
 python -m kitchen cluster-apply         # reads .kitchen_cache/cluster_output.json, writes capability_id back
+python -m kitchen phase-prepare         # writes .kitchen_cache/phase_input.json for an agent to read
+python -m kitchen phase-apply           # reads .kitchen_cache/phase_output.json, writes lifecycle_phase back
 python -m kitchen cards-prepare         # writes .kitchen_cache/cards_input.json for an agent to read
 python -m kitchen cards-apply           # reads .kitchen_cache/cards_output.json, validates + caches cards
 python -m kitchen summary-prepare       # writes .kitchen_cache/summary_input.json for an agent to read
 python -m kitchen summary-apply         # reads .kitchen_cache/summary_output.json, validates + writes summaries back
+python -m kitchen nutrition             # computes context-cost metrics from cached/mirrored bodies (no agent needed)
 python -m kitchen review --queue        # list skills awaiting human review
 python -m kitchen review <skill_id>     # interactive review/promote/reject
 python -m kitchen review <skill_id> --web  # also opens the upstream GitHub page
@@ -135,7 +161,13 @@ force a full refetch.
 
 ### Data model conventions (`kitchen/schemas.py`)
 
-- `skills.json` entries have a `tier`: `"shell"` (auto-ingested, unreviewed)
+- Skills are stored **per source**, not in one monolithic file:
+  `save_skills()` groups records by `source_id` into
+  `data/skill-<source_id>.json` (e.g. `skill-anthropic-official.json`) and
+  `load_all_skills()` globs `data/skill-*.json`. A legacy `data/skills.json`,
+  if present, is read once for migration and then deleted — there is no
+  `skills.json` in the repo.
+- Skill records have a `tier`: `"shell"` (auto-ingested, unreviewed)
   → `"core"` (human-promoted) or `"rejected"`.
 - `provenance` is `"official"` / `"partner"` / `"community"`, derived from
   `OFFICIAL_ORGS` / `PARTNER_ORGS` in `config.py` — update those sets when
@@ -149,6 +181,12 @@ force a full refetch.
   `config.py`, `schemas.py` enums, and the frontend's own copies of these
   lists (`Wizard.tsx`, `SkillCard.astro` both hardcode the tool list too —
   keep them in sync manually).
+- `LIFECYCLE_PHASES` (`define`/`plan`/`build`/`verify`/`review`/`ship`) is a
+  second, independent classification axis alongside `capability_id` — most
+  skills have a capability, only software-engineering-flavored ones also
+  get a non-null `lifecycle_phase`. It only powers the "Software Engineering
+  / SDLC" page (`site/src/pages/sdlc.astro`); the main capability-based
+  Wizard on the homepage doesn't use it.
 
 ### Kitchen tests
 
@@ -166,7 +204,7 @@ JSON output, apply it), not through a mocked model or LLM client.
 
 ## The frontend (`site/`)
 
-Astro v4, static output only (`output: 'static'` in `astro.config.mjs`), with
+Astro v7, static output only (`output: 'static'` in `astro.config.mjs`), with
 Preact islands (`@astrojs/preact`, `compat: true`) for interactivity and
 Tailwind for styling. There is no server-side rendering and no API routes.
 
@@ -177,11 +215,21 @@ Tailwind for styling. There is no server-side rendering and no API routes.
   uses `marked` to render skill README content and `SkillCard.astro` to lay
   it out.
 - `src/pages/sources.astro`, `src/pages/about.astro` — static content pages.
+- `src/pages/sdlc.astro` — "Software Engineering / SDLC" page: groups
+  coding-agent skills (non-null `lifecycle_phase`) into six columns
+  (Define/Plan/Build/Verify/Review/Ship), styled via
+  `src/utils/phaseColors.ts`. Static (no Preact island) — all columns render
+  at once from `kb.json`, no client-side filtering.
 - `src/components/Wizard.tsx` — the only stateful component (tool +
   capability filtering, install-command tabs, copy-to-clipboard). Duplicates
-  the `Tool`/`Capability`/`KBEntry` TypeScript interfaces that mirror
-  `kitchen/schemas.py`'s `KB_SCHEMA` — keep both in sync when the schema
-  changes.
+  the `Tool`/`Capability`/`LifecyclePhase`/`Nutrition`/`KBEntry` TypeScript
+  interfaces that mirror `kitchen/schemas.py`'s `KB_SCHEMA` — keep both in
+  sync when the schema changes.
+- `src/utils/contextCost.ts` — pure formatting helpers (`formatTokens`,
+  `costBucket`) shared by `Wizard.tsx` and `SkillCard.astro` for the
+  context-cost chip; keep the chars÷4 estimate itself in
+  `kitchen/nutrition.py` only — this file only formats numbers the kitchen
+  already computed.
 - `src/components/SkillCard.astro` — server-rendered card with CSS-only
   (radio input) tabs for per-tool install commands, no JS framework needed.
 - `src/components/Badge.astro` — small provenance/license/review badges.
@@ -229,7 +277,7 @@ Cross-platform support: PowerShell scripts (`.ps1`) are provided for Windows, an
 - **Never edit `data/kb.json` by hand.** It's pipeline output; regenerate it
   with `python -m kitchen emit` (after `cluster-apply`/`cards-apply` have
   run, or via the `/skilldeck-ingest` command which does the whole thing)
-  after changing `data/skills.json`, `data/sources.json`, or
+  after changing `data/skill-*.json`, `data/sources.json`, or
   `data/install_matrix.json`.
 - **`data/*.json` files are atomically written** (temp file + rename) by
   every kitchen stage. Follow the same pattern (`kitchen/ingest.py:
@@ -265,9 +313,9 @@ Cross-platform support: PowerShell scripts (`.ps1`) are provided for Windows, an
 
 ## Things that look unfinished (don't be surprised)
 
-- `docs/README.md` is currently empty.
-- No CI workflow files exist yet (no `.github/workflows/`) — test suites are
-  only run manually via `scripts/win/dev-*.ps1` or `scripts/linux/dev-*.sh` or directly.
+- `.github/workflows/ci.yml` runs `pytest kitchen/tests/`, Vitest, the
+  production build, and Playwright e2e on push/PR to `main` — but nothing
+  yet lints or type-checks the `kitchen/` Python code.
 - No `.env.example`; `GITHUB_TOKEN` is expected as an ambient environment
   variable. There is no LLM API key anywhere in the kitchen — capability
   clustering and card writing are done by whatever agent runs

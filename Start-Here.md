@@ -40,7 +40,7 @@ The Kitchen writes it; the Site reads it. That's the entire contract.
 | File | Purpose | Hand-Edit? |
 |------|---------|------------|
 | `data/sources.json` | List of GitHub repos/orgs to fetch skills from | ✅ Yes — this is how you add sources |
-| `data/skills.json` | Every ingested skill with metadata, tier, cluster, score | ⚠️ Rarely — the pipeline manages it |
+| `data/skill-*.json` | Every ingested skill with metadata, tier, cluster, score | ⚠️ Rarely — the pipeline manages it |
 | `data/install_matrix.json` | Per-tool install command templates | ✅ Yes — when install methods change |
 | `data/kb.json` | The final output that powers the website | ❌ Never — regenerate with `python -m kitchen emit` |
 
@@ -273,10 +273,10 @@ The agent confirms it's in the repo root, checks that `GITHUB_TOKEN` is set, and
 
 | Command | What It Does | Reads | Writes |
 |---------|-------------|-------|--------|
-| `python -m kitchen ingest` | Fetches `SKILL.md` files + metadata from every repo in `sources.json` via the GitHub API | `data/sources.json` | `data/skills.json` |
-| `python -m kitchen canonicalize` | Resolves `"aggregator"` sources (awesome-lists) to their true origin repos | `data/skills.json` | `data/skills.json` |
-| `python -m kitchen dedup` | Runs MinHash + Jaccard similarity to detect near-duplicate skills | `data/skills.json` | `data/skills.json` |
-| `python -m kitchen rank` | Scores skills by provenance (official > partner > community), license, and freshness | `data/skills.json` | `data/skills.json` |
+| `python -m kitchen ingest` | Fetches `SKILL.md` files + metadata from every repo in `sources.json` via the GitHub API | `data/sources.json` | `data/skill-*.json` |
+| `python -m kitchen canonicalize` | Resolves `"aggregator"` sources (awesome-lists) to their true origin repos | `data/skill-*.json` | `data/skill-*.json` |
+| `python -m kitchen dedup` | Runs MinHash + Jaccard similarity to detect near-duplicate skills | `data/skill-*.json` | `data/skill-*.json` |
+| `python -m kitchen rank` | Scores skills by provenance (official > partner > community), license, and freshness | `data/skill-*.json` | `data/skill-*.json` |
 
 If any command exits with a non-zero code, the agent **stops and reports the error** to you.
 
@@ -287,7 +287,7 @@ If any command exits with a non-zero code, the agent **stops and reports the err
 | `python -m kitchen cluster-prepare` | Writes a list of skills that need a capability assignment | `.kitchen_cache/cluster_input.json` |
 | **Claude reads the file** | The agent reads each skill's name, description, and body excerpt, then picks the best-fit capability from the 8-category list | *(reads)* `.kitchen_cache/cluster_input.json` |
 | **Claude writes its decisions** | The agent writes `{"assignments": {"skill-id": "capability-id", ...}}` | `.kitchen_cache/cluster_output.json` |
-| `python -m kitchen cluster-apply` | Reads Claude's output and propagates the capability to every member of each duplicate cluster | `data/skills.json` |
+| `python -m kitchen cluster-apply` | Reads Claude's output and propagates the capability to every member of each duplicate cluster | `data/skill-*.json` |
 
 **Phase 3 — Card Writing** (AI writes the copy)
 
@@ -296,7 +296,7 @@ If any command exits with a non-zero code, the agent **stops and reports the err
 | `python -m kitchen cards-prepare` | Writes a list of skills that need an explainer card (skips any with a cached or human-locked card) | `.kitchen_cache/cards_input.json` |
 | **Claude reads the file** | The agent reads each skill's metadata and writes a product card (title, description, sample prompt) | *(reads)* `.kitchen_cache/cards_input.json` |
 | **Claude writes the cards** | The agent writes `{"cards": {"skill-id": {"title": "...", "what_it_does": "...", "try_saying": "..."}}}` | `.kitchen_cache/cards_output.json` |
-| `python -m kitchen cards-apply` | Validates each card against length rules (title ≤6 words, description ≤2 sentences, try_saying ≤25 words), rejects violations, and caches valid cards | `data/skills.json`, `.kitchen_cache/cards_cache.json` |
+| `python -m kitchen cards-apply` | Validates each card against length rules (title ≤6 words, description ≤2 sentences, try_saying ≤25 words), rejects violations, and caches valid cards | `data/skill-*.json`, `.kitchen_cache/cards_cache.json` |
 
 > [!NOTE]
 > If a card fails validation, the agent is expected to re-check and retry. Cards that are too long are **rejected and logged**, not silently truncated.
@@ -308,7 +308,7 @@ If any command exits with a non-zero code, the agent **stops and reports the err
 | `python -m kitchen summary-prepare` | Writes a list of skills whose Skill Summary is missing or stale for the current upstream body (skips human-locked or already-current ones) | `.kitchen_cache/summary_input.json` |
 | **Claude reads the file** | The agent reads each skill's name, description, and body excerpt, then writes one factual paragraph describing what the skill actually does | *(reads)* `.kitchen_cache/summary_input.json` |
 | **Claude writes the summaries** | The agent writes `{"summaries": {"skill-id": "summary text", ...}}` | `.kitchen_cache/summary_output.json` |
-| `python -m kitchen summary-apply` | Validates each summary (single paragraph, 15–120 words, ≤5 sentences, not a verbatim description copy), stamps it on the cluster head, and propagates it to duplicate-cluster members | `data/skills.json` |
+| `python -m kitchen summary-apply` | Validates each summary (single paragraph, 15–120 words, ≤5 sentences, not a verbatim description copy), stamps it on the cluster head, and propagates it to duplicate-cluster members | `data/skill-*.json` |
 
 Summaries end up in `kb.json` under each skill entry and are the substrate for cross-skill semantic comparison (the planned similarity matrix).
 
@@ -316,7 +316,7 @@ Summaries end up in `kb.json` under each skill entry and are the substrate for c
 
 | Command | What It Does | Reads | Writes |
 |---------|-------------|-------|--------|
-| `python -m kitchen emit` | Validates the full dataset against `KB_SCHEMA`, resolves per-tool install commands from `install_matrix.json`, and writes the final knowledge base | `data/skills.json`, `data/install_matrix.json` | `data/kb.json`, `mirror/*.md` |
+| `python -m kitchen emit` | Validates the full dataset against `KB_SCHEMA`, resolves per-tool install commands from `install_matrix.json`, and writes the final knowledge base | `data/skill-*.json`, `data/install_matrix.json` | `data/kb.json`, `mirror/*.md` |
 
 **Phase 5 — Report**
 
@@ -340,7 +340,7 @@ Once the command finishes, here's what you should do:
 
 ```bash
 git status                    # See which files were modified
-git diff data/skills.json     # Review skill metadata changes
+git diff data/skill-*.json     # Review skill metadata changes
 git diff data/kb.json         # Review the final knowledge base output
 ```
 
@@ -403,7 +403,7 @@ python -m kitchen pipeline
 #   4. rank          — scores skills by provenance, license, freshness
 ```
 
-After this, `data/skills.json` is updated with all discovered skills.
+After this, `data/skill-*.json` is updated with all discovered skills.
 
 ---
 
@@ -651,7 +651,7 @@ Without a token, GitHub's API allows only 60 requests/hour. With one, you get 5,
 python -m kitchen emit
 ```
 
-This regenerates it. If `skills.json` is also missing, run `python -m kitchen pipeline` first.
+This regenerates it. If the `data/skill-*.json` files are also missing, run `python -m kitchen pipeline` first.
 
 ### Card validation failures during `cards-apply`
 

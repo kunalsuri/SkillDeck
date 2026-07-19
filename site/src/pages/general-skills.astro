@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import SkillExplorer from '../components/SkillExplorer';
 import kbData from '../data/kb.json';
+import type { KB } from '../types/kb';
 
 const title = "General Skills — SkillDeck";
 const description = "Non-development skills from Google and Anthropic and the wider catalog - documents, spreadsheets, cloud operations, and design - grouped by capability.";
@@ -28,5 +29,5 @@ const description = "Non-development skills from Google and Anthropic and the wi
   {/* Skill explorer: a searchable master list of every non-dev skill on
       the left, full detail card (info grid, install options, try-saying
       prompt) for the selected one on the right. */}
-  <SkillExplorer kb={kbData as any} mode="capability" client:load />
+  <SkillExplorer kb={kbData as unknown as KB} mode="capability" client:load />
 </Layout>

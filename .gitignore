@@ -172,6 +172,7 @@ site/node_modules/
 site/dist/
 site/.astro/
 site/src/data/kb.json
+site/coverage/
 
 # mypy
 .mypy_cache/
