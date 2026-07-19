@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T00:40:57.615759Z",
+  "generated_at": "2026-07-19T01:11:32.834127Z",
   "skills": [
     {
       "id": "google-data-manager-api-audience-ingestion",
@@ -19,7 +19,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "94ef76cfef99124eb4b3819786521f91148c1cf3",
-        "fetched_at": "2026-07-16T14:25:13.043483Z"
+        "fetched_at": "2026-07-19T01:09:56.926162Z"
       },
       "status": "active",
       "tier": "shell",
@@ -32,7 +32,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-085",
+      "cluster_id": "cluster-313",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -69,7 +69,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "0922b64716c841a86aad3e47bf45a29f1f3a1b1c",
-        "fetched_at": "2026-07-16T14:25:13.043524Z"
+        "fetched_at": "2026-07-19T01:09:56.926386Z"
       },
       "status": "active",
       "tier": "shell",
@@ -82,7 +82,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-086",
+      "cluster_id": "cluster-314",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -119,7 +119,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "4d0dd673467822b258982e8eaaea2b82697aea48",
-        "fetched_at": "2026-07-16T14:25:13.043554Z"
+        "fetched_at": "2026-07-19T01:09:56.926552Z"
       },
       "status": "active",
       "tier": "shell",
@@ -132,7 +132,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-087",
+      "cluster_id": "cluster-315",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -169,7 +169,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "207243ab8dc25709b383169187fa781f602ee7e1",
-        "fetched_at": "2026-07-16T14:25:13.043583Z"
+        "fetched_at": "2026-07-19T01:09:56.926718Z"
       },
       "status": "active",
       "tier": "shell",
@@ -182,7 +182,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-088",
+      "cluster_id": "cluster-316",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -219,7 +219,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "5b67f3ace1ff768a369f2f9c1589370d25fa897f",
-        "fetched_at": "2026-07-16T14:25:13.043612Z"
+        "fetched_at": "2026-07-19T01:09:56.926885Z"
       },
       "status": "active",
       "tier": "shell",
@@ -232,7 +232,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-089",
+      "cluster_id": "cluster-317",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -269,7 +269,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "5a10bec73597451ad4dbe99b7565eb7e80d255be",
-        "fetched_at": "2026-07-16T14:25:13.043641Z"
+        "fetched_at": "2026-07-19T01:09:56.927052Z"
       },
       "status": "active",
       "tier": "shell",
@@ -282,7 +282,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-090",
+      "cluster_id": "cluster-318",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -319,7 +319,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "89490ef8ae0c948f05021722641883aa2b73174c",
-        "fetched_at": "2026-07-16T14:25:13.043668Z"
+        "fetched_at": "2026-07-19T01:09:56.927223Z"
       },
       "status": "active",
       "tier": "shell",
@@ -332,7 +332,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-091",
+      "cluster_id": "cluster-319",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -369,7 +369,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "75757774bf4fa240d5a29e8c96e8cdbff9fae4cb",
-        "fetched_at": "2026-07-16T14:25:13.043696Z"
+        "fetched_at": "2026-07-19T01:09:56.927394Z"
       },
       "status": "active",
       "tier": "shell",
@@ -382,7 +382,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-092",
+      "cluster_id": "cluster-320",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -419,7 +419,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "cc5e87719da55ac2057c6b31fee593c16d9ea399",
-        "fetched_at": "2026-07-16T14:25:13.043725Z"
+        "fetched_at": "2026-07-19T01:09:56.927514Z"
       },
       "status": "active",
       "tier": "shell",
@@ -432,7 +432,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-093",
+      "cluster_id": "cluster-321",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -469,7 +469,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "910d76c896e31f4569558ea23678ce1649203048",
-        "fetched_at": "2026-07-16T14:25:13.043754Z"
+        "fetched_at": "2026-07-19T01:09:56.927588Z"
       },
       "status": "active",
       "tier": "shell",
@@ -482,7 +482,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-094",
+      "cluster_id": "cluster-322",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -519,7 +519,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "77e70ff339dfcff4d06e02042d37fa09d2dbea80",
-        "fetched_at": "2026-07-16T14:25:13.043784Z"
+        "fetched_at": "2026-07-19T01:09:56.927657Z"
       },
       "status": "active",
       "tier": "shell",
@@ -532,7 +532,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-095",
+      "cluster_id": "cluster-323",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -569,7 +569,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "1dd1b543ef4d527ba67fdbaec4cd168ad95d10e2",
-        "fetched_at": "2026-07-16T14:25:13.043814Z"
+        "fetched_at": "2026-07-19T01:09:56.927726Z"
       },
       "status": "active",
       "tier": "shell",
@@ -582,7 +582,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-096",
+      "cluster_id": "cluster-324",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -627,7 +627,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "1d669070b5b5f0807bdf7c1c15059cba176a2d73",
-        "fetched_at": "2026-07-16T14:25:13.043844Z"
+        "fetched_at": "2026-07-19T01:09:56.927793Z"
       },
       "status": "active",
       "tier": "shell",
@@ -640,7 +640,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-097",
+      "cluster_id": "cluster-325",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -685,7 +685,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "457ed43c632208fa62858366359870bbb84f9fb2",
-        "fetched_at": "2026-07-16T14:25:13.043874Z"
+        "fetched_at": "2026-07-19T01:09:56.927861Z"
       },
       "status": "active",
       "tier": "shell",
@@ -698,7 +698,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-098",
+      "cluster_id": "cluster-326",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -743,7 +743,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "2d8e68d9dd8067e71d74e801c30312cbcfaeb424",
-        "fetched_at": "2026-07-16T14:25:13.043906Z"
+        "fetched_at": "2026-07-19T01:09:56.927930Z"
       },
       "status": "active",
       "tier": "shell",
@@ -756,7 +756,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-099",
+      "cluster_id": "cluster-327",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -801,7 +801,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "36e4ad427c7793e5db03dcebca3d0efe5e4d3a2d",
-        "fetched_at": "2026-07-16T14:25:13.043936Z"
+        "fetched_at": "2026-07-19T01:09:56.927998Z"
       },
       "status": "active",
       "tier": "shell",
@@ -814,7 +814,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-100",
+      "cluster_id": "cluster-328",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -859,7 +859,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "1fabfd1ce1579d40d7270935def00ec96bc35617",
-        "fetched_at": "2026-07-16T14:25:13.043966Z"
+        "fetched_at": "2026-07-19T01:09:56.928065Z"
       },
       "status": "active",
       "tier": "shell",
@@ -872,7 +872,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-101",
+      "cluster_id": "cluster-329",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -917,7 +917,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "666c78dec892aaaf29632137af65d5b557c15ca6",
-        "fetched_at": "2026-07-16T14:25:13.043999Z"
+        "fetched_at": "2026-07-19T01:09:56.928134Z"
       },
       "status": "active",
       "tier": "shell",
@@ -930,7 +930,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-102",
+      "cluster_id": "cluster-330",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -975,7 +975,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "fec68368238e4f9242db4ea7d1d49be6a5e23d7d",
-        "fetched_at": "2026-07-16T14:25:13.044031Z"
+        "fetched_at": "2026-07-19T01:09:56.928210Z"
       },
       "status": "active",
       "tier": "shell",
@@ -988,7 +988,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-103",
+      "cluster_id": "cluster-331",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1033,7 +1033,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "ec2f578be2c43ff4c7c42615a60fe296045d4d19",
-        "fetched_at": "2026-07-16T14:25:13.044063Z"
+        "fetched_at": "2026-07-19T01:09:56.928279Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1046,7 +1046,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-104",
+      "cluster_id": "cluster-332",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1091,7 +1091,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "088dbc52b1c9d8559259787ae1c7c3e894465845",
-        "fetched_at": "2026-07-16T14:25:13.044094Z"
+        "fetched_at": "2026-07-19T01:09:56.928363Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1104,7 +1104,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-105",
+      "cluster_id": "cluster-333",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1149,7 +1149,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "7d9ff2c9c022c05a487f406faeb1a6b740a74f73",
-        "fetched_at": "2026-07-16T14:25:13.044127Z"
+        "fetched_at": "2026-07-19T01:09:56.928431Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1162,7 +1162,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-106",
+      "cluster_id": "cluster-334",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1207,7 +1207,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "0a827579f25e948c07ccc5848fe39e4906b78ced",
-        "fetched_at": "2026-07-16T14:25:13.044160Z"
+        "fetched_at": "2026-07-19T01:09:56.928499Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1220,7 +1220,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-107",
+      "cluster_id": "cluster-335",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1265,7 +1265,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "3b24fccebb9a36a3156dd1a5e4dc8d09831668eb",
-        "fetched_at": "2026-07-16T14:25:13.044192Z"
+        "fetched_at": "2026-07-19T01:09:56.928569Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1278,7 +1278,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-108",
+      "cluster_id": "cluster-336",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1323,7 +1323,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "2596067307954386faacc05b231fa2eeb59f0c93",
-        "fetched_at": "2026-07-16T14:25:13.044225Z"
+        "fetched_at": "2026-07-19T01:09:56.928638Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1336,7 +1336,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-109",
+      "cluster_id": "cluster-337",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1381,7 +1381,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "db30ef4b8cefea6048e06342fd17c4f289a51b93",
-        "fetched_at": "2026-07-16T14:25:13.044260Z"
+        "fetched_at": "2026-07-19T01:09:56.928903Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1394,7 +1394,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-110",
+      "cluster_id": "cluster-338",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1439,7 +1439,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "5fb001712501319717b5bc75388ec6c0bb2d911d",
-        "fetched_at": "2026-07-16T14:25:13.044292Z"
+        "fetched_at": "2026-07-19T01:09:56.928976Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1452,7 +1452,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-111",
+      "cluster_id": "cluster-339",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1497,7 +1497,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "3e57636f5f4a9a6ae8809e1e772c4405254c35e9",
-        "fetched_at": "2026-07-16T14:25:13.044326Z"
+        "fetched_at": "2026-07-19T01:09:56.929046Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1510,7 +1510,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-112",
+      "cluster_id": "cluster-340",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1555,7 +1555,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "893d5a89d62250bcc35d5cf9b3efa22be647fc06",
-        "fetched_at": "2026-07-16T14:25:13.756819Z"
+        "fetched_at": "2026-07-19T01:09:56.929117Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1568,7 +1568,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-113",
+      "cluster_id": "cluster-341",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1612,7 +1612,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "cbb63bee2a509a65adfed158f623b0cb8706c872",
-        "fetched_at": "2026-07-16T14:25:13.756894Z"
+        "fetched_at": "2026-07-19T01:09:56.929187Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1625,7 +1625,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-114",
+      "cluster_id": "cluster-342",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1670,7 +1670,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "364e09b23007f299f79f9712433456a8b416ed0e",
-        "fetched_at": "2026-07-16T14:25:14.392376Z"
+        "fetched_at": "2026-07-19T01:09:56.929273Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1683,7 +1683,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-115",
+      "cluster_id": "cluster-343",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1704,6 +1704,47 @@
       }
     },
     {
+      "id": "google-cloud-monitoring-metric-selection",
+      "source_id": "google-official",
+      "provenance": "official",
+      "origin": {
+        "org": "google",
+        "repo": "skills",
+        "path": "skills/cloud/cloud-monitoring-metric-selection",
+        "default_branch": "main"
+      },
+      "name": "cloud-monitoring-metric-selection",
+      "frontmatter_description": "Retrieve, query, and identify relevant Google Cloud Monitoring metric descriptors for a GCP service or resource (such as Compute Engine, Spanner, BigQuery, Cloud Run, Cloud SQL, Pub/Sub, Cloud Storage, etc.). Use when asked to find, list, search, or discover GCP metric types, names, kind/value schemas, or descriptors.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "719aeb96d2be582ca15c83d857738e9d623a94b1",
+        "fetched_at": "2026-07-19T01:09:57.241837Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "google",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-344",
+      "score_default": 350,
+      "scores_by_tool": {
+        "claude-code": 350,
+        "claude-ai": 350,
+        "vscode-copilot": 350,
+        "antigravity": 400,
+        "gemini-cli": 400,
+        "cursor": 350
+      }
+    },
+    {
       "id": "google-cloud-run-basics",
       "source_id": "google-official",
       "provenance": "official",
@@ -1720,7 +1761,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "713efc4f3f6cb35a9f33c943f44690140d0c261a",
-        "fetched_at": "2026-07-16T14:25:15.056190Z"
+        "fetched_at": "2026-07-19T01:09:57.242007Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1733,7 +1774,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-116",
+      "cluster_id": "cluster-345",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1777,7 +1818,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "33ac65fd4a046422d383c440e53f8778c61f6d6e",
-        "fetched_at": "2026-07-16T14:25:15.056266Z"
+        "fetched_at": "2026-07-19T01:09:57.242123Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1790,7 +1831,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-117",
+      "cluster_id": "cluster-346",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1835,7 +1876,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "890ee413e0b031d27062c542587e8adfe8a31ace",
-        "fetched_at": "2026-07-16T14:25:15.056309Z"
+        "fetched_at": "2026-07-19T01:09:57.242218Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1848,7 +1889,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-118",
+      "cluster_id": "cluster-347",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1893,7 +1934,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "a89379cbf8e29348e4e293b0dd1aaeed1bc57412",
-        "fetched_at": "2026-07-16T14:25:15.672858Z"
+        "fetched_at": "2026-07-19T01:09:57.242314Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1906,7 +1947,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-119",
+      "cluster_id": "cluster-348",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1943,7 +1984,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "bd4887658c20a24e1154c45362dae2ec435611e5",
-        "fetched_at": "2026-07-16T14:25:16.344853Z"
+        "fetched_at": "2026-07-19T01:09:57.242388Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1956,7 +1997,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-120",
+      "cluster_id": "cluster-349",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2000,7 +2041,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "f11d29aa62bb2cad530bbebba070040745d1b8a6",
-        "fetched_at": "2026-07-16T14:25:16.344940Z"
+        "fetched_at": "2026-07-19T01:09:57.242463Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2013,7 +2054,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-121",
+      "cluster_id": "cluster-350",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2058,7 +2099,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "5f1f0c8097768250d8eaf1086e103c6f65211528",
-        "fetched_at": "2026-07-16T14:25:16.344987Z"
+        "fetched_at": "2026-07-19T01:09:57.242539Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2071,7 +2112,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-122",
+      "cluster_id": "cluster-351",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2116,7 +2157,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "94b41e7641397a6c175096681e55a8b206ccec7f",
-        "fetched_at": "2026-07-16T14:25:17.195212Z"
+        "fetched_at": "2026-07-19T01:09:57.242613Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2129,7 +2170,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-123",
+      "cluster_id": "cluster-352",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2173,7 +2214,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "8bf8d29ccfb1149d26c880c364f33baad36f93d7",
-        "fetched_at": "2026-07-16T14:25:17.195325Z"
+        "fetched_at": "2026-07-19T01:09:57.242726Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2186,7 +2227,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-124",
+      "cluster_id": "cluster-353",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2231,7 +2272,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "60f3913c6e00beeb81352e62bffbb5764dd2deeb",
-        "fetched_at": "2026-07-16T14:25:17.871574Z"
+        "fetched_at": "2026-07-19T01:09:57.242825Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2244,7 +2285,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-125",
+      "cluster_id": "cluster-354",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2272,6 +2313,47 @@
       }
     },
     {
+      "id": "google-liveapi-service",
+      "source_id": "google-official",
+      "provenance": "official",
+      "origin": {
+        "org": "google",
+        "repo": "skills",
+        "path": "skills/cloud/gemini-live-api",
+        "default_branch": "main"
+      },
+      "name": "liveapi-service",
+      "frontmatter_description": "Generates a LiveAPI client service class in the user's chosen programming language. Use when the user wants to build, scaffold, or integrate a client that connects to the Gemini Enterprise LiveAPI websocket endpoint, handles session setup/resumption, bearer token refresh, and sending/receiving `ClientMessage`/`ServerMessage` protos. Don't use for general (non-live, non-bidirectional) Gemini API usage such as one-shot `generateContent`, embeddings, image/video generation, or fine-tuning — use the `gemini-api` skill for those.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "c6dc53650119cb8878d6e5462b2d9c542b83cbc9",
+        "fetched_at": "2026-07-19T01:09:57.478549Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "google",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-355",
+      "score_default": 350,
+      "scores_by_tool": {
+        "claude-code": 350,
+        "claude-ai": 350,
+        "vscode-copilot": 350,
+        "antigravity": 400,
+        "gemini-cli": 400,
+        "cursor": 350
+      }
+    },
+    {
       "id": "google-gke-app-onboarding",
       "source_id": "google-official",
       "provenance": "official",
@@ -2288,7 +2370,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "cf22de079781e6fb6ab0a136e0095a57bc463673",
-        "fetched_at": "2026-07-16T14:25:17.871671Z"
+        "fetched_at": "2026-07-19T01:09:57.478717Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2301,7 +2383,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-126",
+      "cluster_id": "cluster-356",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2346,7 +2428,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "bbd652c156643541541bf0ca5fea8be162910c55",
-        "fetched_at": "2026-07-16T14:25:18.565099Z"
+        "fetched_at": "2026-07-19T01:09:57.478835Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2359,7 +2441,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-127",
+      "cluster_id": "cluster-357",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2403,7 +2485,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "52be22dc06fad426868c577ccbe1f63957888918",
-        "fetched_at": "2026-07-16T14:25:18.565186Z"
+        "fetched_at": "2026-07-19T01:09:57.478916Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2416,7 +2498,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-128",
+      "cluster_id": "cluster-358",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2461,7 +2543,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "f07fcc5382d13ca5e6998ac90323f94ad03eb8f5",
-        "fetched_at": "2026-07-16T14:25:18.565233Z"
+        "fetched_at": "2026-07-19T01:09:57.478996Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2474,7 +2556,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-129",
+      "cluster_id": "cluster-359",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2519,7 +2601,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "0bfee954c30c0020e71973c7297accccafc24d26",
-        "fetched_at": "2026-07-16T14:25:18.565276Z"
+        "fetched_at": "2026-07-19T01:09:57.479075Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2532,7 +2614,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-130",
+      "cluster_id": "cluster-360",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2571,13 +2653,13 @@
         "default_branch": "main"
       },
       "name": "gke-cluster-creation",
-      "frontmatter_description": "Plans and executes GKE cluster creation, provisioning, and production readiness audits. Use when creating GKE clusters, provisioning GKE environments, or auditing GKE clusters. Don't use for application onboarding or deployment configuration (use gke-app-onboarding instead).",
+      "frontmatter_description": "Plans and executes GKE cluster creation, provisioning, and production readiness audits using pre-defined templates (Autopilot, Standard Regional, GPU/AI Inference, AI Hypercompute). Use when creating GKE clusters, provisioning GKE environments, selecting cluster modes, or auditing GKE clusters. Don't use for application onboarding or deployment configuration (use gke-app-onboarding instead).",
       "license": "Apache-2.0",
       "mirrorable": true,
       "upstream": {
-        "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
-        "blob_sha": "fcf9c1a89276fd9e5894aa9c112843bd66470d5d",
-        "fetched_at": "2026-07-16T14:25:19.283588Z"
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "528e1407e165d314f17b5ebd5740f269badc6d8b",
+        "fetched_at": "2026-07-19T01:09:57.728110Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2590,7 +2672,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-131",
+      "cluster_id": "cluster-361",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2599,22 +2681,6 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
-      },
-      "nutrition": {
-        "token_estimate": 1458,
-        "word_count": 643,
-        "line_count": 163,
-        "basis": "body",
-        "trigger": "Use when creating GKE clusters, provisioning GKE environments, or auditing GKE clusters.",
-        "body_blob_sha": "fcf9c1a89276fd9e5894aa9c112843bd66470d5d",
-        "computed_at": "2026-07-16T14:29:37.753479Z"
-      },
-      "summary": {
-        "text": "Plans and provisions new Google Kubernetes Engine clusters from scratch and audits existing clusters against production-readiness criteria. It operates at the cluster-infrastructure level, before any application is onboarded or deployed onto the cluster, which is instead the job of the gke-app-onboarding skill. Its output is either a newly created GKE cluster or a readiness audit report identifying gaps against production standards.",
-        "basis": "body",
-        "body_blob_sha": "fcf9c1a89276fd9e5894aa9c112843bd66470d5d",
-        "generated_by": "llm",
-        "generated_at": "2026-07-19T00:40:57.587568Z"
       }
     },
     {
@@ -2634,7 +2700,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "dcf68341fe46ede100c1b764f007339665b6cfe7",
-        "fetched_at": "2026-07-16T14:25:19.283679Z"
+        "fetched_at": "2026-07-19T01:09:57.728330Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2647,7 +2713,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-132",
+      "cluster_id": "cluster-362",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2692,7 +2758,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "831b9ccdcc316fc016b57c9484352a47cb9d1399",
-        "fetched_at": "2026-07-16T14:25:19.283729Z"
+        "fetched_at": "2026-07-19T01:09:57.728590Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2705,7 +2771,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-133",
+      "cluster_id": "cluster-363",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2750,7 +2816,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "a03c68b7d27bd9b41115862964db1d000c4e2455",
-        "fetched_at": "2026-07-16T14:25:19.968316Z"
+        "fetched_at": "2026-07-19T01:09:57.728740Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2763,7 +2829,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-134",
+      "cluster_id": "cluster-364",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2807,7 +2873,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "afe4660e66e4f508bfb19211e3c5ad5dd863bee8",
-        "fetched_at": "2026-07-16T14:25:19.968644Z"
+        "fetched_at": "2026-07-19T01:09:57.728838Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2820,7 +2886,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-135",
+      "cluster_id": "cluster-365",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2865,7 +2931,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "be4dce18a2a37e726d80faf3fd7bcf42abc5d1ab",
-        "fetched_at": "2026-07-16T14:25:19.968880Z"
+        "fetched_at": "2026-07-19T01:09:57.728921Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2878,7 +2944,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-136",
+      "cluster_id": "cluster-366",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2923,7 +2989,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "e022d66c73e46d08b8f45dab25b8fc8554ee2433",
-        "fetched_at": "2026-07-16T14:25:20.687718Z"
+        "fetched_at": "2026-07-19T01:09:57.729001Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2936,7 +3002,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-137",
+      "cluster_id": "cluster-367",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2980,7 +3046,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "97d727c705691c8285cca0e86b2353da8b0fb67e",
-        "fetched_at": "2026-07-16T14:25:20.687833Z"
+        "fetched_at": "2026-07-19T01:09:57.729081Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2993,7 +3059,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-138",
+      "cluster_id": "cluster-368",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3038,7 +3104,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "337ff2bf03e5bf113ad4949cfc1db4249d24ec3b",
-        "fetched_at": "2026-07-16T14:25:20.687885Z"
+        "fetched_at": "2026-07-19T01:09:57.729160Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3051,7 +3117,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-139",
+      "cluster_id": "cluster-369",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3080,64 +3146,6 @@
       }
     },
     {
-      "id": "google-gke-scaling",
-      "source_id": "google-official",
-      "provenance": "official",
-      "origin": {
-        "org": "google",
-        "repo": "skills",
-        "path": "skills/cloud/gke-scaling",
-        "default_branch": "main"
-      },
-      "name": "gke-scaling",
-      "frontmatter_description": "Configures GKE autoscaling, including HPA, VPA, and Node Auto-Provisioning (NAP). Use when configuring GKE autoscaling, setting up GKE HPA, setting up GKE VPA, or configuring GKE NAP. Don't use for configuring static cluster sizes or setting node-level machine styles directly (use gke-compute-classes instead).",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
-        "blob_sha": "b78db0c5d10a90210a381e597a8322667cb878ef",
-        "fetched_at": "2026-07-16T14:25:20.687932Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "cloud-ops",
-      "native_ecosystem": "google",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-140",
-      "score_default": 350,
-      "scores_by_tool": {
-        "claude-code": 350,
-        "claude-ai": 350,
-        "vscode-copilot": 350,
-        "antigravity": 400,
-        "gemini-cli": 400,
-        "cursor": 350
-      },
-      "lifecycle_phase": null,
-      "nutrition": {
-        "token_estimate": 78,
-        "word_count": 43,
-        "line_count": 1,
-        "basis": "body",
-        "trigger": "Use when configuring GKE autoscaling, setting up GKE HPA, setting up GKE VPA, or configuring GKE NAP.",
-        "body_blob_sha": "b78db0c5d10a90210a381e597a8322667cb878ef",
-        "computed_at": "2026-07-10T19:32:30.739386Z"
-      },
-      "summary": {
-        "text": "Covers autoscaling configuration for Google Kubernetes Engine, specifically Horizontal Pod Autoscaler for scaling pod replica counts, Vertical Pod Autoscaler for adjusting per-pod CPU/memory requests, and Node Auto-Provisioning for automatically creating node pools to fit unschedulable workloads. It addresses dynamic capacity adjustment in response to load rather than fixed static cluster sizing or directly choosing node machine types, which fall under a separate GKE compute-classes skill.",
-        "basis": "body",
-        "body_blob_sha": "b78db0c5d10a90210a381e597a8322667cb878ef",
-        "generated_by": "llm",
-        "generated_at": "2026-07-19T00:40:57.588523Z"
-      }
-    },
-    {
       "id": "google-gke-security",
       "source_id": "google-official",
       "provenance": "official",
@@ -3154,7 +3162,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "6a3ad379182f223fe773ed5323e861414336920e",
-        "fetched_at": "2026-07-16T14:25:20.687977Z"
+        "fetched_at": "2026-07-19T01:09:57.729253Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3167,7 +3175,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-141",
+      "cluster_id": "cluster-370",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3212,7 +3220,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "5ec7080844dc7e1008ba83bbecf87ba8873166f6",
-        "fetched_at": "2026-07-16T14:25:20.688021Z"
+        "fetched_at": "2026-07-19T01:09:57.729338Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3225,7 +3233,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-142",
+      "cluster_id": "cluster-371",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3268,9 +3276,9 @@
       "license": "Apache-2.0",
       "mirrorable": true,
       "upstream": {
-        "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
-        "blob_sha": "c3277e28fd42f82b1eba5197ea9c64c61bc38b2e",
-        "fetched_at": "2026-07-16T14:25:20.688065Z"
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "eab51f99df9014621b18a589d362885feca7ac52",
+        "fetched_at": "2026-07-19T01:09:57.952110Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3283,7 +3291,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-143",
+      "cluster_id": "cluster-372",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3292,23 +3300,47 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      }
+    },
+    {
+      "id": "google-gke-workload-scaling",
+      "source_id": "google-official",
+      "provenance": "official",
+      "origin": {
+        "org": "google",
+        "repo": "skills",
+        "path": "skills/cloud/gke-workload-scaling",
+        "default_branch": "main"
       },
-      "lifecycle_phase": null,
-      "nutrition": {
-        "token_estimate": 254,
-        "word_count": 131,
-        "line_count": 1,
-        "basis": "body",
-        "trigger": "Use this skill whenever the user mentions GKE upgrades, Kubernetes version bumps, node pool maintenance, GKE patching, cluster version management, release channel selection, maintenance windows, surg…",
-        "body_blob_sha": "c3277e28fd42f82b1eba5197ea9c64c61bc38b2e",
-        "computed_at": "2026-07-10T19:32:30.739627Z"
+      "name": "gke-workload-scaling",
+      "frontmatter_description": "Manages scaling for GKE workloads using HPA and VPA. Use when configuring Horizontal Pod Autoscaler (HPA), configuring Vertical Pod Autoscaler (VPA), or applying best practices for GKE workload autoscaling. Do not use for cluster-level autoscaling (Cluster Autoscaler), static cluster sizing, or configuring node-level machine styles directly.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "b4eff546dab048a008d2c31233ec619f93064b85",
+        "fetched_at": "2026-07-19T01:09:58.265871Z"
       },
-      "summary": {
-        "text": "Supports planning and executing version upgrades and maintenance for Google Kubernetes Engine clusters on both Standard and Autopilot modes, producing artifacts such as upgrade runbooks with specific gcloud commands, pre- and post-upgrade validation checklists, and release-channel selection guidance. It reasons about node-pool upgrade mechanics like surge and blue-green rollout strategies, Kubernetes version compatibility, Pod Disruption Budget interactions, and special handling for stateful workloads, GPU nodes, and operators, and helps diagnose upgrades that stall mid-rollout.",
-        "basis": "body",
-        "body_blob_sha": "c3277e28fd42f82b1eba5197ea9c64c61bc38b2e",
-        "generated_by": "llm",
-        "generated_at": "2026-07-19T00:40:57.588817Z"
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "google",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-373",
+      "score_default": 350,
+      "scores_by_tool": {
+        "claude-code": 350,
+        "claude-ai": 350,
+        "vscode-copilot": 350,
+        "antigravity": 400,
+        "gemini-cli": 400,
+        "cursor": 350
       }
     },
     {
@@ -3328,7 +3360,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "720444e3332ca7f4bb1712eb8707ef9d07185f05",
-        "fetched_at": "2026-07-16T14:25:20.688111Z"
+        "fetched_at": "2026-07-19T01:09:58.266049Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3341,7 +3373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-144",
+      "cluster_id": "cluster-374",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3386,7 +3418,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "032c760244a7885419e15ca3b44ed06611bbb42e",
-        "fetched_at": "2026-07-16T14:25:21.400156Z"
+        "fetched_at": "2026-07-19T01:09:58.266177Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3399,7 +3431,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-145",
+      "cluster_id": "cluster-375",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3436,7 +3468,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "aa1aad2e486a993251573b932706577db0a90ce8",
-        "fetched_at": "2026-07-16T14:25:21.400345Z"
+        "fetched_at": "2026-07-19T01:09:58.266325Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3449,7 +3481,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-146",
+      "cluster_id": "cluster-376",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3494,7 +3526,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "0f6e79c58eed43b45b541872bbdcb13257d5b23e",
-        "fetched_at": "2026-07-16T14:25:21.400528Z"
+        "fetched_at": "2026-07-19T01:09:58.266420Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3507,7 +3539,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-147",
+      "cluster_id": "cluster-377",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3552,7 +3584,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "6894b8b2a17a9f16e51a2d5907c1b3ae31544e40",
-        "fetched_at": "2026-07-16T14:25:21.400744Z"
+        "fetched_at": "2026-07-19T01:09:58.266504Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3565,7 +3597,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-148",
+      "cluster_id": "cluster-378",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3610,7 +3642,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "a717981fdea3f6f31c466529cabd74c647f715e1",
-        "fetched_at": "2026-07-16T14:25:21.400933Z"
+        "fetched_at": "2026-07-19T01:09:58.266589Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3623,7 +3655,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-149",
+      "cluster_id": "cluster-379",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3662,13 +3694,13 @@
         "default_branch": "main"
       },
       "name": "google-cloud-solution-agentic-ai-bidirectional-streaming",
-      "frontmatter_description": "Guides agents to interactively discover customer requirements for live, bidirectional multi-agent AI systems that process continuous streams of multimodal data for real-time technical guidance and safety monitoring. Generates a custom Google Cloud solution that uses opinionated best practices and architecture guidance. Use when users need agentic assistance to design and create a multi-product solution in the cloud for live bidirectional multimodal streaming workloads.",
+      "frontmatter_description": "Guides agents to interactively discover customer requirements for live, bidirectional multi-agent AI systems that process continuous streams of multimodal data for real-time technical guidance and safety monitoring. Generates a custom Google Cloud solution that uses opinionated best practices and architecture guidance. Use when users need agentic assistance to design and create a multi-product solution in the cloud for live bidirectional multimodal streaming workloads. Don't use for simple text-based chat applications or workloads without real-time streaming requirements.",
       "license": "Apache-2.0",
       "mirrorable": true,
       "upstream": {
-        "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
-        "blob_sha": "e0a6fc02e7c3eda063d24dd03b074b2c66602bb8",
-        "fetched_at": "2026-07-16T14:25:21.401114Z"
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "020d46f30ce3d1ba505bbda17367232981610e1e",
+        "fetched_at": "2026-07-19T01:09:58.495005Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3681,7 +3713,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-150",
+      "cluster_id": "cluster-380",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3690,23 +3722,6 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
-      },
-      "lifecycle_phase": null,
-      "nutrition": {
-        "token_estimate": 4962,
-        "word_count": 2136,
-        "line_count": 343,
-        "basis": "body",
-        "trigger": "Use when users need agentic assistance to design and create a multi-product solution in the cloud for live bidirectional multimodal streaming workloads.",
-        "body_blob_sha": "e0a6fc02e7c3eda063d24dd03b074b2c66602bb8",
-        "computed_at": "2026-07-12T14:42:14.969175Z"
-      },
-      "summary": {
-        "text": "Guides interactive requirements discovery and architecture design for live, bidirectional, multimodal AI streaming systems that process continuous audio, video, or text for real-time guidance and safety/hazard monitoring use cases. Through four phases (requirements discovery, solution design, implementation planning, validation) it maps workload components to specific Google Cloud products, recommending combinations such as Cloud Run with Cloud Armor and load balancing for ingress, the Agent Development Kit and Agent2Agent protocol for multi-agent coordination, and Gemini Live API or Gemini Flash for the streaming model, while comparing alternatives like GKE or Gemini Enterprise Agent Runtime. Output includes a deployable architecture with implementation automation and validation steps.",
-        "basis": "body",
-        "body_blob_sha": "e0a6fc02e7c3eda063d24dd03b074b2c66602bb8",
-        "generated_by": "llm",
-        "generated_at": "2026-07-19T00:40:57.589533Z"
       }
     },
     {
@@ -3724,9 +3739,9 @@
       "license": "Apache-2.0",
       "mirrorable": true,
       "upstream": {
-        "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
-        "blob_sha": "c6fa1e114821071ce9e120b1bd1ea5fcfc49b125",
-        "fetched_at": "2026-07-16T14:25:22.085034Z"
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "f821b65b19fb0d714ddbad726f08c849c7495c5c",
+        "fetched_at": "2026-07-19T01:09:58.716554Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3739,7 +3754,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-151",
+      "cluster_id": "cluster-381",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3748,15 +3763,6 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
-      },
-      "nutrition": {
-        "token_estimate": 5303,
-        "word_count": 2280,
-        "line_count": 383,
-        "basis": "body",
-        "trigger": "Use when designing a multi-product architecture that connects data silos to AI agents, joining data across clouds, or running federated queries across Google Cloud and external data sources, includin…",
-        "body_blob_sha": "c6fa1e114821071ce9e120b1bd1ea5fcfc49b125",
-        "computed_at": "2026-07-16T14:29:37.755737Z"
       }
     },
     {
@@ -3776,7 +3782,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "3f7920eee3b3973a74f1b17e5b26fa00da50edaf",
-        "fetched_at": "2026-07-16T14:25:22.755433Z"
+        "fetched_at": "2026-07-19T01:09:58.716762Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3789,7 +3795,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-152",
+      "cluster_id": "cluster-382",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3810,6 +3816,47 @@
       }
     },
     {
+      "id": "google-google-cloud-solution-agentic-analytics-spark-knowledge-catalog",
+      "source_id": "google-official",
+      "provenance": "official",
+      "origin": {
+        "org": "google",
+        "repo": "skills",
+        "path": "skills/cloud/google-cloud-solution-agentic-analytics-spark-knowledge-catalog",
+        "default_branch": "main"
+      },
+      "name": "google-cloud-solution-agentic-analytics-spark-knowledge-catalog",
+      "frontmatter_description": "Discovers requirements and generates guidance to design and deploy a governed, secure agentic-analytics solution for data that's distributed across Google Cloud, other cloud providers, or on-premises. Data that's outside Google Cloud (such as data from Databricks, Snowflake, Salesforce, SAP, or Oracle systems) is accessed through federation mechanisms such as Apache Iceberg, other \"zero-copy ETL\" methods, or remote query push-down. Use this skill when designing an architecture for efficient analytics across large volumes of structured and unstructured data that's located in multiple systems and environments, including other cloud providers and on-premises.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
+        "blob_sha": "2b7433f29bbe23a54a2f435b8a2a2c1663d4ba6b",
+        "fetched_at": "2026-07-19T01:09:58.926100Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "google",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-383",
+      "score_default": 350,
+      "scores_by_tool": {
+        "claude-code": 350,
+        "claude-ai": 350,
+        "vscode-copilot": 350,
+        "antigravity": 400,
+        "gemini-cli": 400,
+        "cursor": 350
+      }
+    },
+    {
       "id": "google-google-cloud-solution-architecture",
       "source_id": "google-official",
       "provenance": "official",
@@ -3826,7 +3873,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "47061d92cbb28ef8c787af22d918d4cd302d868e",
-        "fetched_at": "2026-07-16T14:25:22.755607Z"
+        "fetched_at": "2026-07-19T01:09:58.926407Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3839,7 +3886,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-153",
+      "cluster_id": "cluster-384",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3884,7 +3931,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "839ecc11b54763933bdfc6caa14547386020e2d0",
-        "fetched_at": "2026-07-16T14:25:23.640430Z"
+        "fetched_at": "2026-07-19T01:09:58.926623Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3897,7 +3944,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-154",
+      "cluster_id": "cluster-385",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3934,7 +3981,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "0372156bb918213b1852d13367b684a6839b00ad",
-        "fetched_at": "2026-07-16T14:25:23.640567Z"
+        "fetched_at": "2026-07-19T01:09:58.926780Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3947,7 +3994,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-155",
+      "cluster_id": "cluster-386",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3992,7 +4039,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "83cb7acac757359ca5212a5ffcf4af24c7cf4c1b",
-        "fetched_at": "2026-07-16T14:25:23.640641Z"
+        "fetched_at": "2026-07-19T01:09:58.926906Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4005,7 +4052,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-156",
+      "cluster_id": "cluster-387",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4050,7 +4097,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "35bfdf1b6c1dde2620a982dfe11f18b48422bb9c",
-        "fetched_at": "2026-07-16T14:25:23.640713Z"
+        "fetched_at": "2026-07-19T01:09:58.927011Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4063,7 +4110,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-157",
+      "cluster_id": "cluster-388",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4108,7 +4155,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "8944d2327a5ea3294e56f245494a8470141771c8",
-        "fetched_at": "2026-07-16T14:25:23.640783Z"
+        "fetched_at": "2026-07-19T01:09:58.927110Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4121,7 +4168,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-158",
+      "cluster_id": "cluster-389",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4166,7 +4213,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "58e18f7a4fb1b5506de02ae3406437db30f076ef",
-        "fetched_at": "2026-07-16T14:25:23.640851Z"
+        "fetched_at": "2026-07-19T01:09:58.927218Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4179,7 +4226,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-159",
+      "cluster_id": "cluster-390",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4224,7 +4271,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "10362b86aeeb1ba30ab77cad3881e67ce3f77b95",
-        "fetched_at": "2026-07-16T14:25:23.640932Z"
+        "fetched_at": "2026-07-19T01:09:58.927324Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4237,7 +4284,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-160",
+      "cluster_id": "cluster-391",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4266,6 +4313,122 @@
       }
     },
     {
+      "id": "google-workload-manager-basics",
+      "source_id": "google-official",
+      "provenance": "official",
+      "origin": {
+        "org": "google",
+        "repo": "skills",
+        "path": "skills/cloud/workload-manager-basics",
+        "default_branch": "main"
+      },
+      "name": "workload-manager-basics",
+      "frontmatter_description": "Use this skill to manage Google Cloud Workload Manager evaluations, rules, scanned resources, and validation results by using public client libraries and the REST API. Use when you need to inspect workload best-practice rules, create and run evaluations for Google Cloud general best practices, SAP, SQL Server, or custom organizational rules, review violations, export results to BigQuery, or automate Workload Manager through client libraries because no service-specific public CLI or MCP server is available. Don't use for general Google Compute Engine instance management, VPC configuration, or standard IAM auditing.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
+        "blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
+        "fetched_at": "2026-07-19T01:09:58.927429Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "cloud-ops",
+      "native_ecosystem": "google",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-392",
+      "score_default": 350,
+      "scores_by_tool": {
+        "claude-code": 350,
+        "claude-ai": 350,
+        "vscode-copilot": 350,
+        "antigravity": 400,
+        "gemini-cli": 400,
+        "cursor": 350
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 155,
+        "word_count": 89,
+        "line_count": 1,
+        "basis": "body",
+        "trigger": "Use when you need to inspect workload best-practice rules, create and run evaluations for Google Cloud general best practices, SAP, SQL Server, or custom organizational rules, review violations, expo…",
+        "body_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
+        "computed_at": "2026-07-10T19:32:30.740423Z"
+      },
+      "summary": {
+        "text": "Manages Google Cloud Workload Manager evaluations by calling its public client libraries and REST API directly, since no dedicated CLI or MCP server exists for the service. It covers inspecting best-practice rule sets, creating and running evaluations against scanned resources for general Google Cloud practices, SAP, SQL Server, or custom organizational rules, reviewing rule violations, and exporting results to BigQuery for further analysis. It excludes general Compute Engine instance management, VPC configuration, and standard IAM auditing tasks, which fall outside Workload Manager's scope.",
+        "basis": "body",
+        "body_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.590367Z"
+      }
+    },
+    {
+      "id": "google-gke-scaling",
+      "source_id": "google-official",
+      "provenance": "official",
+      "origin": {
+        "org": "google",
+        "repo": "skills",
+        "path": "skills/cloud/gke-scaling",
+        "default_branch": "main"
+      },
+      "name": "gke-scaling",
+      "frontmatter_description": "Configures GKE autoscaling, including HPA, VPA, and Node Auto-Provisioning (NAP). Use when configuring GKE autoscaling, setting up GKE HPA, setting up GKE VPA, or configuring GKE NAP. Don't use for configuring static cluster sizes or setting node-level machine styles directly (use gke-compute-classes instead).",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
+        "blob_sha": "b78db0c5d10a90210a381e597a8322667cb878ef",
+        "fetched_at": "2026-07-16T14:25:20.687932Z"
+      },
+      "status": "gone",
+      "tier": "shell",
+      "capability_id": "cloud-ops",
+      "native_ecosystem": "google",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-140",
+      "score_default": 350,
+      "scores_by_tool": {
+        "claude-code": 350,
+        "claude-ai": 350,
+        "vscode-copilot": 350,
+        "antigravity": 400,
+        "gemini-cli": 400,
+        "cursor": 350
+      },
+      "lifecycle_phase": null,
+      "nutrition": {
+        "token_estimate": 78,
+        "word_count": 43,
+        "line_count": 1,
+        "basis": "body",
+        "trigger": "Use when configuring GKE autoscaling, setting up GKE HPA, setting up GKE VPA, or configuring GKE NAP.",
+        "body_blob_sha": "b78db0c5d10a90210a381e597a8322667cb878ef",
+        "computed_at": "2026-07-10T19:32:30.739386Z"
+      },
+      "summary": {
+        "text": "Covers autoscaling configuration for Google Kubernetes Engine, specifically Horizontal Pod Autoscaler for scaling pod replica counts, Vertical Pod Autoscaler for adjusting per-pod CPU/memory requests, and Node Auto-Provisioning for automatically creating node pools to fit unschedulable workloads. It addresses dynamic capacity adjustment in response to load rather than fixed static cluster sizing or directly choosing node machine types, which fall under a separate GKE compute-classes skill.",
+        "basis": "body",
+        "body_blob_sha": "b78db0c5d10a90210a381e597a8322667cb878ef",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.588523Z"
+      }
+    },
+    {
       "id": "google-iam-recommendations-fetcher",
       "source_id": "google-official",
       "provenance": "official",
@@ -4284,7 +4447,7 @@
         "blob_sha": "0b44d9605b96bb675a490d46e74981f934853f17",
         "fetched_at": "2026-07-16T14:25:23.641004Z"
       },
-      "status": "active",
+      "status": "gone",
       "tier": "shell",
       "capability_id": "cloud-ops",
       "native_ecosystem": "google",
@@ -4321,64 +4484,6 @@
         "body_blob_sha": "0b44d9605b96bb675a490d46e74981f934853f17",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.590271Z"
-      }
-    },
-    {
-      "id": "google-workload-manager-basics",
-      "source_id": "google-official",
-      "provenance": "official",
-      "origin": {
-        "org": "google",
-        "repo": "skills",
-        "path": "skills/cloud/workload-manager-basics",
-        "default_branch": "main"
-      },
-      "name": "workload-manager-basics",
-      "frontmatter_description": "Use this skill to manage Google Cloud Workload Manager evaluations, rules, scanned resources, and validation results by using public client libraries and the REST API. Use when you need to inspect workload best-practice rules, create and run evaluations for Google Cloud general best practices, SAP, SQL Server, or custom organizational rules, review violations, export results to BigQuery, or automate Workload Manager through client libraries because no service-specific public CLI or MCP server is available. Don't use for general Google Compute Engine instance management, VPC configuration, or standard IAM auditing.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
-        "blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
-        "fetched_at": "2026-07-16T14:25:23.641072Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "cloud-ops",
-      "native_ecosystem": "google",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-162",
-      "score_default": 350,
-      "scores_by_tool": {
-        "claude-code": 350,
-        "claude-ai": 350,
-        "vscode-copilot": 350,
-        "antigravity": 400,
-        "gemini-cli": 400,
-        "cursor": 350
-      },
-      "lifecycle_phase": null,
-      "nutrition": {
-        "token_estimate": 155,
-        "word_count": 89,
-        "line_count": 1,
-        "basis": "body",
-        "trigger": "Use when you need to inspect workload best-practice rules, create and run evaluations for Google Cloud general best practices, SAP, SQL Server, or custom organizational rules, review violations, expo…",
-        "body_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
-        "computed_at": "2026-07-10T19:32:30.740423Z"
-      },
-      "summary": {
-        "text": "Manages Google Cloud Workload Manager evaluations by calling its public client libraries and REST API directly, since no dedicated CLI or MCP server exists for the service. It covers inspecting best-practice rule sets, creating and running evaluations against scanned resources for general Google Cloud practices, SAP, SQL Server, or custom organizational rules, reviewing rule violations, and exporting results to BigQuery for further analysis. It excludes general Compute Engine instance management, VPC configuration, and standard IAM auditing tasks, which fall outside Workload Manager's scope.",
-        "basis": "body",
-        "body_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
-        "generated_by": "llm",
-        "generated_at": "2026-07-19T00:40:57.590367Z"
       }
     },
     {

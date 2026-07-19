@@ -65,11 +65,13 @@ python -m kitchen cluster-prepare
 ```
 
 This writes `.kitchen_cache/cluster_input.json` with two lists:
-`already_assigned` (manually-reviewed skills — leave these alone) and
-`heads_needing_classification`, each with `skill_id`, `name`, `description`,
-a `body_excerpt` (first 500 words of the skill body), and a `members` list
-(all skill IDs in that dedup cluster — useful context for how broadly the
-capability applies).
+`already_assigned` (manually-reviewed skills, plus skills already classified
+by a prior agent run whose content hasn't changed since — leave these alone)
+and `heads_needing_classification`, each with `skill_id`, `name`,
+`description`, a `body_excerpt` (first 500 words of the skill body), and a
+`members` list (all skill IDs in that dedup cluster — useful context for how
+broadly the capability applies). Only new or content-changed heads show up
+in `heads_needing_classification`, so this list gets shorter on repeat runs.
 
 Read that file. For every entry in `heads_needing_classification`, pick the
 single best-fitting capability from the `capabilities` list in the same file
@@ -97,11 +99,14 @@ python -m kitchen phase-prepare
 ```
 
 This writes `.kitchen_cache/phase_input.json` with two lists:
-`already_assigned` (manually-reviewed skills — leave these alone) and
-`heads_needing_classification`, each with `skill_id`, `name`, `description`,
-a `body_excerpt`, a `capability_label` (the capability just assigned in step
-2), and a `members` list. This only covers skills that already have a real
-`capability_id` — it feeds the "Software Engineering / SDLC" page.
+`already_assigned` (manually-reviewed skills, plus skills already classified
+by a prior agent run whose content hasn't changed since — leave these alone)
+and `heads_needing_classification`, each with `skill_id`, `name`,
+`description`, a `body_excerpt`, a `capability_label` (the capability just
+assigned in step 2), and a `members` list. This only covers skills that
+already have a real `capability_id` — it feeds the "Software Engineering /
+SDLC" page. Only new or content-changed heads show up in
+`heads_needing_classification`, so this list gets shorter on repeat runs.
 
 Read that file. For every entry in `heads_needing_classification`, decide
 whether it's a software-engineering / coding-agent lifecycle skill, and if

@@ -7,6 +7,18 @@ from kitchen.utils import load_all_skills, save_skills, atomic_write_json
 PHASE_INPUT_FILE = CACHE_DIR / "phase_input.json"
 PHASE_OUTPUT_FILE = CACHE_DIR / "phase_output.json"
 
+def _phase_is_current(head: dict, valid_phases: set) -> bool:
+    """True if head's lifecycle_phase (including a deliberate null "not
+    applicable") was already decided by an agent against the skill's current
+    blob_sha, so classification can be skipped this round."""
+    phase_id = head.get("lifecycle_phase")
+    if phase_id is not None and phase_id not in valid_phases:
+        return False
+    assigned_sha = head.get("phase_assigned_blob_sha")
+    if not assigned_sha:
+        return False
+    return assigned_sha == head.get("upstream", {}).get("blob_sha")
+
 def prepare_phase_input(output_path: Path = None) -> Path:
     """
     Stage 1 of lifecycle-phase classification for the Software Engineering /
@@ -53,6 +65,15 @@ def prepare_phase_input(output_path: Path = None) -> Path:
                 "members": member_ids
             })
             continue
+        if _phase_is_current(head, valid_phases):
+            # Already classified by an agent against this exact blob_sha -
+            # nothing changed since, so don't re-spend agent effort on it.
+            already_assigned.append({
+                "skill_id": head["id"],
+                "lifecycle_phase": head.get("lifecycle_phase"),
+                "members": member_ids
+            })
+            continue
         needs_classification.append({
             "skill_id": head["id"],
             "name": head.get("name", ""),
@@ -81,7 +102,7 @@ def prepare_phase_input(output_path: Path = None) -> Path:
     atomic_write_json(output_path, payload)
     print(
         f"Wrote {len(needs_classification)} head(s) needing phase classification to "
-        f"{output_path} ({len(already_assigned)} already manually assigned)."
+        f"{output_path} ({len(already_assigned)} already assigned/unchanged, skipped)."
     )
     return output_path
 
@@ -124,13 +145,27 @@ def apply_phase_assignments(input_path: Path = None) -> None:
 
     for head in heads:
         members = head_to_members[head["id"]]
+        head_id = head["id"]
+        current_sha = head.get("upstream", {}).get("blob_sha")
+
         if head.get("tier") == "core" and head.get("lifecycle_phase") in valid_phases:
+            # Human-reviewed lock: never touched by agent assignments.
             phase_id = head["lifecycle_phase"]
-        else:
-            phase_id = assignments.get(head["id"])
+        elif head_id in assignments:
+            phase_id = assignments[head_id]
             if phase_id is not None and phase_id not in valid_phases:
-                print(f"Warning: unknown lifecycle_phase '{phase_id}' for '{head['id']}', parking as null.")
+                print(f"Warning: unknown lifecycle_phase '{phase_id}' for '{head_id}', parking as null.")
                 phase_id = None
+            head["phase_assigned_blob_sha"] = current_sha
+        else:
+            # Not in this round's assignments - prepare already decided it
+            # didn't need reclassification (unchanged since it was last
+            # classified), so keep the existing value instead of wiping it.
+            phase_id = head.get("lifecycle_phase")
+            if phase_id is not None and phase_id not in valid_phases:
+                phase_id = None
+
+        head["lifecycle_phase"] = phase_id
 
         if phase_id is None:
             not_applicable_count += 1

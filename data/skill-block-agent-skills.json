@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T00:40:57.614874Z",
+  "generated_at": "2026-07-19T01:11:32.812075Z",
   "skills": [
     {
       "id": "block-api-setup",
@@ -32,7 +32,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-042",
+      "cluster_id": "cluster-043",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -82,7 +82,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-043",
+      "cluster_id": "cluster-044",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -132,7 +132,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-044",
+      "cluster_id": "cluster-045",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -182,7 +182,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-045",
+      "cluster_id": "cluster-046",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -232,7 +232,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-046",
+      "cluster_id": "cluster-047",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -282,7 +282,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-047",
+      "cluster_id": "cluster-048",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -332,7 +332,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-048",
+      "cluster_id": "cluster-049",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,

@@ -1,7 +1,107 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T00:40:57.593775Z",
+  "generated_at": "2026-07-19T01:11:32.816413Z",
   "skills": [
+    {
+      "id": "nvidia-nvidia-skill-finder",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/nvidia-skill-finder",
+        "default_branch": "main"
+      },
+      "name": "nvidia-skill-finder",
+      "frontmatter_description": "Use for NVIDIA-related requests where an NVIDIA skill might help, even if the user did not ask for a skill. Trigger on NVIDIA products, hardware, software, SDKs, GPUs, Jetson/JetPack/L4T/BSP/SDK Manager/driver/flashing/setup, CUDA, NIM, NeMo, Omniverse/OpenUSD/SimReady, RAPIDS/cuDF, cuPyNumeric, cuOpt, Dynamo, Holoscan, TensorRT, DeepStream, VSS, TAO, NGC/NVCF. Do not use for generic non-NVIDIA route, optimize, deploy, AI, video, data, or infrastructure tasks.",
+      "license": "CC-BY-4.0 AND Apache-2.0",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "4aaf713060da4702086b66cd7061a9735cbff2ea",
+        "fetched_at": "2026-07-19T01:10:26.988595Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-088",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 1918,
+        "word_count": 1140,
+        "line_count": 164,
+        "basis": "body",
+        "trigger": "Use for NVIDIA-related requests where an NVIDIA skill might help, even if the user did not ask for a skill.",
+        "body_blob_sha": "4aaf713060da4702086b66cd7061a9735cbff2ea",
+        "computed_at": "2026-07-16T14:29:37.853369Z"
+      }
+    },
+    {
+      "id": "nvidia-accelerated-computing-cudf",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/accelerated-computing-cudf",
+        "default_branch": "main"
+      },
+      "name": "accelerated-computing-cudf",
+      "frontmatter_description": "Official NVIDIA-authored guidance for NVIDIA cuDF GPU DataFrames, pandas acceleration, dask-cuDF, ETL, joins, groupby, CSV/Parquet I/O, nullable semantics, and multi-GPU DataFrame workloads.",
+      "license": "CC-BY-4.0 AND Apache-2.0",
+      "mirrorable": false,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "41fcff67caaf3d569636c1fdddad1fc58d28ea3a",
+        "fetched_at": "2026-07-19T01:10:03.727405Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-089",
+      "score_default": 220,
+      "scores_by_tool": {
+        "claude-code": 220,
+        "claude-ai": 220,
+        "vscode-copilot": 220,
+        "antigravity": 220,
+        "gemini-cli": 220,
+        "cursor": 220
+      },
+      "nutrition": {
+        "token_estimate": 2252,
+        "word_count": 1204,
+        "line_count": 190,
+        "basis": "body",
+        "trigger": "Official NVIDIA-authored guidance for NVIDIA cuDF GPU DataFrames, pandas acceleration, dask-cuDF, ETL, joins, groupby, CSV/Parquet I/O, nullable semantics, and multi-GPU DataFrame workloads.",
+        "body_blob_sha": "41fcff67caaf3d569636c1fdddad1fc58d28ea3a",
+        "computed_at": "2026-07-16T14:29:37.766243Z"
+      }
+    },
     {
       "id": "nvidia-aiq-deploy",
       "source_id": "nvidia-skills",
@@ -19,7 +119,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7bb611d75ada64a80b6af1980c13717684828ba7",
-        "fetched_at": "2026-07-16T14:26:17.231260Z"
+        "fetched_at": "2026-07-19T01:10:03.727501Z"
       },
       "status": "active",
       "tier": "shell",
@@ -32,7 +132,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-165",
+      "cluster_id": "cluster-090",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -69,7 +169,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "670d8249cb3f1a3533100a7bdaaeb9a750dc19c7",
-        "fetched_at": "2026-07-16T14:26:17.897967Z"
+        "fetched_at": "2026-07-19T01:10:03.727570Z"
       },
       "status": "active",
       "tier": "shell",
@@ -82,7 +182,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-166",
+      "cluster_id": "cluster-091",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -103,556 +203,6 @@
       }
     },
     {
-      "id": "nvidia-cuopt-numerical-optimization-api",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/cuopt-numerical-optimization-api",
-        "default_branch": "main"
-      },
-      "name": "cuopt-numerical-optimization-api",
-      "frontmatter_description": "LP, MILP, and QP (beta) with cuOpt — Python, C, and CLI. Use when the user is solving LP, MILP, or QP with any cuOpt interface.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "b4a807d10a8fdb4e8ae71a7d23bec531fdbfb50c",
-        "fetched_at": "2026-07-16T14:26:24.599548Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-167",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 1139,
-        "word_count": 703,
-        "line_count": 86,
-        "basis": "body",
-        "trigger": "Use when the user is solving LP, MILP, or QP with any cuOpt interface.",
-        "body_blob_sha": "b4a807d10a8fdb4e8ae71a7d23bec531fdbfb50c",
-        "computed_at": "2026-07-16T14:29:37.760492Z"
-      }
-    },
-    {
-      "id": "nvidia-dali-dynamic-mode",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/dali-dynamic-mode",
-        "default_branch": "main"
-      },
-      "name": "dali-dynamic-mode",
-      "frontmatter_description": "DALI imperative dynamic mode (`nvidia.dali.experimental.dynamic`, ndd): use when working on ndd code or migrating pipelines; skip pipeline-only tasks.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "d3d73bb569b0001c8c13edc24de317824c46adb2",
-        "fetched_at": "2026-07-16T14:26:30.249381Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-168",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 3618,
-        "word_count": 1899,
-        "line_count": 275,
-        "basis": "body",
-        "trigger": "DALI imperative dynamic mode (`nvidia.dali.experimental.dynamic`, ndd): use when working on ndd code or migrating pipelines; skip pipeline-only tasks.",
-        "body_blob_sha": "d3d73bb569b0001c8c13edc24de317824c46adb2",
-        "computed_at": "2026-07-16T14:29:37.761180Z"
-      }
-    },
-    {
-      "id": "nvidia-dynamo-interconnect-check",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/dynamo-interconnect-check",
-        "default_branch": "main"
-      },
-      "name": "dynamo-interconnect-check",
-      "frontmatter_description": "Validate that a Dynamo deployment's NIXL/UCX/NCCL interconnect is ready for disaggregated serving over RDMA/NVLink. Use after recipe-runner brings a deployment up (especially disagg/multi-node) to confirm the KV transport is correct; use troubleshoot for diagnosing already-failed pods.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "a9c9d46228fed0439b76ed74d36fd128358c5f1f",
-        "fetched_at": "2026-07-16T14:26:40.165174Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-169",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 1478,
-        "word_count": 821,
-        "line_count": 147,
-        "basis": "body",
-        "trigger": "Validate that a Dynamo deployment's NIXL/UCX/NCCL interconnect is ready for disaggregated serving over RDMA/NVLink.",
-        "body_blob_sha": "a9c9d46228fed0439b76ed74d36fd128358c5f1f",
-        "computed_at": "2026-07-16T14:29:37.761698Z"
-      }
-    },
-    {
-      "id": "nvidia-dynamo-router-starter",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/dynamo-router-starter",
-        "default_branch": "main"
-      },
-      "name": "dynamo-router-starter",
-      "frontmatter_description": "Start or patch Dynamo router modes and run router endpoint smoke checks. Use for round-robin, KV-aware, least-loaded, or device-aware routing setup; use recipe-runner for recipe deployment and troubleshoot for failure diagnosis.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "954b040c479fabbb4411d4212ae2eb3316b19581",
-        "fetched_at": "2026-07-16T14:26:41.488592Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-170",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 1325,
-        "word_count": 715,
-        "line_count": 162,
-        "basis": "body",
-        "trigger": "Use for round-robin, KV-aware, least-loaded, or device-aware routing setup; use recipe-runner for recipe deployment and troubleshoot for failure diagnosis.",
-        "body_blob_sha": "954b040c479fabbb4411d4212ae2eb3316b19581",
-        "computed_at": "2026-07-16T14:29:37.762149Z"
-      }
-    },
-    {
-      "id": "nvidia-nemoclaw-user-guide",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/nemoclaw-user-guide",
-        "default_branch": "main"
-      },
-      "name": "nemoclaw-user-guide",
-      "frontmatter_description": "Guides human users' AI agents to the NemoClaw docs MCP server and canonical Fern documentation in Markdown form. Use when users ask how to install, configure, operate, troubleshoot, secure, or learn NemoClaw with an AI coding assistant. Trigger keywords - nemoclaw docs, use nemoclaw with ai agent, nemoclaw mcp docs, nemoclaw install help, nemoclaw quickstart, nemoclaw markdown docs, llms.txt, agent skills.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "2615963051cd533e008ef69c370131328326c4c5",
-        "fetched_at": "2026-07-16T14:27:44.387660Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-171",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 968,
-        "word_count": 496,
-        "line_count": 63,
-        "basis": "body",
-        "trigger": "Use when users ask how to install, configure, operate, troubleshoot, secure, or learn NemoClaw with an AI coding assistant.",
-        "body_blob_sha": "2615963051cd533e008ef69c370131328326c4c5",
-        "computed_at": "2026-07-16T14:29:37.762580Z"
-      }
-    },
-    {
-      "id": "nvidia-omniverse-cad-to-simready",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/omniverse-cad-to-simready",
-        "default_branch": "main"
-      },
-      "name": "omniverse-cad-to-simready",
-      "frontmatter_description": "Coordinate the end-to-end CAD/source-asset to SimReady workflow. Use for broad requests such as CAD to SimReady, source asset to simulation-ready USD, or prop packaging that require conversion, material/physics assignment, SimReady conformance, validation, and optional package creation; deploy or verify Content Agents services first when property assignment is enabled; route single-stage work through nested references.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "f8269c99a39f3e23be3ebb4133a80c581b6d163d",
-        "fetched_at": "2026-07-16T14:27:54.495980Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-172",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 4223,
-        "word_count": 2139,
-        "line_count": 264,
-        "basis": "body",
-        "trigger": "Use for broad requests such as CAD to SimReady, source asset to simulation-ready USD, or prop packaging that require conversion, material/physics assignment, SimReady conformance, validation, and opt…",
-        "body_blob_sha": "f8269c99a39f3e23be3ebb4133a80c581b6d163d",
-        "computed_at": "2026-07-16T14:29:37.763228Z"
-      }
-    },
-    {
-      "id": "nvidia-omniverse-realtime-viewer",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/omniverse-realtime-viewer",
-        "default_branch": "main"
-      },
-      "name": "omniverse-realtime-viewer",
-      "frontmatter_description": "Use as the top-level router for Omniverse Realtime Viewer USD app requests and focused viewer reference documents.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "3aabd8e04ac51bd3e2e69e618c768aa735b8ef42",
-        "fetched_at": "2026-07-16T14:27:55.187239Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-173",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 1739,
-        "word_count": 683,
-        "line_count": 113,
-        "basis": "body",
-        "trigger": "Use as the top-level router for Omniverse Realtime Viewer USD app requests and focused viewer reference documents.",
-        "body_blob_sha": "3aabd8e04ac51bd3e2e69e618c768aa735b8ef42",
-        "computed_at": "2026-07-16T14:29:37.763695Z"
-      }
-    },
-    {
-      "id": "nvidia-omniverse-usd-performance-tuning",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/omniverse-usd-performance-tuning",
-        "default_branch": "main"
-      },
-      "name": "omniverse-usd-performance-tuning",
-      "frontmatter_description": "Top-level workflow skill for USD performance diagnosis and optimization. Use for slow loading, high memory, low FPS, or 'optimize my scene' requests; delegates auth/runtime setup to Phase 0 owners.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "e7fbee88dd67867ead9738f0efc6bb20b97e640a",
-        "fetched_at": "2026-07-16T14:27:55.857179Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-174",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 4322,
-        "word_count": 2064,
-        "line_count": 253,
-        "basis": "body",
-        "trigger": "Use for slow loading, high memory, low FPS, or 'optimize my scene' requests; delegates auth/runtime setup to Phase 0 owners.",
-        "body_blob_sha": "e7fbee88dd67867ead9738f0efc6bb20b97e640a",
-        "computed_at": "2026-07-16T14:29:37.764487Z"
-      }
-    },
-    {
-      "id": "nvidia-physical-ai-infrastructure-setup-and-resilient-scaling",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/physical-ai-infrastructure-setup-and-resilient-scaling",
-        "default_branch": "main"
-      },
-      "name": "physical-ai-infrastructure-setup-and-resilient-scaling",
-      "frontmatter_description": "Use when the user wants to set up, scale, validate, or harden NVIDIA physical AI infrastructure for synthetic data generation workflows across local MicroK8s or Azure AKS, including Kubernetes clusters, inference endpoint deployment, OSMO deployment, workload submission readiness, and infrastructure failure recovery. Trigger keywords: physical ai infrastructure, resilient scaling, SDG infrastructure, microk8s, azure aks, NVCF deployment, NIM Operator, OSMO deploy, workflow scaling. Don't trigger for: OSMO log summarization or workload-only operations unless infrastructure setup, scaling, validation, or recovery is requested.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "3fe5942578fbcb923ab007f8a81b16e8152c0186",
-        "fetched_at": "2026-07-16T14:27:57.263659Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-175",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 2474,
-        "word_count": 1285,
-        "line_count": 171,
-        "basis": "body",
-        "trigger": "Use when the user wants to set up, scale, validate, or harden NVIDIA physical AI infrastructure for synthetic data generation workflows across local MicroK8s or Azure AKS, including Kubernetes cluste…",
-        "body_blob_sha": "3fe5942578fbcb923ab007f8a81b16e8152c0186",
-        "computed_at": "2026-07-16T14:29:37.765051Z"
-      }
-    },
-    {
-      "id": "nvidia-physical-ai-neural-reconstruction",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/physical-ai-neural-reconstruction",
-        "default_branch": "main"
-      },
-      "name": "physical-ai-neural-reconstruction",
-      "frontmatter_description": "Router for NVIDIA NuRec/NRE: USDZ rendering, NCore conversion, 3DGS, gRPC sensor sim, PhysicalAI HF datasets. Do NOT use for SimReady or infra setup.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "91e611e57f6baf3dd3969d8fb19519781a39e818",
-        "fetched_at": "2026-07-16T14:27:57.958961Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-176",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 3738,
-        "word_count": 2019,
-        "line_count": 277,
-        "basis": "body",
-        "trigger": "Do NOT use for SimReady or infra setup.",
-        "body_blob_sha": "91e611e57f6baf3dd3969d8fb19519781a39e818",
-        "computed_at": "2026-07-16T14:29:37.765712Z"
-      }
-    },
-    {
-      "id": "nvidia-accelerated-computing-cudf",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/accelerated-computing-cudf",
-        "default_branch": "main"
-      },
-      "name": "accelerated-computing-cudf",
-      "frontmatter_description": "Official NVIDIA-authored guidance for NVIDIA cuDF GPU DataFrames, pandas acceleration, dask-cuDF, ETL, joins, groupby, CSV/Parquet I/O, nullable semantics, and multi-GPU DataFrame workloads.",
-      "license": "CC-BY-4.0 AND Apache-2.0",
-      "mirrorable": false,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "41fcff67caaf3d569636c1fdddad1fc58d28ea3a",
-        "fetched_at": "2026-07-16T14:26:16.570449Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-177",
-      "score_default": 220,
-      "scores_by_tool": {
-        "claude-code": 220,
-        "claude-ai": 220,
-        "vscode-copilot": 220,
-        "antigravity": 220,
-        "gemini-cli": 220,
-        "cursor": 220
-      },
-      "nutrition": {
-        "token_estimate": 2252,
-        "word_count": 1204,
-        "line_count": 190,
-        "basis": "body",
-        "trigger": "Official NVIDIA-authored guidance for NVIDIA cuDF GPU DataFrames, pandas acceleration, dask-cuDF, ETL, joins, groupby, CSV/Parquet I/O, nullable semantics, and multi-GPU DataFrame workloads.",
-        "body_blob_sha": "41fcff67caaf3d569636c1fdddad1fc58d28ea3a",
-        "computed_at": "2026-07-16T14:29:37.766243Z"
-      }
-    },
-    {
       "id": "nvidia-amc-run-sample-calibration",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -669,7 +219,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "bc31b4336dff257fa9820e41998d5fc36f4f18e5",
-        "fetched_at": "2026-07-16T14:26:18.586369Z"
+        "fetched_at": "2026-07-19T01:10:03.727646Z"
       },
       "status": "active",
       "tier": "shell",
@@ -682,7 +232,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-178",
+      "cluster_id": "cluster-092",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -719,7 +269,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "9073214f9dd811ee853324ac034cb3b156db8ebb",
-        "fetched_at": "2026-07-16T14:26:19.282626Z"
+        "fetched_at": "2026-07-19T01:10:03.727721Z"
       },
       "status": "active",
       "tier": "shell",
@@ -732,7 +282,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-179",
+      "cluster_id": "cluster-093",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -769,7 +319,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "da127ba3b8fc297c7f1182e054b2b451e193f06b",
-        "fetched_at": "2026-07-16T14:26:19.951377Z"
+        "fetched_at": "2026-07-19T01:10:03.727796Z"
       },
       "status": "active",
       "tier": "shell",
@@ -782,7 +332,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-180",
+      "cluster_id": "cluster-094",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -819,7 +369,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "51af53bf3f37f5691ab6e38e372f4459a93bb35f",
-        "fetched_at": "2026-07-16T14:26:20.673754Z"
+        "fetched_at": "2026-07-19T01:10:03.727873Z"
       },
       "status": "active",
       "tier": "shell",
@@ -832,7 +382,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-181",
+      "cluster_id": "cluster-095",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -869,7 +419,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e4d99183209d233ff58ac86628162693f5364df4",
-        "fetched_at": "2026-07-16T14:26:21.505599Z"
+        "fetched_at": "2026-07-19T01:10:03.727950Z"
       },
       "status": "active",
       "tier": "shell",
@@ -882,7 +432,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-182",
+      "cluster_id": "cluster-096",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -919,7 +469,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ecc1187e2946e1c07b5b72edf4cab40f3ab934fe",
-        "fetched_at": "2026-07-16T14:26:22.210817Z"
+        "fetched_at": "2026-07-19T01:10:03.728029Z"
       },
       "status": "active",
       "tier": "shell",
@@ -932,7 +482,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-183",
+      "cluster_id": "cluster-097",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -969,7 +519,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f0839ec93c12ea1617c669572995e8a0951bfe1d",
-        "fetched_at": "2026-07-16T14:26:22.965475Z"
+        "fetched_at": "2026-07-19T01:10:03.728111Z"
       },
       "status": "active",
       "tier": "shell",
@@ -982,7 +532,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-184",
+      "cluster_id": "cluster-098",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1019,7 +569,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "61daf255744f5d6152357a59542792b7ab67448a",
-        "fetched_at": "2026-07-16T14:26:23.652843Z"
+        "fetched_at": "2026-07-19T01:10:03.728190Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1032,7 +582,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-185",
+      "cluster_id": "cluster-099",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1053,6 +603,56 @@
       }
     },
     {
+      "id": "nvidia-cuopt-numerical-optimization-api",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/cuopt-numerical-optimization-api",
+        "default_branch": "main"
+      },
+      "name": "cuopt-numerical-optimization-api",
+      "frontmatter_description": "LP, MILP, and QP (beta) with cuOpt — Python, C, and CLI. Use when the user is solving LP, MILP, or QP with any cuOpt interface.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "b4a807d10a8fdb4e8ae71a7d23bec531fdbfb50c",
+        "fetched_at": "2026-07-19T01:10:03.728241Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-100",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1139,
+        "word_count": 703,
+        "line_count": 86,
+        "basis": "body",
+        "trigger": "Use when the user is solving LP, MILP, or QP with any cuOpt interface.",
+        "body_blob_sha": "b4a807d10a8fdb4e8ae71a7d23bec531fdbfb50c",
+        "computed_at": "2026-07-16T14:29:37.760492Z"
+      }
+    },
+    {
       "id": "nvidia-cuopt-numerical-optimization-formulation",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -1069,7 +669,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "49db5508d3f83b65e417204cac622f549fa61374",
-        "fetched_at": "2026-07-16T14:26:25.309406Z"
+        "fetched_at": "2026-07-19T01:10:03.728286Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1082,7 +682,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-186",
+      "cluster_id": "cluster-101",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1119,7 +719,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "741badfabfbbd7c52c8314c80d0d4cfe263b3e48",
-        "fetched_at": "2026-07-16T14:26:25.948996Z"
+        "fetched_at": "2026-07-19T01:10:03.728321Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1132,7 +732,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-187",
+      "cluster_id": "cluster-102",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1169,7 +769,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ffaee3f792348da3c25a66e572ffdc1246056cb7",
-        "fetched_at": "2026-07-16T14:26:26.631999Z"
+        "fetched_at": "2026-07-19T01:10:03.728382Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1182,7 +782,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-188",
+      "cluster_id": "cluster-103",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1219,7 +819,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1f0036c145b57b973fa8da530171981e6ffd2db2",
-        "fetched_at": "2026-07-16T14:26:27.320738Z"
+        "fetched_at": "2026-07-19T01:10:03.728463Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1232,7 +832,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-189",
+      "cluster_id": "cluster-104",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1269,7 +869,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c2760882d0ff61e84aa7b9bfc89d1bf39dceb17d",
-        "fetched_at": "2026-07-16T14:26:27.972573Z"
+        "fetched_at": "2026-07-19T01:10:03.728552Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1282,7 +882,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-190",
+      "cluster_id": "cluster-105",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1319,7 +919,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f3b561dcb56682f9879a0d75f4195ecfe93e57d2",
-        "fetched_at": "2026-07-16T14:26:28.643150Z"
+        "fetched_at": "2026-07-19T01:10:03.728645Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1332,7 +932,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-191",
+      "cluster_id": "cluster-106",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1369,7 +969,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "fb40770b46ebb2de5e26548514257742c24b6b75",
-        "fetched_at": "2026-07-16T14:26:29.393011Z"
+        "fetched_at": "2026-07-19T01:10:03.728750Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1382,7 +982,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-192",
+      "cluster_id": "cluster-107",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1403,6 +1003,56 @@
       }
     },
     {
+      "id": "nvidia-dali-dynamic-mode",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/dali-dynamic-mode",
+        "default_branch": "main"
+      },
+      "name": "dali-dynamic-mode",
+      "frontmatter_description": "DALI imperative dynamic mode (`nvidia.dali.experimental.dynamic`, ndd): use when working on ndd code or migrating pipelines; skip pipeline-only tasks.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "d3d73bb569b0001c8c13edc24de317824c46adb2",
+        "fetched_at": "2026-07-19T01:10:03.728817Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-108",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 3618,
+        "word_count": 1899,
+        "line_count": 275,
+        "basis": "body",
+        "trigger": "DALI imperative dynamic mode (`nvidia.dali.experimental.dynamic`, ndd): use when working on ndd code or migrating pipelines; skip pipeline-only tasks.",
+        "body_blob_sha": "d3d73bb569b0001c8c13edc24de317824c46adb2",
+        "computed_at": "2026-07-16T14:29:37.761180Z"
+      }
+    },
+    {
       "id": "nvidia-data-designer",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -1419,7 +1069,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e04af0d79da1034d8b350472cc3eafc07bda670d",
-        "fetched_at": "2026-07-16T14:26:30.952788Z"
+        "fetched_at": "2026-07-19T01:10:03.728905Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1432,7 +1082,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-193",
+      "cluster_id": "cluster-109",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1469,7 +1119,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "be30155d412010646714c8d42bf5f9734200ea84",
-        "fetched_at": "2026-07-16T14:26:31.698808Z"
+        "fetched_at": "2026-07-19T01:10:03.728950Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1482,7 +1132,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-194",
+      "cluster_id": "cluster-110",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1519,7 +1169,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7fa8d7572facd8fca1d551ca8d46bfb2849353ae",
-        "fetched_at": "2026-07-16T14:26:32.355163Z"
+        "fetched_at": "2026-07-19T01:10:03.728991Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1532,7 +1182,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-195",
+      "cluster_id": "cluster-111",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1569,7 +1219,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "6f7ce2b66c4cd55ae92ae9aa704635edc076a007",
-        "fetched_at": "2026-07-16T14:26:33.032222Z"
+        "fetched_at": "2026-07-19T01:10:03.729030Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1582,7 +1232,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-196",
+      "cluster_id": "cluster-112",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1619,7 +1269,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "000f6c7ecdf24a3f509a92a319922459cd02bca3",
-        "fetched_at": "2026-07-16T14:26:33.721667Z"
+        "fetched_at": "2026-07-19T01:10:03.729130Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1632,7 +1282,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-197",
+      "cluster_id": "cluster-113",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1669,7 +1319,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "45d3a1a5d584840e10fd49811b0b3055d7e7d2a0",
-        "fetched_at": "2026-07-16T14:26:34.437680Z"
+        "fetched_at": "2026-07-19T01:10:03.729226Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1682,7 +1332,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-198",
+      "cluster_id": "cluster-114",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -1719,7 +1369,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "63838253ffecb12aeffd14c418d1b5b69f9e787d",
-        "fetched_at": "2026-07-16T14:26:35.086838Z"
+        "fetched_at": "2026-07-19T01:10:03.729284Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1732,7 +1382,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-199",
+      "cluster_id": "cluster-115",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1769,7 +1419,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b6c04f993c7c13d81138a7d53b9d9a89d4d89cd7",
-        "fetched_at": "2026-07-16T14:26:35.834078Z"
+        "fetched_at": "2026-07-19T01:10:03.729387Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1782,7 +1432,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-200",
+      "cluster_id": "cluster-116",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1819,7 +1469,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "248f507d030a2d1da7eb790e2b24ce34ee0ef0ee",
-        "fetched_at": "2026-07-16T14:26:36.519446Z"
+        "fetched_at": "2026-07-19T01:10:03.729484Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1832,7 +1482,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-201",
+      "cluster_id": "cluster-117",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1869,7 +1519,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "6f99decfdaddde7109f5af4d9262b1eac9ee6b88",
-        "fetched_at": "2026-07-16T14:26:37.236581Z"
+        "fetched_at": "2026-07-19T01:10:03.729577Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1882,7 +1532,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-202",
+      "cluster_id": "cluster-118",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1919,7 +1569,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1686edfe90a880c7ef076eff4de868c0465af634",
-        "fetched_at": "2026-07-16T14:26:37.891589Z"
+        "fetched_at": "2026-07-19T01:10:03.729669Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1932,7 +1582,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-203",
+      "cluster_id": "cluster-119",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -1969,7 +1619,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "dc3372af4f7635c8f03b8edc79275eefb44ae546",
-        "fetched_at": "2026-07-16T14:26:38.670737Z"
+        "fetched_at": "2026-07-19T01:10:03.729763Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1982,7 +1632,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-204",
+      "cluster_id": "cluster-120",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2019,7 +1669,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "dc358551c1e714e87a3f96e213d386bb7bf4c08f",
-        "fetched_at": "2026-07-16T14:26:39.480930Z"
+        "fetched_at": "2026-07-19T01:10:03.729857Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2032,7 +1682,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-205",
+      "cluster_id": "cluster-121",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2053,6 +1703,97 @@
       }
     },
     {
+      "id": "nvidia-doca-aes-gcm",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/doca-aes-gcm",
+        "default_branch": "main"
+      },
+      "name": "doca-aes-gcm",
+      "frontmatter_description": "Use this skill when the user is doing hands-on DOCA AES-GCM work on a BlueField DPU or ConnectX NIC — configuring `doca_aes_gcm_task_encrypt` / `_task_decrypt`, querying `doca_aes_gcm_cap_*` for per-key-type (only `DOCA_AES_GCM_KEY_128` / `_256` — AES-192 not supported) and per-task support, sizing plaintext against the max-buf cap, setting source / destination mmap permissions, validating with a NIST GCMVS or RFC 5288 vector, or debugging DOCA_ERROR_* including the security-critical tag-verification-failed outcome on decrypt. Trigger even when the user does not explicitly mention \"DOCA AES-GCM\" or \"AEAD\" — typical implicit phrasings: \"decrypt completion IO_FAILED\", \"auth tag isn't verifying\", \"NOT_PERMITTED on my encrypt buffer\", \"is AES-192-GCM on this BlueField\" (no), or \"encrypted record came back tampered\". Refuse and route elsewhere for non-GCM AES modes (CBC / CTR / XTS — CPU OpenSSL), key management (KMS / HSM / rotation), SHA (doca-sha), or general AEAD background.\n",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "55f18499943e3ddf52c4aab0a034562c8f285079",
+        "blob_sha": "e9c628f70d1448532c5badd0e83b370113621256",
+        "fetched_at": "2026-07-19T01:10:03.983108Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-122",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      }
+    },
+    {
+      "id": "nvidia-dynamo-interconnect-check",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/dynamo-interconnect-check",
+        "default_branch": "main"
+      },
+      "name": "dynamo-interconnect-check",
+      "frontmatter_description": "Validate that a Dynamo deployment's NIXL/UCX/NCCL interconnect is ready for disaggregated serving over RDMA/NVLink. Use after recipe-runner brings a deployment up (especially disagg/multi-node) to confirm the KV transport is correct; use troubleshoot for diagnosing already-failed pods.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "a9c9d46228fed0439b76ed74d36fd128358c5f1f",
+        "fetched_at": "2026-07-19T01:10:09.870824Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-123",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1478,
+        "word_count": 821,
+        "line_count": 147,
+        "basis": "body",
+        "trigger": "Validate that a Dynamo deployment's NIXL/UCX/NCCL interconnect is ready for disaggregated serving over RDMA/NVLink.",
+        "body_blob_sha": "a9c9d46228fed0439b76ed74d36fd128358c5f1f",
+        "computed_at": "2026-07-16T14:29:37.761698Z"
+      }
+    },
+    {
       "id": "nvidia-dynamo-recipe-runner",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -2069,7 +1810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "33bac367967d93aa2bdb1d09dd294244d460977e",
-        "fetched_at": "2026-07-16T14:26:40.821450Z"
+        "fetched_at": "2026-07-19T01:10:09.870887Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2082,7 +1823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-206",
+      "cluster_id": "cluster-124",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2103,6 +1844,56 @@
       }
     },
     {
+      "id": "nvidia-dynamo-router-starter",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/dynamo-router-starter",
+        "default_branch": "main"
+      },
+      "name": "dynamo-router-starter",
+      "frontmatter_description": "Start or patch Dynamo router modes and run router endpoint smoke checks. Use for round-robin, KV-aware, least-loaded, or device-aware routing setup; use recipe-runner for recipe deployment and troubleshoot for failure diagnosis.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "954b040c479fabbb4411d4212ae2eb3316b19581",
+        "fetched_at": "2026-07-19T01:10:09.870920Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-125",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1325,
+        "word_count": 715,
+        "line_count": 162,
+        "basis": "body",
+        "trigger": "Use for round-robin, KV-aware, least-loaded, or device-aware routing setup; use recipe-runner for recipe deployment and troubleshoot for failure diagnosis.",
+        "body_blob_sha": "954b040c479fabbb4411d4212ae2eb3316b19581",
+        "computed_at": "2026-07-16T14:29:37.762149Z"
+      }
+    },
+    {
       "id": "nvidia-dynamo-troubleshoot",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -2119,7 +1910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1fb05f7747aef2d6646d6abdd6c304a1c705269b",
-        "fetched_at": "2026-07-16T14:26:42.146099Z"
+        "fetched_at": "2026-07-19T01:10:09.870960Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2132,7 +1923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-207",
+      "cluster_id": "cluster-126",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2169,7 +1960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "65b020d4eaa3106c1fb322821c35fe96dc842658",
-        "fetched_at": "2026-07-16T14:26:42.843041Z"
+        "fetched_at": "2026-07-19T01:10:09.871001Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2182,7 +1973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-208",
+      "cluster_id": "cluster-127",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2219,7 +2010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e330cefff418bcbd8da7b6d7edbee4c34937dea5",
-        "fetched_at": "2026-07-16T14:26:43.506221Z"
+        "fetched_at": "2026-07-19T01:10:09.871044Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2232,7 +2023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-209",
+      "cluster_id": "cluster-128",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2269,7 +2060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "71a1717d1c559342ce2deca974c0a98b0070b3d7",
-        "fetched_at": "2026-07-16T14:26:44.187958Z"
+        "fetched_at": "2026-07-19T01:10:09.871086Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2282,7 +2073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-210",
+      "cluster_id": "cluster-129",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2319,7 +2110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1d7d8558bffeadb5fd8a522258647fe740c51708",
-        "fetched_at": "2026-07-16T14:26:44.869653Z"
+        "fetched_at": "2026-07-19T01:10:09.871128Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2332,7 +2123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-211",
+      "cluster_id": "cluster-130",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2369,7 +2160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "8d20bfdc734cd0f42a8f3d19fc041ef584604efe",
-        "fetched_at": "2026-07-16T14:26:45.551521Z"
+        "fetched_at": "2026-07-19T01:10:09.871169Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2382,7 +2173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-212",
+      "cluster_id": "cluster-131",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2419,7 +2210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ba8197af54656af6177049dbadeb8d43544254f7",
-        "fetched_at": "2026-07-16T14:26:46.286217Z"
+        "fetched_at": "2026-07-19T01:10:09.871229Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2432,7 +2223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-213",
+      "cluster_id": "cluster-132",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2469,7 +2260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "475a2fccf22a23d7dd38c0cb063f3a2af77e1526",
-        "fetched_at": "2026-07-16T14:26:46.933070Z"
+        "fetched_at": "2026-07-19T01:10:09.871273Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2482,7 +2273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-214",
+      "cluster_id": "cluster-133",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2519,7 +2310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "6259145d208609e4bf36082e1c928e61774e562e",
-        "fetched_at": "2026-07-16T14:26:47.603825Z"
+        "fetched_at": "2026-07-19T01:10:09.871315Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2532,7 +2323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-215",
+      "cluster_id": "cluster-134",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2569,7 +2360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "52629e1db86d5b456e961795d84c788b3c22616a",
-        "fetched_at": "2026-07-16T14:26:48.289609Z"
+        "fetched_at": "2026-07-19T01:10:09.871358Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2582,7 +2373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-216",
+      "cluster_id": "cluster-135",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2619,7 +2410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d904e68156f32aaec4f6cbca0fba294b2c73ace7",
-        "fetched_at": "2026-07-16T14:26:48.934746Z"
+        "fetched_at": "2026-07-19T01:10:09.871400Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2632,7 +2423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-217",
+      "cluster_id": "cluster-136",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2669,7 +2460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "8be8b19e7c0cc39ceb106d94701a14d862745abd",
-        "fetched_at": "2026-07-16T14:26:49.601431Z"
+        "fetched_at": "2026-07-19T01:10:09.871441Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2682,7 +2473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-218",
+      "cluster_id": "cluster-137",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2719,7 +2510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "245a70e99fc38f638292b53cf9ebe4f1dabfc2db",
-        "fetched_at": "2026-07-16T14:26:50.255225Z"
+        "fetched_at": "2026-07-19T01:10:09.871483Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2732,7 +2523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-219",
+      "cluster_id": "cluster-138",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2769,7 +2560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "65ee361a80806f7edaa6bce468bc2554fce79736",
-        "fetched_at": "2026-07-16T14:26:50.887651Z"
+        "fetched_at": "2026-07-19T01:10:09.871524Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2782,7 +2573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-220",
+      "cluster_id": "cluster-139",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2819,7 +2610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c07884bb043db248aba314f775e993335602f29d",
-        "fetched_at": "2026-07-16T14:26:51.566764Z"
+        "fetched_at": "2026-07-19T01:10:09.871566Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2832,7 +2623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-221",
+      "cluster_id": "cluster-140",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2869,7 +2660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f8dc15e05478d4806ca05ea4ecb9cb2ddd49c5a7",
-        "fetched_at": "2026-07-16T14:26:52.241093Z"
+        "fetched_at": "2026-07-19T01:10:09.871608Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2882,7 +2673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-222",
+      "cluster_id": "cluster-141",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2919,7 +2710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5716ee29501c68bf1149a2f7c56b502fad89b7c2",
-        "fetched_at": "2026-07-16T14:26:52.925010Z"
+        "fetched_at": "2026-07-19T01:10:09.871653Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2932,7 +2723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-223",
+      "cluster_id": "cluster-142",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -2969,7 +2760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b6d8a6efa497a1becffd0bbfae14277e2eebaec0",
-        "fetched_at": "2026-07-16T14:26:53.601427Z"
+        "fetched_at": "2026-07-19T01:10:09.871697Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2982,7 +2773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-224",
+      "cluster_id": "cluster-143",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3019,7 +2810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "4e5482cf52b95417c76481f9ffeb368287dd9061",
-        "fetched_at": "2026-07-16T14:26:54.388435Z"
+        "fetched_at": "2026-07-19T01:10:09.871741Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3032,7 +2823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-225",
+      "cluster_id": "cluster-144",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3069,7 +2860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f574376c723658e2c2c21396ccdb2b1ce8dfaee3",
-        "fetched_at": "2026-07-16T14:26:55.096019Z"
+        "fetched_at": "2026-07-19T01:10:09.871784Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3082,7 +2873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-226",
+      "cluster_id": "cluster-145",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3119,7 +2910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "9808deee4592d196d16a1f5bffb89c35f406ed43",
-        "fetched_at": "2026-07-16T14:26:55.875046Z"
+        "fetched_at": "2026-07-19T01:10:09.871829Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3132,7 +2923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-227",
+      "cluster_id": "cluster-146",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3169,7 +2960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "118999176d1191d8442792922f2f70f5d024d0fd",
-        "fetched_at": "2026-07-16T14:26:56.657178Z"
+        "fetched_at": "2026-07-19T01:10:09.871873Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3182,7 +2973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-228",
+      "cluster_id": "cluster-147",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3219,7 +3010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f3b3e70ea47e9415799096805905a8fe8c8c7bad",
-        "fetched_at": "2026-07-16T14:26:57.518180Z"
+        "fetched_at": "2026-07-19T01:10:09.871916Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3232,7 +3023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-229",
+      "cluster_id": "cluster-148",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3269,7 +3060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b1513b14ffa529d381ba5317d05d0a78fe22f599",
-        "fetched_at": "2026-07-16T14:26:58.216683Z"
+        "fetched_at": "2026-07-19T01:10:09.871962Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3282,7 +3073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-230",
+      "cluster_id": "cluster-149",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3319,7 +3110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "a101b3968a7b8fe110e7fb5cb7d924b46bb1184e",
-        "fetched_at": "2026-07-16T14:26:58.889758Z"
+        "fetched_at": "2026-07-19T01:10:09.872006Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3332,7 +3123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-231",
+      "cluster_id": "cluster-150",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3369,7 +3160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f501ac58839f1d299742dd22704e3f753a523c45",
-        "fetched_at": "2026-07-16T14:26:59.535836Z"
+        "fetched_at": "2026-07-19T01:10:09.872051Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3382,7 +3173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-232",
+      "cluster_id": "cluster-151",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3419,7 +3210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "205203450ea87cbaceb75522ab56d176de7e7080",
-        "fetched_at": "2026-07-16T14:27:00.191230Z"
+        "fetched_at": "2026-07-19T01:10:09.872097Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3432,7 +3223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-233",
+      "cluster_id": "cluster-152",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3469,7 +3260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d5cc1822868fb8a9ee41796c373418e67879b16e",
-        "fetched_at": "2026-07-16T14:27:00.874359Z"
+        "fetched_at": "2026-07-19T01:10:09.872142Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3482,7 +3273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-234",
+      "cluster_id": "cluster-153",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3519,7 +3310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "a140e17d18eddb1ff920c39db592df246b1a1735",
-        "fetched_at": "2026-07-16T14:27:01.553654Z"
+        "fetched_at": "2026-07-19T01:10:09.872188Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3532,7 +3323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-235",
+      "cluster_id": "cluster-154",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3569,7 +3360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ce92297c5386328aeae7c4b407664f5d0ecd4dee",
-        "fetched_at": "2026-07-16T14:27:02.233203Z"
+        "fetched_at": "2026-07-19T01:10:09.872356Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3582,7 +3373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-236",
+      "cluster_id": "cluster-155",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3619,7 +3410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d49ea46992d87dac9e0504a965d34cdc9ca2b858",
-        "fetched_at": "2026-07-16T14:27:02.918302Z"
+        "fetched_at": "2026-07-19T01:10:09.872494Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3632,7 +3423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-237",
+      "cluster_id": "cluster-156",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3669,7 +3460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "68256856bc1bc2cbdd624174e9c00df9afede242",
-        "fetched_at": "2026-07-16T14:27:03.717216Z"
+        "fetched_at": "2026-07-19T01:10:09.872567Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3682,7 +3473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-238",
+      "cluster_id": "cluster-157",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3719,7 +3510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "6df2ed5c7dc31185396505f90b7671ff27525132",
-        "fetched_at": "2026-07-16T14:27:04.432632Z"
+        "fetched_at": "2026-07-19T01:10:09.872616Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3732,7 +3523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-239",
+      "cluster_id": "cluster-158",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3769,7 +3560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7bd1a956d4d3d406d37b8985904addbcf5cc51eb",
-        "fetched_at": "2026-07-16T14:27:05.139030Z"
+        "fetched_at": "2026-07-19T01:10:09.872665Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3782,7 +3573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-240",
+      "cluster_id": "cluster-159",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3819,7 +3610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "dae77e0214ef8f546a438882dc6c3edc6d029a12",
-        "fetched_at": "2026-07-16T14:27:06.000981Z"
+        "fetched_at": "2026-07-19T01:10:09.872714Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3832,7 +3623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-241",
+      "cluster_id": "cluster-160",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3869,7 +3660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "cebe1cb848345e7218246edde2cf1278303fe715",
-        "fetched_at": "2026-07-16T14:27:06.968281Z"
+        "fetched_at": "2026-07-19T01:10:09.872763Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3882,7 +3673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-242",
+      "cluster_id": "cluster-161",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3919,7 +3710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "4dec5c75d14eb81e41354df5fe412fdfd7f908a6",
-        "fetched_at": "2026-07-16T14:27:07.829331Z"
+        "fetched_at": "2026-07-19T01:10:09.872811Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3932,7 +3723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-243",
+      "cluster_id": "cluster-162",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -3969,7 +3760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "90dd85edb90f37a92e97058cb8d0cabcf4e7a37d",
-        "fetched_at": "2026-07-16T14:27:08.553690Z"
+        "fetched_at": "2026-07-19T01:10:09.872860Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3982,7 +3773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-244",
+      "cluster_id": "cluster-163",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4019,7 +3810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7ccc1ade94fee1d22c1fdb2fe27f07f7e5c8d2d8",
-        "fetched_at": "2026-07-16T14:27:09.291287Z"
+        "fetched_at": "2026-07-19T01:10:09.872909Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4032,7 +3823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-245",
+      "cluster_id": "cluster-164",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4069,7 +3860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b47868db58ae05e272443c04de5ca45160fece56",
-        "fetched_at": "2026-07-16T14:27:09.978833Z"
+        "fetched_at": "2026-07-19T01:10:09.872958Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4082,7 +3873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-246",
+      "cluster_id": "cluster-165",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4119,7 +3910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "0176f835ba3a3f109eb56efd78ca2b921728e3a8",
-        "fetched_at": "2026-07-16T14:27:10.645333Z"
+        "fetched_at": "2026-07-19T01:10:09.873008Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4132,7 +3923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-247",
+      "cluster_id": "cluster-166",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4169,7 +3960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "007cf002c9a3457f9e4bcc045ec9ecf2a64bb89e",
-        "fetched_at": "2026-07-16T14:27:11.344298Z"
+        "fetched_at": "2026-07-19T01:10:09.873058Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4182,7 +3973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-248",
+      "cluster_id": "cluster-167",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4219,7 +4010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "75bcca226df896af9f7c3c42fd5d57e44015dd5c",
-        "fetched_at": "2026-07-16T14:27:12.072828Z"
+        "fetched_at": "2026-07-19T01:10:09.873108Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4232,7 +4023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-249",
+      "cluster_id": "cluster-168",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4269,7 +4060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "4589885ff35376d56fbc422afe4ce9586cfb7a0f",
-        "fetched_at": "2026-07-16T14:27:12.800168Z"
+        "fetched_at": "2026-07-19T01:10:09.873159Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4282,7 +4073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-250",
+      "cluster_id": "cluster-169",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4319,7 +4110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1015194f7c6e384b307deabe25be368e6e461021",
-        "fetched_at": "2026-07-16T14:27:13.491558Z"
+        "fetched_at": "2026-07-19T01:10:09.873257Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4332,7 +4123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-251",
+      "cluster_id": "cluster-170",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4369,7 +4160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "add6b1d555ae352c79f4c7e4958c9f6889a5b124",
-        "fetched_at": "2026-07-16T14:27:14.196078Z"
+        "fetched_at": "2026-07-19T01:10:09.873406Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4382,7 +4173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-252",
+      "cluster_id": "cluster-171",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4419,7 +4210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ce2be10596ca2ac14b9ebc0027bb01ddcd1827d2",
-        "fetched_at": "2026-07-16T14:27:14.976029Z"
+        "fetched_at": "2026-07-19T01:10:09.873539Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4432,7 +4223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-253",
+      "cluster_id": "cluster-172",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4469,7 +4260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "3ea78dda6835e5e26653b4865d11e6a827a6f1f1",
-        "fetched_at": "2026-07-16T14:27:15.770690Z"
+        "fetched_at": "2026-07-19T01:10:09.873884Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4482,7 +4273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-254",
+      "cluster_id": "cluster-173",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4519,7 +4310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c8fd168868b8e56d0fd31ac8107ae5dc7b24ddc6",
-        "fetched_at": "2026-07-16T14:27:16.484597Z"
+        "fetched_at": "2026-07-19T01:10:09.873952Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4532,7 +4323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-255",
+      "cluster_id": "cluster-174",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4569,7 +4360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "67d8670af9a641b03a0bcdca560774f8b1ff7d3d",
-        "fetched_at": "2026-07-16T14:27:17.236922Z"
+        "fetched_at": "2026-07-19T01:10:09.874009Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4582,7 +4373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-256",
+      "cluster_id": "cluster-175",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4619,7 +4410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c1448d93eecf2fb1e1b6b03b94f597557d00e257",
-        "fetched_at": "2026-07-16T14:27:17.958341Z"
+        "fetched_at": "2026-07-19T01:10:09.874064Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4632,7 +4423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-257",
+      "cluster_id": "cluster-176",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4669,7 +4460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "256ca992c0ff6ce21a90071821db5915929d5f45",
-        "fetched_at": "2026-07-16T14:27:18.648299Z"
+        "fetched_at": "2026-07-19T01:10:09.874120Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4682,7 +4473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-258",
+      "cluster_id": "cluster-177",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4719,7 +4510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "67d8ac30f3d8453bc6a0611129ade163639ddc57",
-        "fetched_at": "2026-07-16T14:27:19.376396Z"
+        "fetched_at": "2026-07-19T01:10:09.874175Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4732,7 +4523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-259",
+      "cluster_id": "cluster-178",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4769,7 +4560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ea75bc41ccb56323f985b04b109287c49af4ed2c",
-        "fetched_at": "2026-07-16T14:27:20.086815Z"
+        "fetched_at": "2026-07-19T01:10:09.874263Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4782,7 +4573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-260",
+      "cluster_id": "cluster-179",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4819,7 +4610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "26f3081b505574facb662f2f5f230de8c24006a8",
-        "fetched_at": "2026-07-16T14:27:20.876432Z"
+        "fetched_at": "2026-07-19T01:10:09.874337Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4832,7 +4623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-261",
+      "cluster_id": "cluster-180",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4869,7 +4660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "40bf67b476fd1dbb7e449644e1145dd545dca540",
-        "fetched_at": "2026-07-16T14:27:21.638172Z"
+        "fetched_at": "2026-07-19T01:10:09.874392Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4882,7 +4673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-262",
+      "cluster_id": "cluster-181",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4919,7 +4710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e616951575083737d9c9434340002b8a7102eaaa",
-        "fetched_at": "2026-07-16T14:27:22.390154Z"
+        "fetched_at": "2026-07-19T01:10:09.874447Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4932,7 +4723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-263",
+      "cluster_id": "cluster-182",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -4969,7 +4760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7b95db3f6921a87b93f18a7e513599ad7a7a212b",
-        "fetched_at": "2026-07-16T14:27:23.167046Z"
+        "fetched_at": "2026-07-19T01:10:09.874502Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4982,7 +4773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-264",
+      "cluster_id": "cluster-183",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5019,7 +4810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d067097790e04b1d7332708ae2081b3a8b18d0db",
-        "fetched_at": "2026-07-16T14:27:23.837197Z"
+        "fetched_at": "2026-07-19T01:10:09.874558Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5032,7 +4823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-265",
+      "cluster_id": "cluster-184",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5069,7 +4860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "fab9152941115f58e5354ea3f4946ff138b805c6",
-        "fetched_at": "2026-07-16T14:27:24.529117Z"
+        "fetched_at": "2026-07-19T01:10:09.874613Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5082,7 +4873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-266",
+      "cluster_id": "cluster-185",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5119,7 +4910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "547f103d292a15cb480dfba76d98fc76b35066af",
-        "fetched_at": "2026-07-16T14:27:25.192103Z"
+        "fetched_at": "2026-07-19T01:10:09.874688Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5132,7 +4923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-267",
+      "cluster_id": "cluster-186",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5153,56 +4944,6 @@
       }
     },
     {
-      "id": "nvidia-nemo-data-designer-plugin",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/nemo-data-designer-plugin",
-        "default_branch": "main"
-      },
-      "name": "nemo-data-designer-plugin",
-      "frontmatter_description": "Use when the user wants to create a dataset, generate synthetic data, or build a data generation pipeline.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "2fbf1bf6fc215cde1cf35ef542a26eabfbf60722",
-        "fetched_at": "2026-07-16T14:27:25.980844Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-268",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 1424,
-        "word_count": 749,
-        "line_count": 102,
-        "basis": "body",
-        "trigger": "Use when the user wants to create a dataset, generate synthetic data, or build a data generation pipeline.",
-        "body_blob_sha": "2fbf1bf6fc215cde1cf35ef542a26eabfbf60722",
-        "computed_at": "2026-07-16T14:29:37.831233Z"
-      }
-    },
-    {
       "id": "nvidia-nemo-evaluator-plugin",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -5219,7 +4960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e9966e79270fa6fc4e6be8d0636138597938ff1e",
-        "fetched_at": "2026-07-16T14:27:26.677335Z"
+        "fetched_at": "2026-07-19T01:10:09.971166Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5232,7 +4973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-269",
+      "cluster_id": "cluster-187",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5253,56 +4994,6 @@
       }
     },
     {
-      "id": "nvidia-nemo-mbridge-mlm-bridge-training",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/nemo-mbridge-mlm-bridge-training",
-        "default_branch": "main"
-      },
-      "name": "nemo-mbridge-mlm-bridge-training",
-      "frontmatter_description": "Run Megatron-LM (MLM) and Megatron Bridge training with mock or real data. Covers correlation testing, available recipes, and multi-GPU examples.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "c059545e80cce13b0bdfc7f456550361cf531963",
-        "fetched_at": "2026-07-16T14:27:27.512357Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-270",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 1455,
-        "word_count": 643,
-        "line_count": 172,
-        "basis": "body",
-        "trigger": "Run Megatron-LM (MLM) and Megatron Bridge training with mock or real data.",
-        "body_blob_sha": "c059545e80cce13b0bdfc7f456550361cf531963",
-        "computed_at": "2026-07-16T14:29:37.832357Z"
-      }
-    },
-    {
       "id": "nvidia-nemo-mbridge-multi-node-slurm",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -5319,7 +5010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "814c677e63894f5c9a4eb974983c27cb5a0fb42a",
-        "fetched_at": "2026-07-16T14:27:28.214442Z"
+        "fetched_at": "2026-07-19T01:10:10.070671Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5332,7 +5023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-271",
+      "cluster_id": "cluster-188",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5369,7 +5060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b50bcb7436a51649b9f6778ec4b8b4511b06af13",
-        "fetched_at": "2026-07-16T14:27:28.872392Z"
+        "fetched_at": "2026-07-19T01:10:10.070759Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5382,7 +5073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-272",
+      "cluster_id": "cluster-189",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5419,7 +5110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c8f52df0d148fc100c3ced6d0108c11922b0fe66",
-        "fetched_at": "2026-07-16T14:27:29.545850Z"
+        "fetched_at": "2026-07-19T01:10:10.070822Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5432,7 +5123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-273",
+      "cluster_id": "cluster-190",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5469,7 +5160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d62248b68c60e1d6829e6fbd3ed14a02c8723324",
-        "fetched_at": "2026-07-16T14:27:30.261440Z"
+        "fetched_at": "2026-07-19T01:10:10.070885Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5482,7 +5173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-274",
+      "cluster_id": "cluster-191",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5519,7 +5210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c02516f3c9b309a9e29516d745ed0fb4255b02aa",
-        "fetched_at": "2026-07-16T14:27:30.944932Z"
+        "fetched_at": "2026-07-19T01:10:10.070946Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5532,7 +5223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-275",
+      "cluster_id": "cluster-192",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5569,7 +5260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "68ae9fb5e131ee250dc7a1db62a2c0656ac37376",
-        "fetched_at": "2026-07-16T14:27:31.633633Z"
+        "fetched_at": "2026-07-19T01:10:10.071006Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5582,7 +5273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-276",
+      "cluster_id": "cluster-193",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5619,7 +5310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "023af6b3cf3ef9758bbd840100f6e69762f54bd6",
-        "fetched_at": "2026-07-16T14:27:32.276000Z"
+        "fetched_at": "2026-07-19T01:10:10.071066Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5632,7 +5323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-277",
+      "cluster_id": "cluster-194",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5669,7 +5360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "17e5a8549d6376fe5c68511d5f6728248177fbb7",
-        "fetched_at": "2026-07-16T14:27:32.942979Z"
+        "fetched_at": "2026-07-19T01:10:10.071126Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5682,7 +5373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-278",
+      "cluster_id": "cluster-195",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5719,7 +5410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "bb1b4c86f9e7041f00e082c72aa77767512acf5f",
-        "fetched_at": "2026-07-16T14:27:33.585495Z"
+        "fetched_at": "2026-07-19T01:10:10.071188Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5732,7 +5423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-279",
+      "cluster_id": "cluster-196",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5769,7 +5460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d7795ac2817d7fabddb701eb4366757e75869f09",
-        "fetched_at": "2026-07-16T14:27:34.230528Z"
+        "fetched_at": "2026-07-19T01:10:10.071257Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5782,7 +5473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-280",
+      "cluster_id": "cluster-197",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5819,7 +5510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "3a588a269c2e2cd23858faa4cee744dabebc917f",
-        "fetched_at": "2026-07-16T14:27:34.876377Z"
+        "fetched_at": "2026-07-19T01:10:10.071319Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5832,7 +5523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-281",
+      "cluster_id": "cluster-198",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5869,7 +5560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "abfe8ca952fc421f84391a967116b8d9f3b484bb",
-        "fetched_at": "2026-07-16T14:27:35.539923Z"
+        "fetched_at": "2026-07-19T01:10:10.071380Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5882,7 +5573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-282",
+      "cluster_id": "cluster-199",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5919,7 +5610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e36a13b77ac8669f3b99399c61a68f55fed0df17",
-        "fetched_at": "2026-07-16T14:27:36.182920Z"
+        "fetched_at": "2026-07-19T01:10:10.071441Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5932,7 +5623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-283",
+      "cluster_id": "cluster-200",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -5969,7 +5660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "afb1399460aa7c852915492416dd107cc5560b52",
-        "fetched_at": "2026-07-16T14:27:36.898729Z"
+        "fetched_at": "2026-07-19T01:10:10.071503Z"
       },
       "status": "active",
       "tier": "shell",
@@ -5982,7 +5673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-284",
+      "cluster_id": "cluster-201",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6019,7 +5710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "183165067d480da84aac2746a781adb34b741f65",
-        "fetched_at": "2026-07-16T14:27:37.567328Z"
+        "fetched_at": "2026-07-19T01:10:10.071566Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6032,7 +5723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-285",
+      "cluster_id": "cluster-202",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6053,56 +5744,6 @@
       }
     },
     {
-      "id": "nvidia-nemo-mbridge-perf-sequence-packing",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/nemo-mbridge-perf-sequence-packing",
-        "default_branch": "main"
-      },
-      "name": "nemo-mbridge-perf-sequence-packing",
-      "frontmatter_description": "Validate and use packed sequences and long-context training in Megatron-Bridge, distinguishing offline packed SFT for LLMs from in-batch packing for VLMs, and applying the right CP constraints.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "ad55770d7d687fdaad2e1dfaf9b999e054d80515",
-        "fetched_at": "2026-07-16T14:27:38.265270Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-286",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 1728,
-        "word_count": 643,
-        "line_count": 189,
-        "basis": "body",
-        "trigger": "Validate and use packed sequences and long-context training in Megatron-Bridge, distinguishing offline packed SFT for LLMs from in-batch packing for VLMs, and applying the right CP constraints.",
-        "body_blob_sha": "ad55770d7d687fdaad2e1dfaf9b999e054d80515",
-        "computed_at": "2026-07-16T14:29:37.840773Z"
-      }
-    },
-    {
       "id": "nvidia-nemo-mbridge-perf-tp-dp-comm-overlap",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -6119,7 +5760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e0700137808e51ebf7ed6e5bda86f22581199026",
-        "fetched_at": "2026-07-16T14:27:38.926523Z"
+        "fetched_at": "2026-07-19T01:10:10.172729Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6132,7 +5773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-287",
+      "cluster_id": "cluster-203",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6169,7 +5810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "dfdd2c66faea7cbc2c7374deeb228bee1d82ea2b",
-        "fetched_at": "2026-07-16T14:27:39.621585Z"
+        "fetched_at": "2026-07-19T01:10:10.172844Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6182,7 +5823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-288",
+      "cluster_id": "cluster-204",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6219,7 +5860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "643ade7933c48dd769d1db3302343ca0bd20b3bf",
-        "fetched_at": "2026-07-16T14:27:40.291396Z"
+        "fetched_at": "2026-07-19T01:10:10.172962Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6232,7 +5873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-289",
+      "cluster_id": "cluster-205",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6269,7 +5910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "48289a5aea3cc789ac4e645fad0f9861a1f85eeb",
-        "fetched_at": "2026-07-16T14:27:41.030959Z"
+        "fetched_at": "2026-07-19T01:10:17.274065Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6282,7 +5923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-290",
+      "cluster_id": "cluster-206",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6319,7 +5960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7e393c0ccf310eaf5dc1b2964be9447d3036bc72",
-        "fetched_at": "2026-07-16T14:27:41.712748Z"
+        "fetched_at": "2026-07-19T01:10:17.274162Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6332,7 +5973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-291",
+      "cluster_id": "cluster-207",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6369,7 +6010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "4de9b63d8d2f2a2b2fd6fa6d4fbfe8a668f8c5e2",
-        "fetched_at": "2026-07-16T14:27:42.382050Z"
+        "fetched_at": "2026-07-19T01:10:17.274292Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6382,7 +6023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-292",
+      "cluster_id": "cluster-208",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6419,7 +6060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5ffe3263e3f316322f3b5b054b8370ce0a28c1ea",
-        "fetched_at": "2026-07-16T14:27:43.049221Z"
+        "fetched_at": "2026-07-19T01:10:17.274458Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6432,7 +6073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-293",
+      "cluster_id": "cluster-209",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6469,7 +6110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c7021219d32836bc677d4de507f8a49cbd1e8716",
-        "fetched_at": "2026-07-16T14:27:43.744108Z"
+        "fetched_at": "2026-07-19T01:10:17.274606Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6482,7 +6123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-294",
+      "cluster_id": "cluster-210",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6519,7 +6160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "fb375848527661592449c124783b281aa76e30f3",
-        "fetched_at": "2026-07-16T14:27:45.050325Z"
+        "fetched_at": "2026-07-19T01:10:23.745577Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6532,7 +6173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-295",
+      "cluster_id": "cluster-211",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6569,7 +6210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "789972430de3d35d0b83cbb82860a00ff5b79e71",
-        "fetched_at": "2026-07-16T14:27:45.749343Z"
+        "fetched_at": "2026-07-19T01:10:23.745723Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6582,7 +6223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-296",
+      "cluster_id": "cluster-212",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -6603,56 +6244,6 @@
       }
     },
     {
-      "id": "nvidia-nemotron-retrieval-recipes",
-      "source_id": "nvidia-skills",
-      "provenance": "partner",
-      "origin": {
-        "org": "nvidia",
-        "repo": "skills",
-        "path": "skills/nemotron-retrieval-recipes",
-        "default_branch": "main"
-      },
-      "name": "nemotron-retrieval-recipes",
-      "frontmatter_description": "Use when planning, debugging, tuning, evaluating, exporting, or deploying public Nemotron `embed`/`rerank` retrieval recipes.",
-      "license": "Apache-2.0",
-      "mirrorable": true,
-      "upstream": {
-        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "9528347c139b93d25ad3dfe2adc39b99a57208ae",
-        "fetched_at": "2026-07-16T14:27:46.464028Z"
-      },
-      "status": "active",
-      "tier": "shell",
-      "capability_id": "unassigned",
-      "native_ecosystem": "generic",
-      "install_hints": {},
-      "reviewed_by": null,
-      "reviewed_at": null,
-      "reviewed_commit_sha": null,
-      "reject_reason": null,
-      "freshness": null,
-      "upstream_changed_at": null,
-      "cluster_id": "cluster-297",
-      "score_default": 250,
-      "scores_by_tool": {
-        "claude-code": 250,
-        "claude-ai": 250,
-        "vscode-copilot": 250,
-        "antigravity": 250,
-        "gemini-cli": 250,
-        "cursor": 250
-      },
-      "nutrition": {
-        "token_estimate": 2178,
-        "word_count": 1239,
-        "line_count": 113,
-        "basis": "body",
-        "trigger": "Use when planning, debugging, tuning, evaluating, exporting, or deploying public Nemotron `embed`/`rerank` retrieval recipes.",
-        "body_blob_sha": "9528347c139b93d25ad3dfe2adc39b99a57208ae",
-        "computed_at": "2026-07-16T14:29:37.846528Z"
-      }
-    },
-    {
       "id": "nvidia-nemotron-speech",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -6669,7 +6260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "bb5a5b8dfcfc092f24d6ee17d068199407c629f9",
-        "fetched_at": "2026-07-16T14:27:47.156053Z"
+        "fetched_at": "2026-07-19T01:10:26.987616Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6682,7 +6273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-298",
+      "cluster_id": "cluster-213",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6719,7 +6310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "2f4c9e74282b189cd6599d88abc2ff319a9ee34c",
-        "fetched_at": "2026-07-16T14:27:47.806832Z"
+        "fetched_at": "2026-07-19T01:10:26.987720Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6732,7 +6323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-299",
+      "cluster_id": "cluster-214",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6769,7 +6360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b91e8359d5509d49954897c45373f9bad43aabbb",
-        "fetched_at": "2026-07-16T14:27:48.453161Z"
+        "fetched_at": "2026-07-19T01:10:26.987795Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6782,7 +6373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-300",
+      "cluster_id": "cluster-215",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6819,7 +6410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "4fb685cd668ff906e966ac3ec4bdd7c2897dd646",
-        "fetched_at": "2026-07-16T14:27:49.108462Z"
+        "fetched_at": "2026-07-19T01:10:26.987865Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6832,7 +6423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-301",
+      "cluster_id": "cluster-216",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6869,7 +6460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "a81f3b9e574ca0dd6d540a7850d295ac9f196fa1",
-        "fetched_at": "2026-07-16T14:27:49.815975Z"
+        "fetched_at": "2026-07-19T01:10:26.987935Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6882,7 +6473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-302",
+      "cluster_id": "cluster-217",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6919,7 +6510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "145dde12036a8133a2343b7aea318263c9194072",
-        "fetched_at": "2026-07-16T14:27:50.476969Z"
+        "fetched_at": "2026-07-19T01:10:26.988005Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6932,7 +6523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-303",
+      "cluster_id": "cluster-218",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -6969,7 +6560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5290d86e26277e7989a2117f11626a8acb8c41cd",
-        "fetched_at": "2026-07-16T14:27:51.154507Z"
+        "fetched_at": "2026-07-19T01:10:26.988074Z"
       },
       "status": "active",
       "tier": "shell",
@@ -6982,7 +6573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-304",
+      "cluster_id": "cluster-219",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7019,7 +6610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1c469fe515900e0e089e7d9b6081556c7a0733a6",
-        "fetched_at": "2026-07-16T14:27:51.807517Z"
+        "fetched_at": "2026-07-19T01:10:26.988142Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7032,7 +6623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-305",
+      "cluster_id": "cluster-220",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7069,7 +6660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "3bd7301c15bc7967a993669376f2f8f080f07edf",
-        "fetched_at": "2026-07-16T14:27:52.455906Z"
+        "fetched_at": "2026-07-19T01:10:26.988238Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7082,7 +6673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-306",
+      "cluster_id": "cluster-221",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7119,7 +6710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "196347a720ec7e42899ce24d84d1fd5536bbb2d4",
-        "fetched_at": "2026-07-16T14:27:53.105220Z"
+        "fetched_at": "2026-07-19T01:10:26.988417Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7132,7 +6723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-307",
+      "cluster_id": "cluster-222",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7153,23 +6744,23 @@
       }
     },
     {
-      "id": "nvidia-nvidia-skill-finder",
+      "id": "nvidia-omniverse-cad-to-simready",
       "source_id": "nvidia-skills",
       "provenance": "partner",
       "origin": {
         "org": "nvidia",
         "repo": "skills",
-        "path": "skills/nvidia-skill-finder",
+        "path": "skills/omniverse-cad-to-simready",
         "default_branch": "main"
       },
-      "name": "nvidia-skill-finder",
-      "frontmatter_description": "Use for NVIDIA-related requests where an NVIDIA skill might help, even if the user did not ask for a skill. Trigger on NVIDIA products, hardware, software, SDKs, GPUs, Jetson/JetPack/L4T/BSP/SDK Manager/driver/flashing/setup, CUDA, NIM, NeMo, Omniverse/OpenUSD/SimReady, RAPIDS/cuDF, cuPyNumeric, cuOpt, Dynamo, Holoscan, TensorRT, DeepStream, VSS, TAO, NGC/NVCF. Do not use for generic non-NVIDIA route, optimize, deploy, AI, video, data, or infrastructure tasks.",
-      "license": "CC-BY-4.0 AND Apache-2.0",
-      "mirrorable": false,
+      "name": "omniverse-cad-to-simready",
+      "frontmatter_description": "Coordinate the end-to-end CAD/source-asset to SimReady workflow. Use for broad requests such as CAD to SimReady, source asset to simulation-ready USD, or prop packaging that require conversion, material/physics assignment, SimReady conformance, validation, and optional package creation; deploy or verify Content Agents services first when property assignment is enabled; route single-stage work through nested references.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
-        "blob_sha": "4aaf713060da4702086b66cd7061a9735cbff2ea",
-        "fetched_at": "2026-07-16T14:27:53.759536Z"
+        "blob_sha": "f8269c99a39f3e23be3ebb4133a80c581b6d163d",
+        "fetched_at": "2026-07-19T01:10:26.988665Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7182,24 +6773,124 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-308",
-      "score_default": 220,
+      "cluster_id": "cluster-223",
+      "score_default": 250,
       "scores_by_tool": {
-        "claude-code": 220,
-        "claude-ai": 220,
-        "vscode-copilot": 220,
-        "antigravity": 220,
-        "gemini-cli": 220,
-        "cursor": 220
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
       },
       "nutrition": {
-        "token_estimate": 1918,
-        "word_count": 1140,
-        "line_count": 164,
+        "token_estimate": 4223,
+        "word_count": 2139,
+        "line_count": 264,
         "basis": "body",
-        "trigger": "Use for NVIDIA-related requests where an NVIDIA skill might help, even if the user did not ask for a skill.",
-        "body_blob_sha": "4aaf713060da4702086b66cd7061a9735cbff2ea",
-        "computed_at": "2026-07-16T14:29:37.853369Z"
+        "trigger": "Use for broad requests such as CAD to SimReady, source asset to simulation-ready USD, or prop packaging that require conversion, material/physics assignment, SimReady conformance, validation, and opt…",
+        "body_blob_sha": "f8269c99a39f3e23be3ebb4133a80c581b6d163d",
+        "computed_at": "2026-07-16T14:29:37.763228Z"
+      }
+    },
+    {
+      "id": "nvidia-omniverse-realtime-viewer",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/omniverse-realtime-viewer",
+        "default_branch": "main"
+      },
+      "name": "omniverse-realtime-viewer",
+      "frontmatter_description": "Use as the top-level router for Omniverse Realtime Viewer USD app requests and focused viewer reference documents.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "3aabd8e04ac51bd3e2e69e618c768aa735b8ef42",
+        "fetched_at": "2026-07-19T01:10:26.988785Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-224",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1739,
+        "word_count": 683,
+        "line_count": 113,
+        "basis": "body",
+        "trigger": "Use as the top-level router for Omniverse Realtime Viewer USD app requests and focused viewer reference documents.",
+        "body_blob_sha": "3aabd8e04ac51bd3e2e69e618c768aa735b8ef42",
+        "computed_at": "2026-07-16T14:29:37.763695Z"
+      }
+    },
+    {
+      "id": "nvidia-omniverse-usd-performance-tuning",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/omniverse-usd-performance-tuning",
+        "default_branch": "main"
+      },
+      "name": "omniverse-usd-performance-tuning",
+      "frontmatter_description": "Top-level workflow skill for USD performance diagnosis and optimization. Use for slow loading, high memory, low FPS, or 'optimize my scene' requests; delegates auth/runtime setup to Phase 0 owners.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "e7fbee88dd67867ead9738f0efc6bb20b97e640a",
+        "fetched_at": "2026-07-19T01:10:26.988836Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-225",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 4322,
+        "word_count": 2064,
+        "line_count": 253,
+        "basis": "body",
+        "trigger": "Use for slow loading, high memory, low FPS, or 'optimize my scene' requests; delegates auth/runtime setup to Phase 0 owners.",
+        "body_blob_sha": "e7fbee88dd67867ead9738f0efc6bb20b97e640a",
+        "computed_at": "2026-07-16T14:29:37.764487Z"
       }
     },
     {
@@ -7219,7 +6910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5a81e4627825eea2e1366aa5fd427bffba762917",
-        "fetched_at": "2026-07-16T14:27:56.596298Z"
+        "fetched_at": "2026-07-19T01:10:26.988931Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7232,7 +6923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-309",
+      "cluster_id": "cluster-226",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -7253,6 +6944,56 @@
       }
     },
     {
+      "id": "nvidia-physical-ai-infrastructure-setup-and-resilient-scaling",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/physical-ai-infrastructure-setup-and-resilient-scaling",
+        "default_branch": "main"
+      },
+      "name": "physical-ai-infrastructure-setup-and-resilient-scaling",
+      "frontmatter_description": "Use when the user wants to set up, scale, validate, or harden NVIDIA physical AI infrastructure for synthetic data generation workflows across local MicroK8s or Azure AKS, including Kubernetes clusters, inference endpoint deployment, OSMO deployment, workload submission readiness, and infrastructure failure recovery. Trigger keywords: physical ai infrastructure, resilient scaling, SDG infrastructure, microk8s, azure aks, NVCF deployment, NIM Operator, OSMO deploy, workflow scaling. Don't trigger for: OSMO log summarization or workload-only operations unless infrastructure setup, scaling, validation, or recovery is requested.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "3fe5942578fbcb923ab007f8a81b16e8152c0186",
+        "fetched_at": "2026-07-19T01:10:26.988969Z"
+      },
+      "status": "active",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-227",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 2474,
+        "word_count": 1285,
+        "line_count": 171,
+        "basis": "body",
+        "trigger": "Use when the user wants to set up, scale, validate, or harden NVIDIA physical AI infrastructure for synthetic data generation workflows across local MicroK8s or Azure AKS, including Kubernetes cluste…",
+        "body_blob_sha": "3fe5942578fbcb923ab007f8a81b16e8152c0186",
+        "computed_at": "2026-07-16T14:29:37.765051Z"
+      }
+    },
+    {
       "id": "nvidia-physical-ai-people-attribute-search",
       "source_id": "nvidia-skills",
       "provenance": "partner",
@@ -7269,7 +7010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "0b8ad3d79cbbdde3b212d85b56f7a2a252d9548e",
-        "fetched_at": "2026-07-16T14:27:58.607645Z"
+        "fetched_at": "2026-07-19T01:10:30.224993Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7282,7 +7023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-310",
+      "cluster_id": "cluster-228",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -7319,7 +7060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "37af04d3e5988f301e7f6de428b66b56eaa202c5",
-        "fetched_at": "2026-07-16T14:27:59.351264Z"
+        "fetched_at": "2026-07-19T01:10:30.225094Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7332,7 +7073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-311",
+      "cluster_id": "cluster-229",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -7369,7 +7110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5455c5c759d78b33c7a166df7ca2900e96c7a536",
-        "fetched_at": "2026-07-16T14:28:00.020651Z"
+        "fetched_at": "2026-07-19T01:10:30.225184Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7382,7 +7123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-312",
+      "cluster_id": "cluster-230",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7419,7 +7160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "2f8ce918131063e11e74a5558e25ecf3802e6777",
-        "fetched_at": "2026-07-16T14:28:00.728323Z"
+        "fetched_at": "2026-07-19T01:10:30.225266Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7432,7 +7173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-313",
+      "cluster_id": "cluster-231",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7469,7 +7210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "010478c61d867cdedb7b1764ee0edae7218ca039",
-        "fetched_at": "2026-07-16T14:28:01.415399Z"
+        "fetched_at": "2026-07-19T01:10:30.225345Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7482,7 +7223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-314",
+      "cluster_id": "cluster-232",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7519,7 +7260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b65d42e1302b676004f632d9facdb745f20cb5dc",
-        "fetched_at": "2026-07-16T14:28:02.117358Z"
+        "fetched_at": "2026-07-19T01:10:30.225419Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7532,7 +7273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-315",
+      "cluster_id": "cluster-233",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7569,7 +7310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1189ce4d818df6e75e55ab994d96d9efc506fad3",
-        "fetched_at": "2026-07-16T14:28:02.761965Z"
+        "fetched_at": "2026-07-19T01:10:30.225493Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7582,7 +7323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-316",
+      "cluster_id": "cluster-234",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -7619,7 +7360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d5da7391462cf7f53585c7b7e7813bce7b097447",
-        "fetched_at": "2026-07-16T14:28:03.441618Z"
+        "fetched_at": "2026-07-19T01:10:30.225568Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7632,7 +7373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-317",
+      "cluster_id": "cluster-235",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7669,7 +7410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "33f873136a3fa9cd9c55aabcecfa4d9b14e5d973",
-        "fetched_at": "2026-07-16T14:28:04.188879Z"
+        "fetched_at": "2026-07-19T01:10:30.225643Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7682,7 +7423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-318",
+      "cluster_id": "cluster-236",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7719,7 +7460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ec6b24bd3dab9a44a264c2d83e497017b53f6039",
-        "fetched_at": "2026-07-16T14:28:04.830430Z"
+        "fetched_at": "2026-07-19T01:10:30.225718Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7732,7 +7473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-319",
+      "cluster_id": "cluster-237",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7769,7 +7510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ec14b4f2a8a87079ed10496d1489378e13164c53",
-        "fetched_at": "2026-07-16T14:28:05.522721Z"
+        "fetched_at": "2026-07-19T01:10:30.225792Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7782,7 +7523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-320",
+      "cluster_id": "cluster-238",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7819,7 +7560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "0a1be7bd7450d8dfd026711798c444310bccb43e",
-        "fetched_at": "2026-07-16T14:28:06.187048Z"
+        "fetched_at": "2026-07-19T01:10:30.225866Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7832,7 +7573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-321",
+      "cluster_id": "cluster-239",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7869,7 +7610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "8e62eb911ca1a05dd756ecdccc15fe86ab39de08",
-        "fetched_at": "2026-07-16T14:28:06.884304Z"
+        "fetched_at": "2026-07-19T01:10:30.225941Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7882,7 +7623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-322",
+      "cluster_id": "cluster-240",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7919,7 +7660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "8637f529fbe8eccb1f01e01188641e37629d21d6",
-        "fetched_at": "2026-07-16T14:28:07.571169Z"
+        "fetched_at": "2026-07-19T01:10:30.226016Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7932,7 +7673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-323",
+      "cluster_id": "cluster-241",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -7969,7 +7710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b73091e2e91e7febee9d4236e7440aac08ecebd2",
-        "fetched_at": "2026-07-16T14:28:08.251869Z"
+        "fetched_at": "2026-07-19T01:10:30.226093Z"
       },
       "status": "active",
       "tier": "shell",
@@ -7982,7 +7723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-324",
+      "cluster_id": "cluster-242",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8019,7 +7760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b576524f847ab4dc43e98f16be3be02973a4ccaa",
-        "fetched_at": "2026-07-16T14:28:08.899977Z"
+        "fetched_at": "2026-07-19T01:10:30.226177Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8032,7 +7773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-325",
+      "cluster_id": "cluster-243",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8069,7 +7810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d6bad56bd58dddd13811794e52d6744ee0ab9800",
-        "fetched_at": "2026-07-16T14:28:09.584861Z"
+        "fetched_at": "2026-07-19T01:10:30.226349Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8082,7 +7823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-326",
+      "cluster_id": "cluster-244",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8119,7 +7860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d0535ef92547c40e87015ebf18d29fe7b4dd0799",
-        "fetched_at": "2026-07-16T14:28:10.276593Z"
+        "fetched_at": "2026-07-19T01:10:30.226544Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8132,7 +7873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-327",
+      "cluster_id": "cluster-245",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8169,7 +7910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "421a249182379650b09ad0c42ea880e25bd81e55",
-        "fetched_at": "2026-07-16T14:28:10.984963Z"
+        "fetched_at": "2026-07-19T01:10:30.226670Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8182,7 +7923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-328",
+      "cluster_id": "cluster-246",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8219,7 +7960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f6f5a67643490a28ba93457e26338462d34c35df",
-        "fetched_at": "2026-07-16T14:28:11.647780Z"
+        "fetched_at": "2026-07-19T01:10:30.226803Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8232,7 +7973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-329",
+      "cluster_id": "cluster-247",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8269,7 +8010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "0add98b53ac6557d55afcb15e1bc683565964986",
-        "fetched_at": "2026-07-16T14:28:12.316958Z"
+        "fetched_at": "2026-07-19T01:10:30.227008Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8282,7 +8023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-330",
+      "cluster_id": "cluster-248",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8319,7 +8060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "31ecf606745eab1fbb382ee628288b0a550bba94",
-        "fetched_at": "2026-07-16T14:28:13.018138Z"
+        "fetched_at": "2026-07-19T01:10:30.227241Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8332,7 +8073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-331",
+      "cluster_id": "cluster-249",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8369,7 +8110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f13bdfedf88673c1e20e36a3b9533c6ab4d3915a",
-        "fetched_at": "2026-07-16T14:28:13.673711Z"
+        "fetched_at": "2026-07-19T01:10:30.227944Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8382,7 +8123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-332",
+      "cluster_id": "cluster-250",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8419,7 +8160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "aa217ee98d198833582d2d087c02a8b1e1b550f7",
-        "fetched_at": "2026-07-16T14:28:14.372021Z"
+        "fetched_at": "2026-07-19T01:10:30.228161Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8432,7 +8173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-333",
+      "cluster_id": "cluster-251",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8469,7 +8210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "549ab122e8ffe4c26aaa7241d35e7e2399678982",
-        "fetched_at": "2026-07-16T14:28:15.032576Z"
+        "fetched_at": "2026-07-19T01:10:30.228313Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8482,7 +8223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-334",
+      "cluster_id": "cluster-252",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8519,7 +8260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "60c8ed7c14f931a2026792cb2794906ca87b03a0",
-        "fetched_at": "2026-07-16T14:28:15.710183Z"
+        "fetched_at": "2026-07-19T01:10:30.228394Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8532,7 +8273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-335",
+      "cluster_id": "cluster-253",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -8569,7 +8310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "df4eca38fd9a0e32f9f77898d465f80bf508aef8",
-        "fetched_at": "2026-07-16T14:28:16.355543Z"
+        "fetched_at": "2026-07-19T01:10:30.228475Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8582,7 +8323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-336",
+      "cluster_id": "cluster-254",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8619,7 +8360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "6773889551dc68a39323631ce4c4c47998400bc6",
-        "fetched_at": "2026-07-16T14:28:17.045137Z"
+        "fetched_at": "2026-07-19T01:10:30.228554Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8632,7 +8373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-337",
+      "cluster_id": "cluster-255",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8669,7 +8410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "89156ec41e43a444a78b2a6423b9a92f4c767a32",
-        "fetched_at": "2026-07-16T14:28:17.722605Z"
+        "fetched_at": "2026-07-19T01:10:30.228631Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8682,7 +8423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-338",
+      "cluster_id": "cluster-256",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8719,7 +8460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "3a8679e4074d97a22536dac9e1d7c83d5d433970",
-        "fetched_at": "2026-07-16T14:28:18.384408Z"
+        "fetched_at": "2026-07-19T01:10:30.228708Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8732,7 +8473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-339",
+      "cluster_id": "cluster-257",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8769,7 +8510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "6f7a150b0373794b0f16d3ecb8671fd6cc662569",
-        "fetched_at": "2026-07-16T14:28:19.068748Z"
+        "fetched_at": "2026-07-19T01:10:30.228784Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8782,7 +8523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-340",
+      "cluster_id": "cluster-258",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8819,7 +8560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f8fb5217f023699223d8fd27d968489bdb58c727",
-        "fetched_at": "2026-07-16T14:28:19.774017Z"
+        "fetched_at": "2026-07-19T01:10:30.228862Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8832,7 +8573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-341",
+      "cluster_id": "cluster-259",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8869,7 +8610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "620361bd258a791be67c8abcf14c17bd511ad0af",
-        "fetched_at": "2026-07-16T14:28:20.480176Z"
+        "fetched_at": "2026-07-19T01:10:30.228940Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8882,7 +8623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-342",
+      "cluster_id": "cluster-260",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8919,7 +8660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "4224e31c32f1ca346cf322d5af8453aa1745fb08",
-        "fetched_at": "2026-07-16T14:28:21.222623Z"
+        "fetched_at": "2026-07-19T01:10:30.229021Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8932,7 +8673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-343",
+      "cluster_id": "cluster-261",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -8969,7 +8710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1994ef5b5bcd34220ecc3e1acac0fb1868af0c5f",
-        "fetched_at": "2026-07-16T14:28:21.918919Z"
+        "fetched_at": "2026-07-19T01:10:30.229102Z"
       },
       "status": "active",
       "tier": "shell",
@@ -8982,7 +8723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-344",
+      "cluster_id": "cluster-262",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9019,7 +8760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b093f417a4155e0503541cfc22efed777fb386d6",
-        "fetched_at": "2026-07-16T14:28:22.588058Z"
+        "fetched_at": "2026-07-19T01:10:30.229222Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9032,7 +8773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-345",
+      "cluster_id": "cluster-263",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9069,7 +8810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "647bf4df05c2e33cdf0cbc6831a62725e2bfa938",
-        "fetched_at": "2026-07-16T14:28:23.286645Z"
+        "fetched_at": "2026-07-19T01:10:30.229311Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9082,7 +8823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-346",
+      "cluster_id": "cluster-264",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9119,7 +8860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "082297333f0f7dc3cf8767e1624444c877cacaa7",
-        "fetched_at": "2026-07-16T14:28:24.212213Z"
+        "fetched_at": "2026-07-19T01:10:30.229395Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9132,7 +8873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-347",
+      "cluster_id": "cluster-265",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9169,7 +8910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5f987df220c660645ac8a1b8ff1ecda140590555",
-        "fetched_at": "2026-07-16T14:28:24.899867Z"
+        "fetched_at": "2026-07-19T01:10:30.229478Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9182,7 +8923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-348",
+      "cluster_id": "cluster-266",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9219,7 +8960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1e8142abeeb6663059bbfe2d44baa8225d6b6cd6",
-        "fetched_at": "2026-07-16T14:28:25.546703Z"
+        "fetched_at": "2026-07-19T01:10:30.229562Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9232,7 +8973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-349",
+      "cluster_id": "cluster-267",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9269,7 +9010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "d2b2a074cd682ff92a5e5b27ddbe8fe23436ac11",
-        "fetched_at": "2026-07-16T14:28:26.258994Z"
+        "fetched_at": "2026-07-19T01:10:30.229644Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9282,7 +9023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-350",
+      "cluster_id": "cluster-268",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9319,7 +9060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "561b8c3d808288c98352439e143021d83ea9c22e",
-        "fetched_at": "2026-07-16T14:28:26.914857Z"
+        "fetched_at": "2026-07-19T01:10:30.229727Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9332,7 +9073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-351",
+      "cluster_id": "cluster-269",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9369,7 +9110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "23d97510e629c1431f5b1c9b9674191db018a1b8",
-        "fetched_at": "2026-07-16T14:28:27.576700Z"
+        "fetched_at": "2026-07-19T01:10:30.229810Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9382,7 +9123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-352",
+      "cluster_id": "cluster-270",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9419,7 +9160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1962ad9a76d50958dcb53c3b0219168276c6ed44",
-        "fetched_at": "2026-07-16T14:28:28.232847Z"
+        "fetched_at": "2026-07-19T01:10:30.229892Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9432,7 +9173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-353",
+      "cluster_id": "cluster-271",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9469,7 +9210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ba014ac53a4b97edb74c4b01739cfee8a905e543",
-        "fetched_at": "2026-07-16T14:28:28.887488Z"
+        "fetched_at": "2026-07-19T01:10:30.229976Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9482,7 +9223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-354",
+      "cluster_id": "cluster-272",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9519,7 +9260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b07b81bd1036d04a8c0d5fa7b6bbe6ee73c51c9e",
-        "fetched_at": "2026-07-16T14:28:29.567327Z"
+        "fetched_at": "2026-07-19T01:10:30.230058Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9532,7 +9273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-355",
+      "cluster_id": "cluster-273",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9569,7 +9310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "cb07f3d27ef9bafc58de96e5a024adbee9f0241e",
-        "fetched_at": "2026-07-16T14:28:30.235624Z"
+        "fetched_at": "2026-07-19T01:10:30.230142Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9582,7 +9323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-356",
+      "cluster_id": "cluster-274",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9619,7 +9360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "33cfc4fa83361c03b8a0dadb5609b1ae1270f82b",
-        "fetched_at": "2026-07-16T14:28:30.864197Z"
+        "fetched_at": "2026-07-19T01:10:30.230250Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9632,7 +9373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-357",
+      "cluster_id": "cluster-275",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9669,7 +9410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "f09ce8bdb53af4a6a1c282f5ae6e3db672d6b6d8",
-        "fetched_at": "2026-07-16T14:28:31.511109Z"
+        "fetched_at": "2026-07-19T01:10:30.230347Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9682,7 +9423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-358",
+      "cluster_id": "cluster-276",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9719,7 +9460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1725b5b93db18463ebab82e1e0bc27bf0e9cdd52",
-        "fetched_at": "2026-07-16T14:28:32.210873Z"
+        "fetched_at": "2026-07-19T01:10:30.230477Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9732,7 +9473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-359",
+      "cluster_id": "cluster-277",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9769,7 +9510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "823f84a92ada8fc5f025be7e4069efd617dfeb41",
-        "fetched_at": "2026-07-16T14:28:32.890403Z"
+        "fetched_at": "2026-07-19T01:10:30.230580Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9782,7 +9523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-360",
+      "cluster_id": "cluster-278",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9819,7 +9560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "9db58073ed418ca335e653fabc40476258b3b6f0",
-        "fetched_at": "2026-07-16T14:28:33.547623Z"
+        "fetched_at": "2026-07-19T01:10:30.230666Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9832,7 +9573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-361",
+      "cluster_id": "cluster-279",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9869,7 +9610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "8cfb689abc15b27c1d8064976493dbebad32325a",
-        "fetched_at": "2026-07-16T14:28:34.234477Z"
+        "fetched_at": "2026-07-19T01:10:30.230752Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9882,7 +9623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-362",
+      "cluster_id": "cluster-280",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9919,7 +9660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "e405f3228a4f640c363d93ae43e510b9a2bbb6e9",
-        "fetched_at": "2026-07-16T14:28:34.877488Z"
+        "fetched_at": "2026-07-19T01:10:30.230866Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9932,7 +9673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-363",
+      "cluster_id": "cluster-281",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -9969,7 +9710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "afd1e2b79b2bb29b25682be28ffa53643eddf94e",
-        "fetched_at": "2026-07-16T14:28:35.555508Z"
+        "fetched_at": "2026-07-19T01:10:30.231040Z"
       },
       "status": "active",
       "tier": "shell",
@@ -9982,7 +9723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-364",
+      "cluster_id": "cluster-282",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10019,7 +9760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "45f9a6108d641b6c8d78dc005c381f8bcf49437c",
-        "fetched_at": "2026-07-16T14:28:36.205649Z"
+        "fetched_at": "2026-07-19T01:10:30.231174Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10032,7 +9773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-365",
+      "cluster_id": "cluster-283",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10069,7 +9810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "6b9dc12ce5e52746628d9e89d2b9ace425691f90",
-        "fetched_at": "2026-07-16T14:28:36.853722Z"
+        "fetched_at": "2026-07-19T01:10:30.231306Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10082,7 +9823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-366",
+      "cluster_id": "cluster-284",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10119,7 +9860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "208c42561ae37df81139c3755158b5f8fb10b35e",
-        "fetched_at": "2026-07-16T14:28:37.526977Z"
+        "fetched_at": "2026-07-19T01:10:30.231463Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10132,7 +9873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-367",
+      "cluster_id": "cluster-285",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10169,7 +9910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ee681e227b53b38e519dba387b9725db03c51e75",
-        "fetched_at": "2026-07-16T14:28:38.198086Z"
+        "fetched_at": "2026-07-19T01:10:30.231689Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10182,7 +9923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-368",
+      "cluster_id": "cluster-286",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10219,7 +9960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "8a8e14fdb77e8dc9e85d48c52e7c6d8bb39fbb7f",
-        "fetched_at": "2026-07-16T14:28:38.860257Z"
+        "fetched_at": "2026-07-19T01:10:30.231848Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10232,7 +9973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-369",
+      "cluster_id": "cluster-287",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10269,7 +10010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "efb1559b2dc65fd9a8aa93aeb0ae5aa131ec41ec",
-        "fetched_at": "2026-07-16T14:28:39.521398Z"
+        "fetched_at": "2026-07-19T01:10:30.231964Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10282,7 +10023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-370",
+      "cluster_id": "cluster-288",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10319,7 +10060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "76332cc6fe9293d53ca7e77d1d2de5126bfc2e9a",
-        "fetched_at": "2026-07-16T14:28:40.233516Z"
+        "fetched_at": "2026-07-19T01:10:30.232126Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10332,7 +10073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-371",
+      "cluster_id": "cluster-289",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10369,7 +10110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "20b86d1f4f9dbe26d81bc6eaa1fc55ba205fc844",
-        "fetched_at": "2026-07-16T14:28:40.914514Z"
+        "fetched_at": "2026-07-19T01:10:30.232310Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10382,7 +10123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-372",
+      "cluster_id": "cluster-290",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10419,7 +10160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1d2c3db7ad403d3a529bcbe6ca835f75a693f9a8",
-        "fetched_at": "2026-07-16T14:28:41.636081Z"
+        "fetched_at": "2026-07-19T01:10:30.232432Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10432,7 +10173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-373",
+      "cluster_id": "cluster-291",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -10469,7 +10210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "579497732482eb8e737f60127801324326735536",
-        "fetched_at": "2026-07-16T14:28:42.307548Z"
+        "fetched_at": "2026-07-19T01:10:30.232549Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10482,7 +10223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-374",
+      "cluster_id": "cluster-292",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -10519,7 +10260,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "faef8433744d586babda916b8b46e74e8882228c",
-        "fetched_at": "2026-07-16T14:28:43.028111Z"
+        "fetched_at": "2026-07-19T01:10:30.232682Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10532,7 +10273,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-375",
+      "cluster_id": "cluster-293",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -10569,7 +10310,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5e5c472e9756d9042f1b240538d2e74e65836fab",
-        "fetched_at": "2026-07-16T14:28:43.703849Z"
+        "fetched_at": "2026-07-19T01:10:30.232790Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10582,7 +10323,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-376",
+      "cluster_id": "cluster-294",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -10619,7 +10360,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "64953b758c61452af0d4974ec53f5bbcb5a847e2",
-        "fetched_at": "2026-07-16T14:28:44.494713Z"
+        "fetched_at": "2026-07-19T01:10:30.232893Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10632,7 +10373,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-377",
+      "cluster_id": "cluster-295",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -10669,7 +10410,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "3696a1890c8265d287bf26dc9fd6af363de5cbed",
-        "fetched_at": "2026-07-16T14:28:45.169991Z"
+        "fetched_at": "2026-07-19T01:10:30.232998Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10682,7 +10423,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-378",
+      "cluster_id": "cluster-296",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -10719,7 +10460,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7cb3e2e3a055569f99a858ec9bdf4ccd80df0778",
-        "fetched_at": "2026-07-16T14:28:45.826675Z"
+        "fetched_at": "2026-07-19T01:10:30.233098Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10732,7 +10473,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-379",
+      "cluster_id": "cluster-297",
       "score_default": 220,
       "scores_by_tool": {
         "claude-code": 220,
@@ -10769,7 +10510,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "b23555a22537387472386e714418325d79b4d7ab",
-        "fetched_at": "2026-07-16T14:28:46.515732Z"
+        "fetched_at": "2026-07-19T01:10:30.233199Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10782,7 +10523,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-380",
+      "cluster_id": "cluster-298",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10819,7 +10560,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "7b1f5c977f58e66ec840690b6056f4eefa9524fe",
-        "fetched_at": "2026-07-16T14:28:47.217810Z"
+        "fetched_at": "2026-07-19T01:10:30.233314Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10832,7 +10573,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-381",
+      "cluster_id": "cluster-299",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10869,7 +10610,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "cdeb2472aec62e3549941fc80ec4a0418d15c5fb",
-        "fetched_at": "2026-07-16T14:28:47.884969Z"
+        "fetched_at": "2026-07-19T01:10:30.233415Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10882,7 +10623,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-382",
+      "cluster_id": "cluster-300",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10919,7 +10660,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "fadd7abcdd8be70112eb6f1a858d5335eacac25a",
-        "fetched_at": "2026-07-16T14:28:48.632620Z"
+        "fetched_at": "2026-07-19T01:10:30.233523Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10932,7 +10673,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-383",
+      "cluster_id": "cluster-301",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -10969,7 +10710,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "155aad4f240f3a38aa3a2559af3a3ec8d704603b",
-        "fetched_at": "2026-07-16T14:28:49.358593Z"
+        "fetched_at": "2026-07-19T01:10:30.233625Z"
       },
       "status": "active",
       "tier": "shell",
@@ -10982,7 +10723,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-384",
+      "cluster_id": "cluster-302",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11019,7 +10760,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "330986b6dee2172e63d1ffa5f80ed5793e98b8ca",
-        "fetched_at": "2026-07-16T14:28:50.029596Z"
+        "fetched_at": "2026-07-19T01:10:30.233729Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11032,7 +10773,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-385",
+      "cluster_id": "cluster-303",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11069,7 +10810,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "0e129c0b4938f1c3c7f8f1098242bf94946e6b98",
-        "fetched_at": "2026-07-16T14:28:50.723089Z"
+        "fetched_at": "2026-07-19T01:10:30.233830Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11082,7 +10823,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-386",
+      "cluster_id": "cluster-304",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11119,7 +10860,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "08585b839e6830bdf44363ce98cf8e372f9c2101",
-        "fetched_at": "2026-07-16T14:28:51.467769Z"
+        "fetched_at": "2026-07-19T01:10:30.233947Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11132,7 +10873,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-387",
+      "cluster_id": "cluster-305",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11169,7 +10910,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "395c9bd288a6032d0ba59211bd83cf85e8d5ae2f",
-        "fetched_at": "2026-07-16T14:28:52.124659Z"
+        "fetched_at": "2026-07-19T01:10:30.234043Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11182,7 +10923,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-388",
+      "cluster_id": "cluster-306",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11219,7 +10960,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "5e2c3b456d1001636eba763520a66e2dda401b0c",
-        "fetched_at": "2026-07-16T14:28:52.876119Z"
+        "fetched_at": "2026-07-19T01:10:30.234141Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11232,7 +10973,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-389",
+      "cluster_id": "cluster-307",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11269,7 +11010,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "ca506372c315ed84b4d6972ec97465c701277bbf",
-        "fetched_at": "2026-07-16T14:28:53.559223Z"
+        "fetched_at": "2026-07-19T01:10:30.234247Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11282,7 +11023,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-390",
+      "cluster_id": "cluster-308",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11319,7 +11060,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "0cc4a6db6d330230a3ee23d69c0de298e814dea1",
-        "fetched_at": "2026-07-16T14:28:54.225374Z"
+        "fetched_at": "2026-07-19T01:10:30.234347Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11332,7 +11073,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-391",
+      "cluster_id": "cluster-309",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11369,7 +11110,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "c0d2199e7a02a42f27f08e975437314fd2cc71f5",
-        "fetched_at": "2026-07-16T14:28:54.862719Z"
+        "fetched_at": "2026-07-19T01:10:30.234453Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11382,7 +11123,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-392",
+      "cluster_id": "cluster-310",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11419,7 +11160,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "1d8990703efbeee3f07f8f4b14edb6a1f829b475",
-        "fetched_at": "2026-07-16T14:28:55.535577Z"
+        "fetched_at": "2026-07-19T01:10:30.234548Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11432,7 +11173,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-393",
+      "cluster_id": "cluster-311",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11469,7 +11210,7 @@
       "upstream": {
         "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
         "blob_sha": "a4489c071337744c1b00be339af4810c6b39f761",
-        "fetched_at": "2026-07-16T14:28:56.209379Z"
+        "fetched_at": "2026-07-19T01:10:30.234641Z"
       },
       "status": "active",
       "tier": "shell",
@@ -11482,7 +11223,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-394",
+      "cluster_id": "cluster-312",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -11500,6 +11241,306 @@
         "trigger": "Use to summarize a recorded video via the LVS summarization microservice (HITL-gated) with a VLM fallback.",
         "body_blob_sha": "a4489c071337744c1b00be339af4810c6b39f761",
         "computed_at": "2026-07-16T14:29:37.905754Z"
+      }
+    },
+    {
+      "id": "nvidia-nemoclaw-user-guide",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/nemoclaw-user-guide",
+        "default_branch": "main"
+      },
+      "name": "nemoclaw-user-guide",
+      "frontmatter_description": "Guides human users' AI agents to the NemoClaw docs MCP server and canonical Fern documentation in Markdown form. Use when users ask how to install, configure, operate, troubleshoot, secure, or learn NemoClaw with an AI coding assistant. Trigger keywords - nemoclaw docs, use nemoclaw with ai agent, nemoclaw mcp docs, nemoclaw install help, nemoclaw quickstart, nemoclaw markdown docs, llms.txt, agent skills.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "2615963051cd533e008ef69c370131328326c4c5",
+        "fetched_at": "2026-07-16T14:27:44.387660Z"
+      },
+      "status": "gone",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-171",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 968,
+        "word_count": 496,
+        "line_count": 63,
+        "basis": "body",
+        "trigger": "Use when users ask how to install, configure, operate, troubleshoot, secure, or learn NemoClaw with an AI coding assistant.",
+        "body_blob_sha": "2615963051cd533e008ef69c370131328326c4c5",
+        "computed_at": "2026-07-16T14:29:37.762580Z"
+      }
+    },
+    {
+      "id": "nvidia-physical-ai-neural-reconstruction",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/physical-ai-neural-reconstruction",
+        "default_branch": "main"
+      },
+      "name": "physical-ai-neural-reconstruction",
+      "frontmatter_description": "Router for NVIDIA NuRec/NRE: USDZ rendering, NCore conversion, 3DGS, gRPC sensor sim, PhysicalAI HF datasets. Do NOT use for SimReady or infra setup.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "91e611e57f6baf3dd3969d8fb19519781a39e818",
+        "fetched_at": "2026-07-16T14:27:57.958961Z"
+      },
+      "status": "gone",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-176",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 3738,
+        "word_count": 2019,
+        "line_count": 277,
+        "basis": "body",
+        "trigger": "Do NOT use for SimReady or infra setup.",
+        "body_blob_sha": "91e611e57f6baf3dd3969d8fb19519781a39e818",
+        "computed_at": "2026-07-16T14:29:37.765712Z"
+      }
+    },
+    {
+      "id": "nvidia-nemo-data-designer-plugin",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/nemo-data-designer-plugin",
+        "default_branch": "main"
+      },
+      "name": "nemo-data-designer-plugin",
+      "frontmatter_description": "Use when the user wants to create a dataset, generate synthetic data, or build a data generation pipeline.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "2fbf1bf6fc215cde1cf35ef542a26eabfbf60722",
+        "fetched_at": "2026-07-16T14:27:25.980844Z"
+      },
+      "status": "gone",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-268",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1424,
+        "word_count": 749,
+        "line_count": 102,
+        "basis": "body",
+        "trigger": "Use when the user wants to create a dataset, generate synthetic data, or build a data generation pipeline.",
+        "body_blob_sha": "2fbf1bf6fc215cde1cf35ef542a26eabfbf60722",
+        "computed_at": "2026-07-16T14:29:37.831233Z"
+      }
+    },
+    {
+      "id": "nvidia-nemo-mbridge-mlm-bridge-training",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/nemo-mbridge-mlm-bridge-training",
+        "default_branch": "main"
+      },
+      "name": "nemo-mbridge-mlm-bridge-training",
+      "frontmatter_description": "Run Megatron-LM (MLM) and Megatron Bridge training with mock or real data. Covers correlation testing, available recipes, and multi-GPU examples.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "c059545e80cce13b0bdfc7f456550361cf531963",
+        "fetched_at": "2026-07-16T14:27:27.512357Z"
+      },
+      "status": "gone",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-270",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1455,
+        "word_count": 643,
+        "line_count": 172,
+        "basis": "body",
+        "trigger": "Run Megatron-LM (MLM) and Megatron Bridge training with mock or real data.",
+        "body_blob_sha": "c059545e80cce13b0bdfc7f456550361cf531963",
+        "computed_at": "2026-07-16T14:29:37.832357Z"
+      }
+    },
+    {
+      "id": "nvidia-nemo-mbridge-perf-sequence-packing",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/nemo-mbridge-perf-sequence-packing",
+        "default_branch": "main"
+      },
+      "name": "nemo-mbridge-perf-sequence-packing",
+      "frontmatter_description": "Validate and use packed sequences and long-context training in Megatron-Bridge, distinguishing offline packed SFT for LLMs from in-batch packing for VLMs, and applying the right CP constraints.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "ad55770d7d687fdaad2e1dfaf9b999e054d80515",
+        "fetched_at": "2026-07-16T14:27:38.265270Z"
+      },
+      "status": "gone",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-286",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 1728,
+        "word_count": 643,
+        "line_count": 189,
+        "basis": "body",
+        "trigger": "Validate and use packed sequences and long-context training in Megatron-Bridge, distinguishing offline packed SFT for LLMs from in-batch packing for VLMs, and applying the right CP constraints.",
+        "body_blob_sha": "ad55770d7d687fdaad2e1dfaf9b999e054d80515",
+        "computed_at": "2026-07-16T14:29:37.840773Z"
+      }
+    },
+    {
+      "id": "nvidia-nemotron-retrieval-recipes",
+      "source_id": "nvidia-skills",
+      "provenance": "partner",
+      "origin": {
+        "org": "nvidia",
+        "repo": "skills",
+        "path": "skills/nemotron-retrieval-recipes",
+        "default_branch": "main"
+      },
+      "name": "nemotron-retrieval-recipes",
+      "frontmatter_description": "Use when planning, debugging, tuning, evaluating, exporting, or deploying public Nemotron `embed`/`rerank` retrieval recipes.",
+      "license": "Apache-2.0",
+      "mirrorable": true,
+      "upstream": {
+        "commit_sha": "f3f7ce4ecffa751f151bfb9b6c865c51f2b40557",
+        "blob_sha": "9528347c139b93d25ad3dfe2adc39b99a57208ae",
+        "fetched_at": "2026-07-16T14:27:46.464028Z"
+      },
+      "status": "gone",
+      "tier": "shell",
+      "capability_id": "unassigned",
+      "native_ecosystem": "generic",
+      "install_hints": {},
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "reviewed_commit_sha": null,
+      "reject_reason": null,
+      "freshness": null,
+      "upstream_changed_at": null,
+      "cluster_id": "cluster-297",
+      "score_default": 250,
+      "scores_by_tool": {
+        "claude-code": 250,
+        "claude-ai": 250,
+        "vscode-copilot": 250,
+        "antigravity": 250,
+        "gemini-cli": 250,
+        "cursor": 250
+      },
+      "nutrition": {
+        "token_estimate": 2178,
+        "word_count": 1239,
+        "line_count": 113,
+        "basis": "body",
+        "trigger": "Use when planning, debugging, tuning, evaluating, exporting, or deploying public Nemotron `embed`/`rerank` retrieval recipes.",
+        "body_blob_sha": "9528347c139b93d25ad3dfe2adc39b99a57208ae",
+        "computed_at": "2026-07-16T14:29:37.846528Z"
       }
     }
   ]

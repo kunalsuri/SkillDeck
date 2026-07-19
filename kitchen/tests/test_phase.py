@@ -162,5 +162,94 @@ class TestPhase(unittest.TestCase):
         skills_res = {s["id"]: s for s in result["skills"]}
         self.assertIsNone(skills_res["test-skill-to-classify"]["lifecycle_phase"])
 
+    def test_prepare_skips_already_current_shell_head(self):
+        # Simulate a shell-tier head an agent already classified on a prior
+        # run, against the blob_sha it still has - it shouldn't be
+        # re-queued for classification.
+        fixture = self._skills_fixture()
+        for s in fixture["skills"]:
+            if s["id"] == "test-skill-to-classify":
+                s["lifecycle_phase"] = "verify"
+                s["phase_assigned_blob_sha"] = "sha_cluster"
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_skills = Path(tmpdir) / "skills.json"
+            tmp_input = Path(tmpdir) / "phase_input.json"
+            tmp_cache_dir = Path(tmpdir) / ".kitchen_cache"
+            tmp_cache_dir.mkdir()
+
+            with open(tmp_skills, "w", encoding="utf-8") as f:
+                json.dump(fixture, f)
+
+            with patch_module_paths(tmp_skills, tmp_cache_dir):
+                prepare_phase_input(tmp_input)
+                with open(tmp_input, "r", encoding="utf-8") as f:
+                    prepared = json.load(f)
+
+        needing_ids = {n["skill_id"] for n in prepared["heads_needing_classification"]}
+        already_ids = {a["skill_id"] for a in prepared["already_assigned"]}
+        self.assertNotIn("test-skill-to-classify", needing_ids)
+        self.assertIn("test-skill-to-classify", already_ids)
+        # Untouched skill still needs classification, unaffected.
+        self.assertIn("doc-skill-not-applicable", needing_ids)
+
+    def test_prepare_requeues_when_blob_sha_changed(self):
+        # A stale phase_assigned_blob_sha (content changed since it was
+        # classified) must send the head back for reclassification.
+        fixture = self._skills_fixture()
+        for s in fixture["skills"]:
+            if s["id"] == "test-skill-to-classify":
+                s["lifecycle_phase"] = "verify"
+                s["phase_assigned_blob_sha"] = "sha_cluster_OLD"
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_skills = Path(tmpdir) / "skills.json"
+            tmp_input = Path(tmpdir) / "phase_input.json"
+            tmp_cache_dir = Path(tmpdir) / ".kitchen_cache"
+            tmp_cache_dir.mkdir()
+
+            with open(tmp_skills, "w", encoding="utf-8") as f:
+                json.dump(fixture, f)
+
+            with patch_module_paths(tmp_skills, tmp_cache_dir):
+                prepare_phase_input(tmp_input)
+                with open(tmp_input, "r", encoding="utf-8") as f:
+                    prepared = json.load(f)
+
+        needing_ids = {n["skill_id"] for n in prepared["heads_needing_classification"]}
+        self.assertIn("test-skill-to-classify", needing_ids)
+
+    def test_apply_keeps_existing_phase_when_head_not_in_assignments(self):
+        # A head prepare correctly skipped (already current) won't appear in
+        # the agent's assignments output - apply must not wipe it to null
+        # just because it's missing from that file.
+        fixture = self._skills_fixture()
+        for s in fixture["skills"]:
+            if s["id"] == "test-skill-to-classify":
+                s["lifecycle_phase"] = "verify"
+                s["phase_assigned_blob_sha"] = "sha_cluster"
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmp_skills = Path(tmpdir) / "skills.json"
+            tmp_output = Path(tmpdir) / "phase_output.json"
+            tmp_cache_dir = Path(tmpdir) / ".kitchen_cache"
+            tmp_cache_dir.mkdir()
+
+            with open(tmp_skills, "w", encoding="utf-8") as f:
+                json.dump(fixture, f)
+
+            with open(tmp_output, "w", encoding="utf-8") as f:
+                json.dump({"assignments": {"doc-skill-not-applicable": None}}, f)
+
+            with patch_module_paths(tmp_skills, tmp_cache_dir):
+                apply_phase_assignments(tmp_output)
+
+            with open(tmp_skills, "r", encoding="utf-8") as f:
+                result = json.load(f)
+
+        skills_res = {s["id"]: s for s in result["skills"]}
+        self.assertEqual(skills_res["test-skill-to-classify"]["lifecycle_phase"], "verify")
+        self.assertEqual(skills_res["test-skill-twin"]["lifecycle_phase"], "verify")
+
 if __name__ == "__main__":
     unittest.main()

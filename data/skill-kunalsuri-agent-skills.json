@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T00:40:57.624545Z",
+  "generated_at": "2026-07-19T01:11:32.813569Z",
   "skills": [
     {
       "id": "kunalsuri-multi-agent-docs",
@@ -19,7 +19,7 @@
       "upstream": {
         "commit_sha": "cc90b735a1174329c7571a184dc200a7ec803fa8",
         "blob_sha": "4509832034974ddf91e6209347a8f3f01446b347",
-        "fetched_at": "2026-07-16T14:25:28.933861Z"
+        "fetched_at": "2026-07-19T01:10:01.012798Z"
       },
       "status": "active",
       "tier": "shell",
@@ -32,7 +32,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-163",
+      "cluster_id": "cluster-062",
       "score_default": 150,
       "scores_by_tool": {
         "claude-code": 150,
@@ -69,7 +69,7 @@
       "upstream": {
         "commit_sha": "5c0e0f5b6487d6834bfbbadb6fabf119ef6eec56",
         "blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
-        "fetched_at": "2026-07-16T14:25:28.933968Z"
+        "fetched_at": "2026-07-19T01:10:01.012840Z"
       },
       "status": "active",
       "tier": "shell",
@@ -82,7 +82,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-164",
+      "cluster_id": "cluster-063",
       "score_default": 150,
       "scores_by_tool": {
         "claude-code": 150,

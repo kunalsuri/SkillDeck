@@ -143,6 +143,7 @@ SKILLS_SCHEMA = {
                     "status": {"type": "string", "enum": ["active", "gone"]},
                     "tier": {"type": "string", "enum": ["core", "shell", "rejected"]},
                     "capability_id": {"type": "string"},
+                    "capability_assigned_blob_sha": {"type": ["string", "null"]},
                     "native_ecosystem": {"type": "string", "enum": ["claude", "google", "vscode", "generic"]},
                     "install_hints": {"type": "object"},
                     "reviewed_by": {"type": ["string", "null"]},
@@ -155,6 +156,7 @@ SKILLS_SCHEMA = {
                         "type": ["string", "null"],
                         "enum": ["define", "plan", "build", "verify", "review", "ship", None]
                     },
+                    "phase_assigned_blob_sha": {"type": ["string", "null"]},
                     "nutrition": NUTRITION_SCHEMA,
                     "summary": SUMMARY_SCHEMA
                 }

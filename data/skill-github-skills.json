@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T00:40:57.593033Z",
+  "generated_at": "2026-07-19T01:11:32.813246Z",
   "skills": [
     {
       "id": "skills-bootstrap-exercise-from-outline",
@@ -19,7 +19,7 @@
       "upstream": {
         "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
         "blob_sha": "c1d4664856d3e852b435a2c9889988eaa4d381ac",
-        "fetched_at": "2026-07-16T14:25:31.426410Z"
+        "fetched_at": "2026-07-19T01:10:01.711016Z"
       },
       "status": "active",
       "tier": "shell",
@@ -32,7 +32,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-081",
+      "cluster_id": "cluster-058",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -69,7 +69,7 @@
       "upstream": {
         "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
         "blob_sha": "42422207bdfeca4e4406a9c3a06bf10f875d494d",
-        "fetched_at": "2026-07-16T14:25:32.130135Z"
+        "fetched_at": "2026-07-19T01:10:01.711055Z"
       },
       "status": "active",
       "tier": "shell",
@@ -82,7 +82,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-082",
+      "cluster_id": "cluster-059",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -119,7 +119,7 @@
       "upstream": {
         "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
         "blob_sha": "4d68af7973f59ad5863ad8a5e475a2bd4fa738e6",
-        "fetched_at": "2026-07-16T14:25:32.766832Z"
+        "fetched_at": "2026-07-19T01:10:01.711294Z"
       },
       "status": "active",
       "tier": "shell",
@@ -132,7 +132,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-083",
+      "cluster_id": "cluster-060",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,
@@ -169,7 +169,7 @@
       "upstream": {
         "commit_sha": "0cd52d0c2abc1296945258c2c662eb82a5e6b328",
         "blob_sha": "7135687138220f5908b896ea7e2d4282ad431cce",
-        "fetched_at": "2026-07-16T14:25:33.407775Z"
+        "fetched_at": "2026-07-19T01:10:01.711341Z"
       },
       "status": "active",
       "tier": "shell",
@@ -182,7 +182,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-084",
+      "cluster_id": "cluster-061",
       "score_default": 250,
       "scores_by_tool": {
         "claude-code": 250,

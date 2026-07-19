@@ -47,6 +47,19 @@ def _elect_heads(active_skills: list, skill_lookup: dict):
 
     return heads, head_to_members
 
+def _capability_is_current(head: dict, valid_caps: set) -> bool:
+    """True if head's capability_id was already decided by an agent (or is
+    "unassigned") against the skill's current blob_sha, so classification
+    can be skipped this round. False for skills never classified, or whose
+    content changed since the cached decision."""
+    cap_id = head.get("capability_id")
+    if cap_id not in valid_caps and cap_id != "unassigned":
+        return False
+    assigned_sha = head.get("capability_assigned_blob_sha")
+    if not assigned_sha:
+        return False
+    return assigned_sha == head.get("upstream", {}).get("blob_sha")
+
 def prepare_cluster_input(output_path: Path = None) -> Path:
     """
     Stage 1 of capability clustering. Purely local: elects cluster heads and
@@ -89,6 +102,15 @@ def prepare_cluster_input(output_path: Path = None) -> Path:
                 "members": member_ids
             })
             continue
+        if _capability_is_current(head, valid_caps):
+            # Already classified by an agent against this exact blob_sha -
+            # nothing changed since, so don't re-spend agent effort on it.
+            already_assigned.append({
+                "skill_id": head["id"],
+                "capability_id": head["capability_id"],
+                "members": member_ids
+            })
+            continue
         needs_classification.append({
             "skill_id": head["id"],
             "name": head.get("name", ""),
@@ -113,7 +135,7 @@ def prepare_cluster_input(output_path: Path = None) -> Path:
     atomic_write_json(output_path, payload)
     print(
         f"Wrote {len(needs_classification)} head(s) needing classification to {output_path} "
-        f"({len(already_assigned)} already manually assigned)."
+        f"({len(already_assigned)} already assigned/unchanged, skipped)."
     )
     return output_path
 
@@ -152,15 +174,28 @@ def apply_cluster_assignments(input_path: Path = None) -> None:
 
     for head in heads:
         members = head_to_members[head["id"]]
+        head_id = head["id"]
+        current_sha = head.get("upstream", {}).get("blob_sha")
+
         if head.get("tier") == "core" and head.get("capability_id") in valid_caps:
+            # Human-reviewed lock: never touched by agent assignments.
             cap_id = head["capability_id"]
-        else:
-            cap_id = assignments.get(head["id"], "unassigned")
+        elif head_id in assignments:
+            cap_id = assignments[head_id]
             if cap_id not in valid_caps:
                 if cap_id != "unassigned":
-                    print(f"Warning: unknown capability_id '{cap_id}' for '{head['id']}', parking as unassigned.")
+                    print(f"Warning: unknown capability_id '{cap_id}' for '{head_id}', parking as unassigned.")
                 cap_id = "unassigned"
-            head["capability_id"] = cap_id
+            head["capability_assigned_blob_sha"] = current_sha
+        else:
+            # Not in this round's assignments - prepare already decided it
+            # didn't need reclassification (unchanged since it was last
+            # classified), so keep the existing value instead of wiping it.
+            cap_id = head.get("capability_id") or "unassigned"
+            if cap_id not in valid_caps and cap_id != "unassigned":
+                cap_id = "unassigned"
+
+        head["capability_id"] = cap_id
 
         if cap_id == "unassigned":
             unassigned_count += 1
