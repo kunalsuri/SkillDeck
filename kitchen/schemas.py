@@ -165,10 +165,49 @@ SKILLS_SCHEMA = {
     }
 }
 
+# Shared shape for a resolved skill reference (kb.json's skill_refs items
+# and all_skills items are the same shape; all_skills additionally carries
+# capability_id since it isn't implied by an enclosing capability entry).
+SKILL_REF_SCHEMA = {
+    "type": "object",
+    "required": ["name", "repo_url", "provenance", "license", "review_status", "reviewed_at", "install", "nutrition", "summary"],
+    "properties": {
+        "name": {"type": "string"},
+        "repo_url": {"type": "string", "format": "uri"},
+        "provenance": {"type": "string", "enum": ["official", "partner", "community"]},
+        "vendor": {"type": ["string", "null"]},
+        "license": {"type": "string"},
+        "review_status": {"type": "string", "enum": ["human_read", "auto_summarized"]},
+        "reviewed_at": {"type": ["string", "null"]},
+        "freshness": {"type": ["string", "null"], "enum": ["drifted", None]},
+        "upstream_changed_at": {"type": ["string", "null"]},
+        "upstream_fetched_at": {"type": ["string", "null"]},
+        "lifecycle_phase": {
+            "type": ["string", "null"],
+            "enum": ["define", "plan", "build", "verify", "review", "ship", None]
+        },
+        "install": {
+            "type": "object",
+            "additionalProperties": {"type": "string"}
+        },
+        "nutrition": NUTRITION_SCHEMA,
+        "summary": {"type": ["string", "null"]}
+    }
+}
+
+ALL_SKILLS_ENTRY_SCHEMA = {
+    "type": "object",
+    "required": SKILL_REF_SCHEMA["required"] + ["capability_id"],
+    "properties": {
+        **SKILL_REF_SCHEMA["properties"],
+        "capability_id": {"type": ["string", "null"]}
+    }
+}
+
 # Schema for kb.json
 KB_SCHEMA = {
     "type": "object",
-    "required": ["schema_version", "generated_at", "tools", "capabilities", "lifecycle_phases", "entries"],
+    "required": ["schema_version", "generated_at", "tools", "capabilities", "lifecycle_phases", "entries", "all_skills"],
     "properties": {
         "schema_version": {"type": "integer"},
         "generated_at": {"type": "string", "format": "date-time"},
@@ -238,32 +277,7 @@ KB_SCHEMA = {
                     },
                     "skill_refs": {
                         "type": "object",
-                        "additionalProperties": {
-                            "type": "object",
-                            "required": ["name", "repo_url", "provenance", "license", "review_status", "reviewed_at", "install", "nutrition", "summary"],
-                            "properties": {
-                                "name": {"type": "string"},
-                                "repo_url": {"type": "string", "format": "uri"},
-                                "provenance": {"type": "string", "enum": ["official", "partner", "community"]},
-                                "vendor": {"type": ["string", "null"]},
-                                "license": {"type": "string"},
-                                "review_status": {"type": "string", "enum": ["human_read", "auto_summarized"]},
-                                "reviewed_at": {"type": ["string", "null"]},
-                                "freshness": {"type": ["string", "null"], "enum": ["drifted", None]},
-                                "upstream_changed_at": {"type": ["string", "null"]},
-                                "upstream_fetched_at": {"type": ["string", "null"]},
-                                "lifecycle_phase": {
-                                    "type": ["string", "null"],
-                                    "enum": ["define", "plan", "build", "verify", "review", "ship", None]
-                                },
-                                "install": {
-                                    "type": "object",
-                                    "additionalProperties": {"type": "string"}
-                                },
-                                "nutrition": NUTRITION_SCHEMA,
-                                "summary": {"type": ["string", "null"]}
-                            }
-                        }
+                        "additionalProperties": SKILL_REF_SCHEMA
                     },
                     "alternatives": {
                         "type": "array",
@@ -271,6 +285,10 @@ KB_SCHEMA = {
                     }
                 }
             }
+        },
+        "all_skills": {
+            "type": "object",
+            "additionalProperties": ALL_SKILLS_ENTRY_SCHEMA
         }
     }
 }

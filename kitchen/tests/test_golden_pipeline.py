@@ -174,7 +174,8 @@ Write documents skill body text content. Detailed reports can be output!
                  patch("kitchen.emit.SKILLS_JSON", tmp_skills), \
                  patch("kitchen.emit.INSTALL_MATRIX_JSON", tmp_matrix), \
                  patch("kitchen.emit.KB_JSON", tmp_kb), \
-                 patch("kitchen.emit.MIRROR_DIR", tmp_mirror):
+                 patch("kitchen.emit.MIRROR_DIR", tmp_mirror), \
+                 patch("kitchen.emit.SOURCES_JSON", tmp_sources):
 
                 # Scriptable stages: ingest -> canonicalize -> dedup -> rank
                 run_pipeline()

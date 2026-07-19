@@ -12,9 +12,11 @@ from kitchen.schemas import validate_json, KB_SCHEMA
 
 class TestEmit(unittest.TestCase):
     def test_get_vendor(self):
-        self.assertEqual(get_vendor("anthropics"), "anthropic")
-        self.assertEqual(get_vendor("googleworkspace"), "google")
-        self.assertEqual(get_vendor("otherorg"), None)
+        source_vendor = {"anthropic-official": "anthropic", "google-official": "google", "agg-seed": None}
+        self.assertEqual(get_vendor("anthropic-official", source_vendor), "anthropic")
+        self.assertEqual(get_vendor("google-official", source_vendor), "google")
+        self.assertIsNone(get_vendor("agg-seed", source_vendor))
+        self.assertIsNone(get_vendor("unknown-source", source_vendor))
 
     def test_resolve_install_command_pipeline(self):
         # Mock skill and methods
@@ -83,6 +85,7 @@ class TestEmit(unittest.TestCase):
                     "origin": {"org": "anthropics", "repo": "skills", "path": "skills/head", "default_branch": "main"},
                     "upstream": {"commit_sha": "sha_h", "blob_sha": "sha_head", "fetched_at": "2026-07-07T08:00:00Z"},
                     "capability_id": "documents",
+                    "source_id": "src-anthropic",
                     "cluster_id": "cluster-1",
                     "score_default": 1000,
                     "scores_by_tool": {t: 1000 for t in ["claude-code", "claude-ai", "vscode-copilot", "antigravity", "gemini-cli", "cursor"]},
@@ -207,6 +210,43 @@ class TestEmit(unittest.TestCase):
                     "scores_by_tool": {t: 200 for t in ["claude-code", "claude-ai", "vscode-copilot", "antigravity", "gemini-cli", "cursor"]},
                     "reviewed_by": "Carol",
                     "reviewed_at": "2026-07-07T09:00:00Z"
+                },
+                # 8. Not capability-assigned ("unassigned") - excluded from
+                # `entries` but must still show up in all_skills for the
+                # publisher/vendor browse view and skill detail pages.
+                {
+                    "id": "skill-unassigned",
+                    "name": "skill-unassigned",
+                    "status": "active",
+                    "tier": "shell",
+                    "provenance": "partner",
+                    "license": "Apache-2.0",
+                    "mirrorable": False,
+                    "origin": {"org": "nvidia", "repo": "skills", "path": "skills/doca-thing", "default_branch": "main"},
+                    "upstream": {"commit_sha": "sha_u", "blob_sha": "sha_unassigned", "fetched_at": "2026-07-07T08:00:00Z"},
+                    "capability_id": "unassigned",
+                    "source_id": "src-nvidia",
+                    "cluster_id": "cluster-6",
+                    "score_default": 500,
+                    "scores_by_tool": {t: 500 for t in ["claude-code", "claude-ai", "vscode-copilot", "antigravity", "gemini-cli", "cursor"]},
+                    "reviewed_by": None,
+                    "reviewed_at": None
+                }
+            ]
+        }
+
+        sources_content = {
+            "schema_version": 1,
+            "sources": [
+                {
+                    "id": "src-anthropic", "org": "anthropics",
+                    "repo_url": "https://github.com/anthropics/skills",
+                    "kind": "official", "vendor": "anthropic", "default_license": "MIT"
+                },
+                {
+                    "id": "src-nvidia", "org": "nvidia",
+                    "repo_url": "https://github.com/nvidia/skills",
+                    "kind": "partner", "vendor": "nvidia", "default_license": "varies"
                 }
             ]
         }
@@ -240,13 +280,16 @@ class TestEmit(unittest.TestCase):
             tmp_kb = Path(tmpdir) / "kb.json"
             tmp_mirror = Path(tmpdir) / "mirror"
             tmp_cache_dir = Path(tmpdir) / ".kitchen_cache"
+            tmp_sources = Path(tmpdir) / "sources.json"
             tmp_cache_dir.mkdir()
-            
+
             with open(tmp_skills, "w", encoding="utf-8") as f:
                 json.dump(skills_content, f)
             with open(tmp_matrix, "w", encoding="utf-8") as f:
                 json.dump(install_matrix, f)
-                
+            with open(tmp_sources, "w", encoding="utf-8") as f:
+                json.dump(sources_content, f)
+
             # Write mock cache file for skill-head body so get_skill_body doesn't fall back to empty string
             url = "https://api.github.com/repos/anthropics/skills/git/blobs/sha_head"
             url_hash = hashlib.sha256(url.encode("utf-8")).hexdigest()
@@ -258,6 +301,7 @@ class TestEmit(unittest.TestCase):
                  patch("kitchen.emit.INSTALL_MATRIX_JSON", tmp_matrix), \
                  patch("kitchen.emit.KB_JSON", tmp_kb), \
                  patch("kitchen.emit.MIRROR_DIR", tmp_mirror), \
+                 patch("kitchen.emit.SOURCES_JSON", tmp_sources), \
                  patch("kitchen.dedup.CACHE_DIR", tmp_cache_dir):
                 run_emit()
 
@@ -337,6 +381,24 @@ class TestEmit(unittest.TestCase):
             self.assertEqual(design_entry["recommended"]["default"], "skill-design-core")
             self.assertIn("skill-design-shell", design_entry["alternatives"])
 
+            # 7. all_skills is a superset of every capability entry's skill_refs,
+            # plus skills that never got assigned one of the 8 capabilities.
+            self.assertIn("skill-head", kb_data["all_skills"])
+            self.assertIn("skill-unassigned", kb_data["all_skills"])
+            self.assertEqual(kb_data["all_skills"]["skill-head"]["capability_id"], "documents")
+            self.assertIsNone(kb_data["all_skills"]["skill-unassigned"]["capability_id"])
+            self.assertNotIn("skill-gone", kb_data["all_skills"])
+
+            # 8. Vendor is resolved via sources.json's source_id -> vendor map,
+            # not by guessing from the org string.
+            self.assertEqual(kb_data["all_skills"]["skill-head"]["vendor"], "anthropic")
+            self.assertEqual(kb_data["all_skills"]["skill-unassigned"]["vendor"], "nvidia")
+
+            # 9. A skill outside the 8 capabilities is never emitted inside any
+            # capability entry's skill_refs, even though it's in all_skills.
+            for cap_entry in kb_data["entries"]:
+                self.assertNotIn("skill-unassigned", cap_entry["skill_refs"])
+
 def _make_skill(mirrorable=True, capability_id="documents"):
     return {
         "id": "skill-head",
@@ -396,6 +458,7 @@ class TestEmitPhase0FreshClone(unittest.TestCase):
             "kb": tmp_dir / "kb.json",
             "mirror": tmp_dir / "mirror",
             "cache": tmp_dir / ".kitchen_cache",
+            "sources": tmp_dir / "sources.json",  # intentionally never written: load_source_vendor_map() must tolerate a missing file
         }
         paths["mirror"].mkdir(parents=True, exist_ok=True)
         paths["cache"].mkdir(parents=True, exist_ok=True)
@@ -411,6 +474,7 @@ class TestEmitPhase0FreshClone(unittest.TestCase):
             patch("kitchen.emit.INSTALL_MATRIX_JSON", paths["matrix"]),
             patch("kitchen.emit.KB_JSON", paths["kb"]),
             patch("kitchen.emit.MIRROR_DIR", paths["mirror"]),
+            patch("kitchen.emit.SOURCES_JSON", paths["sources"]),
             patch("kitchen.dedup.CACHE_DIR", paths["cache"]),
             patch("kitchen.dedup.MIRROR_DIR", paths["mirror"]),
             patch("kitchen.emit.load_cards_cache", return_value=cards_cache_return),

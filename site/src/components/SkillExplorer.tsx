@@ -27,7 +27,10 @@ interface AxisGroup {
 interface SkillItem {
   id: string;
   skill: SkillRef;
-  entry: KBEntry;
+  // Undefined for a publisher-mode item whose skill was never assigned one
+  // of the 8 curated capabilities (sourced from kb.all_skills, not
+  // kb.entries) - there's no capability-level card to show for it.
+  entry: KBEntry | undefined;
   capability: Capability | undefined;
   group: AxisGroup | undefined;
   isRecommended: boolean;
@@ -144,50 +147,70 @@ export default function SkillExplorer({ kb, mode }: Props) {
     for (const g of groups) map[g.id] = g;
     return map;
   }, [groups]);
+  const entryByCapabilityId = useMemo(() => {
+    const map: Record<string, KBEntry> = {};
+    for (const e of kb.entries) map[e.capability_id] = e;
+    return map;
+  }, [kb]);
 
-  // Flatten every skill_ref across every capability entry into one list.
-  // Phase mode keeps only skills with a lifecycle_phase (the SDLC subset);
-  // capability mode keeps only those without one (everything else) and
-  // groups by capability instead - the two modes never show the same skill.
-  // Publisher mode keeps all active skills and groups by vendor/provenance.
+  function publisherGroupId(skill: SkillRef): string {
+    if (skill.vendor === 'google') return 'google';
+    if (skill.vendor === 'anthropic') return 'anthropic';
+    if (skill.vendor === 'vercel') return 'vercel';
+    if (skill.vendor === 'nvidia') return 'nvidia';
+    if (skill.vendor === 'datadog') return 'datadog';
+    if (skill.vendor === 'openai') return 'openai';
+    if (skill.provenance === 'official' || skill.provenance === 'partner') return 'partner-other';
+    return 'community';
+  }
+
+  // Phase mode keeps only skills with a lifecycle_phase (the SDLC subset),
+  // sourced from kb.entries (capability-assigned skills only) and grouped by
+  // phase. Capability mode keeps the rest of kb.entries (no lifecycle_phase)
+  // grouped by capability - the two modes never show the same skill.
+  // Publisher mode sources from kb.all_skills instead: every active skill
+  // regardless of capability assignment, grouped by vendor - a skill with no
+  // capability still shows up here with `entry` left undefined.
   const items = useMemo(() => {
     const list: SkillItem[] = [];
-    for (const entry of kb.entries) {
-      for (const [id, skill] of Object.entries(entry.skill_refs)) {
-        if (mode === 'phase') {
-          if (!skill.lifecycle_phase) continue;
-        } else if (mode === 'capability') {
-          if (skill.lifecycle_phase) continue;
-        }
-        
-        let groupId = '';
-        if (mode === 'phase') {
-          groupId = skill.lifecycle_phase!;
-        } else if (mode === 'capability') {
-          groupId = entry.capability_id;
-        } else if (mode === 'publisher') {
-          if (skill.vendor === 'google') groupId = 'google';
-          else if (skill.vendor === 'anthropic') groupId = 'anthropic';
-          else if (skill.vendor === 'vercel') groupId = 'vercel';
-          else if (skill.vendor === 'nvidia') groupId = 'nvidia';
-          else if (skill.vendor === 'datadog') groupId = 'datadog';
-          else if (skill.vendor === 'openai') groupId = 'openai';
-          else if (skill.provenance === 'official' || skill.provenance === 'partner') groupId = 'partner-other';
-          else groupId = 'community';
-        }
-        
+
+    if (mode === 'publisher') {
+      for (const [id, skill] of Object.entries(kb.all_skills)) {
+        const capId = skill.capability_id;
         list.push({
           id,
           skill,
-          entry,
-          capability: capabilityById[entry.capability_id],
-          group: groupById[groupId],
-          isRecommended: entry.recommended.default === id,
+          entry: capId ? entryByCapabilityId[capId] : undefined,
+          capability: capId ? capabilityById[capId] : undefined,
+          group: groupById[publisherGroupId(skill)],
+          isRecommended: capId ? entryByCapabilityId[capId]?.recommended.default === id : false,
         });
       }
+    } else {
+      for (const entry of kb.entries) {
+        for (const [id, skill] of Object.entries(entry.skill_refs)) {
+          if (mode === 'phase') {
+            if (!skill.lifecycle_phase) continue;
+          } else if (mode === 'capability') {
+            if (skill.lifecycle_phase) continue;
+          }
+
+          const groupId = mode === 'phase' ? skill.lifecycle_phase! : entry.capability_id;
+
+          list.push({
+            id,
+            skill,
+            entry,
+            capability: capabilityById[entry.capability_id],
+            group: groupById[groupId],
+            isRecommended: entry.recommended.default === id,
+          });
+        }
+      }
     }
+
     return list.sort((a, b) => formatSkillName(a.skill.name).localeCompare(formatSkillName(b.skill.name)));
-  }, [kb, mode, capabilityById, groupById]);
+  }, [kb, mode, capabilityById, groupById, entryByCapabilityId]);
 
   const [selectedGroup, setSelectedGroup] = useState<string | null>(null);
 
@@ -231,8 +254,8 @@ export default function SkillExplorer({ kb, mode }: Props) {
       const haystacks = [
         item.skill.name,
         formatSkillName(item.skill.name),
-        item.entry.card.title,
-        item.entry.card.what_it_does,
+        item.entry?.card.title ?? '',
+        item.entry?.card.what_it_does ?? item.skill.summary ?? '',
         item.capability?.label ?? '',
       ];
       return haystacks.some(h => h.toLowerCase().includes(normalizedQuery));
@@ -375,7 +398,7 @@ export default function SkillExplorer({ kb, mode }: Props) {
                     )}
                   </div>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed mt-1 line-clamp-2">
-                    {item.entry.card.what_it_does}
+                    {item.entry?.card.what_it_does ?? item.skill.summary ?? 'No description yet.'}
                   </p>
                   <div className="flex flex-wrap items-center gap-1.5 mt-2">
                     <span className={`inline-flex items-center gap-1 text-[9px] font-mono font-medium px-1.5 py-0.5 rounded border ${colors.badge}`}>
@@ -611,7 +634,7 @@ function SkillDetailPanel({ item, mode, colorMap, defaultColor, tools, installTo
             What it does
           </span>
           <p className="text-sm md:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
-            {entry.card.what_it_does}
+            {entry?.card.what_it_does ?? skill.summary ?? 'No description yet — see the skill’s repository for details.'}
           </p>
           {nutrition?.trigger && (
             <p className="text-[11px] font-mono text-zinc-400 dark:text-zinc-500">
@@ -620,24 +643,27 @@ function SkillDetailPanel({ item, mode, colorMap, defaultColor, tools, installTo
           )}
         </div>
 
-        {/* Try saying */}
-        <div className="space-y-2">
-          <span className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-            Try asking your assistant
-          </span>
-          <div className="relative group bg-accent/5 dark:bg-accent/10 border-2 border-accent/30 dark:border-accent/40 rounded p-4 flex items-center justify-between gap-4">
-            <blockquote className="text-sm font-semibold italic text-zinc-800 dark:text-zinc-100">
-              &ldquo;{entry.card.try_saying}&rdquo;
-            </blockquote>
-            <button
-              onClick={() => onCopy(entry.card.try_saying, `prompt-${id}`)}
-              className="px-3 py-1.5 rounded border border-accent bg-accent text-white hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1.5 text-xs font-mono font-semibold shrink-0"
-              aria-label="Copy prompt example"
-            >
-              {copiedKey === `prompt-${id}` ? 'Copied' : 'Copy'}
-            </button>
+        {/* Try saying - only available for skills with a capability-level
+            Explainer Card; a skill outside the 8 capabilities has none. */}
+        {entry && (
+          <div className="space-y-2">
+            <span className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+              Try asking your assistant
+            </span>
+            <div className="relative group bg-accent/5 dark:bg-accent/10 border-2 border-accent/30 dark:border-accent/40 rounded p-4 flex items-center justify-between gap-4">
+              <blockquote className="text-sm font-semibold italic text-zinc-800 dark:text-zinc-100">
+                &ldquo;{entry.card.try_saying}&rdquo;
+              </blockquote>
+              <button
+                onClick={() => onCopy(entry.card.try_saying, `prompt-${id}`)}
+                className="px-3 py-1.5 rounded border border-accent bg-accent text-white hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1.5 text-xs font-mono font-semibold shrink-0"
+                aria-label="Copy prompt example"
+              >
+                {copiedKey === `prompt-${id}` ? 'Copied' : 'Copy'}
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Download Options, LM-Studio style: tool tabs + copyable install command */}
         <div className="space-y-2">

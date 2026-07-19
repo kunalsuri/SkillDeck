@@ -2,7 +2,7 @@ import json
 import re
 from datetime import datetime, timezone
 from kitchen.config import (
-    SKILLS_JSON, INSTALL_MATRIX_JSON, KB_JSON, MIRROR_DIR, TOOLS, CAPABILITIES, LIFECYCLE_PHASES
+    SOURCES_JSON, SKILLS_JSON, INSTALL_MATRIX_JSON, KB_JSON, MIRROR_DIR, TOOLS, CAPABILITIES, LIFECYCLE_PHASES
 )
 from kitchen.utils import load_all_skills, atomic_write_json
 from kitchen.dedup import resolve_skill_body
@@ -57,13 +57,57 @@ def resolve_install_command(skill: dict, tool_id: str, methods_dict: dict, fallb
                 pass
     return None
 
-def get_vendor(org: str) -> str:
-    org_l = org.lower()
-    if "anthropic" in org_l:
-        return "anthropic"
-    if "google" in org_l:
-        return "google"
-    return None
+def get_vendor(source_id: str, source_vendor: dict) -> str:
+    return source_vendor.get(source_id)
+
+def load_source_vendor_map() -> dict:
+    """Best-effort source_id->vendor lookup read from sources.json (the
+    canonical vendor label per source, e.g. "nvidia", "datadog", "openai").
+    Tolerates a missing or malformed file the same way
+    load_previous_cards_by_capability does."""
+    if not SOURCES_JSON.exists():
+        return {}
+    try:
+        with open(SOURCES_JSON, "r", encoding="utf-8") as f:
+            sources_data = json.load(f)
+    except Exception:
+        return {}
+    return {s["id"]: s.get("vendor") for s in sources_data.get("sources", [])}
+
+def build_skill_ref(member: dict, methods_dict: dict, fallback_order: dict, source_vendor: dict) -> dict:
+    org = member["origin"]["org"]
+    repo = member["origin"]["repo"]
+    path = member["origin"]["path"]
+    branch = member["origin"]["default_branch"]
+
+    install_block = {}
+    for tool in TOOLS:
+        tool_id = tool["id"]
+        tool_fallback = fallback_order.get(tool_id, [])
+        resolved_cmd = resolve_install_command(member, tool_id, methods_dict, tool_fallback)
+        if resolved_cmd:
+            install_block[tool_id] = resolved_cmd
+
+    review_status = "auto_summarized"
+    if member.get("tier") == "core" and member.get("reviewed_by"):
+        review_status = "human_read"
+
+    return {
+        "name": member["name"],
+        "repo_url": f"https://github.com/{org}/{repo}/tree/{branch}/{path}",
+        "provenance": member["provenance"],
+        "vendor": get_vendor(member.get("source_id"), source_vendor),
+        "license": member["license"],
+        "review_status": review_status,
+        "reviewed_at": member.get("reviewed_at"),
+        "freshness": member.get("freshness"),
+        "upstream_changed_at": member.get("upstream_changed_at"),
+        "upstream_fetched_at": member.get("upstream", {}).get("fetched_at"),
+        "lifecycle_phase": member.get("lifecycle_phase"),
+        "install": install_block,
+        "nutrition": member.get("nutrition"),
+        "summary": (member.get("summary") or {}).get("text")
+    }
 
 def load_previous_cards_by_capability() -> dict:
     """Best-effort read of the kb.json this emit is about to overwrite,
@@ -102,6 +146,7 @@ def run_emit():
     # with generic fallback text (see Phase 0 / T2 in SPEC-01).
     cards_cache = load_cards_cache()
     previous_cards_by_cap = load_previous_cards_by_capability()
+    source_vendor = load_source_vendor_map()
 
     # Build methods lookup dictionary
     methods_dict = {}
@@ -109,14 +154,34 @@ def run_emit():
         methods_dict[(m["tool_id"], m["method"])] = m
     fallback_order = install_matrix.get("fallback_order", {})
 
-    # Filter active, assigned, and non-rejected skills
     valid_caps = {c["id"] for c in CAPABILITIES}
-    active_skills = [
-        s for s in skills 
-        if s.get("status") == "active" 
-        and s.get("tier") != "rejected"
-        and s.get("capability_id") in valid_caps
+
+    # Every active, non-rejected skill, independent of whether it landed in
+    # one of the 8 curated capabilities. This is the superset that backs
+    # skill/[id] detail pages and the publisher/vendor browse view on the
+    # site; `entries` below (built from the capability_id-assigned subset)
+    # is the Wizard/SDLC-facing view. A skill can be real, ingested, and
+    # fully documented while never being assigned a capability (e.g. most of
+    # a vendor's catalog being too domain-specific for the fixed taxonomy)
+    # and still be independently browsable via all_skills.
+    live_skills = [
+        s for s in skills
+        if s.get("status") == "active" and s.get("tier") != "rejected"
     ]
+
+    ref_cache = {}
+    all_skills = {}
+    mirrorable_skills = {}
+    for member in live_skills:
+        mid = member["id"]
+        ref = build_skill_ref(member, methods_dict, fallback_order, source_vendor)
+        ref_cache[mid] = ref
+        cap_id = member.get("capability_id")
+        all_skills[mid] = {**ref, "capability_id": cap_id if cap_id in valid_caps else None}
+        if member.get("mirrorable"):
+            mirrorable_skills[mid] = member
+
+    active_skills = [s for s in live_skills if s.get("capability_id") in valid_caps]
 
     # Group skills by capability_id. A capability is the UI's recommendation
     # slot: exactly one entry must be emitted per capability, even when two
@@ -130,9 +195,6 @@ def run_emit():
 
     # Compile entries
     entries = []
-
-    # Track mirrorable skills to write them to mirror/
-    mirrorable_skills = {}
 
     for cap_id, members in capability_groups.items():
         # Elect head using score_default, but prefer a core-tier (human-reviewed)
@@ -182,48 +244,9 @@ def run_emit():
                 "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
             }
 
-        # Resolve details for all members assigned to this capability
-        skill_refs = {}
-        for member in members:
-            mid = member["id"]
-            org = member["origin"]["org"]
-            repo = member["origin"]["repo"]
-            path = member["origin"]["path"]
-            branch = member["origin"]["default_branch"]
-            
-            # Resolve install commands for all tools
-            install_block = {}
-            for tool in TOOLS:
-                tool_id = tool["id"]
-                tool_fallback = fallback_order.get(tool_id, [])
-                resolved_cmd = resolve_install_command(member, tool_id, methods_dict, tool_fallback)
-                if resolved_cmd:
-                    install_block[tool_id] = resolved_cmd
-            
-            review_status = "auto_summarized"
-            if member.get("tier") == "core" and member.get("reviewed_by"):
-                review_status = "human_read"
-                
-            skill_refs[mid] = {
-                "name": member["name"],
-                "repo_url": f"https://github.com/{org}/{repo}/tree/{branch}/{path}",
-                "provenance": member["provenance"],
-                "vendor": get_vendor(org),
-                "license": member["license"],
-                "review_status": review_status,
-                "reviewed_at": member.get("reviewed_at"),
-                "freshness": member.get("freshness"),
-                "upstream_changed_at": member.get("upstream_changed_at"),
-                "upstream_fetched_at": member.get("upstream", {}).get("fetched_at"),
-                "lifecycle_phase": member.get("lifecycle_phase"),
-                "install": install_block,
-                "nutrition": member.get("nutrition"),
-                "summary": (member.get("summary") or {}).get("text")
-            }
-            
-            # Track if mirrorable
-            if member.get("mirrorable"):
-                mirrorable_skills[mid] = member
+        # Resolve details for all members assigned to this capability, reusing
+        # the ref already built for all_skills above.
+        skill_refs = {member["id"]: ref_cache[member["id"]] for member in members}
 
         # Alternatives are all members except default head
         alternatives = [m["id"] for m in sorted_by_default[1:]]
@@ -246,7 +269,8 @@ def run_emit():
         "tools": TOOLS,
         "capabilities": CAPABILITIES,
         "lifecycle_phases": LIFECYCLE_PHASES,
-        "entries": entries
+        "entries": entries,
+        "all_skills": all_skills
     }
 
     # Validate against JSON Schema

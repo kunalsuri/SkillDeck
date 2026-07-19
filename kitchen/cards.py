@@ -23,10 +23,12 @@ def save_cards_cache(cache: dict):
     atomic_write_json(CARDS_CACHE_FILE, cache)
 
 def _heads_needing_cards(skills: list) -> list:
-    active_skills = [
-        s for s in skills
-        if s.get("status") == "active" and s.get("capability_id") != "unassigned"
-    ]
+    # Not gated on capability_id: skills that never got assigned one of the
+    # 8 curated capabilities (e.g. most of a vendor's catalog being too
+    # domain-specific for the fixed taxonomy) are still real, browsable
+    # skills via kb.json's all_skills and still deserve a real card instead
+    # of living on the generic fallback forever.
+    active_skills = [s for s in skills if s.get("status") == "active"]
     cluster_groups = {}
     for s in active_skills:
         cid = s.get("cluster_id")
@@ -93,7 +95,7 @@ def prepare_cards_input(output_path: Path = None) -> Path:
         skill_id = head["id"]
         blob_sha = head["upstream"]["blob_sha"]
         cap_id = head["capability_id"]
-        cap_label = cap_labels.get(cap_id, cap_id)
+        cap_label = cap_labels.get(cap_id)  # None for "unassigned" skills - no fake capability label
         cache_key = f"{skill_id}:{blob_sha}"
 
         human_card = None

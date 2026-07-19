@@ -66,6 +66,13 @@ export interface KBEntry {
   alternatives: string[];
 }
 
+// Same shape as SkillRef, plus capability_id: null for a skill that was
+// never assigned one of the 8 curated capabilities (too domain-specific
+// for the fixed taxonomy) but is still a real, browsable skill.
+export interface AllSkillsEntry extends SkillRef {
+  capability_id: string | null;
+}
+
 export interface KB {
   schema_version: number;
   generated_at: string;
@@ -73,4 +80,9 @@ export interface KB {
   capabilities: Capability[];
   lifecycle_phases: LifecyclePhase[];
   entries: KBEntry[];
+  // Superset of every entry's skill_refs: every active, non-rejected skill
+  // regardless of capability assignment. Backs the publisher/vendor browse
+  // view and per-skill detail pages so a skill can be independently
+  // browsable without ever landing in one of the 8 capabilities.
+  all_skills: Record<string, AllSkillsEntry>;
 }

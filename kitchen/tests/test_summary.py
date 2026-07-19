@@ -155,7 +155,8 @@ class TestSummaryPrepareApply(unittest.TestCase):
                     "capability_id": "documents",
                     "cluster_id": "cluster-d"
                 },
-                # 6. Not capability-assigned -> not eligible at all.
+                # 6. Not capability-assigned -> still eligible via all_skills,
+                # just without a capability_label.
                 {
                     "id": "sum-unassigned",
                     "name": "sum-unassigned",
@@ -202,21 +203,27 @@ class TestSummaryPrepareApply(unittest.TestCase):
                     prepared = json.load(f)
 
                 needing = {n["skill_id"]: n for n in prepared["heads_needing_summaries"]}
-                self.assertEqual(set(needing.keys()), {"sum-head", "sum-desc"})
+                self.assertEqual(set(needing.keys()), {"sum-head", "sum-desc", "sum-unassigned"})
                 self.assertEqual(needing["sum-head"]["basis"], "body")
                 self.assertEqual(needing["sum-head"]["members"], ["sum-head", "sum-twin"])
                 self.assertEqual(needing["sum-head"]["body_excerpt"], "Full body of the head skill.")
                 self.assertEqual(needing["sum-desc"]["basis"], "description")
                 self.assertEqual(needing["sum-desc"]["body_excerpt"], "desc-only description")
+                self.assertIsNone(needing["sum-unassigned"]["capability_label"])
 
                 desc_summary = (
                     "Provides guidance for desc-only workflows, covering the setup steps "
                     "and commands users need to run the underlying tool."
                 )
+                unassigned_summary = (
+                    "Handles unassigned workflows, covering the setup steps and commands "
+                    "users need to run the underlying tool end to end."
+                )
                 with open(paths["output"], "w", encoding="utf-8") as f:
                     json.dump({"summaries": {
                         "sum-head": VALID_SUMMARY,
-                        "sum-desc": desc_summary
+                        "sum-desc": desc_summary,
+                        "sum-unassigned": unassigned_summary
                     }}, f)
 
                 apply_summary_assignments(paths["output"])
@@ -237,7 +244,10 @@ class TestSummaryPrepareApply(unittest.TestCase):
             # Cached and human-locked summaries untouched.
             self.assertTrue(skills["sum-cached"]["summary"]["text"].startswith("Existing cached"))
             self.assertEqual(skills["sum-human"]["summary"]["generated_by"], "human")
-            self.assertNotIn("summary", skills["sum-unassigned"])
+
+            # A skill outside the 8 curated capabilities is still summarized.
+            self.assertEqual(skills["sum-unassigned"]["summary"]["text"], unassigned_summary)
+            self.assertEqual(skills["sum-unassigned"]["summary"]["basis"], "description")
 
     def test_prepare_is_idempotent_until_upstream_changes(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -251,6 +261,10 @@ class TestSummaryPrepareApply(unittest.TestCase):
                         "sum-desc": (
                             "Provides guidance for desc-only workflows, covering the setup "
                             "steps and commands users need to run the underlying tool."
+                        ),
+                        "sum-unassigned": (
+                            "Handles unassigned workflows, covering the setup steps and "
+                            "commands users need to run the underlying tool end to end."
                         )
                     }}, f)
                 apply_summary_assignments(paths["output"])

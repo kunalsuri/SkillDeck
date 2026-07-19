@@ -135,12 +135,15 @@ python -m kitchen cards-prepare
 ```
 
 This writes `.kitchen_cache/cards_input.json` with `heads_needing_cards`
-(capability-assigned skills without a cached or human-locked card). Each entry
-has `skill_id`, `name`, `frontmatter_description`, a `body_excerpt` (first
-1000 words), and a `capability_label` (the user-facing category this skill
-belongs to, e.g. `"Build web pages & UI"` — use this to frame the card).
-Skills with a human-written card, or one already cached for the current
-`blob_sha`, are skipped automatically.
+(every active skill without a cached or human-locked card, whether or not it
+was assigned one of the 8 capabilities in step 2). Each entry has `skill_id`,
+`name`, `frontmatter_description`, a `body_excerpt` (first 1000 words), and a
+`capability_label` (the user-facing category this skill belongs to, e.g.
+`"Build web pages & UI"` — use this to frame the card when present; it's
+`null` for a skill that isn't assigned one of the 8 capabilities, so frame
+the card from its name/description instead). Skills with a human-written
+card, or one already cached for the current `blob_sha`, are skipped
+automatically.
 
 For each entry, write one product card for a curated catalog of AI agent
 skills, aimed at non-technical users:
@@ -172,12 +175,14 @@ python -m kitchen summary-prepare
 ```
 
 This writes `.kitchen_cache/summary_input.json` with `heads_needing_summaries`
-(capability-assigned skills whose summary is missing or stale for the current
-upstream body). Each entry has `skill_id`, `name`, `frontmatter_description`,
+(every active skill whose summary is missing or stale for the current
+upstream body, whether or not it was assigned one of the 8 capabilities in
+step 2). Each entry has `skill_id`, `name`, `frontmatter_description`,
 a `body_excerpt` (first 1000 words, or just the description when no body is
-available — see the entry's `basis` field), a `capability_label`, and a
-`members` list. Skills with a human-locked summary, or one already written
-for the current body, are skipped automatically.
+available — see the entry's `basis` field), a `capability_label` (`null` for
+a skill outside the 8 capabilities), and a `members` list. Skills with a
+human-locked summary, or one already written for the current body, are
+skipped automatically.
 
 For each entry, write one **Skill Summary** — a factual statement of what
 the skill actually does. Unlike the marketing-friendly card copy, summaries

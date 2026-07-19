@@ -31,14 +31,14 @@ SUMMARY_INSTRUCTIONS = (
 
 
 def _eligible_skills(skills: list) -> list:
-    """The same skill set emit puts into kb.json: active, not rejected, and
-    assigned to a real capability."""
-    valid_caps = {c["id"] for c in CAPABILITIES}
+    """The same skill set emit puts into kb.json's all_skills: active and
+    not rejected. Not gated on capability_id - skills outside the 8 curated
+    capabilities are still browsable via all_skills and still deserve a real
+    summary instead of staying empty forever."""
     return [
         s for s in skills
         if s.get("status") == "active"
         and s.get("tier") != "rejected"
-        and s.get("capability_id") in valid_caps
     ]
 
 
@@ -109,7 +109,7 @@ def prepare_summary_input(output_path: Path = None) -> Path:
     skill_lookup = {s["id"]: s for s in skills}
 
     if not eligible:
-        print("No capability-assigned skills to summarize.")
+        print("No active skills to summarize.")
         atomic_write_json(output_path, {
             "instructions": SUMMARY_INSTRUCTIONS,
             "heads_needing_summaries": []
@@ -147,7 +147,7 @@ def prepare_summary_input(output_path: Path = None) -> Path:
             "frontmatter_description": head.get("frontmatter_description", ""),
             "body_excerpt": excerpt,
             "basis": basis,
-            "capability_label": cap_labels.get(head.get("capability_id"), head.get("capability_id")),
+            "capability_label": cap_labels.get(head.get("capability_id")),  # None for "unassigned" skills
             "members": [m["id"] for m in head_to_members[head["id"]]]
         })
 
@@ -187,7 +187,7 @@ def apply_summary_assignments(input_path: Path = None) -> None:
     skill_lookup = {s["id"]: s for s in skills}
 
     if not eligible:
-        print("No capability-assigned skills to summarize.")
+        print("No active skills to summarize.")
         return
 
     heads, head_to_members = _elect_heads(eligible, skill_lookup)

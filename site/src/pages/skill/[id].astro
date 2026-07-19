@@ -7,10 +7,21 @@ import sanitizeHtml from 'sanitize-html';
 import kbData from '../../data/kb.json';
 import SkillCard from '../../components/SkillCard.astro';
 import Layout from '../../layouts/Layout.astro';
-import type { SkillRef } from '../../types/kb';
+import type { SkillRef, AllSkillsEntry } from '../../types/kb';
 
 export async function getStaticPaths() {
   const paths = [];
+  const seen = new Set<string>();
+
+  // Astro extracts getStaticPaths into an isolated module during the
+  // prerender build, so a sibling module-scope function declaration isn't
+  // reliably available inside it - keep this local to the closure instead.
+  const formatSkillTitle = (name: string): string =>
+    name
+      .split(/[-_]/)
+      .filter(Boolean)
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
 
   for (const entry of kbData.entries) {
     const skillRefs = entry.skill_refs as unknown as Record<string, SkillRef>;
@@ -18,6 +29,7 @@ export async function getStaticPaths() {
 
     for (const skillId of allSkillIds) {
       const skill = skillRefs[skillId];
+      seen.add(skillId);
 
       // Get other duplicate skills in the same cluster to display as alternatives
       const alternatives = allSkillIds
@@ -45,6 +57,27 @@ export async function getStaticPaths() {
         }
       });
     }
+  }
+
+  // Skills that were never assigned one of the 8 curated capabilities still
+  // get a real detail page - there's no capability-level Explainer Card or
+  // dedup-cluster alternatives for them, so the card copy is synthesized
+  // from the skill's own name and Skill Summary instead.
+  const allSkills = kbData.all_skills as unknown as Record<string, AllSkillsEntry>;
+  for (const [skillId, skill] of Object.entries(allSkills)) {
+    if (seen.has(skillId)) continue;
+
+    const title = formatSkillTitle(skill.name);
+    paths.push({
+      params: { id: skillId },
+      props: {
+        skill,
+        title,
+        whatItDoes: skill.summary ?? 'See the linked repository for full documentation.',
+        trySaying: `Use the ${title} skill.`,
+        alternatives: []
+      }
+    });
   }
 
   return paths;

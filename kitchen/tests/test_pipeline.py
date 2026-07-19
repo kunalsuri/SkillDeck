@@ -122,9 +122,10 @@ class TestPipeline(unittest.TestCase):
 
     # 6. Vendor resolution
     def test_vendor(self):
-        self.assertEqual(get_vendor("anthropics"), "anthropic")
-        self.assertEqual(get_vendor("google"), "google")
-        self.assertIsNone(get_vendor("angular"))
+        source_vendor = {"anthropic-official": "anthropic", "google-official": "google"}
+        self.assertEqual(get_vendor("anthropic-official", source_vendor), "anthropic")
+        self.assertEqual(get_vendor("google-official", source_vendor), "google")
+        self.assertIsNone(get_vendor("angular-source", source_vendor))
 
 if __name__ == "__main__":
     unittest.main()

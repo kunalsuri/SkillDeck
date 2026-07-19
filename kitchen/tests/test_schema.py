@@ -197,7 +197,31 @@ class TestSchemas(unittest.TestCase):
                     },
                     "alternatives": []
                 }
-            ]
+            ],
+            "all_skills": {
+                "skill-1": {
+                    "name": "skill-1",
+                    "repo_url": "https://github.com/org/repo/tree/main/path",
+                    "provenance": "official",
+                    "vendor": "anthropic",
+                    "license": "MIT",
+                    "review_status": "auto_summarized",
+                    "reviewed_at": None,
+                    "lifecycle_phase": "build",
+                    "install": {"claude-code": "run command"},
+                    "nutrition": {
+                        "token_estimate": 320,
+                        "word_count": 250,
+                        "line_count": 40,
+                        "basis": "body",
+                        "trigger": "Use this when users request generative art.",
+                        "body_blob_sha": "abc123",
+                        "computed_at": "2026-07-07T10:00:00Z"
+                    },
+                    "summary": "Generates generative art reports from prompts and saves them as documents.",
+                    "capability_id": "documents"
+                }
+            }
         }
         validate_json(valid_kb, KB_SCHEMA)
 
@@ -236,9 +260,79 @@ class TestSchemas(unittest.TestCase):
                     },
                     "alternatives": []
                 }
-            ]
+            ],
+            "all_skills": {
+                "skill-1": {
+                    "name": "skill-1",
+                    "repo_url": "https://github.com/org/repo/tree/main/path",
+                    "provenance": "official",
+                    "vendor": "anthropic",
+                    "license": "MIT",
+                    "review_status": "auto_summarized",
+                    "reviewed_at": None,
+                    "install": {"claude-code": "run command"},
+                    "nutrition": None,
+                    "summary": None,
+                    "capability_id": "documents"
+                }
+            }
         }
         validate_json(valid_kb, KB_SCHEMA)
+
+    def test_kb_schema_valid_all_skills_null_capability_id(self):
+        # A skill outside the 8 curated capabilities: real, browsable via
+        # all_skills, capability_id is null rather than "unassigned".
+        valid_kb = {
+            "schema_version": 1,
+            "generated_at": "2026-07-07T10:00:00Z",
+            "tools": [{"id": "claude-code", "label": "Claude"}],
+            "capabilities": [{"id": "documents", "label": "Docs", "order": 1}],
+            "lifecycle_phases": [{"id": "build", "label": "Build", "order": 3}],
+            "entries": [],
+            "all_skills": {
+                "skill-orphan": {
+                    "name": "skill-orphan",
+                    "repo_url": "https://github.com/org/repo/tree/main/path",
+                    "provenance": "partner",
+                    "vendor": "nvidia",
+                    "license": "Apache-2.0",
+                    "review_status": "auto_summarized",
+                    "reviewed_at": None,
+                    "install": {"claude-code": "run command"},
+                    "nutrition": None,
+                    "summary": None,
+                    "capability_id": None
+                }
+            }
+        }
+        validate_json(valid_kb, KB_SCHEMA)
+
+    def test_kb_schema_invalid_all_skills_missing_capability_id(self):
+        invalid_kb = {
+            "schema_version": 1,
+            "generated_at": "2026-07-07T10:00:00Z",
+            "tools": [{"id": "claude-code", "label": "Claude"}],
+            "capabilities": [{"id": "documents", "label": "Docs", "order": 1}],
+            "lifecycle_phases": [{"id": "build", "label": "Build", "order": 3}],
+            "entries": [],
+            "all_skills": {
+                "skill-orphan": {
+                    "name": "skill-orphan",
+                    "repo_url": "https://github.com/org/repo/tree/main/path",
+                    "provenance": "partner",
+                    "vendor": "nvidia",
+                    "license": "Apache-2.0",
+                    "review_status": "auto_summarized",
+                    "reviewed_at": None,
+                    "install": {"claude-code": "run command"},
+                    "nutrition": None,
+                    "summary": None
+                    # "capability_id" deliberately omitted
+                }
+            }
+        }
+        with self.assertRaises(jsonschema.ValidationError):
+            validate_json(invalid_kb, KB_SCHEMA)
 
     def test_kb_schema_invalid_missing_nutrition_key(self):
         invalid_kb = {
