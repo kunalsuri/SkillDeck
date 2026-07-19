@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-16T14:29:37.933586Z",
+  "generated_at": "2026-07-19T00:40:57.624921Z",
   "skills": [
     {
       "id": "anthropics-algorithmic-art",
@@ -51,6 +51,13 @@
         "trigger": "Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.715524Z"
+      },
+      "summary": {
+        "text": "Generates original generative art using the p5.js JavaScript library, applying seeded random-number generation so a given output is reproducible and exposing parameters that can be explored interactively. Used for code-based art requests such as flow fields and particle systems, producing new p5.js sketches rather than reproductions of existing artists' work, which the skill explicitly avoids for copyright reasons. Output is runnable p5.js code implementing the requested visual pattern.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591304Z"
       }
     },
     {
@@ -102,6 +109,13 @@
         "trigger": "Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.715702Z"
+      },
+      "summary": {
+        "text": "Applies Anthropic's brand identity — a defined color palette and typography — to artifacts being produced, so their visual styling matches Anthropic's official look-and-feel instead of generic defaults. Invoked whenever a task calls for brand-consistent colors, adherence to style guidelines, specific visual formatting, or company design standards. Produces artifacts restyled to Anthropic's particular brand system rather than a generic or freely chosen visual theme.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591395Z"
       }
     },
     {
@@ -153,6 +167,13 @@
         "trigger": "You should use this skill when the user asks to create a poster, piece of art, design, or other static piece.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.715868Z"
+      },
+      "summary": {
+        "text": "Produces static visual design pieces, such as posters or standalone artwork, output as .png image files or .pdf documents, guided by an underlying design philosophy rather than freeform generation. Applied when a user requests a poster, a piece of art, or another static design deliverable. Generates original compositions only, explicitly avoiding reproduction of existing artists' work for copyright reasons.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591473Z"
       }
     },
     {
@@ -204,6 +225,13 @@
         "trigger": "SKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativea…",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.716071Z"
+      },
+      "summary": {
+        "text": "Serves as a reference document for the Claude API and Anthropic SDK, covering model IDs, pricing, request parameters, streaming, tool use, MCP integration, agent construction, prompt caching, token counting, and migrating between model versions. Triggered whenever Claude, Anthropic, or specific model names are mentioned, when a user asks about LLM pricing, model choice, limits, or caching, or when a task is LLM-shaped (agents, MCP, tool definitions, RAG, multi-agent systems) without a named provider. Explicitly skipped when the query or codebase points to a different LLM provider such as OpenAI, Gemini, or Llama.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591584Z"
       }
     },
     {
@@ -255,6 +283,13 @@
         "trigger": "Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.716236Z"
+      },
+      "summary": {
+        "text": "Guides a user through a structured, iterative process for co-authoring written documents such as documentation pages, proposals, technical specifications, and decision documents, rather than producing a finished draft unassisted. The workflow is organized around transferring the user's context efficiently, refining the content across iterations, and checking that the resulting document reads well for its intended audience. Applied when a user asks to write docs, draft a proposal, or create a technical spec.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591659Z"
       }
     },
     {
@@ -306,6 +341,13 @@
         "trigger": "Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.716406Z"
+      },
+      "summary": {
+        "text": "Handles Microsoft Word .docx files across the full lifecycle: creating new documents, reading and reorganizing existing content, and editing files that already exist. Specific operations include applying formatting such as tables of contents, headings, and page numbers; inserting or swapping images; running find-and-replace across a document; and working with tracked changes and reviewer comments. Scoped specifically to Word output rather than PDF, spreadsheet, or Google Docs deliverables, producing a formatted .docx file such as a report, memo, letter, or template as the end result.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591733Z"
       }
     },
     {
@@ -357,6 +399,13 @@
         "trigger": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.716565Z"
+      },
+      "summary": {
+        "text": "Provides visual-design guidance for user interface work, applicable both when building a new UI from scratch and when reshaping an existing one. Focuses specifically on aesthetic direction and typography choices, steering away from default or templated-looking styling toward more distinctive, deliberately chosen visual decisions. Functions as design judgment and recommendations applied during UI development rather than a component library or generated design file.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591792Z"
       }
     },
     {
@@ -408,6 +457,13 @@
         "trigger": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.716727Z"
+      },
+      "summary": {
+        "text": "Supplies a set of company-specific format templates and resources for drafting internal communications, so the output matches structures an organization already uses rather than a generic template. Covers document types including status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, and project updates. Applied whenever a user asks to write one of these internal-communication formats, producing a drafted document in that format as output.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591841Z"
       }
     },
     {
@@ -459,6 +515,13 @@
         "trigger": "Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.716890Z"
+      },
+      "summary": {
+        "text": "Provides guidance for building Model Context Protocol (MCP) servers that expose external APIs or services to LLMs as callable tools, with attention to tool design quality rather than just basic connectivity. Supports two implementation stacks specifically: Python using the FastMCP framework, and Node/TypeScript using the official MCP SDK. Used when a task involves integrating a specific external API or service into an MCP server, producing server code and tool definitions in one of those two stacks.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591879Z"
       }
     },
     {
@@ -510,6 +573,13 @@
         "trigger": "Use this skill whenever the user wants to do anything with PDF files.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.717059Z"
+      },
+      "summary": {
+        "text": "Performs direct manipulation of PDF files, including extracting text and tables, merging multiple PDFs into one file, splitting a PDF into separate files, rotating pages, and adding watermarks. Also creates new PDF documents, fills existing PDF form fields, encrypts or decrypts PDFs, extracts embedded images, and runs OCR on scanned PDFs to convert them into searchable text. Applied to any task where a .pdf file is either the input being processed or the deliverable being produced.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591933Z"
       }
     },
     {
@@ -561,6 +631,13 @@
         "trigger": "Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.717242Z"
+      },
+      "summary": {
+        "text": "Operates on Microsoft PowerPoint .pptx files as either input, output, or both: creating new slide decks, pitch decks, or presentations; parsing and extracting text or content from existing .pptx files (including cases where that content is repurposed elsewhere, such as into an email or summary); editing or updating existing presentations; and combining or splitting slide files. Also handles presentation templates, slide layouts, speaker notes, and comments. Triggered by any mention of a deck, slides, a presentation, or a specific .pptx filename.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.592025Z"
       }
     },
     {
@@ -612,6 +689,13 @@
         "trigger": "Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's descripti…",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.717402Z"
+      },
+      "summary": {
+        "text": "Supports the full lifecycle of authoring agent skills: creating a new skill from scratch, editing or improving an existing one, and evaluating its performance. Performance evaluation includes running evals against a skill and benchmarking its results with variance analysis to check consistency across runs. Also used specifically to optimize a skill's description text so that the skill triggers with better accuracy.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.592070Z"
       }
     },
     {
@@ -663,6 +747,13 @@
         "trigger": "Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.717558Z"
+      },
+      "summary": {
+        "text": "Creates animated GIF files that conform to Slack's specific technical constraints, rather than producing a generic animated GIF file. Provides supporting utilities alongside the generation step: documented constraints to design within, validation tooling to check a generated GIF against those constraints, and animation-concept guidance for the visual content itself. Invoked for requests to produce a specific animated GIF scenario for use in Slack, such as a described character or action.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.592107Z"
       }
     },
     {
@@ -714,6 +805,13 @@
         "trigger": "Toolkit for styling artifacts with a theme.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.717718Z"
+      },
+      "summary": {
+        "text": "Applies visual theming (color palettes and fonts) to already-created artifacts such as slide decks, documents, written reports, and HTML landing pages. Offers a fixed set of 10 pre-defined themes to choose from, and can alternatively generate a new custom theme on the fly rather than using one of the presets. Operates as a post-creation styling step applied to existing artifact content rather than a tool for generating the artifact's content itself.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.592163Z"
       }
     },
     {
@@ -765,6 +863,13 @@
         "trigger": "Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.717876Z"
+      },
+      "summary": {
+        "text": "Provides a set of tools for building multi-component HTML artifacts on claude.ai using React, Tailwind CSS, and the shadcn/ui component library, aimed at artifacts more complex than a single file. Specifically intended for artifacts that require client-side state management, routing between views, or shadcn/ui components, as opposed to simple single-file HTML or JSX artifacts that don't need this tooling. Produces structured, multi-file artifact projects rather than one self-contained script.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.592206Z"
       }
     },
     {
@@ -816,6 +921,13 @@
         "trigger": "Toolkit for interacting with and testing local web applications using Playwright.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.718030Z"
+      },
+      "summary": {
+        "text": "Provides a toolkit for exercising and testing web applications running locally, built on the Playwright browser-automation framework. Supports verifying that frontend functionality behaves as expected, debugging observed UI behavior, capturing screenshots of the browser at a given point, and reading browser log output. Used for interactive, runtime verification of a locally running web app rather than analysis of source code alone.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.592239Z"
       }
     },
     {
@@ -867,6 +979,13 @@
         "trigger": "Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it.",
         "body_blob_sha": null,
         "computed_at": "2026-07-16T14:29:37.718216Z"
+      },
+      "summary": {
+        "text": "Operates on tabular spreadsheet files in .xlsx, .xlsm, .csv, or .tsv format, opening, editing, or fixing existing files by adding columns, computing formulas, applying formatting, and building charts. Also creates new spreadsheets from scratch or from other data sources, converts between these tabular formats, and restructures messy tabular data — malformed rows, misplaced headers, junk data — into a clean, proper spreadsheet. The deliverable is always a spreadsheet file itself, excluding tasks whose actual output is a Word document, HTML report, standalone script, database pipeline, or Google Sheets API integration.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.592306Z"
       }
     },
     {

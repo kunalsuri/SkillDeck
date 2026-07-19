@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-16T14:29:37.929400Z",
+  "generated_at": "2026-07-19T00:40:57.609914Z",
   "skills": [
     {
       "id": "addyosmani-api-and-interface-design",
@@ -101,6 +101,13 @@
         "trigger": "Use when building or debugging anything that runs in a browser.",
         "body_blob_sha": "9864d2724e273e1164d62ab10b73590ae00fd6a8",
         "computed_at": "2026-07-12T14:42:14.931725Z"
+      },
+      "summary": {
+        "text": "Provides a workflow for using the Chrome DevTools MCP server to test and debug browser-based applications, covering installation via npx chrome-devtools-mcp with isolated or auto-connect Chrome profiles. Documents specific tools for capturing screenshots, inspecting the DOM, reading console logs, monitoring network requests, tracing performance metrics such as Core Web Vitals, checking computed styles, and reading the accessibility tree. Also defines security rules for treating browser content as untrusted data and constraining JavaScript execution to read-only inspection.",
+        "basis": "body",
+        "body_blob_sha": "9864d2724e273e1164d62ab10b73590ae00fd6a8",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.581606Z"
       }
     },
     {
@@ -152,6 +159,13 @@
         "trigger": "Use when setting up or modifying build and deployment pipelines.",
         "body_blob_sha": "118456fcb10225c030769a4fee7815b9c536b0ce",
         "computed_at": "2026-07-12T14:42:14.932544Z"
+      },
+      "summary": {
+        "text": "Describes how to configure GitHub Actions CI/CD pipelines with sequential quality gates covering linting (eslint, prettier), type checking (tsc), unit tests (jest/vitest), builds, integration tests against a Postgres service container, end-to-end tests with Playwright, and npm audit security scans, including sample YAML workflow files. Also covers preview deployments (e.g. Vercel), feature-flag rollout patterns, staged production rollouts with monitoring windows, rollback workflows, secrets management conventions, and Dependabot dependency-update configuration.",
+        "basis": "body",
+        "body_blob_sha": "118456fcb10225c030769a4fee7815b9c536b0ce",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.581848Z"
       }
     },
     {
@@ -203,6 +217,13 @@
         "trigger": "Use when reviewing code written by yourself, another agent, or a human.",
         "body_blob_sha": "01c4ebe0424eb25109d0802c46e8d8667947df9b",
         "computed_at": "2026-07-12T14:42:14.933754Z"
+      },
+      "summary": {
+        "text": "Defines a structured code-review process that evaluates a change across five axes — correctness, readability/simplicity, architecture, security, and performance — using checklist questions such as edge-case handling, naming, circular dependencies, SQL parameterization, and N+1 queries. Recommends specific structural remedies, including replacing conditional chains with a dispatcher, collapsing duplicate branches, and extracting helpers or splitting large files, and gives numeric thresholds for change size, flagging diffs beyond roughly 300 changed lines or files exceeding about 1000 total lines for splitting.",
+        "basis": "body",
+        "body_blob_sha": "01c4ebe0424eb25109d0802c46e8d8667947df9b",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.582020Z"
       }
     },
     {
@@ -304,6 +325,13 @@
         "trigger": "Use when starting a new session, when agent output quality degrades, when switching between tasks, or when you need to configure rules files and context for a project.",
         "body_blob_sha": "be991103fe2b13f7e5f6f5da9d3c6029ad30ac64",
         "computed_at": "2026-07-12T14:42:14.935364Z"
+      },
+      "summary": {
+        "text": "Describes a five-level context hierarchy for AI coding agents, from persistent rules files (CLAUDE.md, .cursorrules, .windsurfrules, AGENTS.md, GitHub Copilot instructions) down to specs, relevant source files, error output, and conversation history, with guidance on trust levels for each source. Presents context-packing patterns — a full session brain-dump, a selective per-task file list, and a hierarchical project-map summary — and lists MCP servers (Context7, Chrome DevTools, PostgreSQL, filesystem, GitHub) that supply additional context, plus a protocol for surfacing conflicts between spec and existing code instead of silently choosing one.",
+        "basis": "body",
+        "body_blob_sha": "be991103fe2b13f7e5f6f5da9d3c6029ad30ac64",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.582157Z"
       }
     },
     {
@@ -355,6 +383,13 @@
         "trigger": "Use when tests fail, builds break, behavior doesn't match expectations, or you encounter any unexpected error.",
         "body_blob_sha": "51743d47c2f9ddb699a6d8084c29b709d017b529",
         "computed_at": "2026-07-12T14:42:14.936101Z"
+      },
+      "summary": {
+        "text": "Lays out a six-step triage checklist for debugging — reproduce, localize, reduce to a minimal case, fix the root cause rather than the symptom, add a regression test, and verify end-to-end — paired with a stop-the-line rule that halts feature work until a failure is diagnosed. Includes decision trees for non-reproducible bugs (timing-, environment-, or state-dependent), a git bisect workflow for finding regression-introducing commits, and separate triage tables for test failures, build failures, and runtime errors such as TypeErrors or CORS issues.",
+        "basis": "body",
+        "body_blob_sha": "51743d47c2f9ddb699a6d8084c29b709d017b529",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.582287Z"
       }
     },
     {
@@ -456,6 +491,13 @@
         "trigger": "Use when making architectural decisions, changing public APIs, shipping features, or when you need to record context that future engineers and agents will need to understand the codebase.",
         "body_blob_sha": "061c5e1a0a9faf07bd8c65bbd03141fab7b044bd",
         "computed_at": "2026-07-12T14:42:14.938070Z"
+      },
+      "summary": {
+        "text": "Specifies conventions for writing Architecture Decision Records stored as sequentially numbered markdown files in docs/decisions/, each with Status, Context, Decision, Alternatives Considered, and Consequences sections, plus a Proposed-Accepted-Superseded lifecycle. Also gives templates and rules for inline code comments (explain why, not what), TSDoc/JSDoc API documentation, OpenAPI/Swagger schemas for REST endpoints, a standard README structure covering quick-start steps and commands, and a changelog format with Added/Fixed/Changed sections referencing issue numbers.",
+        "basis": "body",
+        "body_blob_sha": "061c5e1a0a9faf07bd8c65bbd03141fab7b044bd",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.582468Z"
       }
     },
     {
@@ -557,6 +599,13 @@
         "trigger": "Use when building or modifying interfaces and pages, creating components, implementing layouts, meeting WCAG accessibility requirements, managing state, or when the output needs to look and feel prod…",
         "body_blob_sha": "ad64ed29cdfeed9b7ecdd535db34cf98379041ae",
         "computed_at": "2026-07-12T14:42:14.940122Z"
+      },
+      "summary": {
+        "text": "Provides conventions for building production-quality React/TSX UI components, including file colocation, composition-over-configuration patterns, and a decision tree for choosing state management (useState, lifted state, Context, URL params, React Query/SWR, or Zustand/Redux). Catalogs common 'AI-generated' visual anti-patterns to avoid — purple/indigo palettes, excessive gradients, rounded-2xl corners, generic hero sections — in favor of a project's actual design tokens and spacing scale, and specifies WCAG 2.1 AA requirements covering keyboard navigation, ARIA labeling, focus management, and meaningful empty/error states.",
+        "basis": "body",
+        "body_blob_sha": "ad64ed29cdfeed9b7ecdd535db34cf98379041ae",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.582635Z"
       }
     },
     {
@@ -658,6 +707,13 @@
         "trigger": "Use when an idea is still vague, when you need to stress-test assumptions before committing to a plan, or when you want to expand options before converging on one.",
         "body_blob_sha": "38955e8943f2ea68c041f10ef1902d94bdfb1cb9",
         "computed_at": "2026-07-12T14:42:14.941854Z"
+      },
+      "summary": {
+        "text": "Runs an interactive three-phase ideation dialogue: divergent expansion that restates the request as a 'How Might We' statement, asks 3-5 sharpening questions, and generates 5-8 idea variations using lenses like inversion, constraint removal, and audience shift; convergent evaluation that clusters ideas into 2-3 directions and stress-tests each against user value, feasibility, and differentiation; and a final phase that writes a markdown one-pager to docs/ideas/[idea-name].md containing a problem statement, recommended direction, key assumptions, MVP scope, and an explicit 'not doing' list.",
+        "basis": "body",
+        "body_blob_sha": "38955e8943f2ea68c041f10ef1902d94bdfb1cb9",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.582792Z"
       }
     },
     {
@@ -709,6 +765,13 @@
         "trigger": "Use when implementing any feature or change that touches more than one file.",
         "body_blob_sha": "f18acb64e8152c68554b3359203f52afb5715a93",
         "computed_at": "2026-07-12T14:42:14.942693Z"
+      },
+      "summary": {
+        "text": "Describes an incremental delivery workflow of implement-test-verify-commit cycles built around thin vertical slices, with alternative contract-first slicing (define an API contract before parallel backend/frontend work) and risk-first slicing (tackle the riskiest piece first) as options. Lists numbered implementation rules covering simplicity checks, strict scope discipline against unrelated cleanup or refactors, one logical change per commit, keeping the build compilable after every increment, using feature flags for incomplete work, safe opt-in defaults, and rollback-friendly, independently revertable changes.",
+        "basis": "body",
+        "body_blob_sha": "f18acb64e8152c68554b3359203f52afb5715a93",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.582975Z"
       }
     },
     {
@@ -760,6 +823,13 @@
         "trigger": "Use when an ask is underspecified (\"build me X\" without \"for whom\" or \"why now\"), when the user explicitly invokes (\"interview me\", \"grill me\", \"are we sure?\", \"stress-test my thinking\"), or when you…",
         "body_blob_sha": "de5e3aff0c497e2d474e329cde447678632e082b",
         "computed_at": "2026-07-12T14:42:14.943583Z"
+      },
+      "summary": {
+        "text": "Runs a one-question-at-a-time interview to surface a user's actual intent before planning or coding begins, starting with an explicit confidence percentage and a stated hypothesis, then asking single questions each paired with a guessed answer rather than batching questions. Watches for 'want vs. should-want' answers, such as buzzwords like 'scalable' or appeals to convention, and once confidence is high, restates the request as a short structured summary — outcome, user, why now, success criteria, constraint, out-of-scope — that the user must explicitly confirm. Disabled in non-interactive contexts such as CI pipelines or scheduled/loop runs.",
+        "basis": "body",
+        "body_blob_sha": "de5e3aff0c497e2d474e329cde447678632e082b",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.583238Z"
       }
     },
     {
@@ -911,6 +981,13 @@
         "trigger": "Use when you have a spec or clear requirements and need to break work into implementable tasks.",
         "body_blob_sha": "ada6cbc135055f045960a70ff504f1d5371612f7",
         "computed_at": "2026-07-12T14:42:14.946245Z"
+      },
+      "summary": {
+        "text": "Defines a five-step process for turning a spec into an ordered task list: entering a read-only planning mode, mapping a bottom-up component dependency graph, slicing work vertically into complete feature paths rather than horizontally by layer, writing each task with acceptance criteria and a verification command, and inserting checkpoints every 2-3 tasks. Provides an XS-to-XL task-sizing table keyed to file count, flags anything larger than 5-8 files for further breakdown, and specifies writing the plan to tasks/plan.md and the checklist to tasks/todo.md for downstream build commands.",
+        "basis": "body",
+        "body_blob_sha": "ada6cbc135055f045960a70ff504f1d5371612f7",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.583405Z"
       }
     },
     {
@@ -1112,6 +1189,13 @@
         "trigger": "Use when starting a new project, feature, or significant change and no specification exists yet.",
         "body_blob_sha": "569d22321469770385b1ff89bf69f498f2202bc6",
         "computed_at": "2026-07-12T14:42:14.950153Z"
+      },
+      "summary": {
+        "text": "Defines a four-phase, human-gated workflow — Specify, Plan, Tasks, Implement — for producing a written specification before code is written. The Specify phase requires surfacing assumptions explicitly and drafting a spec document with Objective, Commands, Project Structure, Code Style, Testing Strategy, and a three-tier Boundaries section (always do / ask first / never do), plus reframing vague requirements like 'make it faster' into measurable success criteria such as LCP or CLS thresholds. Later phases hand off to companion skills, saving the implementation plan to tasks/plan.md and tasks to tasks/todo.md before execution.",
+        "basis": "body",
+        "body_blob_sha": "569d22321469770385b1ff89bf69f498f2202bc6",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.583540Z"
       }
     },
     {
@@ -1163,6 +1247,13 @@
         "trigger": "Use when implementing any logic, fixing any bug, or changing any behavior.",
         "body_blob_sha": "c96a67f4560121a4761baad2efeaa51ef1602d7a",
         "computed_at": "2026-07-12T14:42:14.950976Z"
+      },
+      "summary": {
+        "text": "Describes the red-green-refactor test-driven development cycle — write a failing test, write minimal code to pass it, then refactor with tests green — and the 'Prove-It Pattern' for bug fixes, which requires writing a reproduction test that fails before implementing any fix. Specifies a test pyramid allocating roughly 80% unit, 15% integration, and 5% end-to-end tests, classifies tests into small/medium/large resource tiers by I/O and process usage, and recommends asserting on outcome state rather than internal method calls, favoring self-contained tests over shared setup helpers.",
+        "basis": "body",
+        "body_blob_sha": "c96a67f4560121a4761baad2efeaa51ef1602d7a",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.583701Z"
       }
     },
     {
@@ -1214,6 +1305,13 @@
         "trigger": "Use when starting a session or when you need to discover which skill applies to the current task.",
         "body_blob_sha": "975fb5c2569c036d62985aeacdf9368d0fac0771",
         "computed_at": "2026-07-12T14:42:14.951845Z"
+      },
+      "summary": {
+        "text": "Acts as a meta-skill routing table that maps a task's development phase — from unclear intent through implementation, testing, review, CI/CD, documentation, and shipping — to the specific companion skill that should handle it, such as directing UI work to frontend-ui-engineering or browser-based testing to browser-testing-with-devtools. Defines six cross-cutting operating behaviors required across all skills: surfacing assumptions before implementing, actively naming confusion instead of guessing, pushing back on flawed approaches, enforcing simplicity, keeping strictly to task scope, and verifying with evidence rather than assuming. Also lists a 16-step typical lifecycle sequence from interview-me through shipping-and-launch.",
+        "basis": "body",
+        "body_blob_sha": "975fb5c2569c036d62985aeacdf9368d0fac0771",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.583838Z"
       }
     }
   ]
