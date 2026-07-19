@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-16T14:29:37.956035Z",
+  "generated_at": "2026-07-19T00:40:57.624545Z",
   "skills": [
     {
       "id": "kunalsuri-multi-agent-docs",
@@ -101,6 +101,13 @@
         "trigger": "Use when a task is large enough to span multiple sessions, could be interrupted mid-way, or when the user asks for spec-driven development, SDD, or a process that survives the agent stopping unexpect…",
         "body_blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
         "computed_at": "2026-07-12T14:42:14.970532Z"
+      },
+      "summary": {
+        "text": "Implements a lightweight spec-driven-development workflow that breaks a multi-step task into a git-committed spec, a derived checklist, and a loop of implement-test-commit-checkoff cycles. It writes docs/SPECS-<feature>.md (context, scope decisions, design, acceptance criteria) as one commit, then derives docs/implementation-<feature>.md as a per-step checklist committed separately. Each step is implemented, run through a test gate, committed, and checked off with a result note in its own commit, so a new session or agent can resume exactly where work stopped by reading just those two files. It points to GitHub Spec Kit for the fuller constitution-to-implementation SDD pipeline this skill deliberately simplifies.",
+        "basis": "body",
+        "body_blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T00:40:57.591217Z"
       }
     }
   ]
