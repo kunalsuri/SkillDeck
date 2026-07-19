@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T01:11:32.813569Z",
+  "generated_at": "2026-07-19T01:49:12.478902Z",
   "skills": [
     {
       "id": "kunalsuri-multi-agent-docs",
@@ -19,11 +19,11 @@
       "upstream": {
         "commit_sha": "cc90b735a1174329c7571a184dc200a7ec803fa8",
         "blob_sha": "4509832034974ddf91e6209347a8f3f01446b347",
-        "fetched_at": "2026-07-19T01:10:01.012798Z"
+        "fetched_at": "2026-07-19T01:32:27.955455Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -50,6 +50,16 @@
         "trigger": "Also trigger if a repo already has a CLAUDE.md or AGENTS.md that looks stale, contradicts the other, or was never kept in sync.",
         "body_blob_sha": "4509832034974ddf91e6209347a8f3f01446b347",
         "computed_at": "2026-07-16T14:29:37.757900Z"
+      },
+      "capability_assigned_blob_sha": "4509832034974ddf91e6209347a8f3f01446b347",
+      "phase_assigned_blob_sha": "4509832034974ddf91e6209347a8f3f01446b347",
+      "lifecycle_phase": "define",
+      "summary": {
+        "text": "This skill creates or refreshes a repository's CLAUDE.md and AGENTS.md files so both carry the same real project context, including the stack, build/test/lint commands, structure, and conventions. It also scaffolds accompanying .claude/ and .agents/ project directories so multiple coding agents and tools share a consistent, up-to-date understanding of the codebase.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.653820Z"
       }
     },
     {
@@ -69,7 +79,7 @@
       "upstream": {
         "commit_sha": "5c0e0f5b6487d6834bfbbadb6fabf119ef6eec56",
         "blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
-        "fetched_at": "2026-07-19T01:10:01.012840Z"
+        "fetched_at": "2026-07-19T01:32:27.955498Z"
       },
       "status": "active",
       "tier": "shell",
@@ -108,7 +118,9 @@
         "body_blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.591217Z"
-      }
+      },
+      "capability_assigned_blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2",
+      "phase_assigned_blob_sha": "b4aac2a10e5c17aeaf113c766afd422c91223dc2"
     }
   ]
 }

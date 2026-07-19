@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T01:11:32.843195Z",
+  "generated_at": "2026-07-19T01:49:12.519302Z",
   "skills": [
     {
       "id": "anthropics-algorithmic-art",
@@ -19,7 +19,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "634f6fa42e4e697fa6afd293acd7fb8246574876",
-        "fetched_at": "2026-07-19T01:09:55.621818Z"
+        "fetched_at": "2026-07-19T01:32:24.732927Z"
       },
       "status": "active",
       "tier": "core",
@@ -32,7 +32,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-425",
+      "cluster_id": "cluster-500",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -50,7 +50,7 @@
         "basis": "description",
         "trigger": "Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.715524Z"
+        "computed_at": "2026-07-19T01:49:12.470020Z"
       },
       "summary": {
         "text": "Generates original generative art using the p5.js JavaScript library, applying seeded random-number generation so a given output is reproducible and exposing parameters that can be explored interactively. Used for code-based art requests such as flow fields and particle systems, producing new p5.js sketches rather than reproductions of existing artists' work, which the skill explicitly avoids for copyright reasons. Output is runnable p5.js code implementing the requested visual pattern.",
@@ -58,7 +58,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.591304Z"
-      }
+      },
+      "phase_assigned_blob_sha": "634f6fa42e4e697fa6afd293acd7fb8246574876"
     },
     {
       "id": "anthropics-brand-guidelines",
@@ -77,7 +78,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "47c72c607bdb5dd81bdea5de2b5e4f3992a5fd59",
-        "fetched_at": "2026-07-19T01:09:55.622031Z"
+        "fetched_at": "2026-07-19T01:32:24.733192Z"
       },
       "status": "active",
       "tier": "core",
@@ -90,7 +91,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-426",
+      "cluster_id": "cluster-501",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -108,7 +109,7 @@
         "basis": "description",
         "trigger": "Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.715702Z"
+        "computed_at": "2026-07-19T01:49:12.470079Z"
       },
       "summary": {
         "text": "Applies Anthropic's brand identity — a defined color palette and typography — to artifacts being produced, so their visual styling matches Anthropic's official look-and-feel instead of generic defaults. Invoked whenever a task calls for brand-consistent colors, adherence to style guidelines, specific visual formatting, or company design standards. Produces artifacts restyled to Anthropic's particular brand system rather than a generic or freely chosen visual theme.",
@@ -116,7 +117,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.591395Z"
-      }
+      },
+      "phase_assigned_blob_sha": "47c72c607bdb5dd81bdea5de2b5e4f3992a5fd59"
     },
     {
       "id": "anthropics-canvas-design",
@@ -135,7 +137,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "9f63fee82de84cd4230e1d0e322247b61eb4c94c",
-        "fetched_at": "2026-07-19T01:09:55.622153Z"
+        "fetched_at": "2026-07-19T01:32:24.733294Z"
       },
       "status": "active",
       "tier": "core",
@@ -148,7 +150,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-427",
+      "cluster_id": "cluster-502",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -166,7 +168,7 @@
         "basis": "description",
         "trigger": "You should use this skill when the user asks to create a poster, piece of art, design, or other static piece.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.715868Z"
+        "computed_at": "2026-07-19T01:49:12.470133Z"
       },
       "summary": {
         "text": "Produces static visual design pieces, such as posters or standalone artwork, output as .png image files or .pdf documents, guided by an underlying design philosophy rather than freeform generation. Applied when a user requests a poster, a piece of art, or another static design deliverable. Generates original compositions only, explicitly avoiding reproduction of existing artists' work for copyright reasons.",
@@ -174,7 +176,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.591473Z"
-      }
+      },
+      "phase_assigned_blob_sha": "9f63fee82de84cd4230e1d0e322247b61eb4c94c"
     },
     {
       "id": "anthropics-claude-api",
@@ -193,7 +196,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "9a9407309936d7fd36858296374c246dc2c27e46",
-        "fetched_at": "2026-07-19T01:09:55.622402Z"
+        "fetched_at": "2026-07-19T01:32:24.733390Z"
       },
       "status": "active",
       "tier": "core",
@@ -206,7 +209,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-428",
+      "cluster_id": "cluster-503",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -224,7 +227,7 @@
         "basis": "description",
         "trigger": "SKIP only when another provider is being worked on (overrides all triggers): OpenAI/GPT/Gemini/Llama/Mistral/Cohere/Ollama named in the query; OR `grep -rE 'openai|langchain_openai|google.generativea…",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.716071Z"
+        "computed_at": "2026-07-19T01:49:12.470253Z"
       },
       "summary": {
         "text": "Serves as a reference document for the Claude API and Anthropic SDK, covering model IDs, pricing, request parameters, streaming, tool use, MCP integration, agent construction, prompt caching, token counting, and migrating between model versions. Triggered whenever Claude, Anthropic, or specific model names are mentioned, when a user asks about LLM pricing, model choice, limits, or caching, or when a task is LLM-shaped (agents, MCP, tool definitions, RAG, multi-agent systems) without a named provider. Explicitly skipped when the query or codebase points to a different LLM provider such as OpenAI, Gemini, or Llama.",
@@ -251,7 +254,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "a5a69839ef4a161131d80b6daef10037a9686f4a",
-        "fetched_at": "2026-07-19T01:09:55.622646Z"
+        "fetched_at": "2026-07-19T01:32:24.733484Z"
       },
       "status": "active",
       "tier": "core",
@@ -264,7 +267,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-429",
+      "cluster_id": "cluster-504",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -282,7 +285,7 @@
         "basis": "description",
         "trigger": "Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.716236Z"
+        "computed_at": "2026-07-19T01:49:12.470333Z"
       },
       "summary": {
         "text": "Guides a user through a structured, iterative process for co-authoring written documents such as documentation pages, proposals, technical specifications, and decision documents, rather than producing a finished draft unassisted. The workflow is organized around transferring the user's context efficiently, refining the content across iterations, and checking that the resulting document reads well for its intended audience. Applied when a user asks to write docs, draft a proposal, or create a technical spec.",
@@ -290,7 +293,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.591659Z"
-      }
+      },
+      "phase_assigned_blob_sha": "a5a69839ef4a161131d80b6daef10037a9686f4a"
     },
     {
       "id": "anthropics-docx",
@@ -309,7 +313,7 @@
       "upstream": {
         "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8",
         "blob_sha": "fb954a460a1ea2294e9595e87fecce8df043eeba",
-        "fetched_at": "2026-07-19T01:09:55.862502Z"
+        "fetched_at": "2026-07-19T01:32:24.733567Z"
       },
       "status": "active",
       "tier": "core",
@@ -322,7 +326,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-430",
+      "cluster_id": "cluster-505",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -331,6 +335,24 @@
         "antigravity": 1320,
         "gemini-cli": 1320,
         "cursor": 1320
+      },
+      "phase_assigned_blob_sha": "fb954a460a1ea2294e9595e87fecce8df043eeba",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill creates, reads, edits, or manipulates Microsoft Word documents (.docx) and Word templates (.dotx). It is triggered by any mention of a Word document or these file extensions, or by requests to produce professional documents with formatting features such as tables of contents, styles, and structured sections.",
+        "basis": "body",
+        "body_blob_sha": "fb954a460a1ea2294e9595e87fecce8df043eeba",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.657466Z"
+      },
+      "nutrition": {
+        "token_estimate": 1486,
+        "word_count": 839,
+        "line_count": 86,
+        "basis": "body",
+        "trigger": "Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or lette…",
+        "body_blob_sha": "fb954a460a1ea2294e9595e87fecce8df043eeba",
+        "computed_at": "2026-07-19T01:49:12.470538Z"
       }
     },
     {
@@ -350,7 +372,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "decdff43d05908b4c1fc2cfd2d80fc5743440934",
-        "fetched_at": "2026-07-19T01:09:55.862838Z"
+        "fetched_at": "2026-07-19T01:32:24.733658Z"
       },
       "status": "active",
       "tier": "core",
@@ -363,7 +385,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-431",
+      "cluster_id": "cluster-506",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -381,7 +403,7 @@
         "basis": "description",
         "trigger": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.716565Z"
+        "computed_at": "2026-07-19T01:49:12.470601Z"
       },
       "summary": {
         "text": "Provides visual-design guidance for user interface work, applicable both when building a new UI from scratch and when reshaping an existing one. Focuses specifically on aesthetic direction and typography choices, steering away from default or templated-looking styling toward more distinctive, deliberately chosen visual decisions. Functions as design judgment and recommendations applied during UI development rather than a component library or generated design file.",
@@ -408,7 +430,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "56ea935b74f371bfeb4c7d3c19d5139df866e73b",
-        "fetched_at": "2026-07-19T01:09:55.863117Z"
+        "fetched_at": "2026-07-19T01:32:24.733741Z"
       },
       "status": "active",
       "tier": "core",
@@ -421,7 +443,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-432",
+      "cluster_id": "cluster-507",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -439,7 +461,7 @@
         "basis": "description",
         "trigger": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.716727Z"
+        "computed_at": "2026-07-19T01:49:12.470662Z"
       },
       "summary": {
         "text": "Supplies a set of company-specific format templates and resources for drafting internal communications, so the output matches structures an organization already uses rather than a generic template. Covers document types including status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, and project updates. Applied whenever a user asks to write one of these internal-communication formats, producing a drafted document in that format as output.",
@@ -447,7 +469,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.591841Z"
-      }
+      },
+      "phase_assigned_blob_sha": "56ea935b74f371bfeb4c7d3c19d5139df866e73b"
     },
     {
       "id": "anthropics-mcp-builder",
@@ -466,7 +489,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "8a1a77a47d141967b246adb4da4f91037578ff7d",
-        "fetched_at": "2026-07-19T01:09:55.866540Z"
+        "fetched_at": "2026-07-19T01:32:24.733824Z"
       },
       "status": "active",
       "tier": "core",
@@ -479,7 +502,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-433",
+      "cluster_id": "cluster-508",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -497,7 +520,7 @@
         "basis": "description",
         "trigger": "Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.716890Z"
+        "computed_at": "2026-07-19T01:49:12.470715Z"
       },
       "summary": {
         "text": "Provides guidance for building Model Context Protocol (MCP) servers that expose external APIs or services to LLMs as callable tools, with attention to tool design quality rather than just basic connectivity. Supports two implementation stacks specifically: Python using the FastMCP framework, and Node/TypeScript using the official MCP SDK. Used when a task involves integrating a specific external API or service into an MCP server, producing server code and tool definitions in one of those two stacks.",
@@ -524,7 +547,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "d3e046a5ae107a6cb23cfb16c219837094ab35d3",
-        "fetched_at": "2026-07-19T01:09:55.866914Z"
+        "fetched_at": "2026-07-19T01:32:24.733925Z"
       },
       "status": "active",
       "tier": "core",
@@ -537,7 +560,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-434",
+      "cluster_id": "cluster-509",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -555,7 +578,7 @@
         "basis": "description",
         "trigger": "Use this skill whenever the user wants to do anything with PDF files.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.717059Z"
+        "computed_at": "2026-07-19T01:49:12.470778Z"
       },
       "summary": {
         "text": "Performs direct manipulation of PDF files, including extracting text and tables, merging multiple PDFs into one file, splitting a PDF into separate files, rotating pages, and adding watermarks. Also creates new PDF documents, fills existing PDF form fields, encrypts or decrypts PDFs, extracts embedded images, and runs OCR on scanned PDFs to convert them into searchable text. Applied to any task where a .pdf file is either the input being processed or the deliverable being produced.",
@@ -563,7 +586,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.591933Z"
-      }
+      },
+      "phase_assigned_blob_sha": "d3e046a5ae107a6cb23cfb16c219837094ab35d3"
     },
     {
       "id": "anthropics-pptx",
@@ -582,7 +606,7 @@
       "upstream": {
         "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8",
         "blob_sha": "41cd2306977f269bb1d8169a9643b35053aa66bd",
-        "fetched_at": "2026-07-19T01:09:56.128953Z"
+        "fetched_at": "2026-07-19T01:32:24.734020Z"
       },
       "status": "active",
       "tier": "shell",
@@ -595,7 +619,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-435",
+      "cluster_id": "cluster-510",
       "score_default": 320,
       "scores_by_tool": {
         "claude-code": 370,
@@ -604,6 +628,25 @@
         "antigravity": 320,
         "gemini-cli": 320,
         "cursor": 320
+      },
+      "capability_assigned_blob_sha": "41cd2306977f269bb1d8169a9643b35053aa66bd",
+      "phase_assigned_blob_sha": "41cd2306977f269bb1d8169a9643b35053aa66bd",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill handles PowerPoint files (.pptx) and templates (.potx) whenever they appear as input, output, or both. It covers creating slide decks, pitch decks, or presentations from scratch, as well as reading, parsing, or extracting text and content from existing presentation files for reuse elsewhere.",
+        "basis": "body",
+        "body_blob_sha": "41cd2306977f269bb1d8169a9643b35053aa66bd",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.657735Z"
+      },
+      "nutrition": {
+        "token_estimate": 4955,
+        "word_count": 3000,
+        "line_count": 233,
+        "basis": "body",
+        "trigger": "Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx or .potx filename, regardless of what they plan to do with the content afterward.",
+        "body_blob_sha": "41cd2306977f269bb1d8169a9643b35053aa66bd",
+        "computed_at": "2026-07-19T01:49:12.471225Z"
       }
     },
     {
@@ -623,7 +666,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "65b3a402dbd09b8e83f9d637c6b553875189085c",
-        "fetched_at": "2026-07-19T01:09:56.129151Z"
+        "fetched_at": "2026-07-19T01:32:24.734231Z"
       },
       "status": "active",
       "tier": "core",
@@ -636,7 +679,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-436",
+      "cluster_id": "cluster-511",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -654,7 +697,7 @@
         "basis": "description",
         "trigger": "Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's descripti…",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.717402Z"
+        "computed_at": "2026-07-19T01:49:12.471296Z"
       },
       "summary": {
         "text": "Supports the full lifecycle of authoring agent skills: creating a new skill from scratch, editing or improving an existing one, and evaluating its performance. Performance evaluation includes running evals against a skill and benchmarking its results with variance analysis to check consistency across runs. Also used specifically to optimize a skill's description text so that the skill triggers with better accuracy.",
@@ -681,7 +724,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "16660d8ceb77af47986bba1c9176c2ff3f287a91",
-        "fetched_at": "2026-07-19T01:09:56.129300Z"
+        "fetched_at": "2026-07-19T01:32:24.734321Z"
       },
       "status": "active",
       "tier": "core",
@@ -694,7 +737,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-437",
+      "cluster_id": "cluster-512",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -712,7 +755,7 @@
         "basis": "description",
         "trigger": "Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.717558Z"
+        "computed_at": "2026-07-19T01:49:12.471351Z"
       },
       "summary": {
         "text": "Creates animated GIF files that conform to Slack's specific technical constraints, rather than producing a generic animated GIF file. Provides supporting utilities alongside the generation step: documented constraints to design within, validation tooling to check a generated GIF against those constraints, and animation-concept guidance for the visual content itself. Invoked for requests to produce a specific animated GIF scenario for use in Slack, such as a described character or action.",
@@ -720,7 +763,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.592107Z"
-      }
+      },
+      "phase_assigned_blob_sha": "16660d8ceb77af47986bba1c9176c2ff3f287a91"
     },
     {
       "id": "anthropics-theme-factory",
@@ -739,7 +783,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "90dfceaf2ecdc191a4dcfb0069768a9560638998",
-        "fetched_at": "2026-07-19T01:09:56.129393Z"
+        "fetched_at": "2026-07-19T01:32:24.734407Z"
       },
       "status": "active",
       "tier": "core",
@@ -752,7 +796,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-438",
+      "cluster_id": "cluster-513",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -770,7 +814,7 @@
         "basis": "description",
         "trigger": "Toolkit for styling artifacts with a theme.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.717718Z"
+        "computed_at": "2026-07-19T01:49:12.471405Z"
       },
       "summary": {
         "text": "Applies visual theming (color palettes and fonts) to already-created artifacts such as slide decks, documents, written reports, and HTML landing pages. Offers a fixed set of 10 pre-defined themes to choose from, and can alternatively generate a new custom theme on the fly rather than using one of the presets. Operates as a post-creation styling step applied to existing artifact content rather than a tool for generating the artifact's content itself.",
@@ -778,7 +822,8 @@
         "body_blob_sha": null,
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.592163Z"
-      }
+      },
+      "phase_assigned_blob_sha": "90dfceaf2ecdc191a4dcfb0069768a9560638998"
     },
     {
       "id": "anthropics-web-artifacts-builder",
@@ -797,7 +842,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "8b39b19f259b4216ecb07574741dd8eaa9863a07",
-        "fetched_at": "2026-07-19T01:09:56.129481Z"
+        "fetched_at": "2026-07-19T01:32:24.734494Z"
       },
       "status": "active",
       "tier": "core",
@@ -810,7 +855,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-439",
+      "cluster_id": "cluster-514",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -828,7 +873,7 @@
         "basis": "description",
         "trigger": "Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.717876Z"
+        "computed_at": "2026-07-19T01:49:12.471456Z"
       },
       "summary": {
         "text": "Provides a set of tools for building multi-component HTML artifacts on claude.ai using React, Tailwind CSS, and the shadcn/ui component library, aimed at artifacts more complex than a single file. Specifically intended for artifacts that require client-side state management, routing between views, or shadcn/ui components, as opposed to simple single-file HTML or JSX artifacts that don't need this tooling. Produces structured, multi-file artifact projects rather than one self-contained script.",
@@ -855,7 +900,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "4726215301db64a0cc4d41fc3219c61f37a30f4a",
-        "fetched_at": "2026-07-19T01:09:56.129568Z"
+        "fetched_at": "2026-07-19T01:32:24.734579Z"
       },
       "status": "active",
       "tier": "core",
@@ -868,7 +913,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-440",
+      "cluster_id": "cluster-515",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -886,7 +931,7 @@
         "basis": "description",
         "trigger": "Toolkit for interacting with and testing local web applications using Playwright.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.718030Z"
+        "computed_at": "2026-07-19T01:49:12.471505Z"
       },
       "summary": {
         "text": "Provides a toolkit for exercising and testing web applications running locally, built on the Playwright browser-automation framework. Supports verifying that frontend functionality behaves as expected, debugging observed UI behavior, capturing screenshots of the browser at a given point, and reading browser log output. Used for interactive, runtime verification of a locally running web app rather than analysis of source code alone.",
@@ -913,7 +958,7 @@
       "upstream": {
         "commit_sha": "fa0fa64bdc967915dc8399e803be67759e1e62b8",
         "blob_sha": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
-        "fetched_at": "2026-07-19T01:09:56.365657Z"
+        "fetched_at": "2026-07-19T01:32:24.734664Z"
       },
       "status": "active",
       "tier": "core",
@@ -926,7 +971,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-441",
+      "cluster_id": "cluster-516",
       "score_default": 1320,
       "scores_by_tool": {
         "claude-code": 1370,
@@ -935,6 +980,24 @@
         "antigravity": 1320,
         "gemini-cli": 1320,
         "cursor": 1320
+      },
+      "phase_assigned_blob_sha": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill handles spreadsheet files, including .xlsx, .xlsm, .xltx, .csv, and .tsv formats, whenever a spreadsheet is the primary input or output of a task. It supports opening, reading, editing, or fixing existing spreadsheets, such as adding columns, computing formulas, formatting cells, building charts, and cleaning up messy data.",
+        "basis": "body",
+        "body_blob_sha": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.657912Z"
+      },
+      "nutrition": {
+        "token_estimate": 1876,
+        "word_count": 1149,
+        "line_count": 94,
+        "basis": "body",
+        "trigger": "Trigger especially when the user references a spreadsheet file by name or path — even casually (like \"the xlsx in my downloads\") — and wants something done to it or produced from it.",
+        "body_blob_sha": "9da54804cc8c938586f89363c8da3b3a6e2a563d",
+        "computed_at": "2026-07-19T01:49:12.471745Z"
       }
     },
     {
@@ -954,7 +1017,7 @@
       "upstream": {
         "commit_sha": "9d2f1ae187231d8199c64b5b762e1bdf2244733d",
         "blob_sha": "50a4f9b104357d96361e257adb70454604cd15c0",
-        "fetched_at": "2026-07-19T01:09:56.365858Z"
+        "fetched_at": "2026-07-19T01:32:24.734758Z"
       },
       "status": "active",
       "tier": "shell",
@@ -967,7 +1030,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-442",
+      "cluster_id": "cluster-517",
       "score_default": 320,
       "scores_by_tool": {
         "claude-code": 370,
@@ -984,8 +1047,9 @@
         "basis": "description",
         "trigger": "Replace with description of the skill and when Claude should use it.",
         "body_blob_sha": null,
-        "computed_at": "2026-07-16T14:29:37.718368Z"
-      }
+        "computed_at": "2026-07-19T01:49:12.471814Z"
+      },
+      "capability_assigned_blob_sha": "50a4f9b104357d96361e257adb70454604cd15c0"
     },
     {
       "id": "anthropic-docx",

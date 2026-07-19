@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T01:11:32.809257Z",
+  "generated_at": "2026-07-19T01:49:12.472649Z",
   "skills": [
     {
       "id": "openai-aspnet-core",
@@ -19,11 +19,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "c71ed6e705c44038fbcd2e37a3e12c3a81683fdf",
-        "fetched_at": "2026-07-19T01:10:02.402402Z"
+        "fetched_at": "2026-07-19T01:32:29.667970Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "frontend",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -50,6 +50,16 @@
         "trigger": "Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing,…",
         "body_blob_sha": "c71ed6e705c44038fbcd2e37a3e12c3a81683fdf",
         "computed_at": "2026-07-16T14:29:37.906169Z"
+      },
+      "capability_assigned_blob_sha": "c71ed6e705c44038fbcd2e37a3e12c3a81683fdf",
+      "phase_assigned_blob_sha": "c71ed6e705c44038fbcd2e37a3e12c3a81683fdf",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill provides official Microsoft guidance for building, reviewing, and architecting ASP.NET Core applications. It covers Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, and gRPC, along with middleware, dependency injection, configuration, authentication, and authorization. It also addresses testing, performance tuning, deployment, and upgrading existing ASP.NET Core projects to newer .NET versions.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.651585Z"
       }
     },
     {
@@ -69,11 +79,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "6280a08c57db44ab622dcccbd853e01005edfcbd",
-        "fetched_at": "2026-07-19T01:10:02.402438Z"
+        "fetched_at": "2026-07-19T01:32:29.668006Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -100,6 +110,16 @@
         "trigger": "Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain settings, or produce a docs-aligned proje…",
         "body_blob_sha": "6280a08c57db44ab622dcccbd853e01005edfcbd",
         "computed_at": "2026-07-16T14:29:37.906908Z"
+      },
+      "capability_assigned_blob_sha": "6280a08c57db44ab622dcccbd853e01005edfcbd",
+      "phase_assigned_blob_sha": "6280a08c57db44ab622dcccbd853e01005edfcbd",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill helps build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server with a widget-based user interface. It covers designing tools, registering UI resources, wiring the MCP Apps bridge, and applying ChatGPT compatibility APIs, metadata, content-security-policy, and domain settings so the resulting app runs correctly inside ChatGPT.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.651666Z"
       }
     },
     {
@@ -119,7 +139,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "60e5a9a03f89cf66a60aa798bfc6f3c3fa5ed8c4",
-        "fetched_at": "2026-07-19T01:10:02.402459Z"
+        "fetched_at": "2026-07-19T01:32:29.668023Z"
       },
       "status": "active",
       "tier": "shell",
@@ -150,7 +170,8 @@
         "trigger": "Use when the user wants Codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion skill.",
         "body_blob_sha": "60e5a9a03f89cf66a60aa798bfc6f3c3fa5ed8c4",
         "computed_at": "2026-07-16T14:29:37.907397Z"
-      }
+      },
+      "capability_assigned_blob_sha": "60e5a9a03f89cf66a60aa798bfc6f3c3fa5ed8c4"
     },
     {
       "id": "openai-cloudflare-deploy",
@@ -169,7 +190,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "e2d73abb7e5a550af3d9e40797a28259bddba97d",
-        "fetched_at": "2026-07-19T01:10:02.402475Z"
+        "fetched_at": "2026-07-19T01:32:29.668038Z"
       },
       "status": "active",
       "tier": "shell",
@@ -200,7 +221,8 @@
         "trigger": "Use when the user asks to deploy, host, publish, or set up a project on Cloudflare.",
         "body_blob_sha": "e2d73abb7e5a550af3d9e40797a28259bddba97d",
         "computed_at": "2026-07-16T14:29:37.907888Z"
-      }
+      },
+      "capability_assigned_blob_sha": "e2d73abb7e5a550af3d9e40797a28259bddba97d"
     },
     {
       "id": "openai-define-goal",
@@ -219,11 +241,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "87f111bd700e0d993465f7ac741847b5daee57d6",
-        "fetched_at": "2026-07-19T01:10:02.402560Z"
+        "fetched_at": "2026-07-19T01:32:29.668310Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "planning",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -250,6 +272,16 @@
         "trigger": "Use this skill for goal creation and goal refinement only; it does not manage durable snapshots, decision logs, or long-running execution artifacts.",
         "body_blob_sha": "87f111bd700e0d993465f7ac741847b5daee57d6",
         "computed_at": "2026-07-16T14:29:37.908314Z"
+      },
+      "capability_assigned_blob_sha": "87f111bd700e0d993465f7ac741847b5daee57d6",
+      "phase_assigned_blob_sha": "87f111bd700e0d993465f7ac741847b5daee57d6",
+      "lifecycle_phase": "define",
+      "summary": {
+        "text": "This skill helps a user define a concrete, measurable goal before implementation work begins. It turns a vague intention into a quantitative objective with explicit success criteria, using a dedicated goal-creation tool. It is scoped narrowly to goal creation and refinement and does not perform task planning, task breakdown, or execution itself.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.651743Z"
       }
     },
     {
@@ -269,11 +301,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "d417e16baf15bad3f1dd147d562c8b2578e4b4bd",
-        "fetched_at": "2026-07-19T01:10:02.402574Z"
+        "fetched_at": "2026-07-19T01:32:29.668333Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -300,6 +332,16 @@
         "trigger": "Use when user says \"code connect\", \"connect this component to code\", \"map this component\", \"link component to code\", \"create code connect mapping\", or wants to establish mappings between Figma design…",
         "body_blob_sha": "d417e16baf15bad3f1dd147d562c8b2578e4b4bd",
         "computed_at": "2026-07-16T14:29:37.908955Z"
+      },
+      "capability_assigned_blob_sha": "d417e16baf15bad3f1dd147d562c8b2578e4b4bd",
+      "phase_assigned_blob_sha": "d417e16baf15bad3f1dd147d562c8b2578e4b4bd",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill connects existing Figma design components to their corresponding code components using Figma's Code Connect mapping tools. It is triggered by requests to link, map, or connect a Figma component to a code implementation, and it establishes and maintains the mapping between the two so designers and developers stay in sync.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.651796Z"
       }
     },
     {
@@ -319,11 +361,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "42cc4ce838276cb68a14bbb29c5a6f1e19b6e50d",
-        "fetched_at": "2026-07-19T01:10:02.402590Z"
+        "fetched_at": "2026-07-19T01:32:29.668349Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -350,6 +392,16 @@
         "trigger": "Use when user says \"create design system rules\", \"generate rules for my project\", \"set up design rules\", \"customize design system guidelines\", or wants to establish project-specific conventions for F…",
         "body_blob_sha": "42cc4ce838276cb68a14bbb29c5a6f1e19b6e50d",
         "computed_at": "2026-07-16T14:29:37.909570Z"
+      },
+      "capability_assigned_blob_sha": "42cc4ce838276cb68a14bbb29c5a6f1e19b6e50d",
+      "phase_assigned_blob_sha": "42cc4ce838276cb68a14bbb29c5a6f1e19b6e50d",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill generates custom design-system rules tailored to a specific codebase, documenting project-specific conventions for Figma-to-code workflows. It requires an existing Figma connection and produces rule sets a team can reuse so translations between Figma designs and application code follow consistent, agreed-upon patterns rather than ad hoc conventions.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.651845Z"
       }
     },
     {
@@ -369,11 +421,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "8f74967b9bb4c26b3b8e2a8d102f004d6962ae0d",
-        "fetched_at": "2026-07-19T01:10:02.402780Z"
+        "fetched_at": "2026-07-19T01:32:29.668365Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -400,6 +452,16 @@
         "trigger": "Use when the user wants to create a new Figma design or FigJam file, or when you need a new file before calling use_figma.",
         "body_blob_sha": "8f74967b9bb4c26b3b8e2a8d102f004d6962ae0d",
         "computed_at": "2026-07-16T14:29:37.909990Z"
+      },
+      "capability_assigned_blob_sha": "8f74967b9bb4c26b3b8e2a8d102f004d6962ae0d",
+      "phase_assigned_blob_sha": "8f74967b9bb4c26b3b8e2a8d102f004d6962ae0d",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill creates a new, blank Figma design file or FigJam file on request. It handles plan resolution via a whoami lookup when needed and is typically invoked before other Figma actions that require a target file to already exist, such as generating a design or building a library inside it.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.651900Z"
       }
     },
     {
@@ -419,11 +481,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "f71d7e71600e84e95639ca2b3e2b8578ac50c3ea",
-        "fetched_at": "2026-07-19T01:10:02.402797Z"
+        "fetched_at": "2026-07-19T01:32:29.668380Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -450,6 +512,16 @@
         "trigger": "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma.",
         "body_blob_sha": "f71d7e71600e84e95639ca2b3e2b8578ac50c3ea",
         "computed_at": "2026-07-16T14:29:37.910681Z"
+      },
+      "capability_assigned_blob_sha": "f71d7e71600e84e95639ca2b3e2b8578ac50c3ea",
+      "phase_assigned_blob_sha": "f71d7e71600e84e95639ca2b3e2b8578ac50c3ea",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill translates an existing application page, view, or multi-section layout into a new Figma design file. It is used alongside a companion Figma-connection skill when the task is to push an already-built interface into Figma, for example to document a shipped UI or hand a built screen to designers for further iteration.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.651958Z"
       }
     },
     {
@@ -469,11 +541,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "0c162901c29dba36094c324cd9ffabd2a6b33498",
-        "fetched_at": "2026-07-19T01:10:02.402811Z"
+        "fetched_at": "2026-07-19T01:32:29.668395Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -500,6 +572,16 @@
         "trigger": "Use when the user wants to create variables/tokens, build component libraries, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma.",
         "body_blob_sha": "0c162901c29dba36094c324cd9ffabd2a6b33498",
         "computed_at": "2026-07-16T14:29:37.911349Z"
+      },
+      "capability_assigned_blob_sha": "0c162901c29dba36094c324cd9ffabd2a6b33498",
+      "phase_assigned_blob_sha": "0c162901c29dba36094c324cd9ffabd2a6b33498",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill builds or updates a design system library inside Figma by generating from an existing codebase. It creates variables and tokens, assembles component libraries, sets up light and dark theming, documents design foundations, and reconciles gaps between what exists in code and what is represented in the Figma file.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652013Z"
       }
     },
     {
@@ -519,11 +601,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "9aacde6657a913db819d7938f3fd1888ff643c6a",
-        "fetched_at": "2026-07-19T01:10:02.402851Z"
+        "fetched_at": "2026-07-19T01:32:29.668412Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -550,6 +632,16 @@
         "trigger": "Use when implementing UI code from Figma files, when user mentions \"implement design\", \"generate code\", \"implement component\", provides Figma URLs, or asks to build components matching Figma specs.",
         "body_blob_sha": "9aacde6657a913db819d7938f3fd1888ff643c6a",
         "computed_at": "2026-07-16T14:29:37.911869Z"
+      },
+      "capability_assigned_blob_sha": "9aacde6657a913db819d7938f3fd1888ff643c6a",
+      "phase_assigned_blob_sha": "9aacde6657a913db819d7938f3fd1888ff643c6a",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill translates a Figma design into production-ready application code with pixel-accurate visual fidelity. It is invoked when a user provides Figma URLs or asks to implement a design, generate code, or build components matching a Figma specification, turning static design artifacts into working, styled UI code in the target codebase.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652061Z"
       }
     },
     {
@@ -569,11 +661,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "4b0e23f53d8160e1623177f518535d1588a53c69",
-        "fetched_at": "2026-07-19T01:10:02.402867Z"
+        "fetched_at": "2026-07-19T01:32:29.668427Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -600,6 +692,16 @@
         "trigger": "Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g.",
         "body_blob_sha": "4b0e23f53d8160e1623177f518535d1588a53c69",
         "computed_at": "2026-07-16T14:29:37.912556Z"
+      },
+      "capability_assigned_blob_sha": "4b0e23f53d8160e1623177f518535d1588a53c69",
+      "phase_assigned_blob_sha": "4b0e23f53d8160e1623177f518535d1588a53c69",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill is a mandatory prerequisite that must run before any call to the underlying Figma tool. It prepares the connection and context needed for write actions or specialized read actions against Figma, and skipping it causes common, hard-to-diagnose failures, so it gates every other Figma-related skill in this family.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652116Z"
       }
     },
     {
@@ -619,11 +721,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "b4f18d2969fe827778b13b5a0fb08a158ec091b1",
-        "fetched_at": "2026-07-19T01:10:02.402895Z"
+        "fetched_at": "2026-07-19T01:32:29.668446Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -650,6 +752,16 @@
         "trigger": "Trigger when a task involves Figma URLs, node IDs, design-to-code implementation, or Figma MCP setup and troubleshooting.",
         "body_blob_sha": "b4f18d2969fe827778b13b5a0fb08a158ec091b1",
         "computed_at": "2026-07-16T14:29:37.913017Z"
+      },
+      "capability_assigned_blob_sha": "b4f18d2969fe827778b13b5a0fb08a158ec091b1",
+      "phase_assigned_blob_sha": "b4f18d2969fe827778b13b5a0fb08a158ec091b1",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill uses the Figma MCP server to fetch design context, screenshots, variables, and other assets directly from Figma files, and to translate Figma nodes into production code. It handles Figma URL and node-ID lookups, design-to-code implementation tasks, and troubleshooting of the underlying Figma MCP connection.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652161Z"
       }
     },
     {
@@ -669,7 +781,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "0ee19e080dc9f0b082157080d1e65511ddc49e7e",
-        "fetched_at": "2026-07-19T01:10:02.402926Z"
+        "fetched_at": "2026-07-19T01:32:29.668462Z"
       },
       "status": "active",
       "tier": "shell",
@@ -700,7 +812,8 @@
         "trigger": "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.",
         "body_blob_sha": "0ee19e080dc9f0b082157080d1e65511ddc49e7e",
         "computed_at": "2026-07-16T14:29:37.913382Z"
-      }
+      },
+      "capability_assigned_blob_sha": "0ee19e080dc9f0b082157080d1e65511ddc49e7e"
     },
     {
       "id": "openai-gh-fix-ci",
@@ -719,7 +832,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "76bdeb6a7bff93cbe924c0652f1fd7a3c3ffc46c",
-        "fetched_at": "2026-07-19T01:10:02.402973Z"
+        "fetched_at": "2026-07-19T01:32:29.668478Z"
       },
       "status": "active",
       "tier": "shell",
@@ -750,7 +863,8 @@
         "trigger": "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after ex…",
         "body_blob_sha": "76bdeb6a7bff93cbe924c0652f1fd7a3c3ffc46c",
         "computed_at": "2026-07-16T14:29:37.913780Z"
-      }
+      },
+      "capability_assigned_blob_sha": "76bdeb6a7bff93cbe924c0652f1fd7a3c3ffc46c"
     },
     {
       "id": "openai-hatch-pet",
@@ -769,11 +883,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "5f6e79a444d2a1ccb38cec02fa6830c7bb2521ba",
-        "fetched_at": "2026-07-19T01:10:02.403030Z"
+        "fetched_at": "2026-07-19T01:32:29.668495Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -800,6 +914,16 @@
         "trigger": "Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA conta…",
         "body_blob_sha": "5f6e79a444d2a1ccb38cec02fa6830c7bb2521ba",
         "computed_at": "2026-07-16T14:29:37.914862Z"
+      },
+      "capability_assigned_blob_sha": "5f6e79a444d2a1ccb38cec02fa6830c7bb2521ba",
+      "phase_assigned_blob_sha": "5f6e79a444d2a1ccb38cec02fa6830c7bb2521ba",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill creates, repairs, validates, and packages animated pet spritesheets for a lightweight virtual-pet workflow, generating them from character art, AI-generated images, or brand and prospect visual references. It includes a visual quality-assurance pass to check the resulting spritesheet before it is packaged as a Codex-compatible animated pet asset.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652224Z"
       }
     },
     {
@@ -819,11 +943,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "e1d1748cac9e9313c8229763751714628d1f6853",
-        "fetched_at": "2026-07-19T01:10:02.403076Z"
+        "fetched_at": "2026-07-19T01:32:29.668514Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "data-analysis",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -850,6 +974,16 @@
         "trigger": "Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` …",
         "body_blob_sha": "e1d1748cac9e9313c8229763751714628d1f6853",
         "computed_at": "2026-07-16T14:29:37.915526Z"
+      },
+      "capability_assigned_blob_sha": "e1d1748cac9e9313c8229763751714628d1f6853",
+      "phase_assigned_blob_sha": "e1d1748cac9e9313c8229763751714628d1f6853",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill creates, scaffolds, or edits Jupyter notebook (.ipynb) files for experiments, explorations, or tutorials. It prefers bundled starter templates and runs a helper script, new_notebook.py, to generate a clean notebook skeleton rather than building one from scratch, giving a consistent starting structure for further data or code work.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652284Z"
       }
     },
     {
@@ -869,7 +1003,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "6982ccbe4835ed207f6c7c0b2f011d903dbe2960",
-        "fetched_at": "2026-07-19T01:10:02.403127Z"
+        "fetched_at": "2026-07-19T01:32:29.668533Z"
       },
       "status": "active",
       "tier": "shell",
@@ -900,7 +1034,8 @@
         "trigger": "Use when the user wants to read, create or updates tickets in Linear.",
         "body_blob_sha": "6982ccbe4835ed207f6c7c0b2f011d903dbe2960",
         "computed_at": "2026-07-16T14:29:37.916035Z"
-      }
+      },
+      "capability_assigned_blob_sha": "6982ccbe4835ed207f6c7c0b2f011d903dbe2960"
     },
     {
       "id": "openai-migrate-to-codex",
@@ -919,11 +1054,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "b1c001b70e8cf326b8196e153b87811a43b23d48",
-        "fetched_at": "2026-07-19T01:10:02.403198Z"
+        "fetched_at": "2026-07-19T01:32:29.668550Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -950,6 +1085,16 @@
         "trigger": "Migrate supported instruction files, skills, agents, and MCP config into Codex project and global files.",
         "body_blob_sha": "b1c001b70e8cf326b8196e153b87811a43b23d48",
         "computed_at": "2026-07-16T14:29:37.916593Z"
+      },
+      "capability_assigned_blob_sha": "b1c001b70e8cf326b8196e153b87811a43b23d48",
+      "phase_assigned_blob_sha": "b1c001b70e8cf326b8196e153b87811a43b23d48",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill migrates instruction files, skills, agents, and MCP configuration from other supported formats into Codex's project-level and global configuration files. It consolidates existing agent tooling setups so they work under Codex without requiring a user to manually recreate each configuration file by hand.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652349Z"
       }
     },
     {
@@ -969,7 +1114,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "52075090a6644b104fc34837c9923b403d949369",
-        "fetched_at": "2026-07-19T01:10:02.403238Z"
+        "fetched_at": "2026-07-19T01:32:29.668569Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1000,7 +1145,8 @@
         "trigger": "Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys.",
         "body_blob_sha": "52075090a6644b104fc34837c9923b403d949369",
         "computed_at": "2026-07-16T14:29:37.917091Z"
-      }
+      },
+      "capability_assigned_blob_sha": "52075090a6644b104fc34837c9923b403d949369"
     },
     {
       "id": "openai-notion-knowledge-capture",
@@ -1019,11 +1165,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "5d347f66e6b494328a81f3ecb4fd7865f95b0067",
-        "fetched_at": "2026-07-19T01:10:02.403287Z"
+        "fetched_at": "2026-07-19T01:32:29.668587Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "documents",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1050,6 +1196,16 @@
         "trigger": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.",
         "body_blob_sha": "5d347f66e6b494328a81f3ecb4fd7865f95b0067",
         "computed_at": "2026-07-16T14:29:37.917494Z"
+      },
+      "capability_assigned_blob_sha": "5d347f66e6b494328a81f3ecb4fd7865f95b0067",
+      "phase_assigned_blob_sha": "5d347f66e6b494328a81f3ecb4fd7865f95b0067",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill captures conversations and decisions into structured Notion pages, turning informal chats or notes into wiki entries, how-to guides, decision records, or FAQs. It handles proper internal linking between the new page and related existing Notion content so the captured knowledge stays discoverable and connected.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652425Z"
       }
     },
     {
@@ -1069,11 +1225,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "efc716839ee614cf57efb3858fcfb538e0c4a8d9",
-        "fetched_at": "2026-07-19T01:10:02.403348Z"
+        "fetched_at": "2026-07-19T01:32:29.668607Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "documents",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1100,6 +1256,16 @@
         "trigger": "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.",
         "body_blob_sha": "efc716839ee614cf57efb3858fcfb538e0c4a8d9",
         "computed_at": "2026-07-16T14:29:37.917906Z"
+      },
+      "capability_assigned_blob_sha": "efc716839ee614cf57efb3858fcfb538e0c4a8d9",
+      "phase_assigned_blob_sha": "efc716839ee614cf57efb3858fcfb538e0c4a8d9",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill prepares meeting materials by combining existing Notion context with additional research. It gathers relevant background information, drafts agendas and pre-read documents, and tailors the resulting materials to the specific attendees of an upcoming meeting, producing ready-to-share Notion content ahead of time.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652507Z"
       }
     },
     {
@@ -1119,11 +1285,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "4bd40dbe0eb8d9d8920e3a4d705b38b4887623c7",
-        "fetched_at": "2026-07-19T01:10:02.403408Z"
+        "fetched_at": "2026-07-19T01:32:29.668627Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "documents",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1150,6 +1316,16 @@
         "trigger": "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations.",
         "body_blob_sha": "4bd40dbe0eb8d9d8920e3a4d705b38b4887623c7",
         "computed_at": "2026-07-16T14:29:37.918304Z"
+      },
+      "capability_assigned_blob_sha": "4bd40dbe0eb8d9d8920e3a4d705b38b4887623c7",
+      "phase_assigned_blob_sha": "4bd40dbe0eb8d9d8920e3a4d705b38b4887623c7",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill researches across multiple Notion sources and synthesizes the findings into structured documentation. It produces briefs, comparisons, or reports that include citations back to the original Notion pages, useful when gathering scattered information from several documents into one coherent, referenced summary.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652568Z"
       }
     },
     {
@@ -1169,11 +1345,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "d6a0a0e0fb358f56e1d4893c54a25c6c2e04fc65",
-        "fetched_at": "2026-07-19T01:10:02.403434Z"
+        "fetched_at": "2026-07-19T01:32:29.668649Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "planning",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1200,6 +1376,16 @@
         "trigger": "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.",
         "body_blob_sha": "d6a0a0e0fb358f56e1d4893c54a25c6c2e04fc65",
         "computed_at": "2026-07-16T14:29:37.918703Z"
+      },
+      "capability_assigned_blob_sha": "d6a0a0e0fb358f56e1d4893c54a25c6c2e04fc65",
+      "phase_assigned_blob_sha": "d6a0a0e0fb358f56e1d4893c54a25c6c2e04fc65",
+      "lifecycle_phase": "plan",
+      "summary": {
+        "text": "This skill converts a Notion product-requirements document or feature spec into an implementation plan, complete with discrete tasks and progress tracking. It is used when a PRD or feature spec already exists in Notion and needs to be turned into actionable, trackable work items within the same workspace.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652615Z"
       }
     },
     {
@@ -1219,11 +1405,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "df395fb442746703eefcc1d0cb9183efa39d9e66",
-        "fetched_at": "2026-07-19T01:10:02.672540Z"
+        "fetched_at": "2026-07-19T01:32:29.930124Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1250,6 +1436,16 @@
         "trigger": "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest …",
         "body_blob_sha": "df395fb442746703eefcc1d0cb9183efa39d9e66",
         "computed_at": "2026-07-16T14:29:37.919366Z"
+      },
+      "capability_assigned_blob_sha": "df395fb442746703eefcc1d0cb9183efa39d9e66",
+      "phase_assigned_blob_sha": "df395fb442746703eefcc1d0cb9183efa39d9e66",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill answers questions about building with OpenAI products and APIs, including how to choose a Codex surface, which model best fits a given use case, and model or prompt upgrade guidance. It uses OpenAI's documentation MCP tools to pull up-to-date, citable official documentation rather than relying on static training knowledge.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652676Z"
       }
     },
     {
@@ -1269,11 +1465,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "fd5d56058f10202e4f50a30bc2906f39696024a1",
-        "fetched_at": "2026-07-19T01:10:02.671958Z"
+        "fetched_at": "2026-07-19T01:32:29.929778Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "documents",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1300,6 +1496,16 @@
         "trigger": "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplu…",
         "body_blob_sha": "fd5d56058f10202e4f50a30bc2906f39696024a1",
         "computed_at": "2026-07-16T14:29:37.919749Z"
+      },
+      "capability_assigned_blob_sha": "fd5d56058f10202e4f50a30bc2906f39696024a1",
+      "phase_assigned_blob_sha": "fd5d56058f10202e4f50a30bc2906f39696024a1",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill handles reading, creating, and reviewing PDF files where precise rendering and layout matter. It favors visual verification by rendering pages with Poppler, and uses Python libraries such as reportlab, pdfplumber, and pypdf for generating new PDFs and extracting text or tables from existing ones.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652760Z"
       }
     },
     {
@@ -1319,11 +1525,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "7d85f8284014c8c2690918a596a4b5bef7cb86e1",
-        "fetched_at": "2026-07-19T01:10:02.672012Z"
+        "fetched_at": "2026-07-19T01:32:29.929803Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "testing",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1350,6 +1556,16 @@
         "trigger": "Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging.",
         "body_blob_sha": "7d85f8284014c8c2690918a596a4b5bef7cb86e1",
         "computed_at": "2026-07-16T14:29:37.920533Z"
+      },
+      "capability_assigned_blob_sha": "7d85f8284014c8c2690918a596a4b5bef7cb86e1",
+      "phase_assigned_blob_sha": "7d85f8284014c8c2690918a596a4b5bef7cb86e1",
+      "lifecycle_phase": "verify",
+      "summary": {
+        "text": "This skill maintains a persistent browser or Electron session through a JavaScript REPL interface, enabling fast, iterative UI debugging without restarting the target application between checks. It is suited to exploratory front-end debugging where a developer needs to repeatedly inspect or interact with the same running instance.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652852Z"
       }
     },
     {
@@ -1369,11 +1585,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "77c01afb31aa602d0b002ae2438c2b67f0335fcb",
-        "fetched_at": "2026-07-19T01:10:02.672066Z"
+        "fetched_at": "2026-07-19T01:32:29.929826Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "testing",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -1400,6 +1616,16 @@
         "trigger": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapp…",
         "body_blob_sha": "77c01afb31aa602d0b002ae2438c2b67f0335fcb",
         "computed_at": "2026-07-16T14:29:37.920928Z"
+      },
+      "capability_assigned_blob_sha": "77c01afb31aa602d0b002ae2438c2b67f0335fcb",
+      "phase_assigned_blob_sha": "77c01afb31aa602d0b002ae2438c2b67f0335fcb",
+      "lifecycle_phase": "verify",
+      "summary": {
+        "text": "This skill automates a real web browser from the terminal for tasks such as navigation, form filling, taking snapshots or screenshots, extracting page data, and debugging UI flows. It runs through the playwright-cli tool or a bundled wrapper script rather than a headless testing framework invoked from code.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.652942Z"
       }
     },
     {
@@ -1419,7 +1645,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "a0f78c13b07df3def82c16bccf4a1c17c4d8e30d",
-        "fetched_at": "2026-07-19T01:10:02.672121Z"
+        "fetched_at": "2026-07-19T01:32:29.929847Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1450,7 +1676,8 @@
         "trigger": "Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform.",
         "body_blob_sha": "a0f78c13b07df3def82c16bccf4a1c17c4d8e30d",
         "computed_at": "2026-07-16T14:29:37.921612Z"
-      }
+      },
+      "capability_assigned_blob_sha": "a0f78c13b07df3def82c16bccf4a1c17c4d8e30d"
     },
     {
       "id": "openai-screenshot",
@@ -1469,7 +1696,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "1d967bfb1d7d38874147b5810f2a19677bc3161b",
-        "fetched_at": "2026-07-19T01:10:02.672179Z"
+        "fetched_at": "2026-07-19T01:32:29.929870Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1500,7 +1727,8 @@
         "trigger": "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-lev…",
         "body_blob_sha": "1d967bfb1d7d38874147b5810f2a19677bc3161b",
         "computed_at": "2026-07-16T14:29:37.922068Z"
-      }
+      },
+      "capability_assigned_blob_sha": "1d967bfb1d7d38874147b5810f2a19677bc3161b"
     },
     {
       "id": "openai-security-best-practices",
@@ -1519,7 +1747,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "45ccbd8d671c4c4cc3e7e0645a16a3f80ec50de7",
-        "fetched_at": "2026-07-19T01:10:02.672239Z"
+        "fetched_at": "2026-07-19T01:32:29.929891Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1550,7 +1778,8 @@
         "trigger": "Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help.",
         "body_blob_sha": "45ccbd8d671c4c4cc3e7e0645a16a3f80ec50de7",
         "computed_at": "2026-07-16T14:29:37.922532Z"
-      }
+      },
+      "capability_assigned_blob_sha": "45ccbd8d671c4c4cc3e7e0645a16a3f80ec50de7"
     },
     {
       "id": "openai-security-ownership-map",
@@ -1569,7 +1798,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "0164d0d8809825dc5bccc99e87cafb8345a6be72",
-        "fetched_at": "2026-07-19T01:10:02.672270Z"
+        "fetched_at": "2026-07-19T01:32:29.929913Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1600,7 +1829,8 @@
         "trigger": "Trigger only when the user explicitly wants a security-oriented ownership or bus-factor analysis grounded in git history (for example: orphaned sensitive code, security maintainers, CODEOWNERS realit…",
         "body_blob_sha": "0164d0d8809825dc5bccc99e87cafb8345a6be72",
         "computed_at": "2026-07-16T14:29:37.923029Z"
-      }
+      },
+      "capability_assigned_blob_sha": "0164d0d8809825dc5bccc99e87cafb8345a6be72"
     },
     {
       "id": "openai-security-threat-model",
@@ -1619,7 +1849,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "abd3c1c95d49c4e0e0664f198f4bf168c6291aec",
-        "fetched_at": "2026-07-19T01:10:02.672295Z"
+        "fetched_at": "2026-07-19T01:32:29.929935Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1650,7 +1880,8 @@
         "trigger": "Trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform AppSec threat modeling.",
         "body_blob_sha": "abd3c1c95d49c4e0e0664f198f4bf168c6291aec",
         "computed_at": "2026-07-16T14:29:37.923470Z"
-      }
+      },
+      "capability_assigned_blob_sha": "abd3c1c95d49c4e0e0664f198f4bf168c6291aec"
     },
     {
       "id": "openai-sentry",
@@ -1669,7 +1900,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "c94f7efa9d513f381d5fcd07912d56581ec3dc2a",
-        "fetched_at": "2026-07-19T01:10:02.672321Z"
+        "fetched_at": "2026-07-19T01:32:29.929957Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1700,7 +1931,8 @@
         "trigger": "Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` comman…",
         "body_blob_sha": "c94f7efa9d513f381d5fcd07912d56581ec3dc2a",
         "computed_at": "2026-07-16T14:29:37.923872Z"
-      }
+      },
+      "capability_assigned_blob_sha": "c94f7efa9d513f381d5fcd07912d56581ec3dc2a"
     },
     {
       "id": "openai-speech",
@@ -1719,7 +1951,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "54727b1f84831739e7262b4db8271ada026d20c7",
-        "fetched_at": "2026-07-19T01:10:02.672377Z"
+        "fetched_at": "2026-07-19T01:32:29.929985Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1750,7 +1982,8 @@
         "trigger": "Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_speech…",
         "body_blob_sha": "54727b1f84831739e7262b4db8271ada026d20c7",
         "computed_at": "2026-07-16T14:29:37.924313Z"
-      }
+      },
+      "capability_assigned_blob_sha": "54727b1f84831739e7262b4db8271ada026d20c7"
     },
     {
       "id": "openai-transcribe",
@@ -1769,7 +2002,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "757576f9bbd1782f14fcc28ca85159139a2b8fa5",
-        "fetched_at": "2026-07-19T01:10:02.672408Z"
+        "fetched_at": "2026-07-19T01:32:29.930009Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1800,7 +2033,8 @@
         "trigger": "Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings.",
         "body_blob_sha": "757576f9bbd1782f14fcc28ca85159139a2b8fa5",
         "computed_at": "2026-07-16T14:29:37.924689Z"
-      }
+      },
+      "capability_assigned_blob_sha": "757576f9bbd1782f14fcc28ca85159139a2b8fa5"
     },
     {
       "id": "openai-vercel-deploy",
@@ -1819,7 +2053,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "a7e6faf3b999d31e8224e232d39fbf58952b7a5b",
-        "fetched_at": "2026-07-19T01:10:02.672435Z"
+        "fetched_at": "2026-07-19T01:32:29.930032Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1869,7 +2103,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "28e67e8677f0ab74ac921ec85dd80888f7d53fa7",
-        "fetched_at": "2026-07-19T01:10:02.672461Z"
+        "fetched_at": "2026-07-19T01:32:29.930055Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1900,7 +2134,8 @@
         "trigger": "Use when creating a brand new app, preparing a machine for WinUI, reviewing, refactoring, planning, troubleshooting, environment-checking, or setting up WinUI 3 XAML, controls, navigation, windowing,…",
         "body_blob_sha": "28e67e8677f0ab74ac921ec85dd80888f7d53fa7",
         "computed_at": "2026-07-16T14:29:37.925585Z"
-      }
+      },
+      "capability_assigned_blob_sha": "28e67e8677f0ab74ac921ec85dd80888f7d53fa7"
     },
     {
       "id": "openai-yeet",
@@ -1919,7 +2154,7 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "acce5634f720e0a26c65c5e6048e0b43f6a3abd8",
-        "fetched_at": "2026-07-19T01:10:02.672490Z"
+        "fetched_at": "2026-07-19T01:32:29.930080Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1950,7 +2185,8 @@
         "trigger": "Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`).",
         "body_blob_sha": "acce5634f720e0a26c65c5e6048e0b43f6a3abd8",
         "computed_at": "2026-07-16T14:29:37.926043Z"
-      }
+      },
+      "capability_assigned_blob_sha": "acce5634f720e0a26c65c5e6048e0b43f6a3abd8"
     },
     {
       "id": "openai-imagegen",
@@ -1969,11 +2205,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "88195882efdedbfab56e0eb2570dd4fd6d9e8610",
-        "fetched_at": "2026-07-19T01:10:02.672517Z"
+        "fetched_at": "2026-07-19T01:32:29.930104Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "design",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -2000,6 +2236,16 @@
         "trigger": "Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector.",
         "body_blob_sha": "88195882efdedbfab56e0eb2570dd4fd6d9e8610",
         "computed_at": "2026-07-16T14:29:37.926700Z"
+      },
+      "capability_assigned_blob_sha": "88195882efdedbfab56e0eb2570dd4fd6d9e8610",
+      "phase_assigned_blob_sha": "88195882efdedbfab56e0eb2570dd4fd6d9e8610",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill generates or edits raster images such as photos, illustrations, textures, sprites, mockups, and transparent-background cutouts using AI image generation. It is used when a task calls for a brand-new bitmap image, a transformation of an existing image, or visual variants derived from reference material.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.653039Z"
       }
     },
     {
@@ -2019,11 +2265,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "5108f549a7d6f93eb4b80dc9990bbd966157330a",
-        "fetched_at": "2026-07-19T01:10:02.672569Z"
+        "fetched_at": "2026-07-19T01:32:29.930150Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -2050,6 +2296,16 @@
         "trigger": "Use when Codex needs to create a new local plugin, add optional plugin structure, or generate or update repo-root `.agents/plugins/marketplace.json` entries for plugin ordering and availability metad…",
         "body_blob_sha": "5108f549a7d6f93eb4b80dc9990bbd966157330a",
         "computed_at": "2026-07-16T14:29:37.927174Z"
+      },
+      "capability_assigned_blob_sha": "5108f549a7d6f93eb4b80dc9990bbd966157330a",
+      "phase_assigned_blob_sha": "5108f549a7d6f93eb4b80dc9990bbd966157330a",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill creates and scaffolds new Codex plugin directories, generating the required .codex-plugin/plugin.json manifest along with optional plugin folders, files, and baseline placeholders. The scaffolded output can then be edited further before the plugin is published or tested, giving a consistent starting structure for new plugins.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.653129Z"
       }
     },
     {
@@ -2069,11 +2325,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "72bc0b97e7a6476254a9d5c424c9971748402ec3",
-        "fetched_at": "2026-07-19T01:10:02.672596Z"
+        "fetched_at": "2026-07-19T01:32:29.930175Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -2100,6 +2356,16 @@
         "trigger": "Guide for creating effective skills.",
         "body_blob_sha": "72bc0b97e7a6476254a9d5c424c9971748402ec3",
         "computed_at": "2026-07-16T14:29:37.927885Z"
+      },
+      "capability_assigned_blob_sha": "72bc0b97e7a6476254a9d5c424c9971748402ec3",
+      "phase_assigned_blob_sha": "72bc0b97e7a6476254a9d5c424c9971748402ec3",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill guides the creation of new Codex skills or the improvement of existing ones, producing skills that extend Codex with specialized knowledge, workflows, or tool integrations. It is used whenever a user wants to author a new skill from scratch or revise an existing skill's instructions or structure.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.653226Z"
       }
     },
     {
@@ -2119,11 +2385,11 @@
       "upstream": {
         "commit_sha": "49f948faa9258a0c61caceaf225e179651397431",
         "blob_sha": "8ca23bf833379d2272a0a67e0026c2709b8823f1",
-        "fetched_at": "2026-07-19T01:10:02.672624Z"
+        "fetched_at": "2026-07-19T01:32:29.930200Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "generic",
       "install_hints": {},
       "reviewed_by": null,
@@ -2150,6 +2416,16 @@
         "trigger": "Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
         "body_blob_sha": "8ca23bf833379d2272a0a67e0026c2709b8823f1",
         "computed_at": "2026-07-16T14:29:37.928284Z"
+      },
+      "capability_assigned_blob_sha": "8ca23bf833379d2272a0a67e0026c2709b8823f1",
+      "phase_assigned_blob_sha": "8ca23bf833379d2272a0a67e0026c2709b8823f1",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill installs Codex skills into the local $CODEX_HOME/skills directory, sourcing them either from a curated list of available skills or directly from a GitHub repository path, including private repositories. It also supports listing which curated skills are available to install before making a selection.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.653372Z"
       }
     }
   ]

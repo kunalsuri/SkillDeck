@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-19T01:11:32.834127Z",
+  "generated_at": "2026-07-19T01:49:12.506762Z",
   "skills": [
     {
       "id": "google-data-manager-api-audience-ingestion",
@@ -19,7 +19,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "94ef76cfef99124eb4b3819786521f91148c1cf3",
-        "fetched_at": "2026-07-19T01:09:56.926162Z"
+        "fetched_at": "2026-07-19T01:32:25.692176Z"
       },
       "status": "active",
       "tier": "shell",
@@ -32,7 +32,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-313",
+      "cluster_id": "cluster-387",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -50,7 +50,8 @@
         "trigger": "Use this skill when the user wants to upload audience members for Customer Match, mobile device ID audiences, or any other audience use case supported by the Data Manager API.",
         "body_blob_sha": "94ef76cfef99124eb4b3819786521f91148c1cf3",
         "computed_at": "2026-07-12T14:42:14.957033Z"
-      }
+      },
+      "capability_assigned_blob_sha": "94ef76cfef99124eb4b3819786521f91148c1cf3"
     },
     {
       "id": "google-data-manager-api-event-ingestion",
@@ -69,7 +70,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "0922b64716c841a86aad3e47bf45a29f1f3a1b1c",
-        "fetched_at": "2026-07-19T01:09:56.926386Z"
+        "fetched_at": "2026-07-19T01:32:25.692316Z"
       },
       "status": "active",
       "tier": "shell",
@@ -82,7 +83,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-314",
+      "cluster_id": "cluster-388",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -100,7 +101,8 @@
         "trigger": "Use this skill when the user wants to upload offline conversions, enhanced conversions for leads, click conversions, Google Analytics web or app events, or any other event ingestion use case supporte…",
         "body_blob_sha": "0922b64716c841a86aad3e47bf45a29f1f3a1b1c",
         "computed_at": "2026-07-12T14:42:14.957785Z"
-      }
+      },
+      "capability_assigned_blob_sha": "0922b64716c841a86aad3e47bf45a29f1f3a1b1c"
     },
     {
       "id": "google-data-manager-api-setup",
@@ -119,7 +121,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "4d0dd673467822b258982e8eaaea2b82697aea48",
-        "fetched_at": "2026-07-19T01:09:56.926552Z"
+        "fetched_at": "2026-07-19T01:32:25.692386Z"
       },
       "status": "active",
       "tier": "shell",
@@ -132,7 +134,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-315",
+      "cluster_id": "cluster-389",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -150,7 +152,8 @@
         "trigger": "Use this skill when a user is getting started with the Data Manager API and needs to setup their local environment, install the client library, or setup access to the API.",
         "body_blob_sha": "4d0dd673467822b258982e8eaaea2b82697aea48",
         "computed_at": "2026-07-12T14:42:14.958305Z"
-      }
+      },
+      "capability_assigned_blob_sha": "4d0dd673467822b258982e8eaaea2b82697aea48"
     },
     {
       "id": "google-google-ads-api-mcp-setup",
@@ -169,11 +172,11 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "207243ab8dc25709b383169187fa781f602ee7e1",
-        "fetched_at": "2026-07-19T01:09:56.926718Z"
+        "fetched_at": "2026-07-19T01:32:25.692453Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -182,7 +185,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-316",
+      "cluster_id": "cluster-390",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -200,6 +203,16 @@
         "trigger": "Use this skill when a user wants to connect their AI assistant (such as Gemini, Claude Code, or Cursor) to their Google Ads account to query campaigns or retrieve reporting metrics using natural lang…",
         "body_blob_sha": "207243ab8dc25709b383169187fa781f602ee7e1",
         "computed_at": "2026-07-12T14:42:14.959428Z"
+      },
+      "capability_assigned_blob_sha": "207243ab8dc25709b383169187fa781f602ee7e1",
+      "phase_assigned_blob_sha": "207243ab8dc25709b383169187fa781f602ee7e1",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill guides downloading, configuring, and installing the official open-source Google Ads MCP Server. It is used when a user wants to connect an AI assistant such as Gemini, Claude Code, or Cursor to their Google Ads account so the assistant can query campaigns or retrieve reporting metrics through the MCP protocol.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.654566Z"
       }
     },
     {
@@ -219,7 +232,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "5b67f3ace1ff768a369f2f9c1589370d25fa897f",
-        "fetched_at": "2026-07-19T01:09:56.926885Z"
+        "fetched_at": "2026-07-19T01:32:25.692518Z"
       },
       "status": "active",
       "tier": "shell",
@@ -232,7 +245,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-317",
+      "cluster_id": "cluster-391",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -250,7 +263,8 @@
         "trigger": "Use this skill when:\n- The user asks how to get started with the Google Ads API.",
         "body_blob_sha": "5b67f3ace1ff768a369f2f9c1589370d25fa897f",
         "computed_at": "2026-07-12T14:42:14.960807Z"
-      }
+      },
+      "capability_assigned_blob_sha": "5b67f3ace1ff768a369f2f9c1589370d25fa897f"
     },
     {
       "id": "google-google-mobile-ads-android-migrate-to-next-gen",
@@ -269,7 +283,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "5a10bec73597451ad4dbe99b7565eb7e80d255be",
-        "fetched_at": "2026-07-19T01:09:56.927052Z"
+        "fetched_at": "2026-07-19T01:32:25.692584Z"
       },
       "status": "active",
       "tier": "shell",
@@ -282,7 +296,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-318",
+      "cluster_id": "cluster-392",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -300,7 +314,8 @@
         "trigger": "Use when migrating an existing Android codebase from the old, legacy GMA SDK to GMA Next-Gen SDK.",
         "body_blob_sha": "5a10bec73597451ad4dbe99b7565eb7e80d255be",
         "computed_at": "2026-07-12T14:42:14.961904Z"
-      }
+      },
+      "capability_assigned_blob_sha": "5a10bec73597451ad4dbe99b7565eb7e80d255be"
     },
     {
       "id": "google-google-mobile-ads-banner",
@@ -319,7 +334,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "89490ef8ae0c948f05021722641883aa2b73174c",
-        "fetched_at": "2026-07-19T01:09:56.927223Z"
+        "fetched_at": "2026-07-19T01:32:25.692649Z"
       },
       "status": "active",
       "tier": "shell",
@@ -332,7 +347,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-319",
+      "cluster_id": "cluster-393",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -350,7 +365,8 @@
         "trigger": "Use when the task involves setting up banner ads in a mobile application.",
         "body_blob_sha": "89490ef8ae0c948f05021722641883aa2b73174c",
         "computed_at": "2026-07-12T14:42:14.962397Z"
-      }
+      },
+      "capability_assigned_blob_sha": "89490ef8ae0c948f05021722641883aa2b73174c"
     },
     {
       "id": "google-google-mobile-ads-get-started",
@@ -369,7 +385,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "75757774bf4fa240d5a29e8c96e8cdbff9fae4cb",
-        "fetched_at": "2026-07-19T01:09:56.927394Z"
+        "fetched_at": "2026-07-19T01:32:25.692720Z"
       },
       "status": "active",
       "tier": "shell",
@@ -382,7 +398,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-320",
+      "cluster_id": "cluster-394",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -400,7 +416,8 @@
         "trigger": "Use this skill when the user wants to get started with, install, integrate, set up, or configure the SDK for AdMob or Ad Manager, GMA Next-Gen SDK or mobile ads framework in an Android, iOS, or Unity…",
         "body_blob_sha": "75757774bf4fa240d5a29e8c96e8cdbff9fae4cb",
         "computed_at": "2026-07-12T14:42:14.962803Z"
-      }
+      },
+      "capability_assigned_blob_sha": "75757774bf4fa240d5a29e8c96e8cdbff9fae4cb"
     },
     {
       "id": "google-google-mobile-ads-interstitial",
@@ -419,7 +436,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "cc5e87719da55ac2057c6b31fee593c16d9ea399",
-        "fetched_at": "2026-07-19T01:09:56.927514Z"
+        "fetched_at": "2026-07-19T01:32:25.692897Z"
       },
       "status": "active",
       "tier": "shell",
@@ -432,7 +449,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-321",
+      "cluster_id": "cluster-395",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -450,7 +467,8 @@
         "trigger": "Use this skill when the task involves setting up interstitial ads.",
         "body_blob_sha": "cc5e87719da55ac2057c6b31fee593c16d9ea399",
         "computed_at": "2026-07-12T14:42:14.963190Z"
-      }
+      },
+      "capability_assigned_blob_sha": "cc5e87719da55ac2057c6b31fee593c16d9ea399"
     },
     {
       "id": "google-google-mobile-ads-rewarded",
@@ -469,7 +487,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "910d76c896e31f4569558ea23678ce1649203048",
-        "fetched_at": "2026-07-19T01:09:56.927588Z"
+        "fetched_at": "2026-07-19T01:32:25.693072Z"
       },
       "status": "active",
       "tier": "shell",
@@ -482,7 +500,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-322",
+      "cluster_id": "cluster-396",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -500,7 +518,8 @@
         "trigger": "Use this skill when the task involves setting up rewarded ads.",
         "body_blob_sha": "910d76c896e31f4569558ea23678ce1649203048",
         "computed_at": "2026-07-12T14:42:14.963585Z"
-      }
+      },
+      "capability_assigned_blob_sha": "910d76c896e31f4569558ea23678ce1649203048"
     },
     {
       "id": "google-ima-sdk-basics",
@@ -519,7 +538,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "77e70ff339dfcff4d06e02042d37fa09d2dbea80",
-        "fetched_at": "2026-07-19T01:09:56.927657Z"
+        "fetched_at": "2026-07-19T01:32:25.693252Z"
       },
       "status": "active",
       "tier": "shell",
@@ -532,7 +551,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-323",
+      "cluster_id": "cluster-397",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -550,7 +569,8 @@
         "trigger": "Use this skill for Interactive Media Ads (IMA) SDK client-side ad insertion when you are requesting video ads client-side into websites, apps, TVs or other platforms with VAST or VMAP.",
         "body_blob_sha": "77e70ff339dfcff4d06e02042d37fa09d2dbea80",
         "computed_at": "2026-07-12T14:42:14.964005Z"
-      }
+      },
+      "capability_assigned_blob_sha": "77e70ff339dfcff4d06e02042d37fa09d2dbea80"
     },
     {
       "id": "google-google-analytics-admin-api-basics",
@@ -569,11 +589,11 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "1dd1b543ef4d527ba67fdbaec4cd168ad95d10e2",
-        "fetched_at": "2026-07-19T01:09:56.927726Z"
+        "fetched_at": "2026-07-19T01:32:25.693429Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "unassigned",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -582,7 +602,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-324",
+      "cluster_id": "cluster-398",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -608,7 +628,8 @@
         "body_blob_sha": "1dd1b543ef4d527ba67fdbaec4cd168ad95d10e2",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584027Z"
-      }
+      },
+      "capability_assigned_blob_sha": "1dd1b543ef4d527ba67fdbaec4cd168ad95d10e2"
     },
     {
       "id": "google-google-analytics-data-api-basics",
@@ -627,11 +648,11 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "1d669070b5b5f0807bdf7c1c15059cba176a2d73",
-        "fetched_at": "2026-07-19T01:09:56.927793Z"
+        "fetched_at": "2026-07-19T01:32:25.693602Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "data-analysis",
+      "capability_id": "unassigned",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -640,7 +661,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-325",
+      "cluster_id": "cluster-399",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -666,7 +687,8 @@
         "body_blob_sha": "1d669070b5b5f0807bdf7c1c15059cba176a2d73",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584224Z"
-      }
+      },
+      "capability_assigned_blob_sha": "1d669070b5b5f0807bdf7c1c15059cba176a2d73"
     },
     {
       "id": "google-agent-platform-alert-configuration",
@@ -685,11 +707,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "457ed43c632208fa62858366359870bbb84f9fb2",
-        "fetched_at": "2026-07-19T01:09:56.927861Z"
+        "fetched_at": "2026-07-19T01:32:25.693776Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -698,7 +720,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-326",
+      "cluster_id": "cluster-400",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -708,7 +730,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "ship",
       "nutrition": {
         "token_estimate": 134,
         "word_count": 76,
@@ -724,7 +746,9 @@
         "body_blob_sha": "457ed43c632208fa62858366359870bbb84f9fb2",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584308Z"
-      }
+      },
+      "capability_assigned_blob_sha": "457ed43c632208fa62858366359870bbb84f9fb2",
+      "phase_assigned_blob_sha": "457ed43c632208fa62858366359870bbb84f9fb2"
     },
     {
       "id": "google-agent-platform-deploy",
@@ -743,11 +767,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "2d8e68d9dd8067e71d74e801c30312cbcfaeb424",
-        "fetched_at": "2026-07-19T01:09:56.927930Z"
+        "fetched_at": "2026-07-19T01:32:25.693954Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -756,7 +780,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-327",
+      "cluster_id": "cluster-401",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -782,7 +806,9 @@
         "body_blob_sha": "2d8e68d9dd8067e71d74e801c30312cbcfaeb424",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584450Z"
-      }
+      },
+      "capability_assigned_blob_sha": "2d8e68d9dd8067e71d74e801c30312cbcfaeb424",
+      "phase_assigned_blob_sha": "2d8e68d9dd8067e71d74e801c30312cbcfaeb424"
     },
     {
       "id": "google-agent-platform-endpoint-management",
@@ -801,11 +827,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "36e4ad427c7793e5db03dcebca3d0efe5e4d3a2d",
-        "fetched_at": "2026-07-19T01:09:56.927998Z"
+        "fetched_at": "2026-07-19T01:32:25.694129Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -814,7 +840,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-328",
+      "cluster_id": "cluster-402",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -824,7 +850,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "ship",
       "nutrition": {
         "token_estimate": 81,
         "word_count": 47,
@@ -840,7 +866,9 @@
         "body_blob_sha": "36e4ad427c7793e5db03dcebca3d0efe5e4d3a2d",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584572Z"
-      }
+      },
+      "capability_assigned_blob_sha": "36e4ad427c7793e5db03dcebca3d0efe5e4d3a2d",
+      "phase_assigned_blob_sha": "36e4ad427c7793e5db03dcebca3d0efe5e4d3a2d"
     },
     {
       "id": "google-agent-platform-eval-flywheel",
@@ -859,11 +887,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "1fabfd1ce1579d40d7270935def00ec96bc35617",
-        "fetched_at": "2026-07-19T01:09:56.928065Z"
+        "fetched_at": "2026-07-19T01:32:25.694304Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -872,7 +900,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-329",
+      "cluster_id": "cluster-403",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -882,7 +910,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "verify",
       "nutrition": {
         "token_estimate": 132,
         "word_count": 74,
@@ -898,7 +926,9 @@
         "body_blob_sha": "1fabfd1ce1579d40d7270935def00ec96bc35617",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584699Z"
-      }
+      },
+      "capability_assigned_blob_sha": "1fabfd1ce1579d40d7270935def00ec96bc35617",
+      "phase_assigned_blob_sha": "1fabfd1ce1579d40d7270935def00ec96bc35617"
     },
     {
       "id": "google-agent-platform-inference",
@@ -917,11 +947,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "666c78dec892aaaf29632137af65d5b557c15ca6",
-        "fetched_at": "2026-07-19T01:09:56.928134Z"
+        "fetched_at": "2026-07-19T01:32:25.694402Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -930,7 +960,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-330",
+      "cluster_id": "cluster-404",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -940,7 +970,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 136,
         "word_count": 80,
@@ -956,7 +986,9 @@
         "body_blob_sha": "666c78dec892aaaf29632137af65d5b557c15ca6",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584805Z"
-      }
+      },
+      "capability_assigned_blob_sha": "666c78dec892aaaf29632137af65d5b557c15ca6",
+      "phase_assigned_blob_sha": "666c78dec892aaaf29632137af65d5b557c15ca6"
     },
     {
       "id": "google-agent-platform-migrate-from-ai-studio",
@@ -975,11 +1007,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "fec68368238e4f9242db4ea7d1d49be6a5e23d7d",
-        "fetched_at": "2026-07-19T01:09:56.928210Z"
+        "fetched_at": "2026-07-19T01:32:25.694473Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -988,7 +1020,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-331",
+      "cluster_id": "cluster-405",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -998,7 +1030,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 76,
         "word_count": 45,
@@ -1014,7 +1046,9 @@
         "body_blob_sha": "fec68368238e4f9242db4ea7d1d49be6a5e23d7d",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584883Z"
-      }
+      },
+      "capability_assigned_blob_sha": "fec68368238e4f9242db4ea7d1d49be6a5e23d7d",
+      "phase_assigned_blob_sha": "fec68368238e4f9242db4ea7d1d49be6a5e23d7d"
     },
     {
       "id": "google-agent-platform-model-registry",
@@ -1033,11 +1067,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "ec2f578be2c43ff4c7c42615a60fe296045d4d19",
-        "fetched_at": "2026-07-19T01:09:56.928279Z"
+        "fetched_at": "2026-07-19T01:32:25.694542Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1046,7 +1080,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-332",
+      "cluster_id": "cluster-406",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1056,7 +1090,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "ship",
       "nutrition": {
         "token_estimate": 72,
         "word_count": 42,
@@ -1072,7 +1106,9 @@
         "body_blob_sha": "ec2f578be2c43ff4c7c42615a60fe296045d4d19",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.584982Z"
-      }
+      },
+      "capability_assigned_blob_sha": "ec2f578be2c43ff4c7c42615a60fe296045d4d19",
+      "phase_assigned_blob_sha": "ec2f578be2c43ff4c7c42615a60fe296045d4d19"
     },
     {
       "id": "google-agent-platform-prompt-management",
@@ -1091,11 +1127,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "088dbc52b1c9d8559259787ae1c7c3e894465845",
-        "fetched_at": "2026-07-19T01:09:56.928363Z"
+        "fetched_at": "2026-07-19T01:32:25.694611Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1104,7 +1140,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-333",
+      "cluster_id": "cluster-407",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1114,7 +1150,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 63,
         "word_count": 37,
@@ -1130,7 +1166,9 @@
         "body_blob_sha": "088dbc52b1c9d8559259787ae1c7c3e894465845",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585072Z"
-      }
+      },
+      "capability_assigned_blob_sha": "088dbc52b1c9d8559259787ae1c7c3e894465845",
+      "phase_assigned_blob_sha": "088dbc52b1c9d8559259787ae1c7c3e894465845"
     },
     {
       "id": "google-agent-platform-rag-engine-management",
@@ -1149,11 +1187,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "7d9ff2c9c022c05a487f406faeb1a6b740a74f73",
-        "fetched_at": "2026-07-19T01:09:56.928431Z"
+        "fetched_at": "2026-07-19T01:32:25.694679Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1162,7 +1200,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-334",
+      "cluster_id": "cluster-408",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1172,7 +1210,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 90,
         "word_count": 56,
@@ -1188,7 +1226,9 @@
         "body_blob_sha": "7d9ff2c9c022c05a487f406faeb1a6b740a74f73",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585168Z"
-      }
+      },
+      "capability_assigned_blob_sha": "7d9ff2c9c022c05a487f406faeb1a6b740a74f73",
+      "phase_assigned_blob_sha": "7d9ff2c9c022c05a487f406faeb1a6b740a74f73"
     },
     {
       "id": "google-agent-platform-skill-registry",
@@ -1207,11 +1247,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "0a827579f25e948c07ccc5848fe39e4906b78ced",
-        "fetched_at": "2026-07-19T01:09:56.928499Z"
+        "fetched_at": "2026-07-19T01:32:25.694748Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1220,7 +1260,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-335",
+      "cluster_id": "cluster-409",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1230,7 +1270,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 49,
         "word_count": 29,
@@ -1246,7 +1286,9 @@
         "body_blob_sha": "0a827579f25e948c07ccc5848fe39e4906b78ced",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585261Z"
-      }
+      },
+      "capability_assigned_blob_sha": "0a827579f25e948c07ccc5848fe39e4906b78ced",
+      "phase_assigned_blob_sha": "0a827579f25e948c07ccc5848fe39e4906b78ced"
     },
     {
       "id": "google-agent-platform-tuning-management",
@@ -1265,11 +1307,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "3b24fccebb9a36a3156dd1a5e4dc8d09831668eb",
-        "fetched_at": "2026-07-19T01:09:56.928569Z"
+        "fetched_at": "2026-07-19T01:32:25.694819Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1278,7 +1320,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-336",
+      "cluster_id": "cluster-410",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1288,7 +1330,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "ship",
       "nutrition": {
         "token_estimate": 76,
         "word_count": 37,
@@ -1304,7 +1346,9 @@
         "body_blob_sha": "3b24fccebb9a36a3156dd1a5e4dc8d09831668eb",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585340Z"
-      }
+      },
+      "capability_assigned_blob_sha": "3b24fccebb9a36a3156dd1a5e4dc8d09831668eb",
+      "phase_assigned_blob_sha": "3b24fccebb9a36a3156dd1a5e4dc8d09831668eb"
     },
     {
       "id": "google-agent-platform-tuning",
@@ -1323,11 +1367,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "2596067307954386faacc05b231fa2eeb59f0c93",
-        "fetched_at": "2026-07-19T01:09:56.928638Z"
+        "fetched_at": "2026-07-19T01:32:25.694888Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1336,7 +1380,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-337",
+      "cluster_id": "cluster-411",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1346,7 +1390,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 78,
         "word_count": 39,
@@ -1362,7 +1406,9 @@
         "body_blob_sha": "2596067307954386faacc05b231fa2eeb59f0c93",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585485Z"
-      }
+      },
+      "capability_assigned_blob_sha": "2596067307954386faacc05b231fa2eeb59f0c93",
+      "phase_assigned_blob_sha": "2596067307954386faacc05b231fa2eeb59f0c93"
     },
     {
       "id": "google-alloydb-basics",
@@ -1381,7 +1427,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "db30ef4b8cefea6048e06342fd17c4f289a51b93",
-        "fetched_at": "2026-07-19T01:09:56.928903Z"
+        "fetched_at": "2026-07-19T01:32:25.695160Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1394,7 +1440,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-338",
+      "cluster_id": "cluster-412",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1420,7 +1466,9 @@
         "body_blob_sha": "db30ef4b8cefea6048e06342fd17c4f289a51b93",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585582Z"
-      }
+      },
+      "capability_assigned_blob_sha": "db30ef4b8cefea6048e06342fd17c4f289a51b93",
+      "phase_assigned_blob_sha": "db30ef4b8cefea6048e06342fd17c4f289a51b93"
     },
     {
       "id": "google-bigquery-ai-ml",
@@ -1439,7 +1487,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "5fb001712501319717b5bc75388ec6c0bb2d911d",
-        "fetched_at": "2026-07-19T01:09:56.928976Z"
+        "fetched_at": "2026-07-19T01:32:25.695293Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1452,7 +1500,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-339",
+      "cluster_id": "cluster-413",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1478,7 +1526,9 @@
         "body_blob_sha": "5fb001712501319717b5bc75388ec6c0bb2d911d",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585677Z"
-      }
+      },
+      "capability_assigned_blob_sha": "5fb001712501319717b5bc75388ec6c0bb2d911d",
+      "phase_assigned_blob_sha": "5fb001712501319717b5bc75388ec6c0bb2d911d"
     },
     {
       "id": "google-bigquery-basics",
@@ -1497,7 +1547,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "3e57636f5f4a9a6ae8809e1e772c4405254c35e9",
-        "fetched_at": "2026-07-19T01:09:56.929046Z"
+        "fetched_at": "2026-07-19T01:32:25.695418Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1510,7 +1560,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-340",
+      "cluster_id": "cluster-414",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1536,7 +1586,9 @@
         "body_blob_sha": "3e57636f5f4a9a6ae8809e1e772c4405254c35e9",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585793Z"
-      }
+      },
+      "capability_assigned_blob_sha": "3e57636f5f4a9a6ae8809e1e772c4405254c35e9",
+      "phase_assigned_blob_sha": "3e57636f5f4a9a6ae8809e1e772c4405254c35e9"
     },
     {
       "id": "google-bigquery-bigframes",
@@ -1555,7 +1607,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "893d5a89d62250bcc35d5cf9b3efa22be647fc06",
-        "fetched_at": "2026-07-19T01:09:56.929117Z"
+        "fetched_at": "2026-07-19T01:32:25.695497Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1568,7 +1620,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-341",
+      "cluster_id": "cluster-415",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1593,7 +1645,10 @@
         "body_blob_sha": "893d5a89d62250bcc35d5cf9b3efa22be647fc06",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585875Z"
-      }
+      },
+      "capability_assigned_blob_sha": "893d5a89d62250bcc35d5cf9b3efa22be647fc06",
+      "phase_assigned_blob_sha": "893d5a89d62250bcc35d5cf9b3efa22be647fc06",
+      "lifecycle_phase": null
     },
     {
       "id": "google-bigtable-basics",
@@ -1612,7 +1667,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "cbb63bee2a509a65adfed158f623b0cb8706c872",
-        "fetched_at": "2026-07-19T01:09:56.929187Z"
+        "fetched_at": "2026-07-19T01:32:25.695573Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1625,7 +1680,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-342",
+      "cluster_id": "cluster-416",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1651,7 +1706,9 @@
         "body_blob_sha": "cbb63bee2a509a65adfed158f623b0cb8706c872",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.585967Z"
-      }
+      },
+      "capability_assigned_blob_sha": "cbb63bee2a509a65adfed158f623b0cb8706c872",
+      "phase_assigned_blob_sha": "cbb63bee2a509a65adfed158f623b0cb8706c872"
     },
     {
       "id": "google-cloud-logging-query-generation",
@@ -1670,11 +1727,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "364e09b23007f299f79f9712433456a8b416ed0e",
-        "fetched_at": "2026-07-19T01:09:56.929273Z"
+        "fetched_at": "2026-07-19T01:32:25.695647Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "cloud-ops",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1683,7 +1740,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-343",
+      "cluster_id": "cluster-417",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1701,6 +1758,16 @@
         "trigger": "Use this skill when you need to query log data or when you are debugging issues.",
         "body_blob_sha": "364e09b23007f299f79f9712433456a8b416ed0e",
         "computed_at": "2026-07-16T14:29:37.749255Z"
+      },
+      "capability_assigned_blob_sha": "364e09b23007f299f79f9712433456a8b416ed0e",
+      "phase_assigned_blob_sha": "364e09b23007f299f79f9712433456a8b416ed0e",
+      "lifecycle_phase": "verify",
+      "summary": {
+        "text": "This skill generates Logging Query Language (LQL) queries for Google Cloud Logging from a natural-language description. It is used when a user needs to query or filter log data by Google Cloud service while debugging an issue, and it is not intended for querying other databases such as SQL or Spanner.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.654631Z"
       }
     },
     {
@@ -1720,11 +1787,11 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "719aeb96d2be582ca15c83d857738e9d623a94b1",
-        "fetched_at": "2026-07-19T01:09:57.241837Z"
+        "fetched_at": "2026-07-19T01:32:25.695723Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "cloud-ops",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1733,7 +1800,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-344",
+      "cluster_id": "cluster-418",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1742,6 +1809,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "719aeb96d2be582ca15c83d857738e9d623a94b1",
+      "phase_assigned_blob_sha": "719aeb96d2be582ca15c83d857738e9d623a94b1",
+      "lifecycle_phase": "verify",
+      "summary": {
+        "text": "This skill retrieves, queries, and identifies relevant Google Cloud Monitoring metric descriptors for a specific GCP service or resource, such as Compute Engine, Spanner, BigQuery, Cloud Run, Cloud SQL, Pub/Sub, or Cloud Storage. It is used when a user needs to find, list, search, or discover available metric types and their value schemas.",
+        "basis": "body",
+        "body_blob_sha": "719aeb96d2be582ca15c83d857738e9d623a94b1",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.654794Z"
+      },
+      "nutrition": {
+        "token_estimate": 2052,
+        "word_count": 946,
+        "line_count": 187,
+        "basis": "body",
+        "trigger": "Use when asked to find, list, search, or discover GCP metric types, names, kind/value schemas, or descriptors.",
+        "body_blob_sha": "719aeb96d2be582ca15c83d857738e9d623a94b1",
+        "computed_at": "2026-07-19T01:49:12.467412Z"
       }
     },
     {
@@ -1761,7 +1847,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "713efc4f3f6cb35a9f33c943f44690140d0c261a",
-        "fetched_at": "2026-07-19T01:09:57.242007Z"
+        "fetched_at": "2026-07-19T01:32:25.695796Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1774,7 +1860,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-345",
+      "cluster_id": "cluster-419",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1799,7 +1885,10 @@
         "body_blob_sha": "713efc4f3f6cb35a9f33c943f44690140d0c261a",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586049Z"
-      }
+      },
+      "capability_assigned_blob_sha": "713efc4f3f6cb35a9f33c943f44690140d0c261a",
+      "phase_assigned_blob_sha": "713efc4f3f6cb35a9f33c943f44690140d0c261a",
+      "lifecycle_phase": "ship"
     },
     {
       "id": "google-cloud-sql-basics",
@@ -1818,7 +1907,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "33ac65fd4a046422d383c440e53f8778c61f6d6e",
-        "fetched_at": "2026-07-19T01:09:57.242123Z"
+        "fetched_at": "2026-07-19T01:32:25.695871Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1831,7 +1920,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-346",
+      "cluster_id": "cluster-420",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1857,7 +1946,9 @@
         "body_blob_sha": "33ac65fd4a046422d383c440e53f8778c61f6d6e",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586130Z"
-      }
+      },
+      "capability_assigned_blob_sha": "33ac65fd4a046422d383c440e53f8778c61f6d6e",
+      "phase_assigned_blob_sha": "33ac65fd4a046422d383c440e53f8778c61f6d6e"
     },
     {
       "id": "google-datalineage-bigquery-asset-impact-analysis",
@@ -1876,7 +1967,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "890ee413e0b031d27062c542587e8adfe8a31ace",
-        "fetched_at": "2026-07-19T01:09:57.242218Z"
+        "fetched_at": "2026-07-19T01:32:25.695946Z"
       },
       "status": "active",
       "tier": "shell",
@@ -1889,7 +1980,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-347",
+      "cluster_id": "cluster-421",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1915,7 +2006,9 @@
         "body_blob_sha": "890ee413e0b031d27062c542587e8adfe8a31ace",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586236Z"
-      }
+      },
+      "capability_assigned_blob_sha": "890ee413e0b031d27062c542587e8adfe8a31ace",
+      "phase_assigned_blob_sha": "890ee413e0b031d27062c542587e8adfe8a31ace"
     },
     {
       "id": "google-datalineage-summary",
@@ -1934,11 +2027,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "a89379cbf8e29348e4e293b0dd1aaeed1bc57412",
-        "fetched_at": "2026-07-19T01:09:57.242314Z"
+        "fetched_at": "2026-07-19T01:32:25.696104Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "data-analysis",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1947,7 +2040,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-348",
+      "cluster_id": "cluster-422",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -1965,6 +2058,16 @@
         "trigger": "Use when summarizing upstream and downstream data flows, and presenting complex lineage data as an intuitive Markdown report.",
         "body_blob_sha": "a89379cbf8e29348e4e293b0dd1aaeed1bc57412",
         "computed_at": "2026-07-16T14:29:37.750429Z"
+      },
+      "capability_assigned_blob_sha": "a89379cbf8e29348e4e293b0dd1aaeed1bc57412",
+      "phase_assigned_blob_sha": "a89379cbf8e29348e4e293b0dd1aaeed1bc57412",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill summarizes Google Cloud Data Lineage graphs to help users debug data-quality issues and understand data provenance across BigQuery and Cloud Storage. It presents complex upstream and downstream data-flow information as an intuitive Markdown report, and is not intended for running generic BigQuery queries or editing lineage data.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.654855Z"
       }
     },
     {
@@ -1984,11 +2087,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "bd4887658c20a24e1154c45362dae2ec435611e5",
-        "fetched_at": "2026-07-19T01:09:57.242388Z"
+        "fetched_at": "2026-07-19T01:32:25.696242Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "unassigned",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -1997,7 +2100,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-349",
+      "cluster_id": "cluster-423",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2022,7 +2125,8 @@
         "body_blob_sha": "bd4887658c20a24e1154c45362dae2ec435611e5",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586333Z"
-      }
+      },
+      "capability_assigned_blob_sha": "bd4887658c20a24e1154c45362dae2ec435611e5"
     },
     {
       "id": "google-firebase-basics",
@@ -2041,7 +2145,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "f11d29aa62bb2cad530bbebba070040745d1b8a6",
-        "fetched_at": "2026-07-19T01:09:57.242463Z"
+        "fetched_at": "2026-07-19T01:32:25.696327Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2054,7 +2158,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-350",
+      "cluster_id": "cluster-424",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2080,7 +2184,9 @@
         "body_blob_sha": "f11d29aa62bb2cad530bbebba070040745d1b8a6",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586454Z"
-      }
+      },
+      "capability_assigned_blob_sha": "f11d29aa62bb2cad530bbebba070040745d1b8a6",
+      "phase_assigned_blob_sha": "f11d29aa62bb2cad530bbebba070040745d1b8a6"
     },
     {
       "id": "google-gcloud",
@@ -2099,7 +2205,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "5f1f0c8097768250d8eaf1086e103c6f65211528",
-        "fetched_at": "2026-07-19T01:09:57.242539Z"
+        "fetched_at": "2026-07-19T01:32:25.696404Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2112,7 +2218,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-351",
+      "cluster_id": "cluster-425",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2138,7 +2244,9 @@
         "body_blob_sha": "5f1f0c8097768250d8eaf1086e103c6f65211528",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586637Z"
-      }
+      },
+      "capability_assigned_blob_sha": "5f1f0c8097768250d8eaf1086e103c6f65211528",
+      "phase_assigned_blob_sha": "5f1f0c8097768250d8eaf1086e103c6f65211528"
     },
     {
       "id": "google-gemini-agents-api",
@@ -2157,11 +2265,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "94b41e7641397a6c175096681e55a8b206ccec7f",
-        "fetched_at": "2026-07-19T01:09:57.242613Z"
+        "fetched_at": "2026-07-19T01:32:25.696480Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -2170,7 +2278,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-352",
+      "cluster_id": "cluster-426",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2195,7 +2303,10 @@
         "body_blob_sha": "94b41e7641397a6c175096681e55a8b206ccec7f",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586738Z"
-      }
+      },
+      "capability_assigned_blob_sha": "94b41e7641397a6c175096681e55a8b206ccec7f",
+      "phase_assigned_blob_sha": "94b41e7641397a6c175096681e55a8b206ccec7f",
+      "lifecycle_phase": "build"
     },
     {
       "id": "google-gemini-api",
@@ -2214,11 +2325,11 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "8bf8d29ccfb1149d26c880c364f33baad36f93d7",
-        "fetched_at": "2026-07-19T01:09:57.242726Z"
+        "fetched_at": "2026-07-19T01:32:25.696556Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -2227,7 +2338,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-353",
+      "cluster_id": "cluster-427",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2237,7 +2348,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 92,
         "word_count": 59,
@@ -2253,7 +2364,9 @@
         "body_blob_sha": "8bf8d29ccfb1149d26c880c364f33baad36f93d7",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586843Z"
-      }
+      },
+      "capability_assigned_blob_sha": "8bf8d29ccfb1149d26c880c364f33baad36f93d7",
+      "phase_assigned_blob_sha": "8bf8d29ccfb1149d26c880c364f33baad36f93d7"
     },
     {
       "id": "google-gemini-interactions-api",
@@ -2272,11 +2385,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "60f3913c6e00beeb81352e62bffbb5764dd2deeb",
-        "fetched_at": "2026-07-19T01:09:57.242825Z"
+        "fetched_at": "2026-07-19T01:32:25.696633Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -2285,7 +2398,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-354",
+      "cluster_id": "cluster-428",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2310,7 +2423,10 @@
         "body_blob_sha": "60f3913c6e00beeb81352e62bffbb5764dd2deeb",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.586924Z"
-      }
+      },
+      "capability_assigned_blob_sha": "60f3913c6e00beeb81352e62bffbb5764dd2deeb",
+      "phase_assigned_blob_sha": "60f3913c6e00beeb81352e62bffbb5764dd2deeb",
+      "lifecycle_phase": "build"
     },
     {
       "id": "google-liveapi-service",
@@ -2329,11 +2445,11 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "c6dc53650119cb8878d6e5462b2d9c542b83cbc9",
-        "fetched_at": "2026-07-19T01:09:57.478549Z"
+        "fetched_at": "2026-07-19T01:32:25.696709Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -2342,7 +2458,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-355",
+      "cluster_id": "cluster-429",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2351,6 +2467,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "c6dc53650119cb8878d6e5462b2d9c542b83cbc9",
+      "phase_assigned_blob_sha": "c6dc53650119cb8878d6e5462b2d9c542b83cbc9",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill generates a LiveAPI client service class in a user's chosen programming language, for building or scaffolding a client that connects to the Gemini Enterprise LiveAPI websocket endpoint. It handles session setup and resumption, bearer-token refresh, and sending and receiving client messages over that websocket connection.",
+        "basis": "body",
+        "body_blob_sha": "c6dc53650119cb8878d6e5462b2d9c542b83cbc9",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.655030Z"
+      },
+      "nutrition": {
+        "token_estimate": 2294,
+        "word_count": 1216,
+        "line_count": 208,
+        "basis": "body",
+        "trigger": "Use when the user wants to build, scaffold, or integrate a client that connects to the Gemini Enterprise LiveAPI websocket endpoint, handles session setup/resumption, bearer token refresh, and sendin…",
+        "body_blob_sha": "c6dc53650119cb8878d6e5462b2d9c542b83cbc9",
+        "computed_at": "2026-07-19T01:49:12.467681Z"
       }
     },
     {
@@ -2370,7 +2505,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "cf22de079781e6fb6ab0a136e0095a57bc463673",
-        "fetched_at": "2026-07-19T01:09:57.478717Z"
+        "fetched_at": "2026-07-19T01:32:25.696785Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2383,7 +2518,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-356",
+      "cluster_id": "cluster-430",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2409,7 +2544,9 @@
         "body_blob_sha": "cf22de079781e6fb6ab0a136e0095a57bc463673",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587033Z"
-      }
+      },
+      "capability_assigned_blob_sha": "cf22de079781e6fb6ab0a136e0095a57bc463673",
+      "phase_assigned_blob_sha": "cf22de079781e6fb6ab0a136e0095a57bc463673"
     },
     {
       "id": "google-gke-backup-dr",
@@ -2428,7 +2565,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "bbd652c156643541541bf0ca5fea8be162910c55",
-        "fetched_at": "2026-07-19T01:09:57.478835Z"
+        "fetched_at": "2026-07-19T01:32:25.696863Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2441,7 +2578,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-357",
+      "cluster_id": "cluster-431",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2466,7 +2603,10 @@
         "body_blob_sha": "bbd652c156643541541bf0ca5fea8be162910c55",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587110Z"
-      }
+      },
+      "capability_assigned_blob_sha": "bbd652c156643541541bf0ca5fea8be162910c55",
+      "phase_assigned_blob_sha": "bbd652c156643541541bf0ca5fea8be162910c55",
+      "lifecycle_phase": null
     },
     {
       "id": "google-gke-basics",
@@ -2485,7 +2625,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "52be22dc06fad426868c577ccbe1f63957888918",
-        "fetched_at": "2026-07-19T01:09:57.478916Z"
+        "fetched_at": "2026-07-19T01:32:25.696941Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2498,7 +2638,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-358",
+      "cluster_id": "cluster-432",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2524,7 +2664,9 @@
         "body_blob_sha": "52be22dc06fad426868c577ccbe1f63957888918",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587188Z"
-      }
+      },
+      "capability_assigned_blob_sha": "52be22dc06fad426868c577ccbe1f63957888918",
+      "phase_assigned_blob_sha": "52be22dc06fad426868c577ccbe1f63957888918"
     },
     {
       "id": "google-gke-batch-hpc",
@@ -2543,7 +2685,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "f07fcc5382d13ca5e6998ac90323f94ad03eb8f5",
-        "fetched_at": "2026-07-19T01:09:57.478996Z"
+        "fetched_at": "2026-07-19T01:32:25.697018Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2556,7 +2698,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-359",
+      "cluster_id": "cluster-433",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2582,7 +2724,9 @@
         "body_blob_sha": "f07fcc5382d13ca5e6998ac90323f94ad03eb8f5",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587288Z"
-      }
+      },
+      "capability_assigned_blob_sha": "f07fcc5382d13ca5e6998ac90323f94ad03eb8f5",
+      "phase_assigned_blob_sha": "f07fcc5382d13ca5e6998ac90323f94ad03eb8f5"
     },
     {
       "id": "google-gke-cluster-autoscaler",
@@ -2601,7 +2745,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "0bfee954c30c0020e71973c7297accccafc24d26",
-        "fetched_at": "2026-07-19T01:09:57.479075Z"
+        "fetched_at": "2026-07-19T01:32:25.697200Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2614,7 +2758,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-360",
+      "cluster_id": "cluster-434",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2640,7 +2784,9 @@
         "body_blob_sha": "0bfee954c30c0020e71973c7297accccafc24d26",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587456Z"
-      }
+      },
+      "capability_assigned_blob_sha": "0bfee954c30c0020e71973c7297accccafc24d26",
+      "phase_assigned_blob_sha": "0bfee954c30c0020e71973c7297accccafc24d26"
     },
     {
       "id": "google-gke-cluster-creation",
@@ -2659,7 +2805,7 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "528e1407e165d314f17b5ebd5740f269badc6d8b",
-        "fetched_at": "2026-07-19T01:09:57.728110Z"
+        "fetched_at": "2026-07-19T01:32:25.697296Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2672,7 +2818,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-361",
+      "cluster_id": "cluster-435",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2681,6 +2827,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "528e1407e165d314f17b5ebd5740f269badc6d8b",
+      "phase_assigned_blob_sha": "528e1407e165d314f17b5ebd5740f269badc6d8b",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill plans and executes Google Kubernetes Engine cluster creation, provisioning, and production-readiness audits using pre-defined templates such as Autopilot, Standard Regional, GPU/AI Inference, and AI Hypercompute. It is used when creating new GKE clusters, selecting a cluster mode, or auditing an already-provisioned cluster against production standards.",
+        "basis": "body",
+        "body_blob_sha": "528e1407e165d314f17b5ebd5740f269badc6d8b",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.655252Z"
+      },
+      "nutrition": {
+        "token_estimate": 2987,
+        "word_count": 1268,
+        "line_count": 344,
+        "basis": "body",
+        "trigger": "Use when creating GKE clusters, provisioning GKE environments, selecting cluster modes, or auditing GKE clusters.",
+        "body_blob_sha": "528e1407e165d314f17b5ebd5740f269badc6d8b",
+        "computed_at": "2026-07-19T01:49:12.467952Z"
       }
     },
     {
@@ -2700,7 +2865,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "dcf68341fe46ede100c1b764f007339665b6cfe7",
-        "fetched_at": "2026-07-19T01:09:57.728330Z"
+        "fetched_at": "2026-07-19T01:32:25.697375Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2713,7 +2878,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-362",
+      "cluster_id": "cluster-436",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2739,7 +2904,9 @@
         "body_blob_sha": "dcf68341fe46ede100c1b764f007339665b6cfe7",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587679Z"
-      }
+      },
+      "capability_assigned_blob_sha": "dcf68341fe46ede100c1b764f007339665b6cfe7",
+      "phase_assigned_blob_sha": "dcf68341fe46ede100c1b764f007339665b6cfe7"
     },
     {
       "id": "google-gke-cost",
@@ -2758,7 +2925,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "831b9ccdcc316fc016b57c9484352a47cb9d1399",
-        "fetched_at": "2026-07-19T01:09:57.728590Z"
+        "fetched_at": "2026-07-19T01:32:25.697457Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2771,7 +2938,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-363",
+      "cluster_id": "cluster-437",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2797,7 +2964,9 @@
         "body_blob_sha": "831b9ccdcc316fc016b57c9484352a47cb9d1399",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587840Z"
-      }
+      },
+      "capability_assigned_blob_sha": "831b9ccdcc316fc016b57c9484352a47cb9d1399",
+      "phase_assigned_blob_sha": "831b9ccdcc316fc016b57c9484352a47cb9d1399"
     },
     {
       "id": "google-gke-golden-path",
@@ -2816,7 +2985,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "a03c68b7d27bd9b41115862964db1d000c4e2455",
-        "fetched_at": "2026-07-19T01:09:57.728740Z"
+        "fetched_at": "2026-07-19T01:32:25.697535Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2829,7 +2998,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-364",
+      "cluster_id": "cluster-438",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2854,7 +3023,10 @@
         "body_blob_sha": "a03c68b7d27bd9b41115862964db1d000c4e2455",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.587928Z"
-      }
+      },
+      "capability_assigned_blob_sha": "a03c68b7d27bd9b41115862964db1d000c4e2455",
+      "phase_assigned_blob_sha": "a03c68b7d27bd9b41115862964db1d000c4e2455",
+      "lifecycle_phase": null
     },
     {
       "id": "google-gke-inference",
@@ -2873,7 +3045,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "afe4660e66e4f508bfb19211e3c5ad5dd863bee8",
-        "fetched_at": "2026-07-19T01:09:57.728838Z"
+        "fetched_at": "2026-07-19T01:32:25.697613Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2886,7 +3058,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-365",
+      "cluster_id": "cluster-439",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2896,7 +3068,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "ship",
       "nutrition": {
         "token_estimate": 72,
         "word_count": 44,
@@ -2912,7 +3084,9 @@
         "body_blob_sha": "afe4660e66e4f508bfb19211e3c5ad5dd863bee8",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588005Z"
-      }
+      },
+      "capability_assigned_blob_sha": "afe4660e66e4f508bfb19211e3c5ad5dd863bee8",
+      "phase_assigned_blob_sha": "afe4660e66e4f508bfb19211e3c5ad5dd863bee8"
     },
     {
       "id": "google-gke-multitenancy",
@@ -2931,7 +3105,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "be4dce18a2a37e726d80faf3fd7bcf42abc5d1ab",
-        "fetched_at": "2026-07-19T01:09:57.728921Z"
+        "fetched_at": "2026-07-19T01:32:25.697692Z"
       },
       "status": "active",
       "tier": "shell",
@@ -2944,7 +3118,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-366",
+      "cluster_id": "cluster-440",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -2970,7 +3144,9 @@
         "body_blob_sha": "be4dce18a2a37e726d80faf3fd7bcf42abc5d1ab",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588085Z"
-      }
+      },
+      "capability_assigned_blob_sha": "be4dce18a2a37e726d80faf3fd7bcf42abc5d1ab",
+      "phase_assigned_blob_sha": "be4dce18a2a37e726d80faf3fd7bcf42abc5d1ab"
     },
     {
       "id": "google-gke-networking",
@@ -2989,7 +3165,7 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "e022d66c73e46d08b8f45dab25b8fc8554ee2433",
-        "fetched_at": "2026-07-19T01:09:57.729001Z"
+        "fetched_at": "2026-07-19T01:32:25.697770Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3002,7 +3178,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-367",
+      "cluster_id": "cluster-441",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3027,7 +3203,10 @@
         "body_blob_sha": "e022d66c73e46d08b8f45dab25b8fc8554ee2433",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588166Z"
-      }
+      },
+      "capability_assigned_blob_sha": "e022d66c73e46d08b8f45dab25b8fc8554ee2433",
+      "phase_assigned_blob_sha": "e022d66c73e46d08b8f45dab25b8fc8554ee2433",
+      "lifecycle_phase": null
     },
     {
       "id": "google-gke-observability",
@@ -3046,7 +3225,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "97d727c705691c8285cca0e86b2353da8b0fb67e",
-        "fetched_at": "2026-07-19T01:09:57.729081Z"
+        "fetched_at": "2026-07-19T01:32:25.697881Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3059,7 +3238,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-368",
+      "cluster_id": "cluster-442",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3085,7 +3264,9 @@
         "body_blob_sha": "97d727c705691c8285cca0e86b2353da8b0fb67e",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588305Z"
-      }
+      },
+      "capability_assigned_blob_sha": "97d727c705691c8285cca0e86b2353da8b0fb67e",
+      "phase_assigned_blob_sha": "97d727c705691c8285cca0e86b2353da8b0fb67e"
     },
     {
       "id": "google-gke-reliability",
@@ -3104,7 +3285,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "337ff2bf03e5bf113ad4949cfc1db4249d24ec3b",
-        "fetched_at": "2026-07-19T01:09:57.729160Z"
+        "fetched_at": "2026-07-19T01:32:25.697967Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3117,7 +3298,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-369",
+      "cluster_id": "cluster-443",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3143,7 +3324,9 @@
         "body_blob_sha": "337ff2bf03e5bf113ad4949cfc1db4249d24ec3b",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588419Z"
-      }
+      },
+      "capability_assigned_blob_sha": "337ff2bf03e5bf113ad4949cfc1db4249d24ec3b",
+      "phase_assigned_blob_sha": "337ff2bf03e5bf113ad4949cfc1db4249d24ec3b"
     },
     {
       "id": "google-gke-security",
@@ -3162,7 +3345,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "6a3ad379182f223fe773ed5323e861414336920e",
-        "fetched_at": "2026-07-19T01:09:57.729253Z"
+        "fetched_at": "2026-07-19T01:32:25.698048Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3175,7 +3358,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-370",
+      "cluster_id": "cluster-444",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3201,7 +3384,9 @@
         "body_blob_sha": "6a3ad379182f223fe773ed5323e861414336920e",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588617Z"
-      }
+      },
+      "capability_assigned_blob_sha": "6a3ad379182f223fe773ed5323e861414336920e",
+      "phase_assigned_blob_sha": "6a3ad379182f223fe773ed5323e861414336920e"
     },
     {
       "id": "google-gke-storage",
@@ -3220,7 +3405,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "5ec7080844dc7e1008ba83bbecf87ba8873166f6",
-        "fetched_at": "2026-07-19T01:09:57.729338Z"
+        "fetched_at": "2026-07-19T01:32:25.698129Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3233,7 +3418,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-371",
+      "cluster_id": "cluster-445",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3259,7 +3444,9 @@
         "body_blob_sha": "5ec7080844dc7e1008ba83bbecf87ba8873166f6",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588710Z"
-      }
+      },
+      "capability_assigned_blob_sha": "5ec7080844dc7e1008ba83bbecf87ba8873166f6",
+      "phase_assigned_blob_sha": "5ec7080844dc7e1008ba83bbecf87ba8873166f6"
     },
     {
       "id": "google-gke-upgrades",
@@ -3278,7 +3465,7 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "eab51f99df9014621b18a589d362885feca7ac52",
-        "fetched_at": "2026-07-19T01:09:57.952110Z"
+        "fetched_at": "2026-07-19T01:32:25.698219Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3291,7 +3478,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-372",
+      "cluster_id": "cluster-446",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3300,6 +3487,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "eab51f99df9014621b18a589d362885feca7ac52",
+      "phase_assigned_blob_sha": "eab51f99df9014621b18a589d362885feca7ac52",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill plans, executes, and validates Google Kubernetes Engine cluster upgrades and maintenance operations for both Standard and Autopilot clusters. It produces upgrade plans, pre- and post-upgrade checklists, maintenance runbooks with gcloud commands, release-channel strategy guidance, and troubleshooting steps for issues encountered during an upgrade.",
+        "basis": "body",
+        "body_blob_sha": "eab51f99df9014621b18a589d362885feca7ac52",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.655522Z"
+      },
+      "nutrition": {
+        "token_estimate": 4164,
+        "word_count": 2255,
+        "line_count": 191,
+        "basis": "body",
+        "trigger": "Use this skill whenever the user mentions GKE upgrades, Kubernetes version bumps, node pool maintenance, GKE patching, cluster version management, release channel selection, maintenance windows, surg…",
+        "body_blob_sha": "eab51f99df9014621b18a589d362885feca7ac52",
+        "computed_at": "2026-07-19T01:49:12.468393Z"
       }
     },
     {
@@ -3319,11 +3525,11 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "b4eff546dab048a008d2c31233ec619f93064b85",
-        "fetched_at": "2026-07-19T01:09:58.265871Z"
+        "fetched_at": "2026-07-19T01:32:25.698302Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "cloud-ops",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -3332,7 +3538,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-373",
+      "cluster_id": "cluster-447",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3341,6 +3547,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "b4eff546dab048a008d2c31233ec619f93064b85",
+      "phase_assigned_blob_sha": "b4eff546dab048a008d2c31233ec619f93064b85",
+      "lifecycle_phase": null,
+      "summary": {
+        "text": "This skill manages scaling for workloads running on Google Kubernetes Engine using the Horizontal Pod Autoscaler and Vertical Pod Autoscaler. It is used when configuring HPA or VPA, or applying best practices for workload autoscaling, and is not intended for cluster-level autoscaling or static cluster sizing decisions.",
+        "basis": "body",
+        "body_blob_sha": "b4eff546dab048a008d2c31233ec619f93064b85",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.655648Z"
+      },
+      "nutrition": {
+        "token_estimate": 1139,
+        "word_count": 610,
+        "line_count": 123,
+        "basis": "body",
+        "trigger": "Use when configuring Horizontal Pod Autoscaler (HPA), configuring Vertical Pod Autoscaler (VPA), or applying best practices for GKE workload autoscaling.",
+        "body_blob_sha": "b4eff546dab048a008d2c31233ec619f93064b85",
+        "computed_at": "2026-07-19T01:49:12.468623Z"
       }
     },
     {
@@ -3360,7 +3585,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "720444e3332ca7f4bb1712eb8707ef9d07185f05",
-        "fetched_at": "2026-07-19T01:09:58.266049Z"
+        "fetched_at": "2026-07-19T01:32:25.698384Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3373,7 +3598,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-374",
+      "cluster_id": "cluster-448",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3399,7 +3624,9 @@
         "body_blob_sha": "720444e3332ca7f4bb1712eb8707ef9d07185f05",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.588905Z"
-      }
+      },
+      "capability_assigned_blob_sha": "720444e3332ca7f4bb1712eb8707ef9d07185f05",
+      "phase_assigned_blob_sha": "720444e3332ca7f4bb1712eb8707ef9d07185f05"
     },
     {
       "id": "google-google-cloud-global-frontend-configuration",
@@ -3418,11 +3645,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "032c760244a7885419e15ca3b44ed06611bbb42e",
-        "fetched_at": "2026-07-19T01:09:58.266177Z"
+        "fetched_at": "2026-07-19T01:32:25.698466Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "cloud-ops",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -3431,7 +3658,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-375",
+      "cluster_id": "cluster-449",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3449,6 +3676,16 @@
         "trigger": "Use when:\n- Designing, configuring, or deploying a Google Cloud global external Application Load Balancer, Cloud CDN, Cloud Armor WAF, or Service Extensions.",
         "body_blob_sha": "032c760244a7885419e15ca3b44ed06611bbb42e",
         "computed_at": "2026-07-16T14:29:37.755042Z"
+      },
+      "capability_assigned_blob_sha": "032c760244a7885419e15ca3b44ed06611bbb42e",
+      "phase_assigned_blob_sha": "032c760244a7885419e15ca3b44ed06611bbb42e",
+      "lifecycle_phase": "build",
+      "summary": {
+        "text": "This skill guides a structured, six-step discovery process to design and deploy a Google Cloud global external Application Load Balancer configured with Cloud CDN, Cloud Armor, and Service Extensions. It maps a workload's requirements to opinionated, best-practice load-balancer configurations rather than requiring the user to assemble the setup manually.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.655730Z"
       }
     },
     {
@@ -3468,7 +3705,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "aa1aad2e486a993251573b932706577db0a90ce8",
-        "fetched_at": "2026-07-19T01:09:58.266325Z"
+        "fetched_at": "2026-07-19T01:32:25.698548Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3481,7 +3718,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-376",
+      "cluster_id": "cluster-450",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3491,7 +3728,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "verify",
       "nutrition": {
         "token_estimate": 86,
         "word_count": 46,
@@ -3507,7 +3744,9 @@
         "body_blob_sha": "aa1aad2e486a993251573b932706577db0a90ce8",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589000Z"
-      }
+      },
+      "capability_assigned_blob_sha": "aa1aad2e486a993251573b932706577db0a90ce8",
+      "phase_assigned_blob_sha": "aa1aad2e486a993251573b932706577db0a90ce8"
     },
     {
       "id": "google-google-cloud-recipe-auth",
@@ -3526,7 +3765,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "0f6e79c58eed43b45b541872bbdcb13257d5b23e",
-        "fetched_at": "2026-07-19T01:09:58.266420Z"
+        "fetched_at": "2026-07-19T01:32:25.698632Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3539,7 +3778,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-377",
+      "cluster_id": "cluster-451",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3565,7 +3804,9 @@
         "body_blob_sha": "0f6e79c58eed43b45b541872bbdcb13257d5b23e",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589074Z"
-      }
+      },
+      "capability_assigned_blob_sha": "0f6e79c58eed43b45b541872bbdcb13257d5b23e",
+      "phase_assigned_blob_sha": "0f6e79c58eed43b45b541872bbdcb13257d5b23e"
     },
     {
       "id": "google-google-cloud-recipe-foundation-builder",
@@ -3584,7 +3825,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "6894b8b2a17a9f16e51a2d5907c1b3ae31544e40",
-        "fetched_at": "2026-07-19T01:09:58.266504Z"
+        "fetched_at": "2026-07-19T01:32:25.698714Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3597,7 +3838,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-378",
+      "cluster_id": "cluster-452",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3607,7 +3848,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "build",
       "nutrition": {
         "token_estimate": 4649,
         "word_count": 2092,
@@ -3623,7 +3864,9 @@
         "body_blob_sha": "6894b8b2a17a9f16e51a2d5907c1b3ae31544e40",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589234Z"
-      }
+      },
+      "capability_assigned_blob_sha": "6894b8b2a17a9f16e51a2d5907c1b3ae31544e40",
+      "phase_assigned_blob_sha": "6894b8b2a17a9f16e51a2d5907c1b3ae31544e40"
     },
     {
       "id": "google-google-cloud-recipe-onboarding",
@@ -3642,7 +3885,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "a717981fdea3f6f31c466529cabd74c647f715e1",
-        "fetched_at": "2026-07-19T01:09:58.266589Z"
+        "fetched_at": "2026-07-19T01:32:25.698797Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3655,7 +3898,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-379",
+      "cluster_id": "cluster-453",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3665,7 +3908,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "define",
       "nutrition": {
         "token_estimate": 104,
         "word_count": 59,
@@ -3681,7 +3924,9 @@
         "body_blob_sha": "a717981fdea3f6f31c466529cabd74c647f715e1",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589316Z"
-      }
+      },
+      "capability_assigned_blob_sha": "a717981fdea3f6f31c466529cabd74c647f715e1",
+      "phase_assigned_blob_sha": "a717981fdea3f6f31c466529cabd74c647f715e1"
     },
     {
       "id": "google-google-cloud-solution-agentic-ai-bidirectional-streaming",
@@ -3700,11 +3945,11 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "020d46f30ce3d1ba505bbda17367232981610e1e",
-        "fetched_at": "2026-07-19T01:09:58.495005Z"
+        "fetched_at": "2026-07-19T01:32:25.698880Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "cloud-ops",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -3713,7 +3958,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-380",
+      "cluster_id": "cluster-454",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3722,6 +3967,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "020d46f30ce3d1ba505bbda17367232981610e1e",
+      "phase_assigned_blob_sha": "020d46f30ce3d1ba505bbda17367232981610e1e",
+      "lifecycle_phase": "plan",
+      "summary": {
+        "text": "This skill interactively discovers a customer's requirements for a live, bidirectional multi-agent AI system that processes continuous streams of multimodal data, such as for real-time technical guidance or safety monitoring. It then generates a custom Google Cloud solution design built on opinionated architectural best practices for that use case.",
+        "basis": "body",
+        "body_blob_sha": "020d46f30ce3d1ba505bbda17367232981610e1e",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.655882Z"
+      },
+      "nutrition": {
+        "token_estimate": 2122,
+        "word_count": 1033,
+        "line_count": 161,
+        "basis": "body",
+        "trigger": "Use when users need agentic assistance to design and create a multi-product solution in the cloud for live bidirectional multimodal streaming workloads.",
+        "body_blob_sha": "020d46f30ce3d1ba505bbda17367232981610e1e",
+        "computed_at": "2026-07-19T01:49:12.468845Z"
       }
     },
     {
@@ -3741,11 +4005,11 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "f821b65b19fb0d714ddbad726f08c849c7495c5c",
-        "fetched_at": "2026-07-19T01:09:58.716554Z"
+        "fetched_at": "2026-07-19T01:32:25.698966Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "cloud-ops",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -3754,7 +4018,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-381",
+      "cluster_id": "cluster-455",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3763,6 +4027,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "f821b65b19fb0d714ddbad726f08c849c7495c5c",
+      "phase_assigned_blob_sha": "f821b65b19fb0d714ddbad726f08c849c7495c5c",
+      "lifecycle_phase": "plan",
+      "summary": {
+        "text": "This skill guides discovery of requirements and design of a governed, secure, borderless data lakehouse architecture with agentic AI integration on Google Cloud. It is used when designing a multi-product architecture that connects siloed data sources to AI agents, including federated queries spanning Google Cloud and external cloud providers.",
+        "basis": "body",
+        "body_blob_sha": "f821b65b19fb0d714ddbad726f08c849c7495c5c",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.656036Z"
+      },
+      "nutrition": {
+        "token_estimate": 2330,
+        "word_count": 1129,
+        "line_count": 170,
+        "basis": "body",
+        "trigger": "Use when designing a multi-product architecture that connects data silos to AI agents, joining data across clouds, or running federated queries across Google Cloud and external data sources, includin…",
+        "body_blob_sha": "f821b65b19fb0d714ddbad726f08c849c7495c5c",
+        "computed_at": "2026-07-19T01:49:12.469064Z"
       }
     },
     {
@@ -3782,11 +4065,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "3f7920eee3b3973a74f1b17e5b26fa00da50edaf",
-        "fetched_at": "2026-07-19T01:09:58.716762Z"
+        "fetched_at": "2026-07-19T01:32:25.699053Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "data-analysis",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -3795,7 +4078,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-382",
+      "cluster_id": "cluster-456",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3813,6 +4096,16 @@
         "trigger": "Use when architecting multi-product solutions for agent-based data analytics or ML workloads.",
         "body_blob_sha": "3f7920eee3b3973a74f1b17e5b26fa00da50edaf",
         "computed_at": "2026-07-16T14:29:37.756295Z"
+      },
+      "capability_assigned_blob_sha": "3f7920eee3b3973a74f1b17e5b26fa00da50edaf",
+      "phase_assigned_blob_sha": "3f7920eee3b3973a74f1b17e5b26fa00da50edaf",
+      "lifecycle_phase": "plan",
+      "summary": {
+        "text": "This skill designs a tailored, multi-product agentic data-science architecture on Google Cloud, incorporating opinionated best practices for agent-based data analytics and machine-learning workloads. It is intended for architecting multi-product solutions rather than for writing simple queries or non-agentic data pipelines.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.656098Z"
       }
     },
     {
@@ -3832,11 +4125,11 @@
       "upstream": {
         "commit_sha": "513a7a51e85fc21878134c4ec0e506504c92d0a6",
         "blob_sha": "2b7433f29bbe23a54a2f435b8a2a2c1663d4ba6b",
-        "fetched_at": "2026-07-19T01:09:58.926100Z"
+        "fetched_at": "2026-07-19T01:32:25.699137Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "data-analysis",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -3845,7 +4138,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-383",
+      "cluster_id": "cluster-457",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3854,6 +4147,25 @@
         "antigravity": 400,
         "gemini-cli": 400,
         "cursor": 350
+      },
+      "capability_assigned_blob_sha": "2b7433f29bbe23a54a2f435b8a2a2c1663d4ba6b",
+      "phase_assigned_blob_sha": "2b7433f29bbe23a54a2f435b8a2a2c1663d4ba6b",
+      "lifecycle_phase": "plan",
+      "summary": {
+        "text": "This skill discovers requirements and generates guidance for designing and deploying a governed, secure agentic-analytics solution over data distributed across Google Cloud, other cloud providers such as Databricks, Snowflake, Salesforce, or SAP, and on-premises systems. It is used when analytics and AI agents need federated access to data that lives outside Google Cloud alone.",
+        "basis": "body",
+        "body_blob_sha": "2b7433f29bbe23a54a2f435b8a2a2c1663d4ba6b",
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.656315Z"
+      },
+      "nutrition": {
+        "token_estimate": 4176,
+        "word_count": 2063,
+        "line_count": 303,
+        "basis": "body",
+        "trigger": "Use this skill when designing an architecture for efficient analytics across large volumes of structured and unstructured data that's located in multiple systems and environments, including other clo…",
+        "body_blob_sha": "2b7433f29bbe23a54a2f435b8a2a2c1663d4ba6b",
+        "computed_at": "2026-07-19T01:49:12.469445Z"
       }
     },
     {
@@ -3873,7 +4185,7 @@
       "upstream": {
         "commit_sha": "b1287583ccfaa32e65b34f274e62ebdab4cb35eb",
         "blob_sha": "47061d92cbb28ef8c787af22d918d4cd302d868e",
-        "fetched_at": "2026-07-19T01:09:58.926407Z"
+        "fetched_at": "2026-07-19T01:32:25.699230Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3886,7 +4198,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-384",
+      "cluster_id": "cluster-458",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3896,7 +4208,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "plan",
       "nutrition": {
         "token_estimate": 2685,
         "word_count": 1464,
@@ -3912,7 +4224,9 @@
         "body_blob_sha": "47061d92cbb28ef8c787af22d918d4cd302d868e",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589684Z"
-      }
+      },
+      "capability_assigned_blob_sha": "47061d92cbb28ef8c787af22d918d4cd302d868e",
+      "phase_assigned_blob_sha": "47061d92cbb28ef8c787af22d918d4cd302d868e"
     },
     {
       "id": "google-google-cloud-solution-rag-enterprise-search-gke-sqldb",
@@ -3931,11 +4245,11 @@
       "upstream": {
         "commit_sha": "cb5b5c69cb68fee2d5a1289a1b58cdbd0a7b5546",
         "blob_sha": "839ecc11b54763933bdfc6caa14547386020e2d0",
-        "fetched_at": "2026-07-19T01:09:58.926623Z"
+        "fetched_at": "2026-07-19T01:32:25.699317Z"
       },
       "status": "active",
       "tier": "shell",
-      "capability_id": "unassigned",
+      "capability_id": "agent-building",
       "native_ecosystem": "google",
       "install_hints": {},
       "reviewed_by": null,
@@ -3944,7 +4258,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-385",
+      "cluster_id": "cluster-459",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -3962,6 +4276,16 @@
         "trigger": "Use when users need a vector-enabled SQL database as the store and index for the embedding vectors, an open model and open-source inferencing framework, and Kubernetes containers to host all the appl…",
         "body_blob_sha": "839ecc11b54763933bdfc6caa14547386020e2d0",
         "computed_at": "2026-07-16T14:29:37.757107Z"
+      },
+      "capability_assigned_blob_sha": "839ecc11b54763933bdfc6caa14547386020e2d0",
+      "phase_assigned_blob_sha": "839ecc11b54763933bdfc6caa14547386020e2d0",
+      "lifecycle_phase": "plan",
+      "summary": {
+        "text": "This skill discovers requirements and generates architectural, design, and deployment guidance for a retrieval-augmented-generation-capable enterprise search system on Google Cloud. It is used when a solution needs a vector-enabled SQL database as the embedding store and index, paired with an open model, running on GKE.",
+        "basis": "description",
+        "body_blob_sha": null,
+        "generated_by": "llm",
+        "generated_at": "2026-07-19T01:49:01.656382Z"
       }
     },
     {
@@ -3981,7 +4305,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "0372156bb918213b1852d13367b684a6839b00ad",
-        "fetched_at": "2026-07-19T01:09:58.926780Z"
+        "fetched_at": "2026-07-19T01:32:25.699403Z"
       },
       "status": "active",
       "tier": "shell",
@@ -3994,7 +4318,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-386",
+      "cluster_id": "cluster-460",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4004,7 +4328,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "review",
       "nutrition": {
         "token_estimate": 80,
         "word_count": 43,
@@ -4020,7 +4344,9 @@
         "body_blob_sha": "0372156bb918213b1852d13367b684a6839b00ad",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589762Z"
-      }
+      },
+      "capability_assigned_blob_sha": "0372156bb918213b1852d13367b684a6839b00ad",
+      "phase_assigned_blob_sha": "0372156bb918213b1852d13367b684a6839b00ad"
     },
     {
       "id": "google-google-cloud-waf-operational-excellence",
@@ -4039,7 +4365,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "83cb7acac757359ca5212a5ffcf4af24c7cf4c1b",
-        "fetched_at": "2026-07-19T01:09:58.926906Z"
+        "fetched_at": "2026-07-19T01:32:25.699487Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4052,7 +4378,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-387",
+      "cluster_id": "cluster-461",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4062,7 +4388,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "review",
       "nutrition": {
         "token_estimate": 93,
         "word_count": 46,
@@ -4078,7 +4404,9 @@
         "body_blob_sha": "83cb7acac757359ca5212a5ffcf4af24c7cf4c1b",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589840Z"
-      }
+      },
+      "capability_assigned_blob_sha": "83cb7acac757359ca5212a5ffcf4af24c7cf4c1b",
+      "phase_assigned_blob_sha": "83cb7acac757359ca5212a5ffcf4af24c7cf4c1b"
     },
     {
       "id": "google-google-cloud-waf-performance-optimization",
@@ -4097,7 +4425,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "35bfdf1b6c1dde2620a982dfe11f18b48422bb9c",
-        "fetched_at": "2026-07-19T01:09:58.927011Z"
+        "fetched_at": "2026-07-19T01:32:25.699583Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4110,7 +4438,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-388",
+      "cluster_id": "cluster-462",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4120,7 +4448,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "review",
       "nutrition": {
         "token_estimate": 95,
         "word_count": 47,
@@ -4136,7 +4464,9 @@
         "body_blob_sha": "35bfdf1b6c1dde2620a982dfe11f18b48422bb9c",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.589933Z"
-      }
+      },
+      "capability_assigned_blob_sha": "35bfdf1b6c1dde2620a982dfe11f18b48422bb9c",
+      "phase_assigned_blob_sha": "35bfdf1b6c1dde2620a982dfe11f18b48422bb9c"
     },
     {
       "id": "google-google-cloud-waf-reliability",
@@ -4155,7 +4485,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "8944d2327a5ea3294e56f245494a8470141771c8",
-        "fetched_at": "2026-07-19T01:09:58.927110Z"
+        "fetched_at": "2026-07-19T01:32:25.699671Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4168,7 +4498,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-389",
+      "cluster_id": "cluster-463",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4178,7 +4508,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "review",
       "nutrition": {
         "token_estimate": 86,
         "word_count": 45,
@@ -4194,7 +4524,9 @@
         "body_blob_sha": "8944d2327a5ea3294e56f245494a8470141771c8",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.590005Z"
-      }
+      },
+      "capability_assigned_blob_sha": "8944d2327a5ea3294e56f245494a8470141771c8",
+      "phase_assigned_blob_sha": "8944d2327a5ea3294e56f245494a8470141771c8"
     },
     {
       "id": "google-google-cloud-waf-security",
@@ -4213,7 +4545,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "58e18f7a4fb1b5506de02ae3406437db30f076ef",
-        "fetched_at": "2026-07-19T01:09:58.927218Z"
+        "fetched_at": "2026-07-19T01:32:25.699756Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4226,7 +4558,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-390",
+      "cluster_id": "cluster-464",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4236,7 +4568,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "review",
       "nutrition": {
         "token_estimate": 87,
         "word_count": 44,
@@ -4252,7 +4584,9 @@
         "body_blob_sha": "58e18f7a4fb1b5506de02ae3406437db30f076ef",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.590080Z"
-      }
+      },
+      "capability_assigned_blob_sha": "58e18f7a4fb1b5506de02ae3406437db30f076ef",
+      "phase_assigned_blob_sha": "58e18f7a4fb1b5506de02ae3406437db30f076ef"
     },
     {
       "id": "google-google-cloud-waf-sustainability",
@@ -4271,7 +4605,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "10362b86aeeb1ba30ab77cad3881e67ce3f77b95",
-        "fetched_at": "2026-07-19T01:09:58.927324Z"
+        "fetched_at": "2026-07-19T01:32:25.699842Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4284,7 +4618,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-391",
+      "cluster_id": "cluster-465",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4294,7 +4628,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "review",
       "nutrition": {
         "token_estimate": 92,
         "word_count": 47,
@@ -4310,7 +4644,9 @@
         "body_blob_sha": "10362b86aeeb1ba30ab77cad3881e67ce3f77b95",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.590176Z"
-      }
+      },
+      "capability_assigned_blob_sha": "10362b86aeeb1ba30ab77cad3881e67ce3f77b95",
+      "phase_assigned_blob_sha": "10362b86aeeb1ba30ab77cad3881e67ce3f77b95"
     },
     {
       "id": "google-workload-manager-basics",
@@ -4329,7 +4665,7 @@
       "upstream": {
         "commit_sha": "c03169671232a50da03d7ce2cc9ab4919ffcd283",
         "blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
-        "fetched_at": "2026-07-19T01:09:58.927429Z"
+        "fetched_at": "2026-07-19T01:32:25.699928Z"
       },
       "status": "active",
       "tier": "shell",
@@ -4342,7 +4678,7 @@
       "reject_reason": null,
       "freshness": null,
       "upstream_changed_at": null,
-      "cluster_id": "cluster-392",
+      "cluster_id": "cluster-466",
       "score_default": 350,
       "scores_by_tool": {
         "claude-code": 350,
@@ -4352,7 +4688,7 @@
         "gemini-cli": 400,
         "cursor": 350
       },
-      "lifecycle_phase": null,
+      "lifecycle_phase": "review",
       "nutrition": {
         "token_estimate": 155,
         "word_count": 89,
@@ -4368,7 +4704,9 @@
         "body_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
         "generated_by": "llm",
         "generated_at": "2026-07-19T00:40:57.590367Z"
-      }
+      },
+      "capability_assigned_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580",
+      "phase_assigned_blob_sha": "bbf929b7c616b0b2c1e5950060b31bd322881580"
     },
     {
       "id": "google-gke-scaling",
