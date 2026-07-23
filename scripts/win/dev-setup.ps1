@@ -238,6 +238,12 @@ try {
         Write-Error "npm install failed in $SiteDir"
         exit 1
     }
+    Write-Step "Installing Playwright browsers..."
+    & npx playwright install
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "Playwright browser installation failed in $SiteDir"
+        exit 1
+    }
 } finally {
     Pop-Location
 }

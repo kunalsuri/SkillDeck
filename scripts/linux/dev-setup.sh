@@ -252,9 +252,11 @@ write_step "Navigating to $SITE_DIR and running npm install..."
 (
     cd "$SITE_DIR" || exit 1
     npm install
+    write_step "Installing Playwright browsers..."
+    npx playwright install
 )
 if [ $? -ne 0 ]; then
-    write_error "npm install failed in $SITE_DIR"
+    write_error "npm install or Playwright browser installation failed in $SITE_DIR"
     exit 1
 fi
 write_success "Frontend dependencies setup complete."
