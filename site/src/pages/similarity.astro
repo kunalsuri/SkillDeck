@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimilarityGalaxy from '../components/SimilarityGalaxy';
+import kbData from '../data/kb.json';
+import type { KB } from '../types/kb';
+
+const title = "Similarity Galaxy — SkillDeck";
+const description = "Drag a skill into the catalog and watch its closest neighbors pull in — see exactly what two skills share, how they differ, and why they scored the way they did.";
+---
+
+<Layout title={title} description={description} active="similarity" mainClass="flex-1 max-w-6xl w-full mx-auto px-4 py-16 space-y-10">
+  <div class="space-y-4 text-center max-w-3xl mx-auto">
+    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/50 shadow-sm">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      Cross-skill similarity
+    </div>
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight font-sans text-transparent bg-clip-text bg-gradient-to-b from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-400 pb-1">
+      Similarity Galaxy
+    </h1>
+    <p class="text-sm md:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans max-w-2xl mx-auto">
+      Every skill below is scored against its closest catalog neighbors by comparing what they actually do, not just
+      shared words. Drag the center skill around — the ones most similar to it pull in like magnets; the rest barely
+      move. Click any neighbor to see exactly what they share, how they differ, and why.
+    </p>
+  </div>
+
+  <SimilarityGalaxy kb={kbData as unknown as KB} client:load />
+</Layout>

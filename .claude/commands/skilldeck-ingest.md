@@ -210,7 +210,57 @@ not silently truncated — re-check and re-run if you see failures):
 python -m kitchen summary-apply
 ```
 
-## 6. Context-cost (nutrition) metrics — no agent involvement
+## 6. Similarity matrix (you do this part too)
+
+```bash
+python -m kitchen simmatrix-prepare
+```
+
+This writes `.kitchen_cache/simmatrix_input.json` with `pairs_needing_scores`.
+Comparison is scoped to active skills that have both a Skill Summary (step 5)
+and one of the 8 curated capabilities, bucketed by `capability_id` — a skill
+in `frontend` is never compared to one in `cloud-ops`. Within each bucket, a
+deterministic lexical prefilter (word-overlap Jaccard over the two Skill
+Summaries, no agent involved) shortlists each skill's nearest ~6 neighbors,
+so you score a bounded shortlist instead of every possible pair. Pairs
+already scored for the current summary text are skipped automatically.
+
+Each entry has `pair_key` (`"<a>|<b>"` — use verbatim as the output key),
+`a`/`b` (`id`, `name`, `summary`), `capability_label`, `lexical_score` (0–1
+word-overlap, a hint not a verdict), and `shared_keywords` (the actual words
+present in both summaries — deterministic, not your judgment).
+
+For each pair, judge how similar the two skills actually are in purpose and
+functionality — semantic similarity can be higher or lower than the lexical
+hint suggests:
+
+- `score`: integer 0–100 (100 = same purpose/near-duplicate, 0 = unrelated).
+- `shared_elements`: 1–4 short phrases naming concrete things both skills
+  actually do or operate on.
+- `key_differences`: 1–3 short phrases on what distinguishes them — required
+  even at a high score, since `dedup.py` already removed literal
+  near-duplicates before this stage ever runs.
+- `reason`: one plain sentence.
+
+Write `.kitchen_cache/simmatrix_output.json`:
+
+```json
+{"scores": {"<pair_key>": {"score": 0, "shared_elements": [], "key_differences": [], "reason": ""}, "...": "..."}}
+```
+
+Every `pair_key` from `pairs_needing_scores` must have an entry. Then apply
+it (scores that violate the rules above are rejected and logged, not
+silently truncated — re-check and re-run if you see failures):
+
+```bash
+python -m kitchen simmatrix-apply
+```
+
+This writes `data/similarity.json` (the full pair set, kitchen-side only) and
+carries over any previously-scored pair whose skills are still eligible and
+whose summaries haven't changed, so coverage only grows across runs.
+
+## 7. Context-cost (nutrition) metrics — no agent involvement
 
 ```bash
 python -m kitchen nutrition
@@ -224,7 +274,7 @@ else the frontmatter description as a last resort with `basis:
 "description"`). Run it any time after `rank`; it's idempotent and safe to
 re-run.
 
-## 7. Emit
+## 8. Emit
 
 ```bash
 python -m kitchen emit
@@ -234,21 +284,24 @@ This validates and writes `data/kb.json`. It groups skills by capability
 bucket (one `kb.json` entry per capability, which may contain multiple
 `skill_refs` if more than one dedup cluster mapped to the same capability),
 and stamps each `skill_refs` entry with its `lifecycle_phase`, `nutrition`
-(or `null`), and `summary` text (or `null`) so the Software Engineering /
-SDLC page, the context-cost chip, and the skill detail page can read them. It also updates `mirror/` non-destructively:
-only `.md` files for skills no longer emitted are deleted, and a file is
-only overwritten when there's fresh GitHub blob cache content for it — a
-cold cache never truncates a committed mirror body down to a one-line
-description fallback.
+(or `null`), `summary` text (or `null`), and `related` (each skill's
+strongest `data/similarity.json` neighbors, capped and derived — the full
+pair set stays kitchen-side) so the Software Engineering / SDLC page, the
+context-cost chip, the skill detail page, and the Similarity page can read
+them. It also updates `mirror/` non-destructively: only `.md` files for
+skills no longer emitted are deleted, and a file is only overwritten when
+there's fresh GitHub blob cache content for it — a cold cache never
+truncates a committed mirror body down to a one-line description fallback.
 
-## 8. Report, don't commit
+## 9. Report, don't commit
 
 Run `git status` and `git diff --stat` on `data/` and `mirror/` and summarize
 for the user: how many skills were ingested, how many capability buckets got
 entries, how many skills were classified into each lifecycle phase, how many
-cards and Skill Summaries you wrote vs. reused from cache, and anything that
-looked off (e.g. a skill you had to leave `unassigned`, or a card or summary
-that failed validation twice).
+cards, Skill Summaries, and similarity scores you wrote vs. reused from
+cache, and anything that looked off (e.g. a skill you had to leave
+`unassigned`, or a card, summary, or similarity score that failed validation
+twice).
 
 Also remind the user that the **web review dashboard** is available for
 human promotion/rejection of skills and manual card editing:

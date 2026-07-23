@@ -9,6 +9,7 @@ SOURCES_JSON = DATA_DIR / "sources.json"
 SKILLS_JSON = DATA_DIR / "skills.json"
 INSTALL_MATRIX_JSON = DATA_DIR / "install_matrix.json"
 KB_JSON = DATA_DIR / "kb.json"
+SIMILARITY_JSON = DATA_DIR / "similarity.json"
 
 MIRROR_DIR = PROJECT_ROOT / "mirror"
 CACHE_DIR = PROJECT_ROOT / ".kitchen_cache"

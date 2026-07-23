@@ -9,7 +9,7 @@ import '../styles/global.css';
 // with a different header/footer max-width, background opacity, and
 // Google Fonts weight set than the rest, which is what made the nav bar
 // visibly resize/reflow when navigating between them.
-export type NavKey = 'catalog' | 'sdlc' | 'general-skills' | 'doctor' | 'faq' | 'about';
+export type NavKey = 'catalog' | 'sdlc' | 'general-skills' | 'similarity' | 'doctor' | 'faq' | 'about';
 
 interface Props {
   title: string;
@@ -24,6 +24,7 @@ const NAV_ITEMS: { key: NavKey; href: string; label: string }[] = [
   { key: 'catalog', href: '/', label: 'Skill Catalog' },
   { key: 'general-skills', href: '/general-skills', label: 'General Skills' },
   { key: 'sdlc', href: '/sdlc', label: 'SDLC' },
+  { key: 'similarity', href: '/similarity', label: 'Similarity' },
   { key: 'doctor', href: '/doctor', label: 'Skill Doctor' },
   { key: 'faq', href: '/faq', label: 'FAQ' },
   { key: 'about', href: '/about', label: 'About' },

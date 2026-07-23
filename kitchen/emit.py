@@ -2,7 +2,7 @@ import json
 import re
 from datetime import datetime, timezone
 from kitchen.config import (
-    SOURCES_JSON, SKILLS_JSON, INSTALL_MATRIX_JSON, KB_JSON, MIRROR_DIR, TOOLS, CAPABILITIES, LIFECYCLE_PHASES
+    SOURCES_JSON, SKILLS_JSON, INSTALL_MATRIX_JSON, KB_JSON, SIMILARITY_JSON, MIRROR_DIR, TOOLS, CAPABILITIES, LIFECYCLE_PHASES
 )
 from kitchen.utils import load_all_skills, atomic_write_json
 from kitchen.dedup import resolve_skill_body
@@ -57,6 +57,50 @@ def resolve_install_command(skill: dict, tool_id: str, methods_dict: dict, fallb
                 pass
     return None
 
+# Neighbors shipped per skill in kb.json. Keeps the static site's payload
+# bounded regardless of how many pairs data/similarity.json accumulates -
+# the full pair set stays kitchen-side, only each skill's strongest matches
+# travel to the frontend.
+MAX_RELATED_PER_SKILL = 8
+
+
+def load_related_map(skills_map: dict) -> dict:
+    """Best-effort read of data/similarity.json (kitchen/simmatrix.py's
+    output), tolerant of a missing or malformed file - same pattern as
+    load_source_vendor_map/load_previous_cards_by_capability - since
+    simmatrix is an independent, optional stage a fresh clone may not have
+    run yet. Returns {skill_id: [related_entry, ...]}, sorted by score
+    descending and capped to MAX_RELATED_PER_SKILL."""
+    if not SIMILARITY_JSON.exists():
+        return {}
+    try:
+        with open(SIMILARITY_JSON, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return {}
+
+    neighbors = {}
+    for p in data.get("pairs", []):
+        a_id, b_id = p.get("a"), p.get("b")
+        a_skill, b_skill = skills_map.get(a_id), skills_map.get(b_id)
+        if not a_skill or not b_skill:
+            continue  # skill removed/renamed since this pair was scored
+        common = {
+            "score": p.get("score", 0),
+            "shared_keywords": p.get("shared_keywords", []),
+            "shared_elements": p.get("shared_elements", []),
+            "key_differences": p.get("key_differences", []),
+            "reason": p.get("reason", ""),
+        }
+        neighbors.setdefault(a_id, []).append({"id": b_id, "name": b_skill.get("name", ""), **common})
+        neighbors.setdefault(b_id, []).append({"id": a_id, "name": a_skill.get("name", ""), **common})
+
+    for sid, lst in neighbors.items():
+        lst.sort(key=lambda e: (-e["score"], e["id"]))
+        neighbors[sid] = lst[:MAX_RELATED_PER_SKILL]
+    return neighbors
+
+
 def get_vendor(source_id: str, source_vendor: dict) -> str:
     return source_vendor.get(source_id)
 
@@ -74,7 +118,7 @@ def load_source_vendor_map() -> dict:
         return {}
     return {s["id"]: s.get("vendor") for s in sources_data.get("sources", [])}
 
-def build_skill_ref(member: dict, methods_dict: dict, fallback_order: dict, source_vendor: dict) -> dict:
+def build_skill_ref(member: dict, methods_dict: dict, fallback_order: dict, source_vendor: dict, related_map: dict) -> dict:
     org = member["origin"]["org"]
     repo = member["origin"]["repo"]
     path = member["origin"]["path"]
@@ -106,7 +150,8 @@ def build_skill_ref(member: dict, methods_dict: dict, fallback_order: dict, sour
         "lifecycle_phase": member.get("lifecycle_phase"),
         "install": install_block,
         "nutrition": member.get("nutrition"),
-        "summary": (member.get("summary") or {}).get("text")
+        "summary": (member.get("summary") or {}).get("text"),
+        "related": related_map.get(member["id"], [])
     }
 
 def load_previous_cards_by_capability() -> dict:
@@ -147,6 +192,7 @@ def run_emit():
     cards_cache = load_cards_cache()
     previous_cards_by_cap = load_previous_cards_by_capability()
     source_vendor = load_source_vendor_map()
+    related_map = load_related_map(skills_map)
 
     # Build methods lookup dictionary
     methods_dict = {}
@@ -174,7 +220,7 @@ def run_emit():
     mirrorable_skills = {}
     for member in live_skills:
         mid = member["id"]
-        ref = build_skill_ref(member, methods_dict, fallback_order, source_vendor)
+        ref = build_skill_ref(member, methods_dict, fallback_order, source_vendor, related_map)
         ref_cache[mid] = ref
         cap_id = member.get("capability_id")
         all_skills[mid] = {**ref, "capability_id": cap_id if cap_id in valid_caps else None}

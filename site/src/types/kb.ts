@@ -36,6 +36,20 @@ export interface Nutrition {
   computed_at: string;
 }
 
+// One neighbor from data/similarity.json, mirrored onto a skill_ref/
+// all_skills entry by emit.py (kitchen/emit.py: load_related_map). Absent
+// or empty for a skill outside the similarity-matrix scope (no Skill
+// Summary yet, or never assigned one of the 8 curated capabilities).
+export interface RelatedSkill {
+  id: string;
+  name: string;
+  score: number;
+  shared_keywords: string[];
+  shared_elements: string[];
+  key_differences: string[];
+  reason: string;
+}
+
 export interface SkillRef {
   name: string;
   repo_url: string;
@@ -53,6 +67,9 @@ export interface SkillRef {
   // Optional until the next `python -m kitchen emit` regenerates kb.json;
   // null when the summary stage hasn't produced text for the skill yet.
   summary?: string | null;
+  // Optional until the next `python -m kitchen emit` regenerates kb.json;
+  // absent/empty when the skill is outside the similarity-matrix scope.
+  related?: RelatedSkill[];
 }
 
 export interface KBEntry {

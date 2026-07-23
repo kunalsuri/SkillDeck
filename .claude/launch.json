@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "skilldeck-site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["site/node_modules/astro/bin/astro.mjs", "dev", "--root", "site"],
+      "port": 4321
+    }
+  ]
+}

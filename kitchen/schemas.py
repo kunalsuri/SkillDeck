@@ -32,6 +32,64 @@ SUMMARY_SCHEMA = {
     }
 }
 
+# Shared shape for one entry in a skill_ref's "related" list - a neighbor
+# from data/similarity.json, kept lean (no full summary text) since kb.json
+# ships this to the static site. Optional/absent means the skill is outside
+# the similarity-matrix scope (see kitchen/simmatrix.py: _eligible_skills).
+RELATED_ENTRY_SCHEMA = {
+    "type": "object",
+    "required": ["id", "name", "score", "shared_elements", "key_differences", "reason"],
+    "properties": {
+        "id": {"type": "string"},
+        "name": {"type": "string"},
+        "score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "shared_keywords": {"type": "array", "items": {"type": "string"}},
+        "shared_elements": {"type": "array", "items": {"type": "string"}},
+        "key_differences": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string"}
+    }
+}
+
+# Shared shape for one pairwise entry in data/similarity.json's "pairs" list.
+SIMILARITY_PAIR_SCHEMA = {
+    "type": "object",
+    "required": [
+        "a", "b", "score", "lexical_score", "shared_keywords", "shared_elements",
+        "key_differences", "reason", "a_summary_sha", "b_summary_sha",
+        "generated_by", "generated_at"
+    ],
+    "properties": {
+        "a": {"type": "string"},
+        "b": {"type": "string"},
+        "a_name": {"type": "string"},
+        "b_name": {"type": "string"},
+        "score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "lexical_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "shared_keywords": {"type": "array", "items": {"type": "string"}},
+        "shared_elements": {"type": "array", "items": {"type": "string"}},
+        "key_differences": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string"},
+        "a_summary_sha": {"type": "string"},
+        "b_summary_sha": {"type": "string"},
+        "generated_by": {"type": "string", "enum": ["llm", "human"]},
+        "generated_at": {"type": "string", "format": "date-time"}
+    }
+}
+
+# Schema for data/similarity.json
+SIMILARITY_SCHEMA = {
+    "type": "object",
+    "required": ["schema_version", "generated_at", "pairs"],
+    "properties": {
+        "schema_version": {"type": "integer"},
+        "generated_at": {"type": "string", "format": "date-time"},
+        "pairs": {
+            "type": "array",
+            "items": SIMILARITY_PAIR_SCHEMA
+        }
+    }
+}
+
 # Schema for sources.json
 SOURCES_SCHEMA = {
     "type": "object",
@@ -191,7 +249,11 @@ SKILL_REF_SCHEMA = {
             "additionalProperties": {"type": "string"}
         },
         "nutrition": NUTRITION_SCHEMA,
-        "summary": {"type": ["string", "null"]}
+        "summary": {"type": ["string", "null"]},
+        # Absent/empty for a skill outside the similarity-matrix scope
+        # (kitchen/simmatrix.py: _eligible_skills) - never null, emit.py
+        # always writes at least [].
+        "related": {"type": "array", "items": RELATED_ENTRY_SCHEMA}
     }
 }
 

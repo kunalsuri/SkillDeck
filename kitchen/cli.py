@@ -10,6 +10,7 @@ from kitchen.nutrition import run_nutrition
 from kitchen.phase import prepare_phase_input, apply_phase_assignments
 from kitchen.cards import prepare_cards_input, apply_card_assignments
 from kitchen.summary import prepare_summary_input, apply_summary_assignments
+from kitchen.simmatrix import prepare_simmatrix_input, apply_simmatrix_assignments
 from kitchen.review import review_skill, show_queue, start_review_server
 from kitchen.freshness import check_freshness
 from kitchen.emit import run_emit
@@ -80,6 +81,11 @@ def main():
     summary_apply_parser = subparsers.add_parser("summary-apply", help="Apply an agent's Skill Summaries")
     summary_apply_parser.add_argument("input_file", nargs="?", help="Path to summaries JSON (default: .kitchen_cache/summary_output.json)")
 
+    # Similarity matrix (agent-driven, split into prepare/apply)
+    subparsers.add_parser("simmatrix-prepare", help="Write shortlisted skill pairs needing a similarity score for an agent to read")
+    simmatrix_apply_parser = subparsers.add_parser("simmatrix-apply", help="Apply an agent's pairwise similarity scores")
+    simmatrix_apply_parser.add_argument("input_file", nargs="?", help="Path to scores JSON (default: .kitchen_cache/simmatrix_output.json)")
+
     # Review
     review_parser = subparsers.add_parser("review", help="Human read/promote workflow")
     review_parser.add_argument("skill_id", nargs="?", help="Skill ID to review")
@@ -126,6 +132,10 @@ def main():
             prepare_summary_input()
         elif args.command == "summary-apply":
             apply_summary_assignments(Path(args.input_file) if args.input_file else None)
+        elif args.command == "simmatrix-prepare":
+            prepare_simmatrix_input()
+        elif args.command == "simmatrix-apply":
+            apply_simmatrix_assignments(Path(args.input_file) if args.input_file else None)
         elif args.command == "review":
             if args.queue:
                 show_queue()
