@@ -150,8 +150,29 @@ the copy confirmation.
 
 | # | Improvement | Status | Commit |
 |---|---|---|---|
-| — | Audit + this plan | Done | (this commit) |
+| — | Audit + this plan | Done | 6ba36a7 |
 | 1 | Mobile navigation collapse | Done | df40070 |
-| 2 | Install-tab non-functional + keyboard access | Done | (this commit) |
-| 3 | Dead Tailwind color classes | Done | (this commit) |
-| 4 | Skip link + copy-button live region | Done | (this commit) |
+| 2 | Install-tab non-functional + keyboard access | Done | 1d39c2d |
+| 3 | Dead Tailwind color classes | Done | c2143e4 |
+| 4 | Skip link + copy-button live region | Done | 723b07f |
+
+## Final validation (all 4 items)
+
+- `npm run lint` — clean (0 errors/warnings; 2 pre-existing deprecation
+  hints from `astro check`, unrelated to this work).
+- `astro check` — 0 errors across 35+ files.
+- `npm run test` (Vitest) — 50/50 passing.
+- `npm run build` — all 526 pages build successfully.
+- `npm run test:e2e` (Playwright) — 10/11 passing. The one failure
+  (`theme-toggle.spec.ts`'s second `page.reload()` timing out) was
+  isolated and confirmed to reproduce identically on a clean checkout
+  of this branch's base commit, with only this session's sandbox
+  environment involved (repeated headless-Chromium reloads under
+  swiftshader) — pre-existing and unrelated to these changes.
+- Full manual visual sweep: all 7 routes (`/`, `/general-skills`,
+  `/sdlc`, `/similarity`, `/doctor`, `/faq`, `/about`) at mobile
+  (375px) and desktop (1440px), light and dark — 28 screenshots, no
+  regressions found.
+- Keyboard-only pass: skip link, mobile nav toggle, install-command
+  tab switching (Tab + arrow keys), and copy-button focus rings all
+  verified interactively via Playwright keyboard simulation.
