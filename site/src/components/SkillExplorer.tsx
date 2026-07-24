@@ -697,7 +697,7 @@ function SkillDetailPanel({ item, mode, colorMap, defaultColor, tools, installTo
               {installCmd && (
                 <button
                   onClick={() => onCopy(installCmd, `install-${id}`)}
-                  className="p-1.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0"
+                  className="p-1.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0"
                   aria-label="Copy installation command"
                 >
                   {copiedKey === `install-${id}` ? (

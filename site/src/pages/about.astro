@@ -121,7 +121,7 @@ const wantList: { need: string; mechanism: string }[] = [
     <h1 class="text-3xl md:text-4xl font-bold tracking-tight font-sans text-zinc-900 dark:text-white">
       About SkillDeck
     </h1>
-    <p class="text-base text-zinc-550 dark:text-zinc-400 leading-relaxed font-sans">
+    <p class="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed font-sans">
       SkillDeck provides a clean directory of agent skills, compiled via offline crawlers and curated to help developers configure their AI coding assistants quickly.
     </p>
   </div>
@@ -141,7 +141,7 @@ const wantList: { need: string; mechanism: string }[] = [
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
-            <tr class="bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-450 text-xs font-mono uppercase tracking-wider">
+            <tr class="bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 text-xs font-mono uppercase tracking-wider">
               <th class="p-4 font-semibold">Source Name</th>
               <th class="p-4 font-semibold">Organization</th>
               <th class="p-4 font-semibold">Kind</th>
@@ -164,8 +164,8 @@ const wantList: { need: string; mechanism: string }[] = [
                     {s.kind}
                   </span>
                 </td>
-                <td class="p-4 font-mono text-zinc-550 dark:text-zinc-400">{s.vendor || '—'}</td>
-                <td class="p-4 text-xs max-w-sm text-zinc-550 dark:text-zinc-400 leading-normal">{s.notes || '—'}</td>
+                <td class="p-4 font-mono text-zinc-500 dark:text-zinc-400">{s.vendor || '—'}</td>
+                <td class="p-4 text-xs max-w-sm text-zinc-500 dark:text-zinc-400 leading-normal">{s.notes || '—'}</td>
                 <td class="p-4">
                   <a
                     href={s.repo_url}
@@ -193,25 +193,25 @@ const wantList: { need: string; mechanism: string }[] = [
       Editorial Vetting & Review Tiers
     </h2>
     <div class="grid md:grid-cols-2 gap-4">
-      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-850 p-5 rounded-lg flex gap-4 items-start shadow-sm">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-5 rounded-lg flex gap-4 items-start shadow-sm">
         <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-900/30 shrink-0">
           ✓ Human-read
         </span>
         <div class="space-y-1">
-          <h3 class="text-sm font-bold text-zinc-850 dark:text-zinc-200">Editor's Choice / Verified Core</h3>
-          <p class="text-xs text-zinc-550 dark:text-zinc-450 leading-relaxed">
+          <h3 class="text-sm font-bold text-zinc-800 dark:text-zinc-200">Editor's Choice / Verified Core</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
             The maintainer has read the upstream `SKILL.md` contents verbatim, promoted the skill to the core tier, and hand-reviewed the product explanation card to ensure absolute accuracy.
           </p>
         </div>
       </div>
 
-      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-850 p-5 rounded-lg flex gap-4 items-start shadow-sm">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-5 rounded-lg flex gap-4 items-start shadow-sm">
         <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-semibold bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200/50 dark:border-amber-900/30 shrink-0">
           Auto-summarized
         </span>
         <div class="space-y-1">
-          <h3 class="text-sm font-bold text-zinc-850 dark:text-zinc-200">Ingested Shell Tier</h3>
-          <p class="text-xs text-zinc-550 dark:text-zinc-450 leading-relaxed">
+          <h3 class="text-sm font-bold text-zinc-800 dark:text-zinc-200">Ingested Shell Tier</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
             The skill was automatically discovered via crawls or aggregator list parsing. Its card was synthesized by an offline agent but has not yet been vetted by a human editor.
           </p>
         </div>
@@ -242,7 +242,7 @@ const wantList: { need: string; mechanism: string }[] = [
             <div class="overflow-x-auto">
               <table class="w-full text-left border-collapse text-xs">
                 <thead>
-                  <tr class="bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-450 font-mono uppercase tracking-wider">
+                  <tr class="bg-zinc-50 dark:bg-zinc-900/50 border-b border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 font-mono uppercase tracking-wider">
                     <th class="p-3 font-semibold sticky left-0 bg-zinc-50 dark:bg-zinc-900/50">Mechanism</th>
                     {tools.map((t) => (
                       <th class="p-3 font-semibold whitespace-nowrap">{t.label}</th>
@@ -254,7 +254,7 @@ const wantList: { need: string; mechanism: string }[] = [
                     <tr class="hover:bg-zinc-50/50 dark:hover:bg-zinc-900/20 transition-colors align-top">
                       <td class="p-3 sticky left-0 bg-white dark:bg-zinc-900">
                         <div class="font-bold text-zinc-800 dark:text-zinc-200">{row.mechanism}</div>
-                        <div class="text-[10px] text-zinc-500 dark:text-zinc-450 mt-1 max-w-xs leading-relaxed font-sans">{row.blurb}</div>
+                        <div class="text-[10px] text-zinc-500 dark:text-zinc-400 mt-1 max-w-xs leading-relaxed font-sans">{row.blurb}</div>
                       </td>
                       {tools.map((t) => (
                         <td class="p-3 text-zinc-700 dark:text-zinc-300 whitespace-nowrap">
@@ -275,7 +275,7 @@ const wantList: { need: string; mechanism: string }[] = [
             </h4>
             <ul class="space-y-2">
               {wantList.map((item) => (
-                <li class="text-xs text-zinc-650 dark:text-zinc-305 leading-relaxed flex gap-2">
+                <li class="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed flex gap-2">
                   <span class="text-zinc-400 dark:text-zinc-600">&rarr;</span>
                   <span>
                     <span class="text-zinc-500 dark:text-zinc-400">{item.need}</span>

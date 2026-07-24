@@ -175,7 +175,7 @@ const displayTitle = `${skill.name} — Skill Details`;
         <div class="markdown-body max-w-none text-zinc-800 dark:text-zinc-200 prose dark:prose-invert" set:html={markdownHtml} />
       </div>
     ) : (
-      <div class="bg-zinc-100 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-850 rounded-lg p-8 text-center text-sm space-y-4">
+      <div class="bg-zinc-100 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg p-8 text-center text-sm space-y-4">
         <div class="text-zinc-500 dark:text-zinc-400 max-w-md mx-auto leading-relaxed">
           {skill.license === 'source-available' ? (
             <p>Due to licensing restrictions for <strong>Source-Available</strong> content, the documentation body cannot be mirrored locally.</p>
@@ -188,7 +188,7 @@ const displayTitle = `${skill.name} — Skill Details`;
             href={skill.repo_url}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-1 px-4 py-2 text-xs font-mono font-bold bg-zinc-900 text-zinc-100 hover:bg-zinc-850 rounded border border-zinc-850"
+            class="inline-flex items-center gap-1 px-4 py-2 text-xs font-mono font-bold bg-zinc-900 text-zinc-100 hover:bg-zinc-800 rounded border border-zinc-800"
           >
             Read on GitHub Upstream
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">

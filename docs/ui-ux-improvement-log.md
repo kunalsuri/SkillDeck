@@ -153,5 +153,5 @@ the copy confirmation.
 | — | Audit + this plan | Done | (this commit) |
 | 1 | Mobile navigation collapse | Done | df40070 |
 | 2 | Install-tab non-functional + keyboard access | Done | (this commit) |
-| 3 | Dead Tailwind color classes | Pending | — |
+| 3 | Dead Tailwind color classes | Done | (this commit) |
 | 4 | Skip link + copy-button live region | Pending | — |
