@@ -48,6 +48,16 @@ const INACTIVE_CLASS = 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dar
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-200 min-h-screen flex flex-col">
+    {/* Skip link: first focusable element on every page, invisible until
+        focused, so keyboard users can bypass the 7-item nav instead of
+        tabbing through it on every single page load. */}
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded focus:bg-accent focus:text-white focus:text-sm focus:font-mono focus:font-semibold focus:shadow-lg"
+    >
+      Skip to content
+    </a>
+
     {/* Header */}
     <header class="border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur sticky top-0 z-10">
       <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -130,9 +140,15 @@ const INACTIVE_CLASS = 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dar
     </script>
 
     {/* Main Content */}
-    <main class={mainClass}>
+    <main id="main" tabindex="-1" class={`${mainClass} focus:outline-none`}>
       <slot />
     </main>
+
+    {/* Shared live region: copy buttons across the site (SkillCard,
+        SkillExplorer) write a short message here so screen readers
+        announce a successful copy, which the visual icon/text swap alone
+        doesn't communicate to assistive tech. */}
+    <div id="copy-announcer" role="status" aria-live="polite" class="sr-only"></div>
 
     {/* Footer */}
     <footer class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/30 mt-auto py-8">

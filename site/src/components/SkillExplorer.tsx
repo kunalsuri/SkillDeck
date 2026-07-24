@@ -282,6 +282,11 @@ export default function SkillExplorer({ kb, mode }: Props) {
   const handleCopy = (text: string, key: string) => {
     navigator.clipboard.writeText(text).then(() => {
       setCopiedKey(key);
+      const announcer = document.getElementById('copy-announcer');
+      if (announcer) {
+        const label = key.startsWith('id-') ? 'Skill ID' : key.startsWith('prompt-') ? 'Prompt' : 'Install command';
+        announcer.textContent = `${label} copied to clipboard`;
+      }
       setTimeout(() => setCopiedKey(null), 2000);
     });
   };
