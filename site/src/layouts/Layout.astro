@@ -58,15 +58,76 @@ const INACTIVE_CLASS = 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dar
           <span class="text-[10px] font-mono border border-zinc-300 dark:border-zinc-700 px-1 rounded text-zinc-500">v0.1.0</span>
         </a>
         <div class="flex items-center gap-4">
-          <nav class="flex items-center gap-6 text-sm font-mono font-medium">
+          <nav class="hidden md:flex items-center gap-6 text-sm font-mono font-medium">
             {NAV_ITEMS.map((item) => (
               <a href={item.href} class={active === item.key ? ACTIVE_CLASS : INACTIVE_CLASS}>{item.label}</a>
             ))}
           </nav>
           <ThemeToggle />
+          <button
+            id="mobile-nav-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            class="md:hidden inline-flex items-center justify-center w-8 h-8 rounded border border-zinc-300 dark:border-zinc-700 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors shrink-0"
+          >
+            <svg id="mobile-nav-icon-open" class="w-4 h-4 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="mobile-nav-icon-close" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
       </div>
+
+      {/* Mobile nav panel: collapsed by default, toggled by the button above.
+          Keeps the header itself a fixed height on small viewports instead
+          of letting 7 nav labels line-wrap into the header row. */}
+      <nav id="mobile-nav" class="md:hidden hidden border-t border-zinc-200 dark:border-zinc-800">
+        <div class="max-w-6xl mx-auto px-4 py-2 flex flex-col">
+          {NAV_ITEMS.map((item) => (
+            <a
+              href={item.href}
+              class={`py-2.5 text-sm font-mono font-medium border-b border-zinc-100 dark:border-zinc-800/70 last:border-b-0 ${active === item.key ? ACTIVE_CLASS : INACTIVE_CLASS}`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
     </header>
+
+    <script>
+      const toggle = document.getElementById('mobile-nav-toggle');
+      const panel = document.getElementById('mobile-nav');
+      const iconOpen = document.getElementById('mobile-nav-icon-open');
+      const iconClose = document.getElementById('mobile-nav-icon-close');
+
+      function setOpen(open: boolean) {
+        panel?.classList.toggle('hidden', !open);
+        toggle?.setAttribute('aria-expanded', String(open));
+        iconOpen?.classList.toggle('hidden', open);
+        iconClose?.classList.toggle('hidden', !open);
+      }
+
+      toggle?.addEventListener('click', () => {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      panel?.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).tagName === 'A') setOpen(false);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
+      });
+
+      window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+        if (e.matches) setOpen(false);
+      });
+    </script>
 
     {/* Main Content */}
     <main class={mainClass}>
