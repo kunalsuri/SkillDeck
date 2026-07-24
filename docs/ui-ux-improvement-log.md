@@ -43,28 +43,49 @@ inline nav row below `md`. Preserve the desktop row unchanged.
   and `Escape`).
 - `npm run build` and `npm run test:e2e` still pass.
 
-### 2. Install-command tabs are keyboard/screen-reader inaccessible (P0)
+### 2. Install-command tool tabs don't work at all — for anyone (P0)
 **Where:** `src/components/SkillCard.astro` (rendered on every
 `/skill/[id]` page — 150+ pages — and embedded standalone)
 **Problem:** The per-tool install-command tabs use a CSS-only
-radio+label trick, but the radio inputs are `class="hidden peer"`.
+radio+label trick, but the radio inputs were `class="hidden peer"`.
 Tailwind's `hidden` is `display:none`, which removes the input from the
-tab order entirely — a keyboard or screen-reader user can never reach or
-switch these tabs, permanently stuck on the first tool ("Claude Code").
-This blocks the page's primary call-to-action (copy your tool's install
-command) for non-mouse users. The adjacent copy-command button also sets
-`focus:outline-none` with no replacement focus ring, so keyboard focus is
-invisible there too.
-**Fix:** Replace `hidden` on the radio inputs with a visually-hidden-but
--focusable utility (`sr-only`-style: `absolute w-px h-px p-0 -m-px
-overflow-hidden clip-[rect(0,0,0,0)] whitespace-nowrap border-0`) and add
-`peer-focus-visible:ring-2` to the associated label. Add a visible
-`focus-visible` ring to the copy button instead of `outline-none` with no
-replacement.
+tab order entirely — a keyboard or screen-reader user could never reach
+or switch these tabs. **While fixing this, found a deeper pre-existing
+bug: the entire tab-switching mechanism was non-functional for every
+user, mouse included.** The per-tool CSS rules lived in
+`<style is:global>{`...`}</style>`, but Astro never evaluates a
+`{jsExpression}` child of `<style>` — it renders the literal,
+un-interpolated JS source text (`${t.id}` verbatim) into the page, which
+is not valid CSS and does nothing. Confirmed via a clean checkout: click
++ arrow-key tests both showed the `:checked` radio updating correctly,
+but the panel's `display` stayed `none` and the label stayed
+default-gray — clicking a tool never actually revealed its install
+command. The adjacent copy-command button also sets `focus:outline-none`
+with no replacement focus ring.
+**Fix:** Replace `hidden` on the radio inputs with Tailwind's `sr-only`
+(visually hidden, still focusable). Move the per-tool CSS generation
+into frontmatter (real JS, evaluated correctly) and render the computed
+string via `<style is:global set:html={tabCss} />` instead of an
+unevaluated template-literal child — this makes tab-switching work for
+mouse users for the first time as a side effect of the accessibility
+fix, verified against both dev SSR and the static `astro build` output.
+Added a `:focus-visible` outline rule to the same computed CSS. While auditing
+this pattern, grepped the whole `src/` tree for `focus:outline-none`
+and found the identical missing-replacement-ring bug in 4 more spots:
+`SkillCard.astro`'s alternatives `<summary>` toggle, `SkillExplorer.tsx`'s
+skill-list-item button, its install-tool tab buttons, its install-copy
+button, and `SimilarityGalaxy.tsx`'s graph-node buttons (which also
+never revealed their name label on keyboard focus, only on mouse hover).
+Fixed all of them with the same `focus-visible:ring-2
+focus-visible:ring-accent` pattern (and `group-focus-visible:opacity-100`
+for the galaxy label).
 **Acceptance criteria:**
 - Tabbing through a skill detail page reaches every tool tab and the
   copy button, each with a visible focus indicator.
 - Arrow keys / Space toggle the radio group per native semantics.
+- Every other fixed control (skill list items, SkillExplorer install
+  tabs/copy button, similarity graph nodes) shows a visible ring on
+  keyboard focus and no change on mouse click.
 - No visual regression for mouse users (screenshot diff on one skill
   page, light + dark).
 - `npm run test:e2e` still passes.
@@ -130,7 +151,7 @@ the copy confirmation.
 | # | Improvement | Status | Commit |
 |---|---|---|---|
 | — | Audit + this plan | Done | (this commit) |
-| 1 | Mobile navigation collapse | Pending | — |
-| 2 | Install-tab keyboard accessibility | Pending | — |
+| 1 | Mobile navigation collapse | Done | df40070 |
+| 2 | Install-tab non-functional + keyboard access | Done | (this commit) |
 | 3 | Dead Tailwind color classes | Pending | — |
 | 4 | Skip link + copy-button live region | Pending | — |

@@ -59,6 +59,26 @@ const cardBorderClass = isEditorsChoice
   ? 'border-blue-300 dark:border-blue-800 border-l-4 border-l-blue-400 dark:border-l-blue-500'
   : 'border-amber-300 dark:border-amber-800 border-l-4 border-l-amber-400 dark:border-l-amber-500'; // Community unreviewed
 
+// Astro's <style> tags compile their contents as static CSS text - a
+// `{jsExpression}` child (as this previously was) is never evaluated, so
+// the per-tool `:checked`/`:focus-visible` rules below must be computed
+// here in frontmatter (real JS) and injected with set:html instead.
+const tabCss = tools.map(t => `
+  #tab-${t.id}-${skillId}:checked ~ div [data-tool="${t.id}"] {
+    border-bottom-color: #2563eb;
+    color: #2563eb;
+    font-weight: 600;
+  }
+  #tab-${t.id}-${skillId}:checked ~ .content-${t.id} {
+    display: flex;
+  }
+  #tab-${t.id}-${skillId}:focus-visible ~ div [data-tool="${t.id}"] {
+    outline: 2px solid #2563eb;
+    outline-offset: -2px;
+    border-radius: 2px;
+  }
+`).join('\n');
+
 const nutrition = skill.nutrition;
 const costChipStyle = nutrition && nutrition.basis === 'body'
   ? costBucket(nutrition.token_estimate) === 'light'
@@ -194,7 +214,7 @@ const costChipStyle = nutrition && nutrition.basis === 'body'
               type="radio"
               name={`tab-${skillId}`}
               id={`tab-${t.id}-${skillId}`}
-              class="hidden peer"
+              class="sr-only peer"
               checked={idx === 0}
             />
           ))}
@@ -212,19 +232,10 @@ const costChipStyle = nutrition && nutrition.basis === 'body'
             ))}
           </div>
 
-          {/* CSS to match labels to checked radio */}
-          <style is:global>{`
-            ${tools.map(t => `
-              #tab-${t.id}-${skillId}:checked ~ div [data-tool="${t.id}"] {
-                border-bottom-color: #2563eb;
-                color: #2563eb;
-                font-weight: 600;
-              }
-              #tab-${t.id}-${skillId}:checked ~ .content-${t.id} {
-                display: flex;
-              }
-            `).join('\n')}
-          `}</style>
+          {/* CSS to match labels to checked radio - computed in frontmatter
+              above (see tabCss) since <style>{jsExpr}</style> is never
+              evaluated by Astro; set:html renders the already-computed text. */}
+          <style is:global set:html={tabCss} />
 
           {/* Panels */}
           {tools.map(t => {
@@ -249,7 +260,7 @@ const costChipStyle = nutrition && nutrition.basis === 'body'
                       btn.innerHTML = '<svg class="w-4 h-4 text-emerald-500 animate-copied-pop" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>';
                       setTimeout(() => { btn.innerHTML = original; }, 2000);
                     })`}
-                    class="p-1.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-400 focus:outline-none shrink-0"
+                    class="p-1.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0"
                     aria-label="Copy installation command"
                   >
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -272,7 +283,7 @@ const costChipStyle = nutrition && nutrition.basis === 'body'
   {/* Collapsed alternatives details */}
   {alternatives.length > 0 && (
     <details class="border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 group">
-      <summary class="px-6 py-3 text-xs font-mono text-zinc-500 dark:text-zinc-400 cursor-pointer select-none hover:text-zinc-700 dark:hover:text-zinc-200 flex items-center justify-between focus:outline-none">
+      <summary class="px-6 py-3 text-xs font-mono text-zinc-500 dark:text-zinc-400 cursor-pointer select-none hover:text-zinc-700 dark:hover:text-zinc-200 flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset">
         <span class="font-semibold">{alternatives.length} other option{alternatives.length > 1 ? 's' : ''} for this capability</span>
         <svg class="w-4 h-4 transition-transform group-open:rotate-180 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
