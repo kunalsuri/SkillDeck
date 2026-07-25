@@ -282,6 +282,11 @@ export default function SkillExplorer({ kb, mode }: Props) {
   const handleCopy = (text: string, key: string) => {
     navigator.clipboard.writeText(text).then(() => {
       setCopiedKey(key);
+      const announcer = document.getElementById('copy-announcer');
+      if (announcer) {
+        const label = key.startsWith('id-') ? 'Skill ID' : key.startsWith('prompt-') ? 'Prompt' : 'Install command';
+        announcer.textContent = `${label} copied to clipboard`;
+      }
       setTimeout(() => setCopiedKey(null), 2000);
     });
   };
@@ -381,7 +386,7 @@ export default function SkillExplorer({ kb, mode }: Props) {
                   type="button"
                   onClick={() => handleSelect(item.id)}
                   aria-current={isActive}
-                  className={`w-full text-left p-3.5 transition-colors focus:outline-none ${
+                  className={`w-full text-left p-3.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset ${
                     isActive
                       ? 'bg-accent/5 dark:bg-accent/10 border-l-2 border-l-accent'
                       : 'border-l-2 border-l-transparent hover:bg-zinc-50 dark:hover:bg-zinc-800/40'
@@ -676,7 +681,7 @@ function SkillDetailPanel({ item, mode, colorMap, defaultColor, tools, installTo
                 <button
                   key={t.id}
                   onClick={() => onInstallToolChange(t.id)}
-                  className={`px-3.5 py-2 text-xs font-mono border-b-2 -mb-[1px] transition-colors focus:outline-none ${
+                  className={`px-3.5 py-2 text-xs font-mono border-b-2 -mb-[1px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset ${
                     installTool === t.id
                       ? 'border-accent text-accent font-semibold'
                       : 'border-transparent text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300'
@@ -697,7 +702,7 @@ function SkillDetailPanel({ item, mode, colorMap, defaultColor, tools, installTo
               {installCmd && (
                 <button
                   onClick={() => onCopy(installCmd, `install-${id}`)}
-                  className="p-1.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-850 text-zinc-400 focus:outline-none shrink-0"
+                  className="p-1.5 rounded border border-zinc-800 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent shrink-0"
                   aria-label="Copy installation command"
                 >
                   {copiedKey === `install-${id}` ? (

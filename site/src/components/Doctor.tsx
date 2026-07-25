@@ -74,7 +74,7 @@ export default function Doctor() {
             </svg>
           </div>
           <div className="space-y-1">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-150">Ready to Analyze</h3>
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Ready to Analyze</h3>
             <p className="text-xs text-zinc-500 dark:text-zinc-400 max-w-[280px]">
               Paste your <code>SKILL.md</code> code on the left and click &ldquo;Check Skill&rdquo; to execute structural linting.
             </p>
@@ -116,7 +116,7 @@ export default function Doctor() {
         </div>
 
         {/* Metrics Box */}
-        <div className="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-850 rounded-xl p-4 flex flex-wrap gap-x-6 gap-y-2 text-[11px] font-mono text-zinc-550 dark:text-zinc-400">
+        <div className="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex flex-wrap gap-x-6 gap-y-2 text-[11px] font-mono text-zinc-500 dark:text-zinc-400">
           <div>
             <span className="text-zinc-400 dark:text-zinc-600">Tokens:</span>{' '}
             <strong className="text-zinc-700 dark:text-zinc-300">{formatTokens(bodyTokens)}</strong>
@@ -153,13 +153,13 @@ export default function Doctor() {
                         <span className={`text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
                           f.severity === 'error' ? 'bg-red-100 text-red-700 dark:bg-red-950/40 dark:text-red-400' :
                           f.severity === 'warn' ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400' :
-                          'bg-zinc-150 text-zinc-750 dark:bg-zinc-800 dark:text-zinc-400'
+                          'bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-400'
                         }`}>
                           {f.severity}
                         </span>
                       </div>
-                      <div className="mt-2 text-xs font-bold text-zinc-900 dark:text-zinc-150">{f.title}</div>
-                      <div className="mt-1 text-[11px] text-zinc-600 dark:text-zinc-455 leading-normal">{f.detail}</div>
+                      <div className="mt-2 text-xs font-bold text-zinc-900 dark:text-zinc-100">{f.title}</div>
+                      <div className="mt-1 text-[11px] text-zinc-600 dark:text-zinc-500 leading-normal">{f.detail}</div>
                     </div>
                   ))}
                 </div>
@@ -173,7 +173,7 @@ export default function Doctor() {
 
   const renderGuide = () => {
     return (
-      <div className="space-y-6 text-xs leading-relaxed text-zinc-650 dark:text-zinc-350 animate-fadeIn">
+      <div className="space-y-6 text-xs leading-relaxed text-zinc-600 dark:text-zinc-300 animate-fadeIn">
         <div className="space-y-2">
           <h4 className="text-sm font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-blue-500">
@@ -185,10 +185,10 @@ export default function Doctor() {
           <p>
             Agent Skills load sequentially to minimize token footprints:
           </p>
-          <ul className="list-disc pl-4 space-y-1 bg-zinc-50 dark:bg-zinc-950 p-3 rounded-lg border border-zinc-200 dark:border-zinc-800 font-mono text-[10px] text-zinc-500 dark:text-zinc-450">
-            <li><strong className="text-zinc-800 dark:text-zinc-250">Discovery</strong>: Startup loads only the name and description.</li>
-            <li><strong className="text-zinc-800 dark:text-zinc-250">Activation</strong>: Full instructions load only when a task matches.</li>
-            <li><strong className="text-zinc-800 dark:text-zinc-250">Execution</strong>: Follows instructions, executing scripts or referencing files.</li>
+          <ul className="list-disc pl-4 space-y-1 bg-zinc-50 dark:bg-zinc-950 p-3 rounded-lg border border-zinc-200 dark:border-zinc-800 font-mono text-[10px] text-zinc-500 dark:text-zinc-400">
+            <li><strong className="text-zinc-800 dark:text-zinc-200">Discovery</strong>: Startup loads only the name and description.</li>
+            <li><strong className="text-zinc-800 dark:text-zinc-200">Activation</strong>: Full instructions load only when a task matches.</li>
+            <li><strong className="text-zinc-800 dark:text-zinc-200">Execution</strong>: Follows instructions, executing scripts or referencing files.</li>
           </ul>
         </div>
 
@@ -272,7 +272,7 @@ export default function Doctor() {
           {rulesList.map((rule) => (
             <div key={rule.id} className="p-3 border border-zinc-200 dark:border-zinc-800 rounded-lg space-y-1 bg-zinc-50/50 dark:bg-zinc-950/20 text-xs">
               <div className="flex justify-between items-baseline flex-wrap gap-1">
-                <span className="font-mono font-bold text-zinc-800 dark:text-zinc-250 flex items-center gap-1.5">
+                <span className="font-mono font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5">
                   <span className={`w-1.5 h-1.5 rounded-full ${
                     rule.severity === 'error' ? 'bg-red-500' :
                     rule.severity === 'warn' ? 'bg-amber-500' : 'bg-blue-500'
@@ -287,7 +287,7 @@ export default function Doctor() {
                   {rule.severity}
                 </span>
               </div>
-              <p className="text-[11px] text-zinc-550 dark:text-zinc-400 leading-normal">{rule.desc}</p>
+              <p className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-normal">{rule.desc}</p>
             </div>
           ))}
         </div>
@@ -306,7 +306,7 @@ export default function Doctor() {
               <span className="w-2.5 h-2.5 rounded-full bg-red-400"></span>
               <span className="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
               <span className="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-              <span className="ml-2 text-xs font-mono font-semibold text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5 bg-zinc-150/60 dark:bg-zinc-800 px-2.5 py-0.5 rounded border border-zinc-250 dark:border-zinc-750">
+              <span className="ml-2 text-xs font-mono font-semibold text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5 bg-zinc-100/60 dark:bg-zinc-800 px-2.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-700">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
                   <path fill-rule="evenodd" d="M4.5 2A1.5 1.5 0 003 3.5v13A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V7.621a1.5 1.5 0 00-.44-1.06l-4.12-4.122A1.5 1.5 0 0011.378 2H4.5zm2.25 8.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5zm0 3a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-6.5z" clip-rule="evenodd" />
                 </svg>
@@ -328,7 +328,7 @@ export default function Doctor() {
             rows={18}
             spellcheck={false}
             placeholder={'---\nname: my-skill\ndescription: Use this when...\n---\n\nInstructions go here.'}
-            className="w-full bg-transparent border-0 rounded-none p-5 text-sm font-mono leading-relaxed focus:outline-none focus:ring-0 dark:text-zinc-200 placeholder-zinc-350 dark:placeholder-zinc-650 resize-y"
+            className="w-full bg-transparent border-0 rounded-none p-5 text-sm font-mono leading-relaxed focus:outline-none focus:ring-0 dark:text-zinc-200 placeholder-zinc-300 dark:placeholder-zinc-600 resize-y"
           />
         </div>
 

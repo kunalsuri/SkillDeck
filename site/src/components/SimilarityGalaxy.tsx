@@ -207,14 +207,14 @@ export default function SimilarityGalaxy({ kb }: Props) {
                 className={`absolute -translate-x-1/2 -translate-y-1/2 transition-[left,top] duration-200 ease-out flex flex-col items-center gap-1 focus:outline-none group`}
               >
                 <span
-                  className={`block rounded-full border-2 ${colors.dot} ${isSelected ? `ring-2 ${colors.ring} ring-offset-2 ring-offset-white dark:ring-offset-zinc-900` : ''}`}
+                  className={`block rounded-full border-2 ${colors.dot} ${isSelected ? `ring-2 ${colors.ring} ring-offset-2 ring-offset-white dark:ring-offset-zinc-900` : ''} group-focus-visible:ring-2 group-focus-visible:ring-accent group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-white dark:group-focus-visible:ring-offset-zinc-900`}
                   style={{
                     width: `${14 + (n.score / 100) * 16}px`,
                     height: `${14 + (n.score / 100) * 16}px`,
                     borderColor: 'white',
                   }}
                 />
-                <span className="text-[9px] font-mono px-1 py-0.5 rounded bg-white/90 dark:bg-zinc-900/90 text-zinc-600 dark:text-zinc-300 whitespace-nowrap shadow-sm border border-zinc-200/60 dark:border-zinc-700/60 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-[9px] font-mono px-1 py-0.5 rounded bg-white/90 dark:bg-zinc-900/90 text-zinc-600 dark:text-zinc-300 whitespace-nowrap shadow-sm border border-zinc-200/60 dark:border-zinc-700/60 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity">
                   {formatName(n.name)} · {n.score}%
                 </span>
               </button>
