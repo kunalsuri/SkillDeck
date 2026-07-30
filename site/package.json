@@ -24,7 +24,7 @@
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
+    "@astrojs/check": "^0.9.10",
     "@playwright/test": "^1.42.1",
     "@testing-library/preact": "^3.0.0",
     "@types/node": "^26.1.1",
