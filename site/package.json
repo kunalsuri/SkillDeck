@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/preact": "^6.0.1",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.1.1",
+    "astro": "^7.1.6",
     "marked": "^18.0.6",
     "preact": "^10.29.7",
     "sanitize-html": "^2.17.6",
