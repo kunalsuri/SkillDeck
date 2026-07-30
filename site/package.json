@@ -15,7 +15,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/preact": "^6.0.1",
+    "@astrojs/preact": "^6.0.2",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.1.1",
     "marked": "^18.0.6",
